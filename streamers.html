@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Winline Esports — стримеры</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <div class="brand"><span>Winline</span> | Егор Холов</div>
+    <div class="navlinks">
+      <a href="index.html"><span class="pn">1</span>Позиция и цели</a>
+      <a href="experience.html"><span class="pn">2</span>Мой опыт</a>
+      <a href="media.html"><span class="pn">3</span>Медиаактив</a>
+      <a href="streamers.html" class="active"><span class="pn">4</span>Стримеры</a>
+      <a href="market.html"><span class="pn">5</span>Дота и рынок</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="kicker">Полная картина, не топ-10 амбассадоров на слайде</div>
+    <h1>Работа со стримерами: кто, как оценивать, как автоматизировать</h1>
+    <p class="sub">Живой роспис текущих партнёров + рамка оценки + три методологии, которые можно построить на официальном Twitch API уже сейчас — не в теории, я это проверил на этом же сайте.</p>
+  </div>
+</header>
+
+<!-- ================= FULL PICTURE ================= -->
+<section id="picture">
+  <div class="wrap">
+    <div class="eyebrow">01 · Живой снепшот</div>
+    <h2>Полная картина сейчас</h2>
+    <div class="callout good">
+      <span class="tag">SLAY переехал</span>
+      Разбор флагманской премии SLAY (750К+ зрителей, публичный скандал с накруткой) — на странице «Медиаактив», это актив компании, не методология работы со стримерами.
+    </div>
+
+    <div class="subhead">CS2 и Dota 2 — живой снепшот, топ-50 по каждой игре отдельно</div>
+    <p class="lede">15 августа, ~16:40 МСК — прошли все живые RU-стримы по CS2 и Dota 2 через Twitch Helix API, у каждого разобрали панели под трансляцией. Ниже — полные таблицы, не выборка из десяти имён. Фильтры переключают игру, списки не смешаны.</p>
+
+    <div class="gamefilter">
+      <button class="active" data-game="cs2">CS2</button>
+      <button data-game="dota2">Dota 2</button>
+    </div>
+
+    <div class="gamepanel active" data-panel="cs2">
+      <div class="grid" style="grid-template-columns:1fr 1fr">
+        <div class="card"><h3>Живых RU-каналов сейчас</h3><p class="statpair">96</p><p>Из них с найденным бренд-баннером в панели — 11.</p></div>
+        <div class="card"><h3>Совокупный охват топ-50</h3><p class="statpair">60 105</p><p>Одновременных зрителей, сумма по всем 50 каналам.</p></div>
+      </div>
+      <div class="callout question">
+        <span class="tag">Вопрос, не вывод</span>
+        В топ-50 бренд нашёлся у 11 каналов: 10 у BetBoom, 1 у Winline. Разброс между снепшотами в течение одного дня заметный — более ранний замер в тот же день находил три канала с Winline вместо одного, так что это не обязательно системный разрыв, а ещё и вопрос выборки в моменте. Стоит уточнить у команды: сколько партнёрских каналов CS2 сейчас в контракте на бумаге, и почему в живой выдаче их не видно.
+      </div>
+      <div class="tablewrap">
+        <table>
+          <thead><tr><th>#</th><th>Канал</th><th>Онлайн</th><th>Бренд</th></tr></thead>
+          <tbody>
+          <tr><td class="num">1</td><td class="strong"><a href="https://twitch.tv/chopperinho" target="_blank" rel="noopener">chopperinho</a></td><td class="num">27 187</td><td><span class="badge betboom">BetBoom</span></td></tr>
+          <tr><td class="num">2</td><td class="strong"><a href="https://twitch.tv/97zoner" target="_blank" rel="noopener">97zoner</a></td><td class="num">8 316</td><td><span class="badge betboom">BetBoom</span></td></tr>
+          <tr><td class="num">3</td><td class="strong"><a href="https://twitch.tv/betboom_cs_ru" target="_blank" rel="noopener">betboom_cs_ru</a></td><td class="num">4 725</td><td><span class="badge betboom">BetBoom</span></td></tr>
+          <tr><td class="num">4</td><td class="strong"><a href="https://twitch.tv/aunkere" target="_blank" rel="noopener">Aunkere</a></td><td class="num">4 094</td><td><span class="badge betboom">BetBoom</span></td></tr>
+          <tr><td class="num">5</td><td class="strong"><a href="https://twitch.tv/lentbb" target="_blank" rel="noopener">lentbb</a></td><td class="num">2 691</td><td><span class="badge betboom">BetBoom</span></td></tr>
+          <tr><td class="num">6</td><td class="strong"><a href="https://twitch.tv/dayneez" target="_blank" rel="noopener">dayneez</a></td><td class="num">2 082</td><td><span class="badge betboom">BetBoom</span></td></tr>
+          <tr><td class="num">7</td><td class="strong"><a href="https://twitch.tv/del1ght" target="_blank" rel="noopener">del1ght</a></td><td class="num">1 479</td><td><span style="color:var(--text-faint)">—</span></td></tr>
+          <tr><td class="num">8</td><td class="strong"><a href="https://twitch.tv/betboom_cs_ru2" target="_blank" rel="noopener">betboom_cs_ru2</a></td><td class="num">1 224</td><td><span class="badge betboom">BetBoom</span></td></tr>
+          <tr><td class="num">9</td><td class="strong"><a href="https://twitch.tv/tenkedzu" target="_blank" rel="noopener">Tenkedzu</a></td><td class="num">958</td><td><span style="color:var(--text-faint)">—</span></td></tr>
+          <tr><td class="num">10</td><td class="strong"><a href="https://twitch.tv/mager1337" target="_blank" rel="noopener">mAger1337</a></td><td class="num">878</td><td><span class="badge betboom">BetBoom</span></td></tr>
+          <tr><td class="num">11</td><td class="strong"><a href="https://twitch.tv/bandurka" target="_blank" rel="noopener">BANDURKA</a></td><td class="num">712</td><td><span style="color:var(--text-faint)">—</span></td></tr>
+          <tr><td class="num">12</td><td class="strong"><a href="https://twitch.tv/lastochkin" target="_blank" rel="noopener">lastochkin</a></td><td class="num">571</td><td><span style="color:var(--text-faint)">—</span></td></tr>
+          <tr><td class="num">13</td><td class="strong"><a href="https://twitch.tv/valenciiiaaa" target="_blank" rel="noopener">valenciiiaaa</a></td><td class="num">462</td><td><span style="color:var(--text-faint)">—</span></td></tr>
+          <tr><td class="num">14</td><td class="strong"><a href="https://twitch.tv/csgopstv" target="_blank" rel="noopener">CSGOPSTV</a></td><td class="num">421</td><td><span style="color:var(--text-faint)">—</span></td></tr>
+          <tr><td class="num">15</td><td class="strong"><a href="https://twitch.tv/verbalabusedd" target="_blank" rel="noopener">verbalabusedd</a></td><td class="num">400</td><td><span style="color:var(--text-faint)">—</span></td></tr>
+          <tr><td class="num">16</td><td class="strong"><a href="https://twitch.tv/friend44444" target="_blank" rel="noopener">friend44444</a></td><td class="num">382</td><td><span class="badge zero">Winline</span></td></tr>
+          <tr><td class="num">17</td><td class="strong"><a href="https://twitch.tv/bam0nty" target="_blank" rel="noopener">BAM0NTy</a></td><td class="num">319</td><td><span style="color:var(--text-faint)">—</span></td></tr>
+          <tr><td class="num">18</td><td class="strong"><a href="https://twitch.tv/1mpala" target="_blank" rel="noopener">1mpala</a></td><td class="num">292</td><td><span style="color:var(--text-faint)">—</span></td></tr>
+          <tr><td class="num">19</td><td class="strong"><a href="https://twitch.tv/kayf52" target="_blank" rel="noopener">kayf52</a></td><td class="num">260</td><td><span style="color:var(--text-faint)">—</span></td></tr>
+          <tr><td class="num">20</td><td class="strong"><a href="https://twitch.tv/sayynex" target="_blank" rel="noopener">sayynex</a></td><td class="num">229</td><td><span style="color:var(--text-faint)">—</span></td></tr>
+          <tr><td class="num">21</td><td class="strong"><a href="https://twitch.tv/krat0ntv" target="_blank" rel="noopener">krat0ntv</a></td><td class="num">214</td><td><span class="badge betboom">BetBoom</span></td></tr>
+          <tr><td class="num">22</td><td class="strong"><a href="https://twitch.tv/poseidonskiy" target="_blank" rel="noopener">poseidonskiy</a></td><td class="num">189</td><td><span style="color:var(--text-faint)">—</span></td></tr>
+          <tr><td class="num">23</td><td class="strong"><a href="https://twitch.tv/russianprofessional1" target="_blank" rel="noopener">RussianProfessional1</a></td><td class="num">170</td><td><span style="color:var(--text-faint)">—</span></td></tr>
+          <tr><td class="num">24</td><td class="strong"><a href="https://twitch.tv/pushmachine077" target="_blank" rel="noopener">pushmachine077</a></td><td class="num">137</td><td><span style="color:var(--text-faint)">—</span></td></tr>
+          <tr><td class="num">25</td><td class="strong"><a href="https://twitch.tv/neret17" target="_blank" rel="noopener">neret17</a></td><td class="num">120</td><td><span style="color:var(--text-faint)">—</span></td></tr>
+          <tr><td class="num">26</td><td class="strong"><a href="https://twitch.tv/torycs" target="_blank" rel="noopener">torycs</a></td><td class="num">107</td><td><span style="color:var(--text-faint)">—</span></td></tr>
+          <tr><td class="num">27</td><td class="strong"><a href="https://twitch.tv/shakirovskiy1" target="_blank" rel="noopener">shakirovskiy1</a></td><td class="num">104</td><td><span style="color:var(--text-faint)">—</span></td></tr>
+          <tr><td class="num">28</td><td class="strong"><a href="https://twitch.tv/gurbl4" target="_blank" rel="noopener">gurbl4</a></td><td class="num">99</td><td><span style="color:var(--text-faint)">—</span></td></tr>
+          <tr><td class="num">29</td><td class="strong"><a href="https://twitch.tv/rex0on" target="_blank" rel="noopener">rex0on</a></td><td class="num">96</td><td><span style="color:var(--text-faint)">—</span></td></tr>
+          <tr><td class="num">30</td><td class="strong"><a href="https://twitch.tv/kingsteping_" target="_blank" rel="noopener">kingsteping_</a></td><td class="num">90</td><td><span style="color:var(--text-faint)">—</span></td></tr>
+          <tr><td class="num">31</td><td class="strong"><a href="https://twitch.tv/westxgood" target="_blank" rel="noopener">westxgood</a></td><td class="num">88</td><td><span style="color:var(--text-faint)">—</span></td></tr>
+          <tr><td class="num">32</td><td class="strong"><a href="https://twitch.tv/rastayaniy" target="_blank" rel="noopener">raStayaniY</a></td><td class="num">84</td><td><span style="color:var(--text-faint)">—</span></td></tr>
+          <tr><td class="num">33</td><td class="strong"><a href="https://twitch.tv/nekiynek" target="_blank" rel="noopener">nekiynek</a></td><td class="num">81</td><td><span style="color:var(--text-faint)">—</span></td></tr>
+          <tr><td class="num">34</td><td class="strong"><a href="https://twitch.tv/1nterz" target="_blank" rel="noopener">1nterz</a></td><td class="num">80</td><td><span style="color:var(--text-faint)">—</span></td></tr>
+          <tr><td class="num">35</td><td class="strong"><a href="https://twitch.tv/cs2_house" target="_blank" rel="noopener">cs2_house</a></td><td class="num">74</td><td><span style="color:var(--text-faint)">—</span></td></tr>
+          <tr><td class="num">36</td><td class="strong"><a href="https://twitch.tv/ame1i_" target="_blank" rel="noopener">Ame1i_</a></td><td class="num">66</td><td><span style="color:var(--text-faint)">—</span></td></tr>
+          <tr><td class="num">37</td><td class="strong"><a href="https://twitch.tv/bodyan04" target="_blank" rel="noopener">bodyan04</a></td><td class="num">66</td><td><span style="color:var(--text-faint)">—</span></td></tr>
+          <tr><td class="num">38</td><td class="strong"><a href="https://twitch.tv/mariomax11" target="_blank" rel="noopener">mariomax11</a></td><td class="num">56</td><td><span class="badge betboom">BetBoom</span></td></tr>
+          <tr><td class="num">39</td><td class="strong"><a href="https://twitch.tv/danielspain666" target="_blank" rel="noopener">danielspain666</a></td><td class="num">52</td><td><span style="color:var(--text-faint)">—</span></td></tr>
+          <tr><td class="num">40</td><td class="strong"><a href="https://twitch.tv/z3nderrrr" target="_blank" rel="noopener">z3nderrrr</a></td><td class="num">51</td><td><span style="color:var(--text-faint)">—</span></td></tr>
+          <tr><td class="num">41</td><td class="strong"><a href="https://twitch.tv/vityacherep" target="_blank" rel="noopener">vityacherep</a></td><td class="num">49</td><td><span style="color:var(--text-faint)">—</span></td></tr>
+          <tr><td class="num">42</td><td class="strong"><a href="https://twitch.tv/vlatessax" target="_blank" rel="noopener">VLATESSAX</a></td><td class="num">46</td><td><span style="color:var(--text-faint)">—</span></td></tr>
+          <tr><td class="num">43</td><td class="strong"><a href="https://twitch.tv/4eenada" target="_blank" rel="noopener">4eenada</a></td><td class="num">45</td><td><span style="color:var(--text-faint)">—</span></td></tr>
+          <tr><td class="num">44</td><td class="strong"><a href="https://twitch.tv/morrkyss" target="_blank" rel="noopener">morrkyss</a></td><td class="num">42</td><td><span style="color:var(--text-faint)">—</span></td></tr>
+          <tr><td class="num">45</td><td class="strong"><a href="https://twitch.tv/m1sfit_tv" target="_blank" rel="noopener">m1sfit_tv</a></td><td class="num">41</td><td><span style="color:var(--text-faint)">—</span></td></tr>
+          <tr><td class="num">46</td><td class="strong"><a href="https://twitch.tv/step_csgonews" target="_blank" rel="noopener">step_csgonews</a></td><td class="num">41</td><td><span style="color:var(--text-faint)">—</span></td></tr>
+          <tr><td class="num">47</td><td class="strong"><a href="https://twitch.tv/sma1l_one" target="_blank" rel="noopener">sma1l_one</a></td><td class="num">36</td><td><span style="color:var(--text-faint)">—</span></td></tr>
+          <tr><td class="num">48</td><td class="strong"><a href="https://twitch.tv/amikiri_al" target="_blank" rel="noopener">amikiri_al</a></td><td class="num">34</td><td><span style="color:var(--text-faint)">—</span></td></tr>
+          <tr><td class="num">49</td><td class="strong"><a href="https://twitch.tv/minichtv" target="_blank" rel="noopener">minichtv</a></td><td class="num">33</td><td><span style="color:var(--text-faint)">—</span></td></tr>
+          <tr><td class="num">50</td><td class="strong"><a href="https://twitch.tv/mb1ww" target="_blank" rel="noopener">mb1ww</a></td><td class="num">32</td><td><span style="color:var(--text-faint)">—</span></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="gamepanel" data-panel="dota2">
+      <div class="grid" style="grid-template-columns:1fr 1fr">
+        <div class="card"><h3>Живых RU-каналов сейчас</h3><p class="statpair">97</p><p>Из них с найденным бренд-баннером в панели — 15.</p></div>
+        <div class="card"><h3>Совокупный охват топ-50</h3><p class="statpair">~197 000</p><p>257 987 суммарно, минус 60 835 — официальные трансляции самого TI (Valve), которые не продаются ни одному букмекеру.</p></div>
+      </div>
+      <div class="callout insight">
+        <span class="tag">Вопрос, не вывод</span>
+        В топ-50 бренд нашёлся у 15 каналов: 7 у BetBoom, 5 у Winline, 3 у Fonbet — уже не паритет, но и не разгром, разница на грани погрешности одного снепшота. Из общего охвата треть — это официальные трансляции TI, где по правилам Valve вообще нет рекламы ни у кого (см. страницу «Дота и рынок»). Стоит спросить, считает ли команда такие каналы вообще релевантной аудиторией для оценки охвата, или чистит их из отчётности сама.
+      </div>
+      <div class="tablewrap">
+        <table>
+          <thead><tr><th>#</th><th>Канал</th><th>Онлайн</th><th>Бренд</th></tr></thead>
+          <tbody>
+          <tr><td class="num">1</td><td class="strong"><a href="https://twitch.tv/nix" target="_blank" rel="noopener">Nix</a></td><td class="num">108 092</td><td><span class="badge betboom">BetBoom</span></td></tr>
+          <tr><td class="num">2</td><td class="strong"><a href="https://twitch.tv/dota2ti_ru" target="_blank" rel="noopener">dota2ti_ru</a></td><td class="num">40 729</td><td><span style="color:var(--text-faint);font-size:14px">офиц. трансляция TI</span></td></tr>
+          <tr><td class="num">3</td><td class="strong"><a href="https://twitch.tv/just_ns" target="_blank" rel="noopener">just_ns</a></td><td class="num">17 682</td><td><span class="badge zero">Winline</span></td></tr>
+          <tr><td class="num">4</td><td class="strong"><a href="https://twitch.tv/ramzes" target="_blank" rel="noopener">ramzes</a></td><td class="num">17 248</td><td><span class="badge zero">Winline</span></td></tr>
+          <tr><td class="num">5</td><td class="strong"><a href="https://twitch.tv/nicoleheart23" target="_blank" rel="noopener">nicoleheart23</a></td><td class="num">12 343</td><td><span style="color:var(--text-faint)">—</span></td></tr>
+          <tr><td class="num">6</td><td class="strong"><a href="https://twitch.tv/solo" target="_blank" rel="noopener">Solo</a></td><td class="num">10 094</td><td><span class="badge betboom">BetBoom</span></td></tr>
+          <tr><td class="num">7</td><td class="strong"><a href="https://twitch.tv/dota2ti_ru_2" target="_blank" rel="noopener">dota2ti_ru_2</a></td><td class="num">8 246</td><td><span style="color:var(--text-faint);font-size:14px">офиц. трансляция TI</span></td></tr>
+          <tr><td class="num">8</td><td class="strong"><a href="https://twitch.tv/dota2ti_ru_4" target="_blank" rel="noopener">dota2ti_ru_4</a></td><td class="num">7 218</td><td><span style="color:var(--text-faint);font-size:14px">офиц. трансляция TI</span></td></tr>
+          <tr><td class="num">9</td><td class="strong"><a href="https://twitch.tv/avice" target="_blank" rel="noopener">avice</a></td><td class="num">6 786</td><td><span class="badge betboom">BetBoom</span></td></tr>
+          <tr><td class="num">10</td><td class="strong"><a href="https://twitch.tv/dota2ti_ru_3" target="_blank" rel="noopener">dota2ti_ru_3</a></td><td class="num">4 642</td><td><span style="color:var(--text-faint);font-size:14px">офиц. трансляция TI</span></td></tr>
+          <tr><td class="num">11</td><td class="strong"><a href="https://twitch.tv/etoseregga" target="_blank" rel="noopener">etosereGGa</a></td><td class="num">2 888</td><td><span style="color:var(--text-faint)">—</span></td></tr>
+          <tr><td class="num">12</td><td class="strong"><a href="https://twitch.tv/dyrachyo" target="_blank" rel="noopener">dyrachyo</a></td><td class="num">2 307</td><td><span class="badge betboom">BetBoom</span></td></tr>
+          <tr><td class="num">13</td><td class="strong"><a href="https://twitch.tv/9pasha" target="_blank" rel="noopener">9pasha</a></td><td class="num">1 908</td><td><span class="badge zero">Winline</span></td></tr>
+          <tr><td class="num">14</td><td class="strong"><a href="https://twitch.tv/c_a_k_e" target="_blank" rel="noopener">C_a_k_e</a></td><td class="num">1 725</td><td><span class="badge neutral">Fonbet</span></td></tr>
+          <tr><td class="num">15</td><td class="strong"><a href="https://twitch.tv/godota2bets" target="_blank" rel="noopener">godota2bets</a></td><td class="num">1 406</td><td><span style="color:var(--text-faint)">—</span></td></tr>
+          <tr><td class="num">16</td><td class="strong"><a href="https://twitch.tv/voodoosh" target="_blank" rel="noopener">VooDooSh</a></td><td class="num">1 348</td><td><span class="badge zero">Winline</span></td></tr>
+          <tr><td class="num">17</td><td class="strong"><a href="https://twitch.tv/ponyaaaa" target="_blank" rel="noopener">ponyaaaa</a></td><td class="num">1 023</td><td><span style="color:var(--text-faint)">—</span></td></tr>
+          <tr><td class="num">18</td><td class="strong"><a href="https://twitch.tv/what1want" target="_blank" rel="noopener">what1want</a></td><td class="num">952</td><td><span style="color:var(--text-faint)">—</span></td></tr>
+          <tr><td class="num">19</td><td class="strong"><a href="https://twitch.tv/mariostar666" target="_blank" rel="noopener">mariostar666</a></td><td class="num">871</td><td><span style="color:var(--text-faint)">—</span></td></tr>
+          <tr><td class="num">20</td><td class="strong"><a href="https://twitch.tv/goodwin_dota" target="_blank" rel="noopener">GoodWin_Dota</a></td><td class="num">795</td><td><span class="badge betboom">BetBoom</span></td></tr>
+          <tr><td class="num">21</td><td class="strong"><a href="https://twitch.tv/torontotokyo17" target="_blank" rel="noopener">TORONTOTOKYO17</a></td><td class="num">663</td><td><span class="badge betboom">BetBoom</span></td></tr>
+          <tr><td class="num">22</td><td class="strong"><a href="https://twitch.tv/goodoq" target="_blank" rel="noopener">goodoq</a></td><td class="num">661</td><td><span class="badge neutral">Fonbet</span></td></tr>
+          <tr><td class="num">23</td><td class="strong"><a href="https://twitch.tv/blackrabbit342" target="_blank" rel="noopener">blackrabbit342</a></td><td class="num">642</td><td><span style="color:var(--text-faint)">—</span></td></tr>
+          <tr><td class="num">24</td><td class="strong"><a href="https://twitch.tv/bolt_ru" target="_blank" rel="noopener">bolt_ru</a></td><td class="num">640</td><td><span style="color:var(--text-faint)">—</span></td></tr>
+          <tr><td class="num">25</td><td class="strong"><a href="https://twitch.tv/radika1fa" target="_blank" rel="noopener">RadiKa1fa</a></td><td class="num">602</td><td><span style="color:var(--text-faint)">—</span></td></tr>
+          <tr><td class="num">26</td><td class="strong"><a href="https://twitch.tv/mary_day" target="_blank" rel="noopener">mary_day</a></td><td class="num">561</td><td><span style="color:var(--text-faint)">—</span></td></tr>
+          <tr><td class="num">27</td><td class="strong"><a href="https://twitch.tv/yandex" target="_blank" rel="noopener">yandex</a></td><td class="num">493</td><td><span style="color:var(--text-faint)">—</span></td></tr>
+          <tr><td class="num">28</td><td class="strong"><a href="https://twitch.tv/sharmendo" target="_blank" rel="noopener">sharmendo</a></td><td class="num">468</td><td><span style="color:var(--text-faint)">—</span></td></tr>
+          <tr><td class="num">29</td><td class="strong"><a href="https://twitch.tv/jester_andrew" target="_blank" rel="noopener">Jester_Andrew</a></td><td class="num">463</td><td><span class="badge betboom">BetBoom</span></td></tr>
+          <tr><td class="num">30</td><td class="strong"><a href="https://twitch.tv/alohadancetv" target="_blank" rel="noopener">ALOHADANCETV</a></td><td class="num">443</td><td><span style="color:var(--text-faint)">—</span></td></tr>
+          <tr><td class="num">31</td><td class="strong"><a href="https://twitch.tv/ueyo" target="_blank" rel="noopener">ueyo</a></td><td class="num">363</td><td><span style="color:var(--text-faint)">—</span></td></tr>
+          <tr><td class="num">32</td><td class="strong"><a href="https://twitch.tv/chubzarik_dota" target="_blank" rel="noopener">chubzarik_dota</a></td><td class="num">362</td><td><span style="color:var(--text-faint)">—</span></td></tr>
+          <tr><td class="num">33</td><td class="strong"><a href="https://twitch.tv/storm_q" target="_blank" rel="noopener">STORM_Q</a></td><td class="num">333</td><td><span style="color:var(--text-faint)">—</span></td></tr>
+          <tr><td class="num">34</td><td class="strong"><a href="https://twitch.tv/analytika_owibok" target="_blank" rel="noopener">Analytika_Owibok</a></td><td class="num">328</td><td><span style="color:var(--text-faint)">—</span></td></tr>
+          <tr><td class="num">35</td><td class="strong"><a href="https://twitch.tv/cispapa" target="_blank" rel="noopener">CISpapa</a></td><td class="num">273</td><td><span style="color:var(--text-faint)">—</span></td></tr>
+          <tr><td class="num">36</td><td class="strong"><a href="https://twitch.tv/browjey" target="_blank" rel="noopener">BrowJey</a></td><td class="num">257</td><td><span style="color:var(--text-faint)">—</span></td></tr>
+          <tr><td class="num">37</td><td class="strong"><a href="https://twitch.tv/icebergdoto" target="_blank" rel="noopener">icebergdoto</a></td><td class="num">250</td><td><span style="color:var(--text-faint)">—</span></td></tr>
+          <tr><td class="num">38</td><td class="strong"><a href="https://twitch.tv/madeinabysz" target="_blank" rel="noopener">MadeInAbysz</a></td><td class="num">229</td><td><span style="color:var(--text-faint)">—</span></td></tr>
+          <tr><td class="num">39</td><td class="strong"><a href="https://twitch.tv/maxon_live_6669085" target="_blank" rel="noopener">MAXON_LIVE_6669085</a></td><td class="num">225</td><td><span style="color:var(--text-faint)">—</span></td></tr>
+          <tr><td class="num">40</td><td class="strong"><a href="https://twitch.tv/sysman_" target="_blank" rel="noopener">sysman_</a></td><td class="num">176</td><td><span style="color:var(--text-faint)">—</span></td></tr>
+          <tr><td class="num">41</td><td class="strong"><a href="https://twitch.tv/dannykoopa" target="_blank" rel="noopener">DannyKoopa</a></td><td class="num">154</td><td><span style="color:var(--text-faint)">—</span></td></tr>
+          <tr><td class="num">42</td><td class="strong"><a href="https://twitch.tv/sqreenbets" target="_blank" rel="noopener">sQreenbets</a></td><td class="num">151</td><td><span class="badge neutral">Fonbet</span></td></tr>
+          <tr><td class="num">43</td><td class="strong"><a href="https://twitch.tv/pashavind" target="_blank" rel="noopener">pashavind</a></td><td class="num">149</td><td><span style="color:var(--text-faint)">—</span></td></tr>
+          <tr><td class="num">44</td><td class="strong"><a href="https://twitch.tv/rinat_lin" target="_blank" rel="noopener">rinat_lin</a></td><td class="num">141</td><td><span style="color:var(--text-faint)">—</span></td></tr>
+          <tr><td class="num">45</td><td class="strong"><a href="https://twitch.tv/5misha" target="_blank" rel="noopener">5Misha</a></td><td class="num">127</td><td><span style="color:var(--text-faint)">—</span></td></tr>
+          <tr><td class="num">46</td><td class="strong"><a href="https://twitch.tv/sanekingg" target="_blank" rel="noopener">sanekingg</a></td><td class="num">124</td><td><span style="color:var(--text-faint)">—</span></td></tr>
+          <tr><td class="num">47</td><td class="strong"><a href="https://twitch.tv/uniquee" target="_blank" rel="noopener">Uniquee</a></td><td class="num">122</td><td><span style="color:var(--text-faint)">—</span></td></tr>
+          <tr><td class="num">48</td><td class="strong"><a href="https://twitch.tv/shisp_dota" target="_blank" rel="noopener">shisp_dota</a></td><td class="num">104</td><td><span style="color:var(--text-faint)">—</span></td></tr>
+          <tr><td class="num">49</td><td class="strong"><a href="https://twitch.tv/followkudes" target="_blank" rel="noopener">followKudes</a></td><td class="num">92</td><td><span class="badge zero">Winline</span></td></tr>
+          <tr><td class="num">50</td><td class="strong"><a href="https://twitch.tv/prettysunraze" target="_blank" rel="noopener">prettysunraze</a></td><td class="num">88</td><td><span style="color:var(--text-faint)">—</span></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="subhead">Амбассадоры вне живой выдачи</div>
+    <p style="font-size:15px;color:var(--text-faint);margin-bottom:16px">Не были в эфире в момент снепшота, но входят в состав Winline по открытым данным.</p>
+    <div class="tablewrap">
+      <table>
+        <thead><tr><th>Канал</th><th>Охват</th><th>Роль</th></tr></thead>
+        <tbody>
+          <tr><td class="strong">Bratishkinoff</td><td class="num">3,4 млн (Twitch)</td><td>Амбассадор, капитан Star Series</td></tr>
+          <tr><td class="strong">Buster</td><td class="num">2 млн+ (Twitch)</td><td>Амбассадор с 2023, экс-каст ESL, организовал Star Series</td></tr>
+          <tr><td class="strong">DreadzTV</td><td class="num">—</td><td>Партнёр, Dota 2</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="callout flag">
+      <span class="tag">Пробел в данных — говорю прямо</span>
+      Кто именно представляет топ-стримеров (агентства/менеджмент, «кто под кем») — без доступа к внутренним контрактам или платным индустриальным базам это не восстановить достоверно, только предположениями. Честно маркирую как открытый вопрос, а не выдумываю ответ.
+    </div>
+    <div class="callout question">
+      <span class="tag">Точка роста</span>
+      По ресёрчу топ-200 русскоязычных Twitch-стримеров — около 47,5% вообще не законтрактованы ни с одним букмекером. Рынок талантов не поделён до конца.
+    </div>
+  </div>
+</section>
+
+<!-- ================= EVALUATION FRAMEWORK ================= -->
+<section id="framework">
+  <div class="wrap">
+    <div class="eyebrow">02 · Рамка оценки</div>
+    <h2>Как оценивать партнёра</h2>
+    <div class="grid">
+      <div class="card"><h3>1. Охват и стабильность</h3><p>Средний онлайн за 30 дней, не пиковые значения — пик легко словить один раз.</p></div>
+      <div class="card"><h3>2. Соответствие аудитории 18+</h3><p>Возрастной состав зрителей, не только самого стримера.</p></div>
+      <div class="card"><h3>3. Глубина интеграции</h3><p>Лого на панели vs совместный формат (капитанство в Star Series). В общей рекламной практике интегрированные форматы обычно конвертят лучше статичного баннера — но это общее правило рынка, а не измеренный на данных Winline факт, стоит проверить на своих кампаниях.</p></div>
+      <div class="card"><h3>4. Эксклюзивность категории</h3><p>Не продвигает ли параллельно конкурента — у нас уже есть реальный пример ниже, где один канал несёт сразу два бренда.</p></div>
+      <div class="card"><h3>5. Трекаемость</h3><p>Есть ли промокод/ссылка для атрибуции регистраций и депозитов.</p></div>
+      <div class="card"><h3>6. Цена за охваченного зрителя</h3><p>А не цена за подписчика — подписчики не равны активной аудитории. Но и «охваченный» не идеален: пиковый онлайн включает случайных и фоновых зрителей. Честнее считать по минутам просмотра или по вовлечённым в чат — это ближе к активной аудитории, чем простой охват.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= API MONITORING ================= -->
+<section id="monitoring">
+  <div class="wrap">
+    <div class="eyebrow">03 · Вопрос, не утверждение</div>
+    <h2>Мониторинг партнёров через API — уже есть, или стоит добавить?</h2>
+    <p class="lede">Не знаю, как сейчас проверяется «партнёр ещё стримит, ссылка ещё стоит» — вручную или уже автоматизировано. Если автоматизировано — интересно сравнить подходы. Если нет — вот рабочий вариант, который я проверил на этом же сайте, не в теории.</p>
+    <div class="grid">
+      <div class="card">
+        <h3>Что технически уже подтверждено</h3>
+        <p>Twitch Helix API отдаёт live-статус, онлайн, игру, длительность стрима. Публичный GQL-эндпоинт панелей отдаёт список ссылок в панели канала — то же самое, что видит зритель в браузере, но программно и по расписанию.</p>
+      </div>
+      <div class="card">
+        <h3>Что можно ловить автоматически</h3>
+        <p>Партнёр перестал стримить N недель подряд. Ссылка Winline пропала из панели. Аномальный скачок/просадка онлайна вне турнирных событий. Стрим идёт не в заявленной игре.</p>
+      </div>
+      <div class="card">
+        <h3>Как часто</h3>
+        <p>Опрос раз в 30–60 минут по списку партнёров — не нагружает API (лимиты Helix это спокойно выдерживают), даёт таймлайн по каждому вместо разовых точек.</p>
+      </div>
+    </div>
+    <div class="callout insight">
+      <span class="tag">Применимо</span>
+      Не гипотеза — ровно так я и собрал живые данные для страниц «Медиаактив» и «Дота и рынок» в этом брифе. Если у вас такого сервиса ещё нет — разница между разовым замером и постоянным мониторингом — это просто вопрос, поставить ли скрипт на расписание.
+    </div>
+  </div>
+</section>
+
+<!-- ================= FRAUD DETECTION ================= -->
+<section id="fraud">
+  <div class="wrap">
+    <div class="eyebrow">04 · Антифрод для стримеров</div>
+    <h2>Как ловить накрутку — и где проходит стена</h2>
+    <p class="lede">У рекламного трафика есть верификаторы уровня Admon — они сидят внутри цепочки показа рекламы и видят IP, устройство, поведение до ставки. У Twitch-просмотров такого встроенного верификатора нет, и хранитель всех точных данных — сама платформа. Дальше — честно, что из этого можно приблизить своими силами, а что нет.</p>
+    <div class="subhead">Структурно недоступно даже с API-доступом</div>
+    <div class="grid">
+      <div class="card"><h3>География, браузер, разрешение экрана</h3><p>Это данные из Creator Dashboard самого Twitch — видны только владельцу канала через его собственный логин. Публичный API такую разбивку не отдаёт никому, включая нас.</p></div>
+      <div class="card"><h3>Точное число уникальных зрителей</h3><p>Twitch не публикует uniques ни в каком виде — только текущий concurrent viewer_count. Без сотрудничества самого стримера это не восстановить.</p></div>
+    </div>
+    <div class="subhead">Можно приблизить своими силами</div>
+    <div class="grid">
+      <div class="card">
+        <h3>Онлайн vs активность чата</h3>
+        <p>Подключение к Twitch IRC анонимно (без авторизации, публичный чат) и подсчёт сообщений в минуту. Соотношение «сообщений на 1000 зрителей» у накрученного канала и у органики визуально отличается — не точная цифра, но рабочий сигнал.</p>
+      </div>
+      <div class="card">
+        <h3>«Хвост» просмотров после эфира</h3>
+        <p>Helix отдаёт view_count у VOD, и это число продолжает расти после стрима. Если опрашивать его повторно в течение недели — получаем кривую роста уже своими силами. Стрим с большим live-онлайном, но плоским хвостом VOD — повод присмотреться.</p>
+      </div>
+      <div class="card">
+        <h3>Возраст аккаунта + история контента</h3>
+        <p>Дата создания канала + архив VOD/клипов из Helix API. Внезапный большой онлайн у канала без истории — классический паттерн накрутки под конкретный контракт.</p>
+      </div>
+      <div class="card">
+        <h3>Форма кривой онлайна</h3>
+        <p>Боты часто дают неестественно ровную или ступенчатую линию. Органика так не скачет — видно только при повторных замерах, не по одной точке.</p>
+      </div>
+    </div>
+    <div class="callout insight">
+      <span class="tag">Это не новая для меня область</span>
+      Ровно этим я занимался на IT-Agency — 1 место на мероприятии Яндекса за систему выявления мошеннического трафика, интеграция с Admon, фильтрация по GIVT/SIVT. Полной точности уровня рекламного верификатора на Twitch не будет — платформа не отдаёт нужных данных никому. Но комбинация чата, VOD-хвоста и формы кривой — это уже рабочий, не гипотетический индекс подозрительности.
+    </div>
+  </div>
+</section>
+
+<!-- ================= AUDIENCE OVERLAP ================= -->
+<section id="overlap">
+  <div class="wrap">
+    <div class="eyebrow">05 · Новая методология</div>
+    <h2>Пересечение аудиторий — не платить дважды за одних и тех же людей</h2>
+    <p class="lede">Задача: подписывая нового партнёра, понимать, насколько его зрители уже видят Winline через другого партнёра — иначе бюджет уходит на охват одной и той же аудитории под разными лицами.</p>
+    <div class="grid">
+      <div class="card">
+        <h3>Метод 1 — пересечение чатов</h3>
+        <p>Анонимное подключение к чатам двух каналов во время одновременного эфира, сбор уникальных ников за окно времени, расчёт процента пересечения. Чат — не весь зритель, но рабочий прокси для пересечения аудитории, не требует платных инструментов.</p>
+      </div>
+      <div class="card">
+        <h3>Метод 2 — эвристика по расписанию</h3>
+        <p>Если два партнёра стримят одну и ту же игру в одни и те же часы — структурный риск пересечения выше по определению, без анализа данных вообще. Дешёвый первый фильтр перед тем, как считать чаты.</p>
+      </div>
+      <div class="card">
+        <h3>Метод 3 — платные инструменты</h3>
+        <p>Если нужна точность на уровне соцграфа (StreamsCharts Pro, Zoomph и аналоги) — это уже покупка, не разработка. Стоит держать в голове как опцию, если методы 1–2 покажут, что вопрос того стоит.</p>
+      </div>
+    </div>
+    <div class="callout flag">
+      <span class="tag">Честная оговорка</span>
+      Twitch не отдаёт пересечение аудиторий напрямую ни в каком виде — это всегда прокси-метрика, не точная цифра. Метод 1 я не тестировал именно на паре реальных каналов Winline, это спроектированная, а не уже проверенная на этом сайте методология — в отличие от мониторинга и антифрода выше.
+    </div>
+  </div>
+</section>
+
+<!-- ================= BANNER EVALUATION ================= -->
+<section id="banners">
+  <div class="wrap">
+    <div class="eyebrow">06 · Оценка баннеров и брендинга</div>
+    <h2>Не всякое лого стоит одинаково</h2>
+    <div class="grid">
+      <div class="card">
+        <h3>Иерархия по типу размещения</h3>
+        <p>Голосовое упоминание стримером &gt; интерактивный формат (капитанство, задание в эфире) &gt; статичный баннер в панели. Запоминаемость отличается на порядок между первым и последним.</p>
+      </div>
+      <div class="card">
+        <h3>Цена за уникальный час просмотра</h3>
+        <p>Та же метрика, что применена к турнирным продуктам на странице «Медиаактив» — считается и для отдельного стримера: стоимость контракта / часы просмотра за период.</p>
+      </div>
+      <div class="card">
+        <h3>Проверка на эксклюзивность</h3>
+        <p>Реальный пример из живых данных: канал Nix несёт в панели одновременно BetBoom и Playerok — два бренда, конкурирующих за один и тот же клик зрителя. Стоит явно фиксировать в контракте, с кем ещё делит панель партнёр.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="wrap">
+<nav class="pagenav" style="border:none;">
+  <a href="media.html">
+    <span class="lbl">← Назад — страница 3</span>
+    <span class="ttl">Медиаактив</span>
+  </a>
+  <a class="next" href="market.html">
+    <span class="lbl">Далее — страница 5</span>
+    <span class="ttl">Дота и рынок →</span>
+  </a>
+</nav>
+</div>
+
+<footer>
+  <div class="wrap">
+    <div>Подготовлено к встрече · источники — Twitch Helix API, собственный сбор данных, август 2026</div>
+    <div>Егор Холов</div>
+  </div>
+</footer>
+<script>
+  document.querySelectorAll('.gamefilter').forEach(function(bar){
+    bar.addEventListener('click', function(e){
+      var btn = e.target.closest('button');
+      if(!btn) return;
+      var game = btn.dataset.game;
+      bar.querySelectorAll('button').forEach(function(b){ b.classList.toggle('active', b===btn); });
+      document.querySelectorAll('.gamepanel').forEach(function(p){
+        p.classList.toggle('active', p.dataset.panel === game);
+      });
+    });
+  });
+</script>
+
+</body>
+</html>
