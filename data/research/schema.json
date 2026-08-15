@@ -1,0 +1,82 @@
+{
+  "schema_version": "1.0.0",
+  "research_cutoff": "2026-08-15",
+  "evidence_statuses": [
+    "official",
+    "corroborated",
+    "reported",
+    "estimate",
+    "inferred",
+    "hypothesis",
+    "rumor",
+    "conflict",
+    "rejected",
+    "stale",
+    "observed",
+    "in_progress"
+  ],
+  "source_types": [
+    "official",
+    "press_release",
+    "database",
+    "analytics",
+    "secondary_media",
+    "social_archive",
+    "existing_dataset"
+  ],
+  "relationship_types": [
+    "general_partner",
+    "main_partner",
+    "title_partner",
+    "betting_partner",
+    "streamer_partner",
+    "sponsor",
+    "ambassador",
+    "media_rights",
+    "broadcast_sponsor",
+    "event_brand"
+  ],
+  "relationship_current_statuses": [
+    "current_publicly_verified",
+    "fresh_public_announcement",
+    "active_by_public_term",
+    "current_unverified",
+    "reported_expired",
+    "historical"
+  ],
+  "required_source_fields": [
+    "source_id",
+    "url",
+    "publisher",
+    "source_type",
+    "observed_at"
+  ],
+  "required_claim_fields": [
+    "claim_id",
+    "subject_id",
+    "predicate",
+    "status",
+    "confidence",
+    "observed_at",
+    "source_ids"
+  ],
+  "required_partnership_fields": [
+    "partnership_id",
+    "brand_id",
+    "asset_id",
+    "relationship_type",
+    "current_status",
+    "status",
+    "confidence",
+    "observed_at",
+    "claim_ids"
+  ],
+  "rules": {
+    "unknown_is_null": true,
+    "rumors_remain_separate_claims": true,
+    "brand_signal_is_not_partnership": true,
+    "audience_scope_required": true,
+    "anti_fraud_is_signal_not_verdict": true,
+    "scores_require_formula_version": true
+  }
+}

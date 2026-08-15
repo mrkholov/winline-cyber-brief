@@ -1,0 +1,121 @@
+{
+  "schema_version": "1.0.0",
+  "research_cutoff": "2026-08-15",
+  "audience_record_count": 6,
+  "audience_records": [
+    {
+      "tournament_id": "tournament:wpl-s2",
+      "peak_viewers": 817,
+      "average_viewers": 244,
+      "hours_watched": 13511,
+      "airtime_hours": 56,
+      "platform_scope": null,
+      "language_scope": null,
+      "geography_scope": null,
+      "co_stream_scope": null,
+      "china_scope": null,
+      "methodology": "public_source_scope_not_fully_disclosed",
+      "status": "reported",
+      "confidence": 0.8,
+      "observed_at": "2026-08-15",
+      "source_ids": [
+        "src:wpl-s2-audience"
+      ]
+    },
+    {
+      "tournament_id": "tournament:wpl-s3",
+      "peak_viewers": 21485,
+      "average_viewers": 2448,
+      "hours_watched": 150735,
+      "airtime_hours": 62,
+      "platform_scope": null,
+      "language_scope": null,
+      "geography_scope": null,
+      "co_stream_scope": null,
+      "china_scope": null,
+      "methodology": "public_source_scope_not_fully_disclosed",
+      "status": "reported",
+      "confidence": 0.82,
+      "observed_at": "2026-08-15",
+      "source_ids": [
+        "src:wpl-s3-audience"
+      ]
+    },
+    {
+      "tournament_id": "tournament:betboom-dacha-2024",
+      "peak_viewers": 258079,
+      "average_viewers": null,
+      "hours_watched": 11540642,
+      "airtime_hours": null,
+      "platform_scope": null,
+      "language_scope": null,
+      "geography_scope": null,
+      "co_stream_scope": null,
+      "china_scope": null,
+      "methodology": "public_source_scope_not_fully_disclosed",
+      "status": "reported",
+      "confidence": 0.88,
+      "observed_at": "2026-08-15",
+      "source_ids": [
+        "src:betboom-dacha-audience"
+      ]
+    },
+    {
+      "tournament_id": "tournament:fissure-universe-8",
+      "peak_viewers": 133654,
+      "average_viewers": 41006,
+      "hours_watched": 2135679,
+      "airtime_hours": 52.083,
+      "platform_scope": null,
+      "language_scope": null,
+      "geography_scope": null,
+      "co_stream_scope": null,
+      "china_scope": null,
+      "methodology": "public_source_scope_not_fully_disclosed",
+      "status": "reported",
+      "confidence": 0.91,
+      "observed_at": "2026-08-15",
+      "source_ids": [
+        "src:fissure-universe-8-audience"
+      ]
+    },
+    {
+      "tournament_id": "tournament:standoff-major-2023",
+      "peak_viewers": 35132,
+      "average_viewers": null,
+      "hours_watched": 308588,
+      "airtime_hours": null,
+      "platform_scope": null,
+      "language_scope": null,
+      "geography_scope": null,
+      "co_stream_scope": null,
+      "china_scope": null,
+      "methodology": "public_source_scope_not_fully_disclosed",
+      "status": "reported",
+      "confidence": 0.82,
+      "observed_at": "2026-08-15",
+      "source_ids": [
+        "src:winline-escharts"
+      ]
+    },
+    {
+      "tournament_id": "tournament:standoff-major-2024",
+      "peak_viewers": 9856,
+      "average_viewers": null,
+      "hours_watched": 176257,
+      "airtime_hours": 42,
+      "platform_scope": null,
+      "language_scope": null,
+      "geography_scope": null,
+      "co_stream_scope": null,
+      "china_scope": null,
+      "methodology": "public_source_scope_not_fully_disclosed",
+      "status": "reported",
+      "confidence": 0.82,
+      "observed_at": "2026-08-15",
+      "source_ids": [
+        "src:winline-escharts"
+      ]
+    }
+  ]
+}

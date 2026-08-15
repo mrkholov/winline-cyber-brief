@@ -1,0 +1,693 @@
+{
+  "schema_version": "1.0.0",
+  "research_cutoff": "2026-08-15",
+  "claim_count": 35,
+  "claims": [
+    {
+      "claim_id": "claim:partnership:1xbet-aurora",
+      "subject_id": "brand:1xbet",
+      "predicate": "title_partner",
+      "object_id": "org:aurora",
+      "value": null,
+      "status": "official",
+      "confidence": 0.96,
+      "valid_from": "2022-03-01",
+      "valid_to": null,
+      "observed_at": "2026-08-15",
+      "source_ids": [
+        "src:aurora-partners",
+        "src:aurora-current"
+      ],
+      "notes": "current_publicly_verified"
+    },
+    {
+      "claim_id": "claim:partnership:1xbet-esl",
+      "subject_id": "brand:1xbet",
+      "predicate": "betting_partner",
+      "object_id": "org:esl",
+      "value": null,
+      "status": "reported",
+      "confidence": 0.82,
+      "valid_from": "2021-03-09",
+      "valid_to": null,
+      "observed_at": "2026-08-15",
+      "source_ids": [
+        "src:1xbet-esl",
+        "src:1xbet-esl-extension"
+      ],
+      "notes": "active_by_public_term"
+    },
+    {
+      "claim_id": "claim:partnership:1xbet-pgl",
+      "subject_id": "brand:1xbet",
+      "predicate": "betting_partner",
+      "object_id": "org:pgl",
+      "value": null,
+      "status": "corroborated",
+      "confidence": 0.92,
+      "valid_from": "2025-02-14",
+      "valid_to": "2026-12-31",
+      "observed_at": "2026-08-15",
+      "source_ids": [
+        "src:1xbet-pgl"
+      ],
+      "notes": "active_by_public_term"
+    },
+    {
+      "claim_id": "claim:partnership:betboom-cybershoke",
+      "subject_id": "brand:betboom",
+      "predicate": "sponsor",
+      "object_id": "org:cybershoke",
+      "value": null,
+      "status": "corroborated",
+      "confidence": 0.78,
+      "valid_from": "2025-01-16",
+      "valid_to": null,
+      "observed_at": "2026-08-15",
+      "source_ids": [
+        "src:betboom-cybershoke"
+      ],
+      "notes": "current_unverified"
+    },
+    {
+      "claim_id": "claim:partnership:betboom-spirit",
+      "subject_id": "brand:betboom",
+      "predicate": "title_partner",
+      "object_id": "org:team-spirit",
+      "value": null,
+      "status": "official",
+      "confidence": 0.98,
+      "valid_from": "2024-04-01",
+      "valid_to": null,
+      "observed_at": "2026-08-15",
+      "source_ids": [
+        "src:team-spirit-partners"
+      ],
+      "notes": "current_publicly_verified"
+    },
+    {
+      "claim_id": "claim:partnership:betboom-team",
+      "subject_id": "brand:betboom",
+      "predicate": "general_partner",
+      "object_id": "org:betboom-team",
+      "value": null,
+      "status": "corroborated",
+      "confidence": 0.8,
+      "valid_from": "2022-04-18",
+      "valid_to": null,
+      "observed_at": "2026-08-15",
+      "source_ids": [
+        "src:betboom-team-interview",
+        "src:betboom-team-current"
+      ],
+      "notes": "current_unverified"
+    },
+    {
+      "claim_id": "claim:partnership:fonbet-mouz",
+      "subject_id": "brand:fonbet",
+      "predicate": "sponsor",
+      "object_id": "org:mouz",
+      "value": null,
+      "status": "official",
+      "confidence": 0.98,
+      "valid_from": "2023-12-01",
+      "valid_to": null,
+      "observed_at": "2026-08-15",
+      "source_ids": [
+        "src:mouz-partners",
+        "src:fonbet-mouz-merch"
+      ],
+      "notes": "current_publicly_verified"
+    },
+    {
+      "claim_id": "claim:partnership:fonbet-strogo",
+      "subject_id": "brand:fonbet",
+      "predicate": "streamer_partner",
+      "object_id": "person:strogo",
+      "value": null,
+      "status": "corroborated",
+      "confidence": 0.88,
+      "valid_from": null,
+      "valid_to": null,
+      "observed_at": "2026-08-15",
+      "source_ids": [
+        "src:fonbet-strogo",
+        "src:fonbet-strogo-current"
+      ],
+      "notes": "current_publicly_verified"
+    },
+    {
+      "claim_id": "claim:partnership:liga-gambit",
+      "subject_id": "brand:liga-stavok",
+      "predicate": "general_partner",
+      "object_id": "org:gambit",
+      "value": null,
+      "status": "official",
+      "confidence": 0.99,
+      "valid_from": "2021-06-09",
+      "valid_to": "2022-06-09",
+      "observed_at": "2026-08-15",
+      "source_ids": [
+        "src:liga-gambit"
+      ],
+      "notes": "historical"
+    },
+    {
+      "claim_id": "claim:partnership:liga-l1ga",
+      "subject_id": "brand:liga-stavok",
+      "predicate": "title_partner",
+      "object_id": "org:l1ga",
+      "value": null,
+      "status": "corroborated",
+      "confidence": 0.86,
+      "valid_from": "2024-01-05",
+      "valid_to": null,
+      "observed_at": "2026-08-15",
+      "source_ids": [
+        "src:liga-l1ga",
+        "src:liga-l1ga-current"
+      ],
+      "notes": "current_unverified"
+    },
+    {
+      "claim_id": "claim:partnership:pari-parivision",
+      "subject_id": "brand:pari",
+      "predicate": "general_partner",
+      "object_id": "org:parivision",
+      "value": null,
+      "status": "official",
+      "confidence": 0.98,
+      "valid_from": null,
+      "valid_to": null,
+      "observed_at": "2026-08-15",
+      "source_ids": [
+        "src:parivision",
+        "src:parivision-partners"
+      ],
+      "notes": "current_publicly_verified"
+    },
+    {
+      "claim_id": "claim:partnership:winline-buster",
+      "subject_id": "brand:winline",
+      "predicate": "ambassador",
+      "object_id": "person:buster",
+      "value": null,
+      "status": "corroborated",
+      "confidence": 0.96,
+      "valid_from": "2023-06-23",
+      "valid_to": null,
+      "observed_at": "2026-08-15",
+      "source_ids": [
+        "src:winline-buster",
+        "src:winline-buster-current"
+      ],
+      "notes": "current_publicly_verified"
+    },
+    {
+      "claim_id": "claim:partnership:winline-esl",
+      "subject_id": "brand:winline",
+      "predicate": "broadcast_sponsor",
+      "object_id": "org:esl",
+      "value": null,
+      "status": "corroborated",
+      "confidence": 0.96,
+      "valid_from": "2023-05-11",
+      "valid_to": null,
+      "observed_at": "2026-08-15",
+      "source_ids": [
+        "src:winline-esl",
+        "src:winline-esl-current"
+      ],
+      "notes": "current_publicly_verified"
+    },
+    {
+      "claim_id": "claim:partnership:winline-gaimin",
+      "subject_id": "brand:winline",
+      "predicate": "sponsor",
+      "object_id": "org:gaimin",
+      "value": null,
+      "status": "reported",
+      "confidence": 0.9,
+      "valid_from": "2023-06-28",
+      "valid_to": null,
+      "observed_at": "2026-08-15",
+      "source_ids": [
+        "src:winline-gaimin",
+        "src:gaimin-expiry"
+      ],
+      "notes": "reported_expired"
+    },
+    {
+      "claim_id": "claim:partnership:winline-magic",
+      "subject_id": "brand:winline",
+      "predicate": "sponsor",
+      "object_id": "org:magic",
+      "value": null,
+      "status": "corroborated",
+      "confidence": 0.96,
+      "valid_from": "2026-08-11",
+      "valid_to": null,
+      "observed_at": "2026-08-15",
+      "source_ids": [
+        "src:winline-magic",
+        "src:winline-magic-secondary"
+      ],
+      "notes": "fresh_public_announcement"
+    },
+    {
+      "claim_id": "claim:partnership:winline-pgl",
+      "subject_id": "brand:winline",
+      "predicate": "broadcast_sponsor",
+      "object_id": "org:pgl",
+      "value": null,
+      "status": "official",
+      "confidence": 0.97,
+      "valid_from": "2024-03-18",
+      "valid_to": null,
+      "observed_at": "2026-08-15",
+      "source_ids": [
+        "src:paragon-pgl"
+      ],
+      "notes": "current_unverified"
+    },
+    {
+      "claim_id": "claim:partnership:winline-tundra",
+      "subject_id": "brand:winline",
+      "predicate": "main_partner",
+      "object_id": "org:tundra",
+      "value": null,
+      "status": "corroborated",
+      "confidence": 0.94,
+      "valid_from": "2023-06-27",
+      "valid_to": null,
+      "observed_at": "2026-08-15",
+      "source_ids": [
+        "src:winline-tundra",
+        "src:tundra-exit"
+      ],
+      "notes": "historical"
+    },
+    {
+      "claim_id": "claim:partnership:winline-vp",
+      "subject_id": "brand:winline",
+      "predicate": "general_partner",
+      "object_id": "org:virtus-pro",
+      "value": null,
+      "status": "corroborated",
+      "confidence": 0.96,
+      "valid_from": "2022-01-01",
+      "valid_to": "2024-12-31",
+      "observed_at": "2026-08-15",
+      "source_ids": [
+        "src:winline-about",
+        "src:winline-vp",
+        "src:vp-partners"
+      ],
+      "notes": "historical"
+    },
+    {
+      "claim_id": "claim:qualification:betboom-team-ownership",
+      "subject_id": "brand:betboom",
+      "predicate": "owns",
+      "object_id": "org:betboom-team",
+      "value": false,
+      "status": "rejected",
+      "confidence": 0.98,
+      "valid_from": null,
+      "valid_to": null,
+      "observed_at": "2026-08-15",
+      "source_ids": [
+        "src:betboom-team-interview"
+      ],
+      "notes": "Public interview describes separate organizations and a naming-rights sponsorship."
+    },
+    {
+      "claim_id": "claim:qualification:parivision-ownership",
+      "subject_id": "brand:pari",
+      "predicate": "ownership_status",
+      "object_id": "org:parivision",
+      "value": "not_established_in_reviewed_sources",
+      "status": "reported",
+      "confidence": 0.9,
+      "valid_from": null,
+      "valid_to": null,
+      "observed_at": "2026-08-15",
+      "source_ids": [
+        "src:parivision"
+      ],
+      "notes": "General sponsorship is public; legal ownership was not established."
+    },
+    {
+      "claim_id": "claim:rumor:gaimin-renewal-value",
+      "subject_id": "org:gaimin",
+      "predicate": "reported_lost_renewal_value",
+      "object_id": "brand:winline",
+      "value": {
+        "amount": 3000000,
+        "currency": "USD"
+      },
+      "status": "rumor",
+      "confidence": 0.52,
+      "valid_from": null,
+      "valid_to": null,
+      "observed_at": "2026-08-15",
+      "source_ids": [
+        "src:gaimin-expiry"
+      ],
+      "notes": "Not suitable for fact-only views."
+    },
+    {
+      "claim_id": "claim:tournament:betboom-dacha-2024",
+      "subject_id": "tournament:betboom-dacha-2024",
+      "predicate": "tournament_metadata",
+      "object_id": null,
+      "value": {
+        "discipline": "dota2",
+        "start_date": "2024-10-19",
+        "end_date": "2024-10-26",
+        "prize_pool": {
+          "amount": 1000000,
+          "currency": "USD"
+        }
+      },
+      "status": "corroborated",
+      "confidence": 0.97,
+      "valid_from": "2024-10-19",
+      "valid_to": "2024-10-26",
+      "observed_at": "2026-08-15",
+      "source_ids": [
+        "src:betboom-dacha"
+      ],
+      "notes": null
+    },
+    {
+      "claim_id": "claim:tournament:betboom-streamers-10",
+      "subject_id": "tournament:betboom-streamers-10",
+      "predicate": "tournament_metadata",
+      "object_id": null,
+      "value": {
+        "discipline": "dota2",
+        "start_date": "2025-05-29",
+        "end_date": "2025-06-08",
+        "prize_pool": {
+          "amount": 5000000,
+          "currency": "RUB"
+        }
+      },
+      "status": "corroborated",
+      "confidence": 0.9,
+      "valid_from": "2025-05-29",
+      "valid_to": "2025-06-08",
+      "observed_at": "2026-08-15",
+      "source_ids": [
+        "src:betboom-streamers-10"
+      ],
+      "notes": null
+    },
+    {
+      "claim_id": "claim:tournament:d2cl-s17",
+      "subject_id": "tournament:d2cl-s17",
+      "predicate": "tournament_metadata",
+      "object_id": null,
+      "value": {
+        "discipline": "dota2",
+        "start_date": "2022-12-01",
+        "end_date": "2022-12-10",
+        "prize_pool": {
+          "amount": 50000,
+          "currency": "USD"
+        }
+      },
+      "status": "corroborated",
+      "confidence": 0.93,
+      "valid_from": "2022-12-01",
+      "valid_to": "2022-12-10",
+      "observed_at": "2026-08-15",
+      "source_ids": [
+        "src:d2cl-s17"
+      ],
+      "notes": null
+    },
+    {
+      "claim_id": "claim:tournament:ewc-2026-cs2",
+      "subject_id": "tournament:ewc-2026-cs2",
+      "predicate": "tournament_metadata",
+      "object_id": null,
+      "value": {
+        "discipline": "cs2",
+        "start_date": "2026-08-12",
+        "end_date": "2026-08-23",
+        "prize_pool": {
+          "amount": 2000000,
+          "currency": "USD"
+        }
+      },
+      "status": "in_progress",
+      "confidence": 0.98,
+      "valid_from": "2026-08-12",
+      "valid_to": "2026-08-23",
+      "observed_at": "2026-08-15",
+      "source_ids": [
+        "src:ewc-2026"
+      ],
+      "notes": null
+    },
+    {
+      "claim_id": "claim:tournament:fissure-universe-8",
+      "subject_id": "tournament:fissure-universe-8",
+      "predicate": "tournament_metadata",
+      "object_id": null,
+      "value": {
+        "discipline": "dota2",
+        "start_date": "2026-01-21",
+        "end_date": "2026-02-01",
+        "prize_pool": {
+          "amount": 250000,
+          "currency": "USD"
+        }
+      },
+      "status": "official",
+      "confidence": 0.99,
+      "valid_from": "2026-01-21",
+      "valid_to": "2026-02-01",
+      "observed_at": "2026-08-15",
+      "source_ids": [
+        "src:fissure-universe-8"
+      ],
+      "notes": null
+    },
+    {
+      "claim_id": "claim:tournament:pari-galaxy",
+      "subject_id": "tournament:pari-galaxy",
+      "predicate": "tournament_metadata",
+      "object_id": null,
+      "value": {
+        "discipline": "cs2",
+        "start_date": "2026-02-18",
+        "end_date": "2026-02-21",
+        "prize_pool": {
+          "amount": 1000000,
+          "currency": "RUB"
+        }
+      },
+      "status": "reported",
+      "confidence": 0.9,
+      "valid_from": "2026-02-18",
+      "valid_to": "2026-02-21",
+      "observed_at": "2026-08-15",
+      "source_ids": [
+        "src:pari-galaxy"
+      ],
+      "notes": null
+    },
+    {
+      "claim_id": "claim:tournament:standoff-major-2023",
+      "subject_id": "tournament:standoff-major-2023",
+      "predicate": "tournament_metadata",
+      "object_id": null,
+      "value": {
+        "discipline": "standoff2",
+        "start_date": "2023-12-06",
+        "end_date": "2023-12-10",
+        "prize_pool": {
+          "amount": 3000000,
+          "currency": "RUB"
+        }
+      },
+      "status": "corroborated",
+      "confidence": 0.97,
+      "valid_from": "2023-12-06",
+      "valid_to": "2023-12-10",
+      "observed_at": "2026-08-15",
+      "source_ids": [
+        "src:standoff-2023"
+      ],
+      "notes": null
+    },
+    {
+      "claim_id": "claim:tournament:standoff-major-2024",
+      "subject_id": "tournament:standoff-major-2024",
+      "predicate": "tournament_metadata",
+      "object_id": null,
+      "value": {
+        "discipline": "standoff2",
+        "start_date": "2024-07-10",
+        "end_date": "2024-07-14",
+        "prize_pool": {
+          "amount": 3000000,
+          "currency": "RUB"
+        }
+      },
+      "status": "corroborated",
+      "confidence": 0.94,
+      "valid_from": "2024-07-10",
+      "valid_to": "2024-07-14",
+      "observed_at": "2026-08-15",
+      "source_ids": [
+        "src:standoff-2024"
+      ],
+      "notes": null
+    },
+    {
+      "claim_id": "claim:tournament:standoff-major-2026",
+      "subject_id": "tournament:standoff-major-2026",
+      "predicate": "tournament_metadata",
+      "object_id": null,
+      "value": {
+        "discipline": "standoff2",
+        "start_date": "2026-07-04",
+        "end_date": "2026-08-02",
+        "prize_pool": {
+          "amount": 6000000,
+          "currency": "RUB"
+        }
+      },
+      "status": "corroborated",
+      "confidence": 0.94,
+      "valid_from": "2026-07-04",
+      "valid_to": "2026-08-02",
+      "observed_at": "2026-08-15",
+      "source_ids": [
+        "src:standoff-2026"
+      ],
+      "notes": null
+    },
+    {
+      "claim_id": "claim:tournament:ti-2026",
+      "subject_id": "tournament:ti-2026",
+      "predicate": "tournament_metadata",
+      "object_id": null,
+      "value": {
+        "discipline": "dota2",
+        "start_date": "2026-08-13",
+        "end_date": "2026-08-23",
+        "prize_pool": null
+      },
+      "status": "in_progress",
+      "confidence": 0.99,
+      "valid_from": "2026-08-13",
+      "valid_to": "2026-08-23",
+      "observed_at": "2026-08-15",
+      "source_ids": [
+        "src:ti-2026"
+      ],
+      "notes": null
+    },
+    {
+      "claim_id": "claim:tournament:wpl-s2",
+      "subject_id": "tournament:wpl-s2",
+      "predicate": "tournament_metadata",
+      "object_id": null,
+      "value": {
+        "discipline": "cs2",
+        "start_date": "2024-10-21",
+        "end_date": "2024-11-03",
+        "prize_pool": {
+          "amount": 3580000,
+          "currency": "RUB"
+        }
+      },
+      "status": "corroborated",
+      "confidence": 0.92,
+      "valid_from": "2024-10-21",
+      "valid_to": "2024-11-03",
+      "observed_at": "2026-08-15",
+      "source_ids": [
+        "src:wpl-s2-audience"
+      ],
+      "notes": null
+    },
+    {
+      "claim_id": "claim:tournament:wpl-s3",
+      "subject_id": "tournament:wpl-s3",
+      "predicate": "tournament_metadata",
+      "object_id": null,
+      "value": {
+        "discipline": "cs2",
+        "start_date": "2025-09-09",
+        "end_date": "2025-09-21",
+        "prize_pool": {
+          "amount": 4615000,
+          "currency": "RUB"
+        }
+      },
+      "status": "corroborated",
+      "confidence": 0.94,
+      "valid_from": "2025-09-09",
+      "valid_to": "2025-09-21",
+      "observed_at": "2026-08-15",
+      "source_ids": [
+        "src:wpl-s3"
+      ],
+      "notes": null
+    },
+    {
+      "claim_id": "claim:tournament:wss-s2-cs2",
+      "subject_id": "tournament:wss-s2-cs2",
+      "predicate": "tournament_metadata",
+      "object_id": null,
+      "value": {
+        "discipline": "cs2",
+        "start_date": "2026-02-25",
+        "end_date": "2026-03-08",
+        "prize_pool": {
+          "amount": 3500000,
+          "currency": "RUB"
+        }
+      },
+      "status": "corroborated",
+      "confidence": 0.95,
+      "valid_from": "2026-02-25",
+      "valid_to": "2026-03-08",
+      "observed_at": "2026-08-15",
+      "source_ids": [
+        "src:wss-cs2-s2"
+      ],
+      "notes": null
+    },
+    {
+      "claim_id": "claim:tournament:wss-s2-dota",
+      "subject_id": "tournament:wss-s2-dota",
+      "predicate": "tournament_metadata",
+      "object_id": null,
+      "value": {
+        "discipline": "dota2",
+        "start_date": "2026-01-22",
+        "end_date": "2026-02-01",
+        "prize_pool": {
+          "amount": 3500000,
+          "currency": "RUB"
+        }
+      },
+      "status": "corroborated",
+      "confidence": 0.94,
+      "valid_from": "2026-01-22",
+      "valid_to": "2026-02-01",
+      "observed_at": "2026-08-15",
+      "source_ids": [
+        "src:wss-dota-s2"
+      ],
+      "notes": null
+    }
+  ]
+}

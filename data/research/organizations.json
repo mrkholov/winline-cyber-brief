@@ -1,0 +1,277 @@
+{
+  "schema_version": "1.0.0",
+  "research_cutoff": "2026-08-15",
+  "organization_count": 23,
+  "organizations": [
+    {
+      "organization_id": "brand:1xbet",
+      "name": "1xBet",
+      "organization_type": "bookmaker",
+      "disciplines": [],
+      "official_urls": [
+        "https://1xbet.com/"
+      ],
+      "observed_at": "2026-08-15"
+    },
+    {
+      "organization_id": "brand:betboom",
+      "name": "BetBoom",
+      "organization_type": "bookmaker",
+      "disciplines": [],
+      "official_urls": [
+        "https://betboom.ru/"
+      ],
+      "observed_at": "2026-08-15"
+    },
+    {
+      "organization_id": "brand:fonbet",
+      "name": "FONBET",
+      "organization_type": "bookmaker",
+      "disciplines": [],
+      "official_urls": [
+        "https://fon.bet/"
+      ],
+      "observed_at": "2026-08-15"
+    },
+    {
+      "organization_id": "brand:liga-stavok",
+      "name": "Liga Stavok",
+      "organization_type": "bookmaker",
+      "disciplines": [],
+      "official_urls": [
+        "https://ligastavok.ru/"
+      ],
+      "observed_at": "2026-08-15"
+    },
+    {
+      "organization_id": "brand:pari",
+      "name": "PARI",
+      "organization_type": "bookmaker",
+      "disciplines": [],
+      "official_urls": [
+        "https://pari.ru/"
+      ],
+      "observed_at": "2026-08-15"
+    },
+    {
+      "organization_id": "brand:winline",
+      "name": "Winline",
+      "organization_type": "bookmaker",
+      "disciplines": [],
+      "official_urls": [
+        "https://winline.ru/"
+      ],
+      "observed_at": "2026-08-15"
+    },
+    {
+      "organization_id": "org:aurora",
+      "name": "Aurora Gaming",
+      "organization_type": "esports_organization",
+      "disciplines": [
+        "cs2",
+        "dota2"
+      ],
+      "official_urls": [
+        "https://auroragg.com/"
+      ],
+      "observed_at": "2026-08-15"
+    },
+    {
+      "organization_id": "org:betboom-team",
+      "name": "BetBoom Team",
+      "organization_type": "esports_organization",
+      "disciplines": [
+        "cs2",
+        "dota2"
+      ],
+      "official_urls": [
+        "https://betboom.team/"
+      ],
+      "observed_at": "2026-08-15"
+    },
+    {
+      "organization_id": "org:cybershoke",
+      "name": "CYBERSHOKE",
+      "organization_type": "esports_media_brand",
+      "disciplines": [
+        "cs2",
+        "standoff2"
+      ],
+      "official_urls": [
+        "https://cybershoke.net/"
+      ],
+      "observed_at": "2026-08-15"
+    },
+    {
+      "organization_id": "org:esl",
+      "name": "ESL FACEIT Group",
+      "organization_type": "tournament_operator",
+      "disciplines": [
+        "cs2",
+        "dota2"
+      ],
+      "official_urls": [
+        "https://eslfaceitgroup.com/"
+      ],
+      "observed_at": "2026-08-15"
+    },
+    {
+      "organization_id": "org:gaimin",
+      "name": "Gaimin Gladiators",
+      "organization_type": "esports_organization",
+      "disciplines": [
+        "dota2"
+      ],
+      "official_urls": [
+        "https://www.gaimingladiators.gg/"
+      ],
+      "observed_at": "2026-08-15"
+    },
+    {
+      "organization_id": "org:gambit",
+      "name": "Gambit Esports",
+      "organization_type": "esports_organization",
+      "disciplines": [
+        "cs2",
+        "dota2"
+      ],
+      "official_urls": [
+        "https://gambit.gg/"
+      ],
+      "observed_at": "2026-08-15"
+    },
+    {
+      "organization_id": "org:l1ga",
+      "name": "L1GA TEAM",
+      "organization_type": "esports_team",
+      "disciplines": [
+        "dota2"
+      ],
+      "official_urls": [],
+      "observed_at": "2026-08-15"
+    },
+    {
+      "organization_id": "org:magic",
+      "name": "MAGIC",
+      "organization_type": "esports_team",
+      "disciplines": [
+        "cs2"
+      ],
+      "official_urls": [],
+      "observed_at": "2026-08-15"
+    },
+    {
+      "organization_id": "org:mouz",
+      "name": "MOUZ",
+      "organization_type": "esports_organization",
+      "disciplines": [
+        "cs2"
+      ],
+      "official_urls": [
+        "https://mousesports.com/"
+      ],
+      "observed_at": "2026-08-15"
+    },
+    {
+      "organization_id": "org:paragon",
+      "name": "Paragon Events",
+      "organization_type": "broadcast_operator",
+      "disciplines": [
+        "cs2",
+        "dota2"
+      ],
+      "official_urls": [],
+      "observed_at": "2026-08-15"
+    },
+    {
+      "organization_id": "org:parivision",
+      "name": "PARIVISION",
+      "organization_type": "esports_organization",
+      "disciplines": [
+        "cs2",
+        "dota2"
+      ],
+      "official_urls": [
+        "https://parivision.gg/"
+      ],
+      "observed_at": "2026-08-15"
+    },
+    {
+      "organization_id": "org:pgl",
+      "name": "PGL",
+      "organization_type": "tournament_operator",
+      "disciplines": [
+        "cs2",
+        "dota2"
+      ],
+      "official_urls": [
+        "https://www.pglesports.com/"
+      ],
+      "observed_at": "2026-08-15"
+    },
+    {
+      "organization_id": "org:team-spirit",
+      "name": "Team Spirit",
+      "organization_type": "esports_organization",
+      "disciplines": [
+        "cs2",
+        "dota2"
+      ],
+      "official_urls": [
+        "https://teamspirit.gg/"
+      ],
+      "observed_at": "2026-08-15"
+    },
+    {
+      "organization_id": "org:tundra",
+      "name": "Tundra Esports",
+      "organization_type": "esports_organization",
+      "disciplines": [
+        "dota2"
+      ],
+      "official_urls": [
+        "https://tundraesports.com/"
+      ],
+      "observed_at": "2026-08-15"
+    },
+    {
+      "organization_id": "org:virtus-pro",
+      "name": "Virtus.pro",
+      "organization_type": "esports_organization",
+      "disciplines": [
+        "cs2",
+        "dota2",
+        "standoff2"
+      ],
+      "official_urls": [
+        "https://virtus.pro/"
+      ],
+      "observed_at": "2026-08-15"
+    },
+    {
+      "organization_id": "person:buster",
+      "name": "Buster",
+      "organization_type": "streamer",
+      "disciplines": [
+        "cs2"
+      ],
+      "official_urls": [
+        "https://www.twitch.tv/buster"
+      ],
+      "observed_at": "2026-08-15"
+    },
+    {
+      "organization_id": "person:strogo",
+      "name": "StRoGo",
+      "organization_type": "streamer",
+      "disciplines": [
+        "cs2",
+        "dota2"
+      ],
+      "official_urls": [
+        "https://www.twitch.tv/strogo"
+      ],
+      "observed_at": "2026-08-15"
+    }
+  ]
+}

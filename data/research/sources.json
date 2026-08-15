@@ -1,0 +1,475 @@
+{
+  "schema_version": "1.0.0",
+  "research_cutoff": "2026-08-15",
+  "source_count": 52,
+  "sources": [
+    {
+      "source_id": "src:1xbet-esl",
+      "url": "https://eslfaceitgroup.com/blog/2021/03/1xbet-becomes-official-global-betting-partner-for-esl-pro-tour-csgo-and-esl-one-dota-2/",
+      "publisher": "ESL FACEIT Group",
+      "source_type": "official",
+      "published_at": "2021-03-09",
+      "observed_at": "2026-08-15",
+      "access": "public"
+    },
+    {
+      "source_id": "src:1xbet-esl-extension",
+      "url": "https://www.dexerto.com/esports/esl-tight-lipped-on-controversial-1xbet-partnership-as-deal-is-extended-1918950/",
+      "publisher": "Dexerto",
+      "source_type": "secondary_media",
+      "published_at": "2022-08-25",
+      "observed_at": "2026-08-15",
+      "access": "public"
+    },
+    {
+      "source_id": "src:1xbet-pgl",
+      "url": "https://sbcnews.co.uk/europe/2025/02/14/1xbet-pgl-sponsorship/",
+      "publisher": "SBC News",
+      "source_type": "secondary_media",
+      "published_at": "2025-02-14",
+      "observed_at": "2026-08-15",
+      "access": "public"
+    },
+    {
+      "source_id": "src:aurora-current",
+      "url": "https://auroragg.com/partners",
+      "publisher": "Aurora Gaming",
+      "source_type": "official",
+      "published_at": null,
+      "observed_at": "2026-08-15",
+      "access": "public"
+    },
+    {
+      "source_id": "src:aurora-partners",
+      "url": "https://www.linkedin.com/posts/1xaffiliates_aurora-media-esports-activity-7460670278465986563-4weX",
+      "publisher": "1xBet Affiliates",
+      "source_type": "official",
+      "published_at": "2026-05-14",
+      "observed_at": "2026-08-15",
+      "access": "public"
+    },
+    {
+      "source_id": "src:betboom-cybershoke",
+      "url": "https://cyber.sports.ru/cs/1116601157-bloger-erik-shokov-vmeste-s-brendom-cybershoke-stal-partnerom-betboom-.html",
+      "publisher": "Cyber.Sports.ru",
+      "source_type": "secondary_media",
+      "published_at": "2025-01-16",
+      "observed_at": "2026-08-15",
+      "access": "public"
+    },
+    {
+      "source_id": "src:betboom-dacha",
+      "url": "https://blast.tv/dota/tournaments/betboom-dacha-belgrade-2024",
+      "publisher": "BLAST",
+      "source_type": "official",
+      "published_at": null,
+      "observed_at": "2026-08-15",
+      "access": "public"
+    },
+    {
+      "source_id": "src:betboom-dacha-audience",
+      "url": "https://escharts.com/tournaments/dota2/betboom-dacha-belgrade-2024-dota2",
+      "publisher": "Esports Charts",
+      "source_type": "analytics",
+      "published_at": null,
+      "observed_at": "2026-08-15",
+      "access": "public"
+    },
+    {
+      "source_id": "src:betboom-streamers-10",
+      "url": "https://liquipedia.net/dota2/BetBoom_Streamers_Battle/10",
+      "publisher": "Liquipedia",
+      "source_type": "database",
+      "published_at": null,
+      "observed_at": "2026-08-15",
+      "access": "public"
+    },
+    {
+      "source_id": "src:betboom-team-current",
+      "url": "https://betboom.team/",
+      "publisher": "BetBoom Team",
+      "source_type": "official",
+      "published_at": null,
+      "observed_at": "2026-08-15",
+      "access": "public"
+    },
+    {
+      "source_id": "src:betboom-team-interview",
+      "url": "https://esports.gg/news/counter-strike-2/betboom-ceo-hints-at-roster-changes/",
+      "publisher": "esports.gg",
+      "source_type": "secondary_media",
+      "published_at": null,
+      "observed_at": "2026-08-15",
+      "access": "public"
+    },
+    {
+      "source_id": "src:d2cl-s17",
+      "url": "https://www.esportsearnings.com/events/10506-d2cl-2022-season-17",
+      "publisher": "Esports Earnings",
+      "source_type": "database",
+      "published_at": null,
+      "observed_at": "2026-08-15",
+      "access": "public"
+    },
+    {
+      "source_id": "src:ewc-2026",
+      "url": "https://esportsworldcup.com/en/press-releases/esports-world-cup-2026-grand-finale-to-be-staged-to-paris-historic-accor-arena-with-counter-strike-2-championship-final",
+      "publisher": "Esports World Cup",
+      "source_type": "official",
+      "published_at": "2026-07-28",
+      "observed_at": "2026-08-15",
+      "access": "public"
+    },
+    {
+      "source_id": "src:fissure-universe-8",
+      "url": "https://fissure.pro/events/universe-ep8",
+      "publisher": "FISSURE",
+      "source_type": "official",
+      "published_at": null,
+      "observed_at": "2026-08-15",
+      "access": "public"
+    },
+    {
+      "source_id": "src:fissure-universe-8-audience",
+      "url": "https://www.offstage.ru/dota2/news/bolee-133-tys-chelovek-v-pike-smotreli-final-nizhnej-setki-fissure-universe-episode-8",
+      "publisher": "Offstage",
+      "source_type": "secondary_media",
+      "published_at": null,
+      "observed_at": "2026-08-15",
+      "access": "public"
+    },
+    {
+      "source_id": "src:fonbet-eleague",
+      "url": "https://cybersport.metaratings.ru/news/fonbet-media-eleague-novyi-kibersportivnyi-turnir-po-dota-2-394146/",
+      "publisher": "Metaratings",
+      "source_type": "secondary_media",
+      "published_at": null,
+      "observed_at": "2026-08-15",
+      "access": "public"
+    },
+    {
+      "source_id": "src:fonbet-mouz-merch",
+      "url": "https://www.sport-express.net/cybersport/esports/news/fonbet-i-mouz-vypustili-limitirovannuyu-kollekciyu-mercha-dlya-top-klientov-2341226/",
+      "publisher": "Sport-Express",
+      "source_type": "secondary_media",
+      "published_at": "2025-07-07",
+      "observed_at": "2026-08-15",
+      "access": "public"
+    },
+    {
+      "source_id": "src:fonbet-strogo",
+      "url": "https://sport24.ru/betting/news-745764-ambassador-fonbet-strogo-vyigral-3mln-rubley-na-stavkakh-counter-stike-i-dota-2",
+      "publisher": "Sport24",
+      "source_type": "secondary_media",
+      "published_at": null,
+      "observed_at": "2026-08-15",
+      "access": "public"
+    },
+    {
+      "source_id": "src:fonbet-strogo-current",
+      "url": "https://stavka.tv/bookmakers/fonbet/ambassador",
+      "publisher": "Ставка ТВ",
+      "source_type": "secondary_media",
+      "published_at": null,
+      "observed_at": "2026-08-15",
+      "access": "public"
+    },
+    {
+      "source_id": "src:gaimin-expiry",
+      "url": "https://richardlewis.substack.com/p/gaimin-gladiators-officially-file",
+      "publisher": "Richard Lewis",
+      "source_type": "secondary_media",
+      "published_at": "2025-10-04",
+      "observed_at": "2026-08-15",
+      "access": "public"
+    },
+    {
+      "source_id": "src:liga-forze",
+      "url": "https://forze.gg/liga-stavok-stala-partnjorom-forze-esports/",
+      "publisher": "FORZE",
+      "source_type": "official",
+      "published_at": "2023-01-01",
+      "observed_at": "2026-08-15",
+      "access": "public"
+    },
+    {
+      "source_id": "src:liga-gambit",
+      "url": "https://gambit.gg/cases/liga-stavok-x-gambit-esports-press-release",
+      "publisher": "Gambit Esports",
+      "source_type": "official",
+      "published_at": "2021-06-09",
+      "observed_at": "2026-08-15",
+      "access": "public"
+    },
+    {
+      "source_id": "src:liga-l1ga",
+      "url": "https://www.sports.ru/betting/industry/blogs/3381827.html",
+      "publisher": "Sports.ru",
+      "source_type": "secondary_media",
+      "published_at": null,
+      "observed_at": "2026-08-15",
+      "access": "public"
+    },
+    {
+      "source_id": "src:liga-l1ga-current",
+      "url": "https://esports.ru/news/mikhail-zhuravskij-rasskazal-chto-daet-lige-stavok-sponsorstvo-sostava-l1ga-team/",
+      "publisher": "Esports.ru",
+      "source_type": "secondary_media",
+      "published_at": "2025-11-26",
+      "observed_at": "2026-08-15",
+      "access": "public"
+    },
+    {
+      "source_id": "src:mouz-partners",
+      "url": "https://mousesports.com/partners/",
+      "publisher": "MOUZ",
+      "source_type": "official",
+      "published_at": null,
+      "observed_at": "2026-08-15",
+      "access": "public"
+    },
+    {
+      "source_id": "src:paragon-pgl",
+      "url": "https://www.linkedin.com/posts/paragon-esports-events_paragon-partners-with-pgl-for-exclusive-russian-activity-7177784439706427393-0AlD",
+      "publisher": "Paragon Events",
+      "source_type": "official",
+      "published_at": "2024-03-18",
+      "observed_at": "2026-08-15",
+      "access": "public"
+    },
+    {
+      "source_id": "src:pari-galaxy",
+      "url": "https://www.vedomosti.ru/sport/rb/news/pari-galaxy-strimnitsa-cs2",
+      "publisher": "Vedomosti Sport",
+      "source_type": "secondary_media",
+      "published_at": null,
+      "observed_at": "2026-08-15",
+      "access": "public"
+    },
+    {
+      "source_id": "src:parivision",
+      "url": "https://parivision.gg/",
+      "publisher": "PARIVISION",
+      "source_type": "official",
+      "published_at": null,
+      "observed_at": "2026-08-15",
+      "access": "public"
+    },
+    {
+      "source_id": "src:parivision-partners",
+      "url": "https://parivision.gg/partners/",
+      "publisher": "PARIVISION",
+      "source_type": "official",
+      "published_at": null,
+      "observed_at": "2026-08-15",
+      "access": "public"
+    },
+    {
+      "source_id": "src:standoff-2023",
+      "url": "https://www.cybersport.ru/tags/standoff-2/saints-stali-chempionami-winline-epic-standoff-2-major",
+      "publisher": "Cybersport.ru",
+      "source_type": "secondary_media",
+      "published_at": "2023-12-10",
+      "observed_at": "2026-08-15",
+      "access": "public"
+    },
+    {
+      "source_id": "src:standoff-2024",
+      "url": "https://liquipedia.net/lab/Standoff2/EPIC/Major/2024/Summer",
+      "publisher": "Liquipedia",
+      "source_type": "database",
+      "published_at": null,
+      "observed_at": "2026-08-15",
+      "access": "public"
+    },
+    {
+      "source_id": "src:standoff-2026",
+      "url": "https://www.cybersport.ru/tags/standoff-2/anonsirovany-otkrytyye-otborochnyye-k-winline-epik-standoff-2-mazhor-2026-1",
+      "publisher": "Cybersport.ru",
+      "source_type": "secondary_media",
+      "published_at": "2026-05-25",
+      "observed_at": "2026-08-15",
+      "access": "public"
+    },
+    {
+      "source_id": "src:team-spirit-partners",
+      "url": "https://teamspirit.gg/partners",
+      "publisher": "Team Spirit",
+      "source_type": "official",
+      "published_at": null,
+      "observed_at": "2026-08-15",
+      "access": "public"
+    },
+    {
+      "source_id": "src:ti-2026",
+      "url": "https://www.dota2.com/newsentry/678505520073540063",
+      "publisher": "Valve",
+      "source_type": "official",
+      "published_at": "2026-07-30",
+      "observed_at": "2026-08-15",
+      "access": "public"
+    },
+    {
+      "source_id": "src:tundra-exit",
+      "url": "https://dotesports.com/dota-2/news/tundra-esports-exits-dota-2",
+      "publisher": "Dot Esports",
+      "source_type": "secondary_media",
+      "published_at": "2026-06-01",
+      "observed_at": "2026-08-15",
+      "access": "public"
+    },
+    {
+      "source_id": "src:vp-partners",
+      "url": "https://virtus.pro/partners",
+      "publisher": "Virtus.pro",
+      "source_type": "official",
+      "published_at": null,
+      "observed_at": "2026-08-15",
+      "access": "public"
+    },
+    {
+      "source_id": "src:winline-about",
+      "url": "https://rabota.winline.ru/about",
+      "publisher": "Winline",
+      "source_type": "official",
+      "published_at": null,
+      "observed_at": "2026-08-15",
+      "access": "public"
+    },
+    {
+      "source_id": "src:winline-buster",
+      "url": "https://cyber.sports.ru/streamers-twitch/1115256016-buster-stal-liczom-winline.html",
+      "publisher": "Cyber.Sports.ru",
+      "source_type": "secondary_media",
+      "published_at": "2023-06-23",
+      "observed_at": "2026-08-15",
+      "access": "public"
+    },
+    {
+      "source_id": "src:winline-buster-current",
+      "url": "https://bookmaker-ratings.ru/news/buster-stavka-total-balshe-final-chm-2026/",
+      "publisher": "Рейтинг Букмекеров",
+      "source_type": "secondary_media",
+      "published_at": "2026-07-19",
+      "observed_at": "2026-08-15",
+      "access": "public"
+    },
+    {
+      "source_id": "src:winline-escharts",
+      "url": "https://escharts.com/organizers/winline",
+      "publisher": "Esports Charts",
+      "source_type": "analytics",
+      "published_at": null,
+      "observed_at": "2026-08-15",
+      "access": "public"
+    },
+    {
+      "source_id": "src:winline-esl",
+      "url": "https://www.cybersport.ru/tags/other/winline-stala-titulnym-sponsorom-russkoiazychnoi-transliatsii-turnirov-esl-po-dota-2-i-cs-go",
+      "publisher": "Cybersport.ru",
+      "source_type": "secondary_media",
+      "published_at": "2023-05-11",
+      "observed_at": "2026-08-15",
+      "access": "public"
+    },
+    {
+      "source_id": "src:winline-esl-current",
+      "url": "https://cybersport.metaratings.ru/news/gotika-i-tekhno-kak-winline-pokazhet-iem-cologne-major-russkoyazychnoi-auditorii-621321/",
+      "publisher": "Metaratings",
+      "source_type": "secondary_media",
+      "published_at": "2026-06-01",
+      "observed_at": "2026-08-15",
+      "access": "public"
+    },
+    {
+      "source_id": "src:winline-gaimin",
+      "url": "https://www.gaimingladiators.gg/blog/gaimin-gladiators-and-winline-announce-partnership",
+      "publisher": "Gaimin Gladiators",
+      "source_type": "official",
+      "published_at": "2023-06-28",
+      "observed_at": "2026-08-15",
+      "access": "public"
+    },
+    {
+      "source_id": "src:winline-magic",
+      "url": "https://tvgram.ru/counter_strike2/31032",
+      "publisher": "TVGram archive of WINLINE CS2",
+      "source_type": "social_archive",
+      "published_at": "2026-08-11",
+      "observed_at": "2026-08-15",
+      "access": "public"
+    },
+    {
+      "source_id": "src:winline-magic-secondary",
+      "url": "https://www.sports.ru/betting/industry/1117331198-winline-stal-betting-parterom-cs2-komandy-magic.html",
+      "publisher": "Sports.ru",
+      "source_type": "secondary_media",
+      "published_at": "2026-08-11",
+      "observed_at": "2026-08-15",
+      "access": "public"
+    },
+    {
+      "source_id": "src:winline-tundra",
+      "url": "https://europeangaming.eu/portal/latest-news/2023/06/27/138264/tundra-esports-announces-new-partnership-deal-with-winline/",
+      "publisher": "Tundra Esports via European Gaming",
+      "source_type": "press_release",
+      "published_at": "2023-06-27",
+      "observed_at": "2026-08-15",
+      "access": "public"
+    },
+    {
+      "source_id": "src:winline-vp",
+      "url": "https://egw.news/esports/news/12497/winline-becomes-the-general-partner-of-virtuspro-TN0-6GxPa",
+      "publisher": "EGW.News",
+      "source_type": "secondary_media",
+      "published_at": "2022-01-04",
+      "observed_at": "2026-08-15",
+      "access": "public"
+    },
+    {
+      "source_id": "src:wpl-s2-audience",
+      "url": "https://escharts.com/tournaments/csgo/winline-pro-league-season-2",
+      "publisher": "Esports Charts",
+      "source_type": "analytics",
+      "published_at": null,
+      "observed_at": "2026-08-15",
+      "access": "public"
+    },
+    {
+      "source_id": "src:wpl-s3",
+      "url": "https://liquipedia.net/counterstrike/Winline_Pro_League/Season_3",
+      "publisher": "Liquipedia",
+      "source_type": "database",
+      "published_at": null,
+      "observed_at": "2026-08-15",
+      "access": "public"
+    },
+    {
+      "source_id": "src:wpl-s3-audience",
+      "url": "https://escharts.com/tournaments/csgo/winline-pro-league-season-3",
+      "publisher": "Esports Charts",
+      "source_type": "analytics",
+      "published_at": null,
+      "observed_at": "2026-08-15",
+      "access": "public"
+    },
+    {
+      "source_id": "src:wss-cs2-s2",
+      "url": "https://liquipedia.net/counterstrike/Winline_Star_Series/Season_2",
+      "publisher": "Liquipedia",
+      "source_type": "database",
+      "published_at": null,
+      "observed_at": "2026-08-15",
+      "access": "public"
+    },
+    {
+      "source_id": "src:wss-dota-s2",
+      "url": "https://liquipedia.net/dota2/Winline_Star_Series/2",
+      "publisher": "Liquipedia",
+      "source_type": "database",
+      "published_at": null,
+      "observed_at": "2026-08-15",
+      "access": "public"
+    }
+  ]
+}

@@ -1,0 +1,1460 @@
+{
+  "schema_version": "1.0.0",
+  "research_cutoff": "2026-08-15",
+  "competitor_portfolio": [
+    {
+      "brand_id": "brand:1xbet",
+      "sampled_relationship_count": 3,
+      "asset_ids": [
+        "org:aurora",
+        "org:esl",
+        "org:pgl"
+      ],
+      "relationship_types": [
+        "betting_partner",
+        "title_partner"
+      ],
+      "disciplines": [
+        "cs2",
+        "dota2"
+      ],
+      "statuses": [
+        "corroborated",
+        "official",
+        "reported"
+      ],
+      "current_statuses": [
+        "active_by_public_term",
+        "current_publicly_verified"
+      ],
+      "current_public_signal_count": 3,
+      "needs_verification_count": 0,
+      "ended_or_expired_count": 0
+    },
+    {
+      "brand_id": "brand:betboom",
+      "sampled_relationship_count": 3,
+      "asset_ids": [
+        "org:betboom-team",
+        "org:cybershoke",
+        "org:team-spirit"
+      ],
+      "relationship_types": [
+        "general_partner",
+        "sponsor",
+        "title_partner"
+      ],
+      "disciplines": [
+        "cs2",
+        "dota2",
+        "standoff2"
+      ],
+      "statuses": [
+        "corroborated",
+        "official"
+      ],
+      "current_statuses": [
+        "current_publicly_verified",
+        "current_unverified"
+      ],
+      "current_public_signal_count": 1,
+      "needs_verification_count": 2,
+      "ended_or_expired_count": 0
+    },
+    {
+      "brand_id": "brand:fonbet",
+      "sampled_relationship_count": 2,
+      "asset_ids": [
+        "org:mouz",
+        "person:strogo"
+      ],
+      "relationship_types": [
+        "sponsor",
+        "streamer_partner"
+      ],
+      "disciplines": [
+        "cs2",
+        "dota2"
+      ],
+      "statuses": [
+        "corroborated",
+        "official"
+      ],
+      "current_statuses": [
+        "current_publicly_verified"
+      ],
+      "current_public_signal_count": 2,
+      "needs_verification_count": 0,
+      "ended_or_expired_count": 0
+    },
+    {
+      "brand_id": "brand:liga-stavok",
+      "sampled_relationship_count": 2,
+      "asset_ids": [
+        "org:gambit",
+        "org:l1ga"
+      ],
+      "relationship_types": [
+        "general_partner",
+        "title_partner"
+      ],
+      "disciplines": [
+        "cs2",
+        "dota2"
+      ],
+      "statuses": [
+        "corroborated",
+        "official"
+      ],
+      "current_statuses": [
+        "current_unverified",
+        "historical"
+      ],
+      "current_public_signal_count": 0,
+      "needs_verification_count": 1,
+      "ended_or_expired_count": 1
+    },
+    {
+      "brand_id": "brand:pari",
+      "sampled_relationship_count": 1,
+      "asset_ids": [
+        "org:parivision"
+      ],
+      "relationship_types": [
+        "general_partner"
+      ],
+      "disciplines": [
+        "cs2",
+        "dota2"
+      ],
+      "statuses": [
+        "official"
+      ],
+      "current_statuses": [
+        "current_publicly_verified"
+      ],
+      "current_public_signal_count": 1,
+      "needs_verification_count": 0,
+      "ended_or_expired_count": 0
+    },
+    {
+      "brand_id": "brand:winline",
+      "sampled_relationship_count": 7,
+      "asset_ids": [
+        "org:esl",
+        "org:gaimin",
+        "org:magic",
+        "org:pgl",
+        "org:tundra",
+        "org:virtus-pro",
+        "person:buster"
+      ],
+      "relationship_types": [
+        "ambassador",
+        "broadcast_sponsor",
+        "general_partner",
+        "main_partner",
+        "sponsor"
+      ],
+      "disciplines": [
+        "cs2",
+        "dota2"
+      ],
+      "statuses": [
+        "corroborated",
+        "official",
+        "reported"
+      ],
+      "current_statuses": [
+        "current_publicly_verified",
+        "current_unverified",
+        "fresh_public_announcement",
+        "historical",
+        "reported_expired"
+      ],
+      "current_public_signal_count": 3,
+      "needs_verification_count": 1,
+      "ended_or_expired_count": 3
+    }
+  ],
+  "tournament_matrix": [
+    {
+      "tournament_id": "tournament:betboom-dacha-2024",
+      "name": "BetBoom Dacha Belgrade 2024",
+      "discipline": "dota2",
+      "organizer": "FISSURE / BetBoom",
+      "start_date": "2024-10-19",
+      "end_date": "2024-10-26",
+      "prize_pool": {
+        "amount": 1000000,
+        "currency": "USD"
+      },
+      "peak_viewers": 258079,
+      "average_viewers": null,
+      "hours_watched": 11540642,
+      "audience_scope_complete": false,
+      "status": "corroborated",
+      "confidence": 0.97
+    },
+    {
+      "tournament_id": "tournament:betboom-streamers-10",
+      "name": "BetBoom Streamers Battle 10",
+      "discipline": "dota2",
+      "organizer": "FISSURE / BetBoom",
+      "start_date": "2025-05-29",
+      "end_date": "2025-06-08",
+      "prize_pool": {
+        "amount": 5000000,
+        "currency": "RUB"
+      },
+      "peak_viewers": null,
+      "average_viewers": null,
+      "hours_watched": null,
+      "audience_scope_complete": false,
+      "status": "corroborated",
+      "confidence": 0.9
+    },
+    {
+      "tournament_id": "tournament:d2cl-s17",
+      "name": "Dota 2 Champions League Season 17",
+      "discipline": "dota2",
+      "organizer": "Epic Esports Events",
+      "start_date": "2022-12-01",
+      "end_date": "2022-12-10",
+      "prize_pool": {
+        "amount": 50000,
+        "currency": "USD"
+      },
+      "peak_viewers": null,
+      "average_viewers": null,
+      "hours_watched": null,
+      "audience_scope_complete": false,
+      "status": "corroborated",
+      "confidence": 0.93
+    },
+    {
+      "tournament_id": "tournament:ewc-2026-cs2",
+      "name": "Esports World Cup 2026 — Counter-Strike 2",
+      "discipline": "cs2",
+      "organizer": "Esports World Cup",
+      "start_date": "2026-08-12",
+      "end_date": "2026-08-23",
+      "prize_pool": {
+        "amount": 2000000,
+        "currency": "USD"
+      },
+      "peak_viewers": null,
+      "average_viewers": null,
+      "hours_watched": null,
+      "audience_scope_complete": false,
+      "status": "in_progress",
+      "confidence": 0.98
+    },
+    {
+      "tournament_id": "tournament:fissure-universe-8",
+      "name": "FISSURE Universe Episode 8",
+      "discipline": "dota2",
+      "organizer": "FISSURE",
+      "start_date": "2026-01-21",
+      "end_date": "2026-02-01",
+      "prize_pool": {
+        "amount": 250000,
+        "currency": "USD"
+      },
+      "peak_viewers": 133654,
+      "average_viewers": 41006,
+      "hours_watched": 2135679,
+      "audience_scope_complete": false,
+      "status": "official",
+      "confidence": 0.99
+    },
+    {
+      "tournament_id": "tournament:pari-galaxy",
+      "name": "PARI GALAXY: СТРИМНИЦА",
+      "discipline": "cs2",
+      "organizer": "PARI",
+      "start_date": "2026-02-18",
+      "end_date": "2026-02-21",
+      "prize_pool": {
+        "amount": 1000000,
+        "currency": "RUB"
+      },
+      "peak_viewers": null,
+      "average_viewers": null,
+      "hours_watched": null,
+      "audience_scope_complete": false,
+      "status": "reported",
+      "confidence": 0.9
+    },
+    {
+      "tournament_id": "tournament:standoff-major-2023",
+      "name": "WINLINE EPIC Standoff 2 Winter Major 2023",
+      "discipline": "standoff2",
+      "organizer": "Epic Esports Events",
+      "start_date": "2023-12-06",
+      "end_date": "2023-12-10",
+      "prize_pool": {
+        "amount": 3000000,
+        "currency": "RUB"
+      },
+      "peak_viewers": 35132,
+      "average_viewers": null,
+      "hours_watched": 308588,
+      "audience_scope_complete": false,
+      "status": "corroborated",
+      "confidence": 0.97
+    },
+    {
+      "tournament_id": "tournament:standoff-major-2024",
+      "name": "WINLINE EPIC Standoff 2 Summer Major 2024",
+      "discipline": "standoff2",
+      "organizer": "Epic Esports Events",
+      "start_date": "2024-07-10",
+      "end_date": "2024-07-14",
+      "prize_pool": {
+        "amount": 3000000,
+        "currency": "RUB"
+      },
+      "peak_viewers": 9856,
+      "average_viewers": null,
+      "hours_watched": 176257,
+      "audience_scope_complete": false,
+      "status": "corroborated",
+      "confidence": 0.94
+    },
+    {
+      "tournament_id": "tournament:standoff-major-2026",
+      "name": "WINLINE EPIC Standoff 2 Jumble Rumble Major",
+      "discipline": "standoff2",
+      "organizer": "Epic Esports Events",
+      "start_date": "2026-07-04",
+      "end_date": "2026-08-02",
+      "prize_pool": {
+        "amount": 6000000,
+        "currency": "RUB"
+      },
+      "peak_viewers": null,
+      "average_viewers": null,
+      "hours_watched": null,
+      "audience_scope_complete": false,
+      "status": "corroborated",
+      "confidence": 0.94
+    },
+    {
+      "tournament_id": "tournament:ti-2026",
+      "name": "The International 2026",
+      "discipline": "dota2",
+      "organizer": "Valve / PGL",
+      "start_date": "2026-08-13",
+      "end_date": "2026-08-23",
+      "prize_pool": null,
+      "peak_viewers": null,
+      "average_viewers": null,
+      "hours_watched": null,
+      "audience_scope_complete": false,
+      "status": "in_progress",
+      "confidence": 0.99
+    },
+    {
+      "tournament_id": "tournament:wpl-s2",
+      "name": "Winline Pro League Season 2",
+      "discipline": "cs2",
+      "organizer": "Winline / FACEIT",
+      "start_date": "2024-10-21",
+      "end_date": "2024-11-03",
+      "prize_pool": {
+        "amount": 3580000,
+        "currency": "RUB"
+      },
+      "peak_viewers": 817,
+      "average_viewers": 244,
+      "hours_watched": 13511,
+      "audience_scope_complete": false,
+      "status": "corroborated",
+      "confidence": 0.92
+    },
+    {
+      "tournament_id": "tournament:wpl-s3",
+      "name": "Winline Pro League Season 3",
+      "discipline": "cs2",
+      "organizer": "Winline / FACEIT",
+      "start_date": "2025-09-09",
+      "end_date": "2025-09-21",
+      "prize_pool": {
+        "amount": 4615000,
+        "currency": "RUB"
+      },
+      "peak_viewers": 21485,
+      "average_viewers": 2448,
+      "hours_watched": 150735,
+      "audience_scope_complete": false,
+      "status": "corroborated",
+      "confidence": 0.94
+    },
+    {
+      "tournament_id": "tournament:wss-s2-cs2",
+      "name": "WINLINE Star Series Season 2",
+      "discipline": "cs2",
+      "organizer": "Winline",
+      "start_date": "2026-02-25",
+      "end_date": "2026-03-08",
+      "prize_pool": {
+        "amount": 3500000,
+        "currency": "RUB"
+      },
+      "peak_viewers": null,
+      "average_viewers": null,
+      "hours_watched": null,
+      "audience_scope_complete": false,
+      "status": "corroborated",
+      "confidence": 0.95
+    },
+    {
+      "tournament_id": "tournament:wss-s2-dota",
+      "name": "WINLINE Star Series Season 2",
+      "discipline": "dota2",
+      "organizer": "Winline",
+      "start_date": "2026-01-22",
+      "end_date": "2026-02-01",
+      "prize_pool": {
+        "amount": 3500000,
+        "currency": "RUB"
+      },
+      "peak_viewers": null,
+      "average_viewers": null,
+      "hours_watched": null,
+      "audience_scope_complete": false,
+      "status": "corroborated",
+      "confidence": 0.94
+    }
+  ],
+  "streamer_brand_signals": [
+    {
+      "snapshot_id": "twitch:cs2",
+      "discipline": "Counter-Strike 2",
+      "event": null,
+      "brand": "BetBoom",
+      "observed_channel_count": 6,
+      "viewers_at_observation": 43222,
+      "evidence_sources": [
+        "tag",
+        "title"
+      ],
+      "interpretation": "Observed promotion signal, not partnership proof."
+    },
+    {
+      "snapshot_id": "twitch:cs2",
+      "discipline": "Counter-Strike 2",
+      "event": null,
+      "brand": "Fonbet",
+      "observed_channel_count": 2,
+      "viewers_at_observation": 730,
+      "evidence_sources": [
+        "title"
+      ],
+      "interpretation": "Observed promotion signal, not partnership proof."
+    },
+    {
+      "snapshot_id": "twitch:cs2",
+      "discipline": "Counter-Strike 2",
+      "event": null,
+      "brand": "Winline",
+      "observed_channel_count": 1,
+      "viewers_at_observation": 382,
+      "evidence_sources": [
+        "title"
+      ],
+      "interpretation": "Observed promotion signal, not partnership proof."
+    },
+    {
+      "snapshot_id": "twitch:cs2-ewc-live",
+      "discipline": "Counter-Strike 2",
+      "event": "Esports World Cup 2026",
+      "brand": "BetBoom",
+      "observed_channel_count": 13,
+      "viewers_at_observation": 27474,
+      "evidence_sources": [
+        "panel_url",
+        "tag",
+        "title"
+      ],
+      "interpretation": "Observed promotion signal, not partnership proof."
+    },
+    {
+      "snapshot_id": "twitch:cs2-ewc-live",
+      "discipline": "Counter-Strike 2",
+      "event": "Esports World Cup 2026",
+      "brand": "Fonbet",
+      "observed_channel_count": 1,
+      "viewers_at_observation": 609,
+      "evidence_sources": [
+        "title"
+      ],
+      "interpretation": "Observed promotion signal, not partnership proof."
+    },
+    {
+      "snapshot_id": "twitch:cs2-ewc-live",
+      "discipline": "Counter-Strike 2",
+      "event": "Esports World Cup 2026",
+      "brand": "Winline",
+      "observed_channel_count": 2,
+      "viewers_at_observation": 570,
+      "evidence_sources": [
+        "panel_url",
+        "title"
+      ],
+      "interpretation": "Observed promotion signal, not partnership proof."
+    },
+    {
+      "snapshot_id": "twitch:cs2-ewc-live",
+      "discipline": "Counter-Strike 2",
+      "event": "Esports World Cup 2026",
+      "brand": "Liga Stavok",
+      "observed_channel_count": 1,
+      "viewers_at_observation": 1,
+      "evidence_sources": [
+        "title"
+      ],
+      "interpretation": "Observed promotion signal, not partnership proof."
+    },
+    {
+      "snapshot_id": "twitch:dota2",
+      "discipline": "Dota 2",
+      "event": "The International 2026",
+      "brand": "BetBoom",
+      "observed_channel_count": 6,
+      "viewers_at_observation": 151440,
+      "evidence_sources": [
+        "panel_url",
+        "tag",
+        "title"
+      ],
+      "interpretation": "Observed promotion signal, not partnership proof."
+    },
+    {
+      "snapshot_id": "twitch:dota2",
+      "discipline": "Dota 2",
+      "event": "The International 2026",
+      "brand": "Playerok",
+      "observed_channel_count": 2,
+      "viewers_at_observation": 148134,
+      "evidence_sources": [
+        "panel_url",
+        "title"
+      ],
+      "interpretation": "Observed promotion signal, not partnership proof."
+    },
+    {
+      "snapshot_id": "twitch:dota2",
+      "discipline": "Dota 2",
+      "event": "The International 2026",
+      "brand": "Winline",
+      "observed_channel_count": 6,
+      "viewers_at_observation": 40405,
+      "evidence_sources": [
+        "panel_url",
+        "title"
+      ],
+      "interpretation": "Observed promotion signal, not partnership proof."
+    },
+    {
+      "snapshot_id": "twitch:dota2",
+      "discipline": "Dota 2",
+      "event": "The International 2026",
+      "brand": "Fonbet",
+      "observed_channel_count": 3,
+      "viewers_at_observation": 1517,
+      "evidence_sources": [
+        "panel_url",
+        "title"
+      ],
+      "interpretation": "Observed promotion signal, not partnership proof."
+    },
+    {
+      "snapshot_id": "twitch:dota2",
+      "discipline": "Dota 2",
+      "event": "The International 2026",
+      "brand": "PARI",
+      "observed_channel_count": 1,
+      "viewers_at_observation": 149,
+      "evidence_sources": [
+        "title"
+      ],
+      "interpretation": "Observed promotion signal, not partnership proof."
+    }
+  ],
+  "streamer_matrix": [
+    {
+      "snapshot_id": "twitch:cs2",
+      "discipline": "Counter-Strike 2",
+      "event": null,
+      "streamer_id": "twitch:47733806",
+      "streamer_login": "chopperinho",
+      "streamer_display_name": "chopperinho",
+      "channel_url": "https://twitch.tv/chopperinho",
+      "viewers_at_observation": 27187,
+      "brand": "BetBoom",
+      "evidence_sources": [
+        "tag",
+        "title"
+      ],
+      "signal_status": "observed",
+      "partnership_status": "not_inferred_from_observed_signals",
+      "interpretation": "Observed promotion signal, not partnership proof."
+    },
+    {
+      "snapshot_id": "twitch:cs2",
+      "discipline": "Counter-Strike 2",
+      "event": null,
+      "streamer_id": "twitch:72603256",
+      "streamer_login": "97zoner",
+      "streamer_display_name": "97zoner",
+      "channel_url": "https://twitch.tv/97zoner",
+      "viewers_at_observation": 8316,
+      "brand": "BetBoom",
+      "evidence_sources": [
+        "title"
+      ],
+      "signal_status": "observed",
+      "partnership_status": "not_inferred_from_observed_signals",
+      "interpretation": "Observed promotion signal, not partnership proof."
+    },
+    {
+      "snapshot_id": "twitch:cs2",
+      "discipline": "Counter-Strike 2",
+      "event": null,
+      "streamer_id": "twitch:139345001",
+      "streamer_login": "aunkere",
+      "streamer_display_name": "Aunkere",
+      "channel_url": "https://twitch.tv/aunkere",
+      "viewers_at_observation": 4094,
+      "brand": "BetBoom",
+      "evidence_sources": [
+        "title"
+      ],
+      "signal_status": "observed",
+      "partnership_status": "not_inferred_from_observed_signals",
+      "interpretation": "Observed promotion signal, not partnership proof."
+    },
+    {
+      "snapshot_id": "twitch:cs2",
+      "discipline": "Counter-Strike 2",
+      "event": null,
+      "streamer_id": "twitch:1318974958",
+      "streamer_login": "lentbb",
+      "streamer_display_name": "lentbb",
+      "channel_url": "https://twitch.tv/lentbb",
+      "viewers_at_observation": 2691,
+      "brand": "BetBoom",
+      "evidence_sources": [
+        "title"
+      ],
+      "signal_status": "observed",
+      "partnership_status": "not_inferred_from_observed_signals",
+      "interpretation": "Observed promotion signal, not partnership proof."
+    },
+    {
+      "snapshot_id": "twitch:cs2",
+      "discipline": "Counter-Strike 2",
+      "event": null,
+      "streamer_id": "twitch:67788628",
+      "streamer_login": "mager1337",
+      "streamer_display_name": "mAger1337",
+      "channel_url": "https://twitch.tv/mager1337",
+      "viewers_at_observation": 878,
+      "brand": "BetBoom",
+      "evidence_sources": [
+        "title"
+      ],
+      "signal_status": "observed",
+      "partnership_status": "not_inferred_from_observed_signals",
+      "interpretation": "Observed promotion signal, not partnership proof."
+    },
+    {
+      "snapshot_id": "twitch:cs2",
+      "discipline": "Counter-Strike 2",
+      "event": null,
+      "streamer_id": "twitch:44096715",
+      "streamer_login": "bandurka",
+      "streamer_display_name": "BANDURKA",
+      "channel_url": "https://twitch.tv/bandurka",
+      "viewers_at_observation": 712,
+      "brand": "Fonbet",
+      "evidence_sources": [
+        "title"
+      ],
+      "signal_status": "observed",
+      "partnership_status": "not_inferred_from_observed_signals",
+      "interpretation": "Observed promotion signal, not partnership proof."
+    },
+    {
+      "snapshot_id": "twitch:cs2",
+      "discipline": "Counter-Strike 2",
+      "event": null,
+      "streamer_id": "twitch:679708594",
+      "streamer_login": "friend44444",
+      "streamer_display_name": "friend44444",
+      "channel_url": "https://twitch.tv/friend44444",
+      "viewers_at_observation": 382,
+      "brand": "Winline",
+      "evidence_sources": [
+        "title"
+      ],
+      "signal_status": "observed",
+      "partnership_status": "not_inferred_from_observed_signals",
+      "interpretation": "Observed promotion signal, not partnership proof."
+    },
+    {
+      "snapshot_id": "twitch:cs2",
+      "discipline": "Counter-Strike 2",
+      "event": null,
+      "streamer_id": "twitch:456782255",
+      "streamer_login": "mariomax11",
+      "streamer_display_name": "mariomax11",
+      "channel_url": "https://twitch.tv/mariomax11",
+      "viewers_at_observation": 56,
+      "brand": "BetBoom",
+      "evidence_sources": [
+        "tag"
+      ],
+      "signal_status": "observed",
+      "partnership_status": "not_inferred_from_observed_signals",
+      "interpretation": "Observed promotion signal, not partnership proof."
+    },
+    {
+      "snapshot_id": "twitch:cs2",
+      "discipline": "Counter-Strike 2",
+      "event": null,
+      "streamer_id": "twitch:635529801",
+      "streamer_login": "sf3z",
+      "streamer_display_name": "sf3z",
+      "channel_url": "https://twitch.tv/sf3z",
+      "viewers_at_observation": 18,
+      "brand": "Fonbet",
+      "evidence_sources": [
+        "title"
+      ],
+      "signal_status": "observed",
+      "partnership_status": "not_inferred_from_observed_signals",
+      "interpretation": "Observed promotion signal, not partnership proof."
+    },
+    {
+      "snapshot_id": "twitch:cs2-ewc-live",
+      "discipline": "Counter-Strike 2",
+      "event": "Esports World Cup 2026",
+      "streamer_id": "twitch:47733806",
+      "streamer_login": "chopperinho",
+      "streamer_display_name": "chopperinho",
+      "channel_url": "https://twitch.tv/chopperinho",
+      "viewers_at_observation": 10398,
+      "brand": "BetBoom",
+      "evidence_sources": [
+        "panel_url",
+        "tag",
+        "title"
+      ],
+      "signal_status": "observed",
+      "partnership_status": "not_inferred_from_observed_signals",
+      "interpretation": "Observed promotion signal, not partnership proof."
+    },
+    {
+      "snapshot_id": "twitch:cs2-ewc-live",
+      "discipline": "Counter-Strike 2",
+      "event": "Esports World Cup 2026",
+      "streamer_id": "twitch:111454676",
+      "streamer_login": "deko",
+      "streamer_display_name": "deko",
+      "channel_url": "https://twitch.tv/deko",
+      "viewers_at_observation": 6827,
+      "brand": "BetBoom",
+      "evidence_sources": [
+        "panel_url",
+        "title"
+      ],
+      "signal_status": "observed",
+      "partnership_status": "not_inferred_from_observed_signals",
+      "interpretation": "Observed promotion signal, not partnership proof."
+    },
+    {
+      "snapshot_id": "twitch:cs2-ewc-live",
+      "discipline": "Counter-Strike 2",
+      "event": "Esports World Cup 2026",
+      "streamer_id": "twitch:72603256",
+      "streamer_login": "97zoner",
+      "streamer_display_name": "97zoner",
+      "channel_url": "https://twitch.tv/97zoner",
+      "viewers_at_observation": 2859,
+      "brand": "BetBoom",
+      "evidence_sources": [
+        "panel_url",
+        "title"
+      ],
+      "signal_status": "observed",
+      "partnership_status": "not_inferred_from_observed_signals",
+      "interpretation": "Observed promotion signal, not partnership proof."
+    },
+    {
+      "snapshot_id": "twitch:cs2-ewc-live",
+      "discipline": "Counter-Strike 2",
+      "event": "Esports World Cup 2026",
+      "streamer_id": "twitch:1390976168",
+      "streamer_login": "betboom_cs_ru",
+      "streamer_display_name": "betboom_cs_ru",
+      "channel_url": "https://twitch.tv/betboom_cs_ru",
+      "viewers_at_observation": 2055,
+      "brand": "BetBoom",
+      "evidence_sources": [
+        "panel_url"
+      ],
+      "signal_status": "observed",
+      "partnership_status": "not_inferred_from_observed_signals",
+      "interpretation": "Observed promotion signal, not partnership proof."
+    },
+    {
+      "snapshot_id": "twitch:cs2-ewc-live",
+      "discipline": "Counter-Strike 2",
+      "event": "Esports World Cup 2026",
+      "streamer_id": "twitch:139345001",
+      "streamer_login": "aunkere",
+      "streamer_display_name": "Aunkere",
+      "channel_url": "https://twitch.tv/aunkere",
+      "viewers_at_observation": 1674,
+      "brand": "BetBoom",
+      "evidence_sources": [
+        "panel_url",
+        "title"
+      ],
+      "signal_status": "observed",
+      "partnership_status": "not_inferred_from_observed_signals",
+      "interpretation": "Observed promotion signal, not partnership proof."
+    },
+    {
+      "snapshot_id": "twitch:cs2-ewc-live",
+      "discipline": "Counter-Strike 2",
+      "event": "Esports World Cup 2026",
+      "streamer_id": "twitch:1318974958",
+      "streamer_login": "lentbb",
+      "streamer_display_name": "lentbb",
+      "channel_url": "https://twitch.tv/lentbb",
+      "viewers_at_observation": 862,
+      "brand": "BetBoom",
+      "evidence_sources": [
+        "panel_url",
+        "title"
+      ],
+      "signal_status": "observed",
+      "partnership_status": "not_inferred_from_observed_signals",
+      "interpretation": "Observed promotion signal, not partnership proof."
+    },
+    {
+      "snapshot_id": "twitch:cs2-ewc-live",
+      "discipline": "Counter-Strike 2",
+      "event": "Esports World Cup 2026",
+      "streamer_id": "twitch:115824215",
+      "streamer_login": "overdrivezzz",
+      "streamer_display_name": "overdrivezzz",
+      "channel_url": "https://twitch.tv/overdrivezzz",
+      "viewers_at_observation": 790,
+      "brand": "BetBoom",
+      "evidence_sources": [
+        "panel_url"
+      ],
+      "signal_status": "observed",
+      "partnership_status": "not_inferred_from_observed_signals",
+      "interpretation": "Observed promotion signal, not partnership proof."
+    },
+    {
+      "snapshot_id": "twitch:cs2-ewc-live",
+      "discipline": "Counter-Strike 2",
+      "event": "Esports World Cup 2026",
+      "streamer_id": "twitch:176262150",
+      "streamer_login": "dayneez",
+      "streamer_display_name": "dayneez",
+      "channel_url": "https://twitch.tv/dayneez",
+      "viewers_at_observation": 655,
+      "brand": "BetBoom",
+      "evidence_sources": [
+        "panel_url"
+      ],
+      "signal_status": "observed",
+      "partnership_status": "not_inferred_from_observed_signals",
+      "interpretation": "Observed promotion signal, not partnership proof."
+    },
+    {
+      "snapshot_id": "twitch:cs2-ewc-live",
+      "discipline": "Counter-Strike 2",
+      "event": "Esports World Cup 2026",
+      "streamer_id": "twitch:44096715",
+      "streamer_login": "bandurka",
+      "streamer_display_name": "BANDURKA",
+      "channel_url": "https://twitch.tv/bandurka",
+      "viewers_at_observation": 609,
+      "brand": "Fonbet",
+      "evidence_sources": [
+        "title"
+      ],
+      "signal_status": "observed",
+      "partnership_status": "not_inferred_from_observed_signals",
+      "interpretation": "Observed promotion signal, not partnership proof."
+    },
+    {
+      "snapshot_id": "twitch:cs2-ewc-live",
+      "discipline": "Counter-Strike 2",
+      "event": "Esports World Cup 2026",
+      "streamer_id": "twitch:679708594",
+      "streamer_login": "friend44444",
+      "streamer_display_name": "friend44444",
+      "channel_url": "https://twitch.tv/friend44444",
+      "viewers_at_observation": 569,
+      "brand": "Winline",
+      "evidence_sources": [
+        "panel_url",
+        "title"
+      ],
+      "signal_status": "observed",
+      "partnership_status": "not_inferred_from_observed_signals",
+      "interpretation": "Observed promotion signal, not partnership proof."
+    },
+    {
+      "snapshot_id": "twitch:cs2-ewc-live",
+      "discipline": "Counter-Strike 2",
+      "event": "Esports World Cup 2026",
+      "streamer_id": "twitch:1390977462",
+      "streamer_login": "betboom_cs_ru2",
+      "streamer_display_name": "betboom_cs_ru2",
+      "channel_url": "https://twitch.tv/betboom_cs_ru2",
+      "viewers_at_observation": 548,
+      "brand": "BetBoom",
+      "evidence_sources": [
+        "panel_url"
+      ],
+      "signal_status": "observed",
+      "partnership_status": "not_inferred_from_observed_signals",
+      "interpretation": "Observed promotion signal, not partnership proof."
+    },
+    {
+      "snapshot_id": "twitch:cs2-ewc-live",
+      "discipline": "Counter-Strike 2",
+      "event": "Esports World Cup 2026",
+      "streamer_id": "twitch:67788628",
+      "streamer_login": "mager1337",
+      "streamer_display_name": "mAger1337",
+      "channel_url": "https://twitch.tv/mager1337",
+      "viewers_at_observation": 501,
+      "brand": "BetBoom",
+      "evidence_sources": [
+        "panel_url",
+        "title"
+      ],
+      "signal_status": "observed",
+      "partnership_status": "not_inferred_from_observed_signals",
+      "interpretation": "Observed promotion signal, not partnership proof."
+    },
+    {
+      "snapshot_id": "twitch:cs2-ewc-live",
+      "discipline": "Counter-Strike 2",
+      "event": "Esports World Cup 2026",
+      "streamer_id": "twitch:138537079",
+      "streamer_login": "krat0ntv",
+      "streamer_display_name": "krat0ntv",
+      "channel_url": "https://twitch.tv/krat0ntv",
+      "viewers_at_observation": 149,
+      "brand": "BetBoom",
+      "evidence_sources": [
+        "panel_url"
+      ],
+      "signal_status": "observed",
+      "partnership_status": "not_inferred_from_observed_signals",
+      "interpretation": "Observed promotion signal, not partnership proof."
+    },
+    {
+      "snapshot_id": "twitch:cs2-ewc-live",
+      "discipline": "Counter-Strike 2",
+      "event": "Esports World Cup 2026",
+      "streamer_id": "twitch:114006938",
+      "streamer_login": "jester_andrew",
+      "streamer_display_name": "Jester_Andrew",
+      "channel_url": "https://twitch.tv/jester_andrew",
+      "viewers_at_observation": 108,
+      "brand": "BetBoom",
+      "evidence_sources": [
+        "panel_url",
+        "tag"
+      ],
+      "signal_status": "observed",
+      "partnership_status": "not_inferred_from_observed_signals",
+      "interpretation": "Observed promotion signal, not partnership proof."
+    },
+    {
+      "snapshot_id": "twitch:cs2-ewc-live",
+      "discipline": "Counter-Strike 2",
+      "event": "Esports World Cup 2026",
+      "streamer_id": "twitch:456782255",
+      "streamer_login": "mariomax11",
+      "streamer_display_name": "mariomax11",
+      "channel_url": "https://twitch.tv/mariomax11",
+      "viewers_at_observation": 48,
+      "brand": "BetBoom",
+      "evidence_sources": [
+        "tag"
+      ],
+      "signal_status": "observed",
+      "partnership_status": "not_inferred_from_observed_signals",
+      "interpretation": "Observed promotion signal, not partnership proof."
+    },
+    {
+      "snapshot_id": "twitch:cs2-ewc-live",
+      "discipline": "Counter-Strike 2",
+      "event": "Esports World Cup 2026",
+      "streamer_id": "twitch:825068718",
+      "streamer_login": "vens1g3r",
+      "streamer_display_name": "vens1g3r",
+      "channel_url": "https://twitch.tv/vens1g3r",
+      "viewers_at_observation": 1,
+      "brand": "Liga Stavok",
+      "evidence_sources": [
+        "title"
+      ],
+      "signal_status": "observed",
+      "partnership_status": "not_inferred_from_observed_signals",
+      "interpretation": "Observed promotion signal, not partnership proof."
+    },
+    {
+      "snapshot_id": "twitch:cs2-ewc-live",
+      "discipline": "Counter-Strike 2",
+      "event": "Esports World Cup 2026",
+      "streamer_id": "twitch:517512150",
+      "streamer_login": "zaharpuzo77",
+      "streamer_display_name": "ZaharPuzo77",
+      "channel_url": "https://twitch.tv/zaharpuzo77",
+      "viewers_at_observation": 1,
+      "brand": "Winline",
+      "evidence_sources": [
+        "title"
+      ],
+      "signal_status": "observed",
+      "partnership_status": "not_inferred_from_observed_signals",
+      "interpretation": "Observed promotion signal, not partnership proof."
+    },
+    {
+      "snapshot_id": "twitch:dota2",
+      "discipline": "Dota 2",
+      "event": "The International 2026",
+      "streamer_id": "twitch:67708794",
+      "streamer_login": "nix",
+      "streamer_display_name": "Nix",
+      "channel_url": "https://twitch.tv/nix",
+      "viewers_at_observation": 131109,
+      "brand": "BetBoom",
+      "evidence_sources": [
+        "panel_url"
+      ],
+      "signal_status": "observed",
+      "partnership_status": "not_inferred_from_observed_signals",
+      "interpretation": "Observed promotion signal, not partnership proof."
+    },
+    {
+      "snapshot_id": "twitch:dota2",
+      "discipline": "Dota 2",
+      "event": "The International 2026",
+      "streamer_id": "twitch:67708794",
+      "streamer_login": "nix",
+      "streamer_display_name": "Nix",
+      "channel_url": "https://twitch.tv/nix",
+      "viewers_at_observation": 131109,
+      "brand": "Playerok",
+      "evidence_sources": [
+        "panel_url"
+      ],
+      "signal_status": "observed",
+      "partnership_status": "not_inferred_from_observed_signals",
+      "interpretation": "Observed promotion signal, not partnership proof."
+    },
+    {
+      "snapshot_id": "twitch:dota2",
+      "discipline": "Dota 2",
+      "event": "The International 2026",
+      "streamer_id": "twitch:42316376",
+      "streamer_login": "just_ns",
+      "streamer_display_name": "just_ns",
+      "channel_url": "https://twitch.tv/just_ns",
+      "viewers_at_observation": 20174,
+      "brand": "Winline",
+      "evidence_sources": [
+        "panel_url",
+        "title"
+      ],
+      "signal_status": "observed",
+      "partnership_status": "not_inferred_from_observed_signals",
+      "interpretation": "Observed promotion signal, not partnership proof."
+    },
+    {
+      "snapshot_id": "twitch:dota2",
+      "discipline": "Dota 2",
+      "event": "The International 2026",
+      "streamer_id": "twitch:77964394",
+      "streamer_login": "ramzes",
+      "streamer_display_name": "ramzes",
+      "channel_url": "https://twitch.tv/ramzes",
+      "viewers_at_observation": 17025,
+      "brand": "Playerok",
+      "evidence_sources": [
+        "panel_url",
+        "title"
+      ],
+      "signal_status": "observed",
+      "partnership_status": "not_inferred_from_observed_signals",
+      "interpretation": "Observed promotion signal, not partnership proof."
+    },
+    {
+      "snapshot_id": "twitch:dota2",
+      "discipline": "Dota 2",
+      "event": "The International 2026",
+      "streamer_id": "twitch:77964394",
+      "streamer_login": "ramzes",
+      "streamer_display_name": "ramzes",
+      "channel_url": "https://twitch.tv/ramzes",
+      "viewers_at_observation": 17025,
+      "brand": "Winline",
+      "evidence_sources": [
+        "panel_url",
+        "title"
+      ],
+      "signal_status": "observed",
+      "partnership_status": "not_inferred_from_observed_signals",
+      "interpretation": "Observed promotion signal, not partnership proof."
+    },
+    {
+      "snapshot_id": "twitch:dota2",
+      "discipline": "Dota 2",
+      "event": "The International 2026",
+      "streamer_id": "twitch:35629041",
+      "streamer_login": "solo",
+      "streamer_display_name": "Solo",
+      "channel_url": "https://twitch.tv/solo",
+      "viewers_at_observation": 12982,
+      "brand": "BetBoom",
+      "evidence_sources": [
+        "panel_url",
+        "title"
+      ],
+      "signal_status": "observed",
+      "partnership_status": "not_inferred_from_observed_signals",
+      "interpretation": "Observed promotion signal, not partnership proof."
+    },
+    {
+      "snapshot_id": "twitch:dota2",
+      "discipline": "Dota 2",
+      "event": "The International 2026",
+      "streamer_id": "twitch:215363437",
+      "streamer_login": "avice",
+      "streamer_display_name": "avice",
+      "channel_url": "https://twitch.tv/avice",
+      "viewers_at_observation": 6956,
+      "brand": "BetBoom",
+      "evidence_sources": [
+        "panel_url",
+        "title"
+      ],
+      "signal_status": "observed",
+      "partnership_status": "not_inferred_from_observed_signals",
+      "interpretation": "Observed promotion signal, not partnership proof."
+    },
+    {
+      "snapshot_id": "twitch:dota2",
+      "discipline": "Dota 2",
+      "event": "The International 2026",
+      "streamer_id": "twitch:64542330",
+      "streamer_login": "9pasha",
+      "streamer_display_name": "9pasha",
+      "channel_url": "https://twitch.tv/9pasha",
+      "viewers_at_observation": 1837,
+      "brand": "Winline",
+      "evidence_sources": [
+        "panel_url",
+        "title"
+      ],
+      "signal_status": "observed",
+      "partnership_status": "not_inferred_from_observed_signals",
+      "interpretation": "Observed promotion signal, not partnership proof."
+    },
+    {
+      "snapshot_id": "twitch:dota2",
+      "discipline": "Dota 2",
+      "event": "The International 2026",
+      "streamer_id": "twitch:31645736",
+      "streamer_login": "goodoq",
+      "streamer_display_name": "goodoq",
+      "channel_url": "https://twitch.tv/goodoq",
+      "viewers_at_observation": 1337,
+      "brand": "Fonbet",
+      "evidence_sources": [
+        "panel_url",
+        "title"
+      ],
+      "signal_status": "observed",
+      "partnership_status": "not_inferred_from_observed_signals",
+      "interpretation": "Observed promotion signal, not partnership proof."
+    },
+    {
+      "snapshot_id": "twitch:dota2",
+      "discipline": "Dota 2",
+      "event": "The International 2026",
+      "streamer_id": "twitch:87481167",
+      "streamer_login": "voodoosh",
+      "streamer_display_name": "VooDooSh",
+      "channel_url": "https://twitch.tv/voodoosh",
+      "viewers_at_observation": 981,
+      "brand": "Winline",
+      "evidence_sources": [
+        "panel_url"
+      ],
+      "signal_status": "observed",
+      "partnership_status": "not_inferred_from_observed_signals",
+      "interpretation": "Observed promotion signal, not partnership proof."
+    },
+    {
+      "snapshot_id": "twitch:dota2",
+      "discipline": "Dota 2",
+      "event": "The International 2026",
+      "streamer_id": "twitch:897352307",
+      "streamer_login": "poisonika",
+      "streamer_display_name": "poisonika",
+      "channel_url": "https://twitch.tv/poisonika",
+      "viewers_at_observation": 305,
+      "brand": "Winline",
+      "evidence_sources": [
+        "panel_url",
+        "title"
+      ],
+      "signal_status": "observed",
+      "partnership_status": "not_inferred_from_observed_signals",
+      "interpretation": "Observed promotion signal, not partnership proof."
+    },
+    {
+      "snapshot_id": "twitch:dota2",
+      "discipline": "Dota 2",
+      "event": "The International 2026",
+      "streamer_id": "twitch:114006938",
+      "streamer_login": "jester_andrew",
+      "streamer_display_name": "Jester_Andrew",
+      "channel_url": "https://twitch.tv/jester_andrew",
+      "viewers_at_observation": 240,
+      "brand": "BetBoom",
+      "evidence_sources": [
+        "panel_url",
+        "tag"
+      ],
+      "signal_status": "observed",
+      "partnership_status": "not_inferred_from_observed_signals",
+      "interpretation": "Observed promotion signal, not partnership proof."
+    },
+    {
+      "snapshot_id": "twitch:dota2",
+      "discipline": "Dota 2",
+      "event": "The International 2026",
+      "streamer_id": "twitch:75850302",
+      "streamer_login": "sqreenbets",
+      "streamer_display_name": "sQreenbets",
+      "channel_url": "https://twitch.tv/sqreenbets",
+      "viewers_at_observation": 151,
+      "brand": "Fonbet",
+      "evidence_sources": [
+        "panel_url",
+        "title"
+      ],
+      "signal_status": "observed",
+      "partnership_status": "not_inferred_from_observed_signals",
+      "interpretation": "Observed promotion signal, not partnership proof."
+    },
+    {
+      "snapshot_id": "twitch:dota2",
+      "discipline": "Dota 2",
+      "event": "The International 2026",
+      "streamer_id": "twitch:59333452",
+      "streamer_login": "pashavind",
+      "streamer_display_name": "pashavind",
+      "channel_url": "https://twitch.tv/pashavind",
+      "viewers_at_observation": 149,
+      "brand": "PARI",
+      "evidence_sources": [
+        "title"
+      ],
+      "signal_status": "observed",
+      "partnership_status": "not_inferred_from_observed_signals",
+      "interpretation": "Observed promotion signal, not partnership proof."
+    },
+    {
+      "snapshot_id": "twitch:dota2",
+      "discipline": "Dota 2",
+      "event": "The International 2026",
+      "streamer_id": "twitch:88256467",
+      "streamer_login": "shisp_dota",
+      "streamer_display_name": "shisp_dota",
+      "channel_url": "https://twitch.tv/shisp_dota",
+      "viewers_at_observation": 114,
+      "brand": "BetBoom",
+      "evidence_sources": [
+        "title"
+      ],
+      "signal_status": "observed",
+      "partnership_status": "not_inferred_from_observed_signals",
+      "interpretation": "Observed promotion signal, not partnership proof."
+    },
+    {
+      "snapshot_id": "twitch:dota2",
+      "discipline": "Dota 2",
+      "event": "The International 2026",
+      "streamer_id": "twitch:52215959",
+      "streamer_login": "followkudes",
+      "streamer_display_name": "followKudes",
+      "channel_url": "https://twitch.tv/followkudes",
+      "viewers_at_observation": 83,
+      "brand": "Winline",
+      "evidence_sources": [
+        "panel_url"
+      ],
+      "signal_status": "observed",
+      "partnership_status": "not_inferred_from_observed_signals",
+      "interpretation": "Observed promotion signal, not partnership proof."
+    },
+    {
+      "snapshot_id": "twitch:dota2",
+      "discipline": "Dota 2",
+      "event": "The International 2026",
+      "streamer_id": "twitch:1228036375",
+      "streamer_login": "divan_analitik",
+      "streamer_display_name": "Divan_analitik",
+      "channel_url": "https://twitch.tv/divan_analitik",
+      "viewers_at_observation": 39,
+      "brand": "BetBoom",
+      "evidence_sources": [
+        "tag"
+      ],
+      "signal_status": "observed",
+      "partnership_status": "not_inferred_from_observed_signals",
+      "interpretation": "Observed promotion signal, not partnership proof."
+    },
+    {
+      "snapshot_id": "twitch:dota2",
+      "discipline": "Dota 2",
+      "event": "The International 2026",
+      "streamer_id": "twitch:619522782",
+      "streamer_login": "blazzerfox",
+      "streamer_display_name": "BlazzerFox",
+      "channel_url": "https://twitch.tv/blazzerfox",
+      "viewers_at_observation": 29,
+      "brand": "Fonbet",
+      "evidence_sources": [
+        "title"
+      ],
+      "signal_status": "observed",
+      "partnership_status": "not_inferred_from_observed_signals",
+      "interpretation": "Observed promotion signal, not partnership proof."
+    }
+  ],
+  "discipline_matrix": [
+    {
+      "discipline": "cs2",
+      "public_attractiveness_score": 4.2,
+      "score_confidence": 0.68,
+      "partnership_count": 15,
+      "bookmaker_count": 6,
+      "tournament_count": 5,
+      "snapshot_count": 2,
+      "observed_channels": 1059,
+      "viewers_at_observation": 107207,
+      "measurement_quality": 5,
+      "status": "inferred",
+      "caveat": "Public-data comparison, not ROI or unique reach."
+    },
+    {
+      "discipline": "dota2",
+      "public_attractiveness_score": 4.8,
+      "score_confidence": 0.68,
+      "partnership_count": 14,
+      "bookmaker_count": 6,
+      "tournament_count": 6,
+      "snapshot_count": 1,
+      "observed_channels": 94,
+      "viewers_at_observation": 275905,
+      "measurement_quality": 4,
+      "status": "inferred",
+      "caveat": "Public-data comparison, not ROI or unique reach."
+    },
+    {
+      "discipline": "standoff2",
+      "public_attractiveness_score": 2.25,
+      "score_confidence": 0.45,
+      "partnership_count": 1,
+      "bookmaker_count": 1,
+      "tournament_count": 3,
+      "snapshot_count": 0,
+      "observed_channels": 0,
+      "viewers_at_observation": 0,
+      "measurement_quality": 3,
+      "status": "inferred",
+      "caveat": "Public-data comparison, not ROI or unique reach."
+    }
+  ],
+  "data_completeness": [
+    {
+      "dataset": "partnerships",
+      "records": 18,
+      "available_fields": [
+        "brand",
+        "asset",
+        "relationship_type",
+        "discipline",
+        "status",
+        "sources"
+      ],
+      "missing_internal_fields": [
+        "contract_value",
+        "full_rights",
+        "exclusivity",
+        "activation_cost",
+        "business_result"
+      ]
+    },
+    {
+      "dataset": "tournaments",
+      "records": 14,
+      "available_fields": [
+        "dates",
+        "discipline",
+        "organizer",
+        "prize_pool",
+        "selected_audience_metrics"
+      ],
+      "missing_internal_fields": [
+        "rights_cost",
+        "production_cost",
+        "registrations",
+        "ftd",
+        "ngr"
+      ]
+    },
+    {
+      "dataset": "streamers",
+      "records": 1153,
+      "available_fields": [
+        "point_in_time_viewers",
+        "title",
+        "tags",
+        "selected_panel_links",
+        "brand_signals"
+      ],
+      "missing_internal_fields": [
+        "historical_average",
+        "unique_reach",
+        "age",
+        "geo",
+        "fee",
+        "registrations",
+        "ftd",
+        "ngr"
+      ]
+    }
+  ]
+}
