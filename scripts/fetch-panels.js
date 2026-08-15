@@ -1,6 +1,10 @@
 const fs = require('fs');
+const path = require('path');
 
 const CLIENT_ID = 'kimne78kx3ncx6brgo4mv6wki5h1ko'; // Twitch's public web client id, used for anonymous public GQL reads
+const ROOT_DIR = path.resolve(__dirname, '..');
+const SNAPSHOT_PATH = path.join(ROOT_DIR, 'data', 'raw', 'snapshot.json');
+const OUTPUT_DIR = path.join(ROOT_DIR, 'data', 'processed');
 
 const BOOKMAKER_RULES = [
   { brand: 'Winline', test: (u) => /10k\.win|winline/i.test(u) },
@@ -78,7 +82,7 @@ async function runGame(gameKey, list) {
     }
     await new Promise(r => setTimeout(r, 120));
   }
-  fs.writeFileSync(`./${gameKey}_panels_full.json`, JSON.stringify(results, null, 2));
+  fs.writeFileSync(path.join(OUTPUT_DIR, `${gameKey}-panels.json`), JSON.stringify(results, null, 2));
   const withBrand = results.filter(r => r.bannerLinks.length > 0);
   console.log(`\n=== ${gameKey}: ${results.length} channels checked, ${withBrand.length} with a bookmaker panel ===`);
   const counts = {};
@@ -91,7 +95,7 @@ async function runGame(gameKey, list) {
 }
 
 async function main() {
-  const snapshot = JSON.parse(fs.readFileSync('./snapshot2.json', 'utf8'));
+  const snapshot = JSON.parse(fs.readFileSync(SNAPSHOT_PATH, 'utf8'));
   await runGame('dota2', snapshot.dota2);
   await runGame('cs2', snapshot.cs2);
 }

@@ -1,0 +1,527 @@
+{
+  "schema_version": "1.0.0",
+  "research_cutoff": "2026-08-15",
+  "partnership_count": 18,
+  "partnerships": [
+    {
+      "partnership_id": "partnership:1xbet-aurora",
+      "brand_id": "brand:1xbet",
+      "asset_id": "org:aurora",
+      "relationship_type": "title_partner",
+      "disciplines": [
+        "cs2",
+        "dota2"
+      ],
+      "valid_from": "2022-03-01",
+      "valid_to": null,
+      "current_status": "current_publicly_verified",
+      "exclusivity": null,
+      "rights": [
+        "jersey",
+        "social",
+        "content"
+      ],
+      "activation_examples": [],
+      "status": "official",
+      "confidence": 0.96,
+      "observed_at": "2026-08-15",
+      "claim_ids": [
+        "claim:partnership:1xbet-aurora"
+      ],
+      "source_ids": [
+        "src:aurora-partners",
+        "src:aurora-current"
+      ]
+    },
+    {
+      "partnership_id": "partnership:1xbet-esl",
+      "brand_id": "brand:1xbet",
+      "asset_id": "org:esl",
+      "relationship_type": "betting_partner",
+      "disciplines": [
+        "cs2",
+        "dota2"
+      ],
+      "valid_from": "2021-03-09",
+      "valid_to": null,
+      "current_status": "active_by_public_term",
+      "exclusivity": null,
+      "rights": [
+        "broadcast_segments",
+        "predictions",
+        "brand_placement"
+      ],
+      "activation_examples": [],
+      "status": "reported",
+      "confidence": 0.82,
+      "observed_at": "2026-08-15",
+      "claim_ids": [
+        "claim:partnership:1xbet-esl"
+      ],
+      "source_ids": [
+        "src:1xbet-esl",
+        "src:1xbet-esl-extension"
+      ]
+    },
+    {
+      "partnership_id": "partnership:1xbet-pgl",
+      "brand_id": "brand:1xbet",
+      "asset_id": "org:pgl",
+      "relationship_type": "betting_partner",
+      "disciplines": [
+        "cs2",
+        "dota2"
+      ],
+      "valid_from": "2025-02-14",
+      "valid_to": "2026-12-31",
+      "current_status": "active_by_public_term",
+      "exclusivity": null,
+      "rights": [
+        "betting_exclusivity",
+        "live_streams",
+        "broadcast_branding"
+      ],
+      "activation_examples": [],
+      "status": "corroborated",
+      "confidence": 0.92,
+      "observed_at": "2026-08-15",
+      "claim_ids": [
+        "claim:partnership:1xbet-pgl"
+      ],
+      "source_ids": [
+        "src:1xbet-pgl"
+      ]
+    },
+    {
+      "partnership_id": "partnership:betboom-cybershoke",
+      "brand_id": "brand:betboom",
+      "asset_id": "org:cybershoke",
+      "relationship_type": "sponsor",
+      "disciplines": [
+        "cs2",
+        "standoff2"
+      ],
+      "valid_from": "2025-01-16",
+      "valid_to": null,
+      "current_status": "current_unverified",
+      "exclusivity": null,
+      "rights": [
+        "ambassador",
+        "team",
+        "platform"
+      ],
+      "activation_examples": [],
+      "status": "corroborated",
+      "confidence": 0.78,
+      "observed_at": "2026-08-15",
+      "claim_ids": [
+        "claim:partnership:betboom-cybershoke"
+      ],
+      "source_ids": [
+        "src:betboom-cybershoke"
+      ]
+    },
+    {
+      "partnership_id": "partnership:betboom-spirit",
+      "brand_id": "brand:betboom",
+      "asset_id": "org:team-spirit",
+      "relationship_type": "title_partner",
+      "disciplines": [
+        "cs2",
+        "dota2"
+      ],
+      "valid_from": "2024-04-01",
+      "valid_to": null,
+      "current_status": "current_publicly_verified",
+      "exclusivity": null,
+      "rights": [
+        "jersey",
+        "content"
+      ],
+      "activation_examples": [],
+      "status": "official",
+      "confidence": 0.98,
+      "observed_at": "2026-08-15",
+      "claim_ids": [
+        "claim:partnership:betboom-spirit"
+      ],
+      "source_ids": [
+        "src:team-spirit-partners"
+      ]
+    },
+    {
+      "partnership_id": "partnership:betboom-team",
+      "brand_id": "brand:betboom",
+      "asset_id": "org:betboom-team",
+      "relationship_type": "general_partner",
+      "disciplines": [
+        "cs2",
+        "dota2"
+      ],
+      "valid_from": "2022-04-18",
+      "valid_to": null,
+      "current_status": "current_unverified",
+      "exclusivity": null,
+      "rights": [
+        "naming",
+        "main_sponsorship"
+      ],
+      "activation_examples": [],
+      "status": "corroborated",
+      "confidence": 0.8,
+      "observed_at": "2026-08-15",
+      "claim_ids": [
+        "claim:partnership:betboom-team"
+      ],
+      "source_ids": [
+        "src:betboom-team-interview",
+        "src:betboom-team-current"
+      ]
+    },
+    {
+      "partnership_id": "partnership:fonbet-mouz",
+      "brand_id": "brand:fonbet",
+      "asset_id": "org:mouz",
+      "relationship_type": "sponsor",
+      "disciplines": [
+        "cs2"
+      ],
+      "valid_from": "2023-12-01",
+      "valid_to": null,
+      "current_status": "current_publicly_verified",
+      "exclusivity": null,
+      "rights": [
+        "team_sponsorship",
+        "promotions",
+        "merchandise"
+      ],
+      "activation_examples": [],
+      "status": "official",
+      "confidence": 0.98,
+      "observed_at": "2026-08-15",
+      "claim_ids": [
+        "claim:partnership:fonbet-mouz"
+      ],
+      "source_ids": [
+        "src:mouz-partners",
+        "src:fonbet-mouz-merch"
+      ]
+    },
+    {
+      "partnership_id": "partnership:fonbet-strogo",
+      "brand_id": "brand:fonbet",
+      "asset_id": "person:strogo",
+      "relationship_type": "streamer_partner",
+      "disciplines": [
+        "cs2",
+        "dota2"
+      ],
+      "valid_from": null,
+      "valid_to": null,
+      "current_status": "current_publicly_verified",
+      "exclusivity": null,
+      "rights": [
+        "streams",
+        "integrations"
+      ],
+      "activation_examples": [],
+      "status": "corroborated",
+      "confidence": 0.88,
+      "observed_at": "2026-08-15",
+      "claim_ids": [
+        "claim:partnership:fonbet-strogo"
+      ],
+      "source_ids": [
+        "src:fonbet-strogo",
+        "src:fonbet-strogo-current"
+      ]
+    },
+    {
+      "partnership_id": "partnership:liga-gambit",
+      "brand_id": "brand:liga-stavok",
+      "asset_id": "org:gambit",
+      "relationship_type": "general_partner",
+      "disciplines": [
+        "cs2",
+        "dota2"
+      ],
+      "valid_from": "2021-06-09",
+      "valid_to": "2022-06-09",
+      "current_status": "historical",
+      "exclusivity": null,
+      "rights": [
+        "fan_activation"
+      ],
+      "activation_examples": [],
+      "status": "official",
+      "confidence": 0.99,
+      "observed_at": "2026-08-15",
+      "claim_ids": [
+        "claim:partnership:liga-gambit"
+      ],
+      "source_ids": [
+        "src:liga-gambit"
+      ]
+    },
+    {
+      "partnership_id": "partnership:liga-l1ga",
+      "brand_id": "brand:liga-stavok",
+      "asset_id": "org:l1ga",
+      "relationship_type": "title_partner",
+      "disciplines": [
+        "dota2"
+      ],
+      "valid_from": "2024-01-05",
+      "valid_to": null,
+      "current_status": "current_unverified",
+      "exclusivity": null,
+      "rights": [
+        "naming",
+        "team_sponsorship"
+      ],
+      "activation_examples": [],
+      "status": "corroborated",
+      "confidence": 0.86,
+      "observed_at": "2026-08-15",
+      "claim_ids": [
+        "claim:partnership:liga-l1ga"
+      ],
+      "source_ids": [
+        "src:liga-l1ga",
+        "src:liga-l1ga-current"
+      ]
+    },
+    {
+      "partnership_id": "partnership:pari-parivision",
+      "brand_id": "brand:pari",
+      "asset_id": "org:parivision",
+      "relationship_type": "general_partner",
+      "disciplines": [
+        "cs2",
+        "dota2"
+      ],
+      "valid_from": null,
+      "valid_to": null,
+      "current_status": "current_publicly_verified",
+      "exclusivity": null,
+      "rights": [
+        "team_development",
+        "content"
+      ],
+      "activation_examples": [],
+      "status": "official",
+      "confidence": 0.98,
+      "observed_at": "2026-08-15",
+      "claim_ids": [
+        "claim:partnership:pari-parivision"
+      ],
+      "source_ids": [
+        "src:parivision",
+        "src:parivision-partners"
+      ]
+    },
+    {
+      "partnership_id": "partnership:winline-buster",
+      "brand_id": "brand:winline",
+      "asset_id": "person:buster",
+      "relationship_type": "ambassador",
+      "disciplines": [
+        "cs2"
+      ],
+      "valid_from": "2023-06-23",
+      "valid_to": null,
+      "current_status": "current_publicly_verified",
+      "exclusivity": null,
+      "rights": [
+        "community_cast",
+        "content"
+      ],
+      "activation_examples": [],
+      "status": "corroborated",
+      "confidence": 0.96,
+      "observed_at": "2026-08-15",
+      "claim_ids": [
+        "claim:partnership:winline-buster"
+      ],
+      "source_ids": [
+        "src:winline-buster",
+        "src:winline-buster-current"
+      ]
+    },
+    {
+      "partnership_id": "partnership:winline-esl",
+      "brand_id": "brand:winline",
+      "asset_id": "org:esl",
+      "relationship_type": "broadcast_sponsor",
+      "disciplines": [
+        "cs2",
+        "dota2"
+      ],
+      "valid_from": "2023-05-11",
+      "valid_to": null,
+      "current_status": "current_publicly_verified",
+      "exclusivity": null,
+      "rights": [
+        "russian_language_broadcast_sponsorship",
+        "viewer_activation",
+        "community_cast"
+      ],
+      "activation_examples": [],
+      "status": "corroborated",
+      "confidence": 0.96,
+      "observed_at": "2026-08-15",
+      "claim_ids": [
+        "claim:partnership:winline-esl"
+      ],
+      "source_ids": [
+        "src:winline-esl",
+        "src:winline-esl-current"
+      ]
+    },
+    {
+      "partnership_id": "partnership:winline-gaimin",
+      "brand_id": "brand:winline",
+      "asset_id": "org:gaimin",
+      "relationship_type": "sponsor",
+      "disciplines": [
+        "dota2"
+      ],
+      "valid_from": "2023-06-28",
+      "valid_to": null,
+      "current_status": "reported_expired",
+      "exclusivity": null,
+      "rights": [],
+      "activation_examples": [],
+      "status": "reported",
+      "confidence": 0.9,
+      "observed_at": "2026-08-15",
+      "claim_ids": [
+        "claim:partnership:winline-gaimin"
+      ],
+      "source_ids": [
+        "src:winline-gaimin",
+        "src:gaimin-expiry"
+      ]
+    },
+    {
+      "partnership_id": "partnership:winline-magic",
+      "brand_id": "brand:winline",
+      "asset_id": "org:magic",
+      "relationship_type": "sponsor",
+      "disciplines": [
+        "cs2"
+      ],
+      "valid_from": "2026-08-11",
+      "valid_to": null,
+      "current_status": "fresh_public_announcement",
+      "exclusivity": null,
+      "rights": [
+        "jersey"
+      ],
+      "activation_examples": [],
+      "status": "corroborated",
+      "confidence": 0.96,
+      "observed_at": "2026-08-15",
+      "claim_ids": [
+        "claim:partnership:winline-magic"
+      ],
+      "source_ids": [
+        "src:winline-magic",
+        "src:winline-magic-secondary"
+      ]
+    },
+    {
+      "partnership_id": "partnership:winline-pgl",
+      "brand_id": "brand:winline",
+      "asset_id": "org:pgl",
+      "relationship_type": "broadcast_sponsor",
+      "disciplines": [
+        "cs2",
+        "dota2"
+      ],
+      "valid_from": "2024-03-18",
+      "valid_to": null,
+      "current_status": "current_unverified",
+      "exclusivity": null,
+      "rights": [
+        "russian_language_broadcast_sponsorship",
+        "event_activation",
+        "community_cast"
+      ],
+      "activation_examples": [],
+      "status": "official",
+      "confidence": 0.97,
+      "observed_at": "2026-08-15",
+      "claim_ids": [
+        "claim:partnership:winline-pgl"
+      ],
+      "source_ids": [
+        "src:paragon-pgl"
+      ]
+    },
+    {
+      "partnership_id": "partnership:winline-tundra",
+      "brand_id": "brand:winline",
+      "asset_id": "org:tundra",
+      "relationship_type": "main_partner",
+      "disciplines": [
+        "dota2"
+      ],
+      "valid_from": "2023-06-27",
+      "valid_to": null,
+      "current_status": "historical",
+      "exclusivity": null,
+      "rights": [
+        "jersey",
+        "nickname_tag",
+        "website_branding",
+        "social",
+        "online_activation",
+        "offline_activation"
+      ],
+      "activation_examples": [],
+      "status": "corroborated",
+      "confidence": 0.94,
+      "observed_at": "2026-08-15",
+      "claim_ids": [
+        "claim:partnership:winline-tundra"
+      ],
+      "source_ids": [
+        "src:winline-tundra",
+        "src:tundra-exit"
+      ]
+    },
+    {
+      "partnership_id": "partnership:winline-vp",
+      "brand_id": "brand:winline",
+      "asset_id": "org:virtus-pro",
+      "relationship_type": "general_partner",
+      "disciplines": [
+        "cs2",
+        "dota2"
+      ],
+      "valid_from": "2022-01-01",
+      "valid_to": "2024-12-31",
+      "current_status": "historical",
+      "exclusivity": null,
+      "rights": [
+        "jersey",
+        "media",
+        "events",
+        "merchandise"
+      ],
+      "activation_examples": [],
+      "status": "corroborated",
+      "confidence": 0.96,
+      "observed_at": "2026-08-15",
+      "claim_ids": [
+        "claim:partnership:winline-vp"
+      ],
+      "source_ids": [
+        "src:winline-about",
+        "src:winline-vp",
+        "src:vp-partners"
+      ]
+    }
+  ]
+}

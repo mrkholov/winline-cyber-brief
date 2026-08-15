@@ -1,0 +1,354 @@
+{
+  "schema_version": "1.0.0",
+  "research_cutoff": "2026-08-15",
+  "tournament_count": 14,
+  "tournaments": [
+    {
+      "tournament_id": "tournament:betboom-dacha-2024",
+      "name": "BetBoom Dacha Belgrade 2024",
+      "discipline": "dota2",
+      "organizer": "FISSURE / BetBoom",
+      "start_date": "2024-10-19",
+      "end_date": "2024-10-26",
+      "location": "Belgrade, Serbia",
+      "prize_pool": {
+        "amount": 1000000,
+        "currency": "USD"
+      },
+      "team_count": null,
+      "sponsor_ids": [],
+      "rights": [],
+      "status": "corroborated",
+      "confidence": 0.97,
+      "observed_at": "2026-08-15",
+      "claim_ids": [
+        "claim:tournament:betboom-dacha-2024"
+      ],
+      "source_ids": [
+        "src:betboom-dacha"
+      ]
+    },
+    {
+      "tournament_id": "tournament:betboom-streamers-10",
+      "name": "BetBoom Streamers Battle 10",
+      "discipline": "dota2",
+      "organizer": "FISSURE / BetBoom",
+      "start_date": "2025-05-29",
+      "end_date": "2025-06-08",
+      "location": "Online",
+      "prize_pool": {
+        "amount": 5000000,
+        "currency": "RUB"
+      },
+      "team_count": null,
+      "sponsor_ids": [],
+      "rights": [],
+      "status": "corroborated",
+      "confidence": 0.9,
+      "observed_at": "2026-08-15",
+      "claim_ids": [
+        "claim:tournament:betboom-streamers-10"
+      ],
+      "source_ids": [
+        "src:betboom-streamers-10"
+      ]
+    },
+    {
+      "tournament_id": "tournament:d2cl-s17",
+      "name": "Dota 2 Champions League Season 17",
+      "discipline": "dota2",
+      "organizer": "Epic Esports Events",
+      "start_date": "2022-12-01",
+      "end_date": "2022-12-10",
+      "location": "Online",
+      "prize_pool": {
+        "amount": 50000,
+        "currency": "USD"
+      },
+      "team_count": null,
+      "sponsor_ids": [],
+      "rights": [],
+      "status": "corroborated",
+      "confidence": 0.93,
+      "observed_at": "2026-08-15",
+      "claim_ids": [
+        "claim:tournament:d2cl-s17"
+      ],
+      "source_ids": [
+        "src:d2cl-s17"
+      ]
+    },
+    {
+      "tournament_id": "tournament:ewc-2026-cs2",
+      "name": "Esports World Cup 2026 — Counter-Strike 2",
+      "discipline": "cs2",
+      "organizer": "Esports World Cup",
+      "start_date": "2026-08-12",
+      "end_date": "2026-08-23",
+      "location": "Paris, France",
+      "prize_pool": {
+        "amount": 2000000,
+        "currency": "USD"
+      },
+      "team_count": null,
+      "sponsor_ids": [],
+      "rights": [],
+      "status": "in_progress",
+      "confidence": 0.98,
+      "observed_at": "2026-08-15",
+      "claim_ids": [
+        "claim:tournament:ewc-2026-cs2"
+      ],
+      "source_ids": [
+        "src:ewc-2026"
+      ]
+    },
+    {
+      "tournament_id": "tournament:fissure-universe-8",
+      "name": "FISSURE Universe Episode 8",
+      "discipline": "dota2",
+      "organizer": "FISSURE",
+      "start_date": "2026-01-21",
+      "end_date": "2026-02-01",
+      "location": "Online",
+      "prize_pool": {
+        "amount": 250000,
+        "currency": "USD"
+      },
+      "team_count": null,
+      "sponsor_ids": [],
+      "rights": [],
+      "status": "official",
+      "confidence": 0.99,
+      "observed_at": "2026-08-15",
+      "claim_ids": [
+        "claim:tournament:fissure-universe-8"
+      ],
+      "source_ids": [
+        "src:fissure-universe-8"
+      ]
+    },
+    {
+      "tournament_id": "tournament:pari-galaxy",
+      "name": "PARI GALAXY: СТРИМНИЦА",
+      "discipline": "cs2",
+      "organizer": "PARI",
+      "start_date": "2026-02-18",
+      "end_date": "2026-02-21",
+      "location": "Moscow, final LAN",
+      "prize_pool": {
+        "amount": 1000000,
+        "currency": "RUB"
+      },
+      "team_count": null,
+      "sponsor_ids": [],
+      "rights": [],
+      "status": "reported",
+      "confidence": 0.9,
+      "observed_at": "2026-08-15",
+      "claim_ids": [
+        "claim:tournament:pari-galaxy"
+      ],
+      "source_ids": [
+        "src:pari-galaxy"
+      ]
+    },
+    {
+      "tournament_id": "tournament:standoff-major-2023",
+      "name": "WINLINE EPIC Standoff 2 Winter Major 2023",
+      "discipline": "standoff2",
+      "organizer": "Epic Esports Events",
+      "start_date": "2023-12-06",
+      "end_date": "2023-12-10",
+      "location": "Moscow, VK Play Arena",
+      "prize_pool": {
+        "amount": 3000000,
+        "currency": "RUB"
+      },
+      "team_count": null,
+      "sponsor_ids": [],
+      "rights": [],
+      "status": "corroborated",
+      "confidence": 0.97,
+      "observed_at": "2026-08-15",
+      "claim_ids": [
+        "claim:tournament:standoff-major-2023"
+      ],
+      "source_ids": [
+        "src:standoff-2023"
+      ]
+    },
+    {
+      "tournament_id": "tournament:standoff-major-2024",
+      "name": "WINLINE EPIC Standoff 2 Summer Major 2024",
+      "discipline": "standoff2",
+      "organizer": "Epic Esports Events",
+      "start_date": "2024-07-10",
+      "end_date": "2024-07-14",
+      "location": "Moscow",
+      "prize_pool": {
+        "amount": 3000000,
+        "currency": "RUB"
+      },
+      "team_count": null,
+      "sponsor_ids": [],
+      "rights": [],
+      "status": "corroborated",
+      "confidence": 0.94,
+      "observed_at": "2026-08-15",
+      "claim_ids": [
+        "claim:tournament:standoff-major-2024"
+      ],
+      "source_ids": [
+        "src:standoff-2024"
+      ]
+    },
+    {
+      "tournament_id": "tournament:standoff-major-2026",
+      "name": "WINLINE EPIC Standoff 2 Jumble Rumble Major",
+      "discipline": "standoff2",
+      "organizer": "Epic Esports Events",
+      "start_date": "2026-07-04",
+      "end_date": "2026-08-02",
+      "location": "Moscow, final LAN",
+      "prize_pool": {
+        "amount": 6000000,
+        "currency": "RUB"
+      },
+      "team_count": null,
+      "sponsor_ids": [],
+      "rights": [],
+      "status": "corroborated",
+      "confidence": 0.94,
+      "observed_at": "2026-08-15",
+      "claim_ids": [
+        "claim:tournament:standoff-major-2026"
+      ],
+      "source_ids": [
+        "src:standoff-2026"
+      ]
+    },
+    {
+      "tournament_id": "tournament:ti-2026",
+      "name": "The International 2026",
+      "discipline": "dota2",
+      "organizer": "Valve / PGL",
+      "start_date": "2026-08-13",
+      "end_date": "2026-08-23",
+      "location": "Shanghai, China",
+      "prize_pool": null,
+      "team_count": null,
+      "sponsor_ids": [],
+      "rights": [],
+      "status": "in_progress",
+      "confidence": 0.99,
+      "observed_at": "2026-08-15",
+      "claim_ids": [
+        "claim:tournament:ti-2026"
+      ],
+      "source_ids": [
+        "src:ti-2026"
+      ]
+    },
+    {
+      "tournament_id": "tournament:wpl-s2",
+      "name": "Winline Pro League Season 2",
+      "discipline": "cs2",
+      "organizer": "Winline / FACEIT",
+      "start_date": "2024-10-21",
+      "end_date": "2024-11-03",
+      "location": "Russia, online",
+      "prize_pool": {
+        "amount": 3580000,
+        "currency": "RUB"
+      },
+      "team_count": null,
+      "sponsor_ids": [],
+      "rights": [],
+      "status": "corroborated",
+      "confidence": 0.92,
+      "observed_at": "2026-08-15",
+      "claim_ids": [
+        "claim:tournament:wpl-s2"
+      ],
+      "source_ids": [
+        "src:wpl-s2-audience"
+      ]
+    },
+    {
+      "tournament_id": "tournament:wpl-s3",
+      "name": "Winline Pro League Season 3",
+      "discipline": "cs2",
+      "organizer": "Winline / FACEIT",
+      "start_date": "2025-09-09",
+      "end_date": "2025-09-21",
+      "location": "Russia, online",
+      "prize_pool": {
+        "amount": 4615000,
+        "currency": "RUB"
+      },
+      "team_count": null,
+      "sponsor_ids": [],
+      "rights": [],
+      "status": "corroborated",
+      "confidence": 0.94,
+      "observed_at": "2026-08-15",
+      "claim_ids": [
+        "claim:tournament:wpl-s3"
+      ],
+      "source_ids": [
+        "src:wpl-s3"
+      ]
+    },
+    {
+      "tournament_id": "tournament:wss-s2-cs2",
+      "name": "WINLINE Star Series Season 2",
+      "discipline": "cs2",
+      "organizer": "Winline",
+      "start_date": "2026-02-25",
+      "end_date": "2026-03-08",
+      "location": "Online",
+      "prize_pool": {
+        "amount": 3500000,
+        "currency": "RUB"
+      },
+      "team_count": null,
+      "sponsor_ids": [],
+      "rights": [],
+      "status": "corroborated",
+      "confidence": 0.95,
+      "observed_at": "2026-08-15",
+      "claim_ids": [
+        "claim:tournament:wss-s2-cs2"
+      ],
+      "source_ids": [
+        "src:wss-cs2-s2"
+      ]
+    },
+    {
+      "tournament_id": "tournament:wss-s2-dota",
+      "name": "WINLINE Star Series Season 2",
+      "discipline": "dota2",
+      "organizer": "Winline",
+      "start_date": "2026-01-22",
+      "end_date": "2026-02-01",
+      "location": "Online",
+      "prize_pool": {
+        "amount": 3500000,
+        "currency": "RUB"
+      },
+      "team_count": null,
+      "sponsor_ids": [],
+      "rights": [],
+      "status": "corroborated",
+      "confidence": 0.94,
+      "observed_at": "2026-08-15",
+      "claim_ids": [
+        "claim:tournament:wss-s2-dota"
+      ],
+      "source_ids": [
+        "src:wss-dota-s2"
+      ]
+    }
+  ]
+}

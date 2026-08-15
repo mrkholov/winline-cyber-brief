@@ -1,0 +1,184 @@
+{
+  "schema_version": "1.0.0",
+  "research_cutoff": "2026-08-15",
+  "formula_version": "public-attractiveness-v1",
+  "score_status": "comparative_public_data_score_not_roi",
+  "disciplines": [
+    {
+      "discipline": "cs2",
+      "period": "public_data_available_by_2026-08-15",
+      "score": 4.2,
+      "score_scale": "1..5",
+      "formula_version": "public-attractiveness-v1",
+      "weights": {
+        "audience_scale": 0.3,
+        "calendar_density": 0.2,
+        "bookmaker_saturation": 0.15,
+        "winline_presence": 0.15,
+        "measurement_quality": 0.2
+      },
+      "inputs": {
+        "audience_scale": 3,
+        "calendar_density": 4,
+        "bookmaker_saturation": 5,
+        "winline_presence": 5,
+        "measurement_quality": 5
+      },
+      "input_provenance": {
+        "max_top_50_viewers": 60105,
+        "tournament_count": 5,
+        "bookmaker_count": 6,
+        "winline_relationship_count": 5,
+        "winline_tournament_count": 3,
+        "twitch_snapshot_count": 2,
+        "audience_record_count": 2,
+        "count_thresholds": [
+          1,
+          2,
+          4,
+          6
+        ],
+        "audience_thresholds": [
+          10000,
+          50000,
+          100000,
+          200000
+        ],
+        "source_files": [
+          "data/research/partnerships.json",
+          "data/research/tournaments.json",
+          "data/research/tournament-audience.json",
+          "data/research/streamer-observations.json"
+        ]
+      },
+      "twitch_snapshot_ids": [
+        "twitch:cs2",
+        "twitch:cs2-ewc-live"
+      ],
+      "status": "inferred",
+      "confidence": 0.68,
+      "limitations": [
+        "Public-data score, not ROI.",
+        "RU-language audience is not equivalent to Russian geography.",
+        "Contract costs, FTD, NGR, retention and internal rights are unavailable."
+      ],
+      "observed_at": "2026-08-15"
+    },
+    {
+      "discipline": "dota2",
+      "period": "public_data_available_by_2026-08-15",
+      "score": 4.8,
+      "score_scale": "1..5",
+      "formula_version": "public-attractiveness-v1",
+      "weights": {
+        "audience_scale": 0.3,
+        "calendar_density": 0.2,
+        "bookmaker_saturation": 0.15,
+        "winline_presence": 0.15,
+        "measurement_quality": 0.2
+      },
+      "inputs": {
+        "audience_scale": 5,
+        "calendar_density": 5,
+        "bookmaker_saturation": 5,
+        "winline_presence": 5,
+        "measurement_quality": 4
+      },
+      "input_provenance": {
+        "max_top_50_viewers": 274322,
+        "tournament_count": 6,
+        "bookmaker_count": 6,
+        "winline_relationship_count": 5,
+        "winline_tournament_count": 1,
+        "twitch_snapshot_count": 1,
+        "audience_record_count": 2,
+        "count_thresholds": [
+          1,
+          2,
+          4,
+          6
+        ],
+        "audience_thresholds": [
+          10000,
+          50000,
+          100000,
+          200000
+        ],
+        "source_files": [
+          "data/research/partnerships.json",
+          "data/research/tournaments.json",
+          "data/research/tournament-audience.json",
+          "data/research/streamer-observations.json"
+        ]
+      },
+      "twitch_snapshot_ids": [
+        "twitch:dota2"
+      ],
+      "status": "inferred",
+      "confidence": 0.68,
+      "limitations": [
+        "Public-data score, not ROI.",
+        "RU-language audience is not equivalent to Russian geography.",
+        "Contract costs, FTD, NGR, retention and internal rights are unavailable."
+      ],
+      "observed_at": "2026-08-15"
+    },
+    {
+      "discipline": "standoff2",
+      "period": "public_data_available_by_2026-08-15",
+      "score": 2.25,
+      "score_scale": "1..5",
+      "formula_version": "public-attractiveness-v1",
+      "weights": {
+        "audience_scale": 0.3,
+        "calendar_density": 0.2,
+        "bookmaker_saturation": 0.15,
+        "winline_presence": 0.15,
+        "measurement_quality": 0.2
+      },
+      "inputs": {
+        "audience_scale": 1,
+        "calendar_density": 3,
+        "bookmaker_saturation": 2,
+        "winline_presence": 3,
+        "measurement_quality": 3
+      },
+      "input_provenance": {
+        "max_top_50_viewers": 0,
+        "tournament_count": 3,
+        "bookmaker_count": 1,
+        "winline_relationship_count": 0,
+        "winline_tournament_count": 3,
+        "twitch_snapshot_count": 0,
+        "audience_record_count": 2,
+        "count_thresholds": [
+          1,
+          2,
+          4,
+          6
+        ],
+        "audience_thresholds": [
+          10000,
+          50000,
+          100000,
+          200000
+        ],
+        "source_files": [
+          "data/research/partnerships.json",
+          "data/research/tournaments.json",
+          "data/research/tournament-audience.json",
+          "data/research/streamer-observations.json"
+        ]
+      },
+      "twitch_snapshot_ids": [],
+      "status": "inferred",
+      "confidence": 0.45,
+      "limitations": [
+        "Public-data score, not ROI.",
+        "RU-language audience is not equivalent to Russian geography.",
+        "Contract costs, FTD, NGR, retention and internal rights are unavailable."
+      ],
+      "observed_at": "2026-08-15"
+    }
+  ]
+}
