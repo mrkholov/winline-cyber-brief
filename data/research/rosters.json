@@ -1,0 +1,370 @@
+{
+  "schema_version": "1.0.0",
+  "research_cutoff": "2026-08-16",
+  "status": "reported",
+  "confidence": 0.85,
+  "method": "Транскрипция инфографики «Карта российского киберспорта на 2026 год» (КИБЕР / Sports.ru). Обозначения: команда, турнир, организация, студия; отдельно отмечены активы с неймингом букмекера.",
+  "brand_count": 6,
+  "brands": [
+    {
+      "brand_id": "brand:winline",
+      "name": "Winline",
+      "assets": [
+        {
+          "asset_type": "team",
+          "name": "Tundra",
+          "bookmaker_naming": false
+        },
+        {
+          "asset_type": "team",
+          "name": "Virtus.pro",
+          "bookmaker_naming": false
+        },
+        {
+          "asset_type": "tournament",
+          "name": "Pro League",
+          "bookmaker_naming": true
+        },
+        {
+          "asset_type": "tournament",
+          "name": "Insight",
+          "bookmaker_naming": true
+        },
+        {
+          "asset_type": "tournament",
+          "name": "Star Series",
+          "bookmaker_naming": true
+        },
+        {
+          "asset_type": "organization",
+          "name": "ESL",
+          "bookmaker_naming": false
+        },
+        {
+          "asset_type": "organization",
+          "name": "PGL",
+          "bookmaker_naming": false
+        },
+        {
+          "asset_type": "studio",
+          "name": "Paragon",
+          "bookmaker_naming": false
+        }
+      ],
+      "streamers": [
+        "buster",
+        "bySL4M",
+        "deepins02",
+        "dinablin",
+        "Dmitry_Lixxx",
+        "DreadzTV",
+        "FORZOREZOR",
+        "guit88man",
+        "janichka",
+        "just_ns",
+        "egxrdemxn",
+        "m1xerboy",
+        "9pasha",
+        "asiv0y",
+        "bratishkinoff",
+        "GeneraL_HS_",
+        "gr0mjkeee",
+        "kartash0v",
+        "KEFIR",
+        "korya_mc",
+        "LAGODA",
+        "linaone",
+        "melharucos",
+        "morphe_ya",
+        "pathofexilebota",
+        "r4dom1r",
+        "ramzes",
+        "rostislav_999",
+        "ROUNDZ",
+        "RUSLANDVIP",
+        "samuraj",
+        "sasavot",
+        "Shiishak",
+        "SNAILKICK",
+        "WorldEdit",
+        "yurapivo",
+        "Zark",
+        "m3wsu",
+        "Mabelend",
+        "actor_step",
+        "QRUSHcsgo",
+        "davay_po_novoy",
+        "GAECHKATM",
+        "enzzai",
+        "sayurri",
+        "poisonika",
+        "Tankzor",
+        "VooDooSh",
+        "watchfulTV"
+      ],
+      "streamer_count": 49,
+      "asset_count": 8,
+      "source_ids": [
+        "src:esports-sponsorship-map-2026"
+      ],
+      "observed_at": "2026-08-16"
+    },
+    {
+      "brand_id": "brand:betboom",
+      "name": "BetBoom",
+      "assets": [
+        {
+          "asset_type": "team",
+          "name": "BetBoom Team",
+          "bookmaker_naming": true
+        },
+        {
+          "asset_type": "team",
+          "name": "Spirit",
+          "bookmaker_naming": false
+        },
+        {
+          "asset_type": "team",
+          "name": "FURIA",
+          "bookmaker_naming": false
+        },
+        {
+          "asset_type": "organization",
+          "name": "Blast",
+          "bookmaker_naming": false
+        },
+        {
+          "asset_type": "organization",
+          "name": "Fissure",
+          "bookmaker_naming": false
+        },
+        {
+          "asset_type": "organization",
+          "name": "CCT",
+          "bookmaker_naming": false
+        },
+        {
+          "asset_type": "organization",
+          "name": "Esports World Cup",
+          "bookmaker_naming": false
+        },
+        {
+          "asset_type": "tournament",
+          "name": "Valorant League",
+          "bookmaker_naming": true
+        },
+        {
+          "asset_type": "tournament",
+          "name": "Aunkere Cup",
+          "bookmaker_naming": true
+        },
+        {
+          "asset_type": "tournament",
+          "name": "FC Streamers Cup",
+          "bookmaker_naming": true
+        },
+        {
+          "asset_type": "tournament",
+          "name": "Women Cup",
+          "bookmaker_naming": true
+        },
+        {
+          "asset_type": "tournament",
+          "name": "Streamers Battle",
+          "bookmaker_naming": true
+        },
+        {
+          "asset_type": "tournament",
+          "name": "All-Star",
+          "bookmaker_naming": true
+        },
+        {
+          "asset_type": "tournament",
+          "name": "Landalan",
+          "bookmaker_naming": false
+        }
+      ],
+      "streamers": [
+        "Nix",
+        "JustCooman",
+        "RelaxCIS",
+        "dayneez",
+        "Vovapain",
+        "blindzone",
+        "hhakuu",
+        "RavshanN",
+        "renatko",
+        "Chopper",
+        "FalleN",
+        "sony9sha",
+        "dyrachyo",
+        "Эрик Шоков",
+        "Paradeev1ch",
+        "Koreshzy",
+        "Danila Gorilla",
+        "By_owl",
+        "Shadowkek",
+        "mantis",
+        "Василиса",
+        "1cen1ce",
+        "cheatbanned",
+        "Exile",
+        "sclkoma",
+        "Illidan",
+        "Silvername",
+        "ct0m",
+        "Adekvat",
+        "mugretnug",
+        "whylollycry",
+        "korb3n",
+        "Влад Раговский",
+        "YBN",
+        "steel",
+        "Stray228",
+        "ZoneR",
+        "Overdrive",
+        "strimans",
+        "Morphilina",
+        "Травоман",
+        "Aunkere",
+        "solo",
+        "Mariachi",
+        "Hooch",
+        "Mager",
+        "Handy",
+        "Maelstorm",
+        "RachelR",
+        "Avice",
+        "Dabex",
+        "Lebwa",
+        "Dadte",
+        "elwycco",
+        "Smurf",
+        "Diamondprox",
+        "Keysie",
+        "k1tava"
+      ],
+      "streamer_count": 58,
+      "asset_count": 14,
+      "source_ids": [
+        "src:esports-sponsorship-map-2026"
+      ],
+      "observed_at": "2026-08-16"
+    },
+    {
+      "brand_id": "brand:fonbet",
+      "name": "FONBET",
+      "assets": [
+        {
+          "asset_type": "team",
+          "name": "Mouz",
+          "bookmaker_naming": false
+        },
+        {
+          "asset_type": "tournament",
+          "name": "Media League",
+          "bookmaker_naming": true
+        },
+        {
+          "asset_type": "organization",
+          "name": "ESL",
+          "bookmaker_naming": false
+        },
+        {
+          "asset_type": "organization",
+          "name": "PGL",
+          "bookmaker_naming": false
+        },
+        {
+          "asset_type": "studio",
+          "name": "Paragon",
+          "bookmaker_naming": false,
+          "note": "CS"
+        }
+      ],
+      "streamers": [
+        "Cake",
+        "T2x2",
+        "Strogo",
+        "des0ut",
+        "Pch3lk1n",
+        "closetape",
+        "AnarAbdullaev",
+        "Sqreendota2",
+        "ILTW",
+        "BAXA",
+        "Len",
+        "Аналитика Ошибок"
+      ],
+      "streamer_count": 12,
+      "asset_count": 5,
+      "source_ids": [
+        "src:esports-sponsorship-map-2026"
+      ],
+      "observed_at": "2026-08-16"
+    },
+    {
+      "brand_id": "brand:pari",
+      "name": "PARI",
+      "assets": [
+        {
+          "asset_type": "team",
+          "name": "PARIVISION",
+          "bookmaker_naming": true
+        }
+      ],
+      "streamers": [
+        "Recrent",
+        "Afoninje",
+        "Jerry",
+        "formix",
+        "tried",
+        "limitless",
+        "Miller_Gena",
+        "Wonderful_Liar"
+      ],
+      "streamer_count": 8,
+      "asset_count": 1,
+      "source_ids": [
+        "src:esports-sponsorship-map-2026"
+      ],
+      "observed_at": "2026-08-16"
+    },
+    {
+      "brand_id": "brand:liga-stavok",
+      "name": "Лига Ставок",
+      "assets": [
+        {
+          "asset_type": "team",
+          "name": "L1ga",
+          "bookmaker_naming": true
+        }
+      ],
+      "streamers": [],
+      "streamer_count": 0,
+      "asset_count": 1,
+      "source_ids": [
+        "src:esports-sponsorship-map-2026"
+      ],
+      "observed_at": "2026-08-16"
+    },
+    {
+      "brand_id": "brand:bet-m",
+      "name": "Бет-М",
+      "assets": [
+        {
+          "asset_type": "team",
+          "name": "Bet-M 33",
+          "bookmaker_naming": true
+        }
+      ],
+      "streamers": [],
+      "streamer_count": 0,
+      "asset_count": 1,
+      "source_ids": [
+        "src:esports-sponsorship-map-2026"
+      ],
+      "observed_at": "2026-08-16"
+    }
+  ]
+}

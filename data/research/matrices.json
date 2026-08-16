@@ -139,7 +139,7 @@
     },
     {
       "brand_id": "brand:winline",
-      "sampled_relationship_count": 7,
+      "sampled_relationship_count": 10,
       "asset_ids": [
         "org:esl",
         "org:gaimin",
@@ -147,7 +147,10 @@
         "org:pgl",
         "org:tundra",
         "org:virtus-pro",
-        "person:buster"
+        "person:bratishkinoff",
+        "person:buster",
+        "person:deepins02",
+        "person:ramzes666"
       ],
       "relationship_types": [
         "ambassador",
@@ -172,8 +175,8 @@
         "historical",
         "reported_expired"
       ],
-      "current_public_signal_count": 3,
-      "needs_verification_count": 1,
+      "current_public_signal_count": 4,
+      "needs_verification_count": 3,
       "ended_or_expired_count": 3
     }
   ],
@@ -1400,7 +1403,7 @@
   "data_completeness": [
     {
       "dataset": "partnerships",
-      "records": 18,
+      "records": 21,
       "available_fields": [
         "brand",
         "asset",

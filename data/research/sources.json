@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0.0",
   "research_cutoff": "2026-08-15",
-  "source_count": 52,
+  "source_count": 63,
   "sources": [
     {
       "source_id": "src:1xbet-esl",
@@ -469,6 +469,105 @@
       "source_type": "database",
       "published_at": null,
       "observed_at": "2026-08-15",
+      "access": "public"
+    },
+    {
+      "source_id": "src:winline-bratishkinoff-deepins",
+      "url": "https://esports.ru/news/bratishkinoff-i-deepins02-stali-ambassadorami-winline/",
+      "publisher": "esports.ru",
+      "source_type": "secondary_media",
+      "published_at": "2025-02-05",
+      "observed_at": "2026-08-16",
+      "access": "public"
+    },
+    {
+      "source_id": "src:legalbet-bratishkinoff",
+      "url": "https://legalbet.ru/daily/762620",
+      "publisher": "Legalbet",
+      "source_type": "secondary_media",
+      "published_at": "2025-02-05",
+      "observed_at": "2026-08-16",
+      "access": "public"
+    },
+    {
+      "source_id": "src:pari-ambassador-strategy",
+      "url": "https://www.sports.ru/betting/industry/1117155820-pari-ob-ambassadorax-net-smysla-soderzhat-ogromnyj-pul-iz-10-12-chelov.html",
+      "publisher": "Sports.ru — Беттинг-индустрия",
+      "source_type": "secondary_media",
+      "published_at": null,
+      "observed_at": "2026-08-16",
+      "access": "public"
+    },
+    {
+      "source_id": "src:maddyson-free-agent-price",
+      "url": "https://cyber.sports.ru/streamers-twitch/1117039708-meddison-ya-svobodnyj-agent-i-ya-gotov-winline-moj-lyubimyj-bukmeker-k.html",
+      "publisher": "Sports.ru — Киберспорт",
+      "source_type": "secondary_media",
+      "published_at": null,
+      "observed_at": "2026-08-16",
+      "access": "public"
+    },
+    {
+      "source_id": "src:wss-s3-2026",
+      "url": "https://cybersport.metaratings.ru/articles/winline-star-series-season-3-po-cs2-raspisanie-setka-komandy-i-translyaciya-turnira/",
+      "publisher": "Metaratings",
+      "source_type": "secondary_media",
+      "published_at": null,
+      "observed_at": "2026-08-16",
+      "access": "public"
+    },
+    {
+      "source_id": "src:twitchtracker-bratishkinoff",
+      "url": "https://twitchtracker.com/bratishkinoff",
+      "publisher": "TwitchTracker",
+      "source_type": "analytics",
+      "published_at": null,
+      "observed_at": "2026-08-16",
+      "access": "public"
+    },
+    {
+      "source_id": "src:twitchtracker-deepins02",
+      "url": "https://twitchtracker.com/deepins02",
+      "publisher": "TwitchTracker",
+      "source_type": "analytics",
+      "published_at": null,
+      "observed_at": "2026-08-16",
+      "access": "public"
+    },
+    {
+      "source_id": "src:streamer-count-map-2026",
+      "url": "https://cyber.sports.ru/betting/1117063397-betboom-lidiruet-sredi-bukmekerov-po-chislu-podpisannyx-strimerov-58-c.html",
+      "publisher": "Sports.ru — Киберспорт",
+      "source_type": "secondary_media",
+      "published_at": "2026-02-04",
+      "observed_at": "2026-08-16",
+      "access": "public"
+    },
+    {
+      "source_id": "src:winline-ambassadors-2026",
+      "url": "https://www.sportsdaily.ru/bookmakers/winline/icegergert-stal-ambassadorom-winline/",
+      "publisher": "SportsDaily",
+      "source_type": "secondary_media",
+      "published_at": "2026-06-30",
+      "observed_at": "2026-08-16",
+      "access": "public"
+    },
+    {
+      "source_id": "src:esports-sponsorship-map-2026",
+      "url": "https://cyber.sports.ru/betting/blogs/3382281.html",
+      "publisher": "Sports.ru — «Карта российского киберспорта на 2026 год»",
+      "source_type": "secondary_media",
+      "published_at": "2026-02-04",
+      "observed_at": "2026-08-16",
+      "access": "public"
+    },
+    {
+      "source_id": "src:betboom-new-ambassadors-2026",
+      "url": "https://www.cybersport.ru/tags/strimery/ilya-satir-andrei-kokoshka-i-dmitrii-koval-stali-ambassadorami-betboom",
+      "publisher": "Cybersport.ru",
+      "source_type": "secondary_media",
+      "published_at": "2026-05-07",
+      "observed_at": "2026-08-16",
       "access": "public"
     }
   ]

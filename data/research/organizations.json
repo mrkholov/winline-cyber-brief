@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0.0",
   "research_cutoff": "2026-08-15",
-  "organization_count": 23,
+  "organization_count": 26,
   "organizations": [
     {
       "organization_id": "brand:1xbet",
@@ -249,6 +249,19 @@
       "observed_at": "2026-08-15"
     },
     {
+      "organization_id": "person:bratishkinoff",
+      "name": "Bratishkinoff (Владимир Семенюк)",
+      "organization_type": "streamer",
+      "disciplines": [
+        "variety",
+        "cs2"
+      ],
+      "official_urls": [
+        "https://www.twitch.tv/bratishkinoff"
+      ],
+      "observed_at": "2026-08-16"
+    },
+    {
       "organization_id": "person:buster",
       "name": "Buster",
       "organization_type": "streamer",
@@ -259,6 +272,30 @@
         "https://www.twitch.tv/buster"
       ],
       "observed_at": "2026-08-15"
+    },
+    {
+      "organization_id": "person:deepins02",
+      "name": "deepins02 (Иван Бессмертных)",
+      "organization_type": "streamer",
+      "disciplines": [
+        "variety"
+      ],
+      "official_urls": [
+        "https://www.twitch.tv/deepins02"
+      ],
+      "observed_at": "2026-08-16"
+    },
+    {
+      "organization_id": "person:ramzes666",
+      "name": "RAMZES666 (Роман Кушнарёв)",
+      "organization_type": "streamer",
+      "disciplines": [
+        "dota2"
+      ],
+      "official_urls": [
+        "https://www.twitch.tv/ramzes"
+      ],
+      "observed_at": "2026-08-16"
     },
     {
       "organization_id": "person:strogo",

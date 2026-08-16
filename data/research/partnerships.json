@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0.0",
   "research_cutoff": "2026-08-15",
-  "partnership_count": 18,
+  "partnership_count": 21,
   "partnerships": [
     {
       "partnership_id": "partnership:1xbet-aurora",
@@ -522,6 +522,88 @@
         "src:winline-vp",
         "src:vp-partners"
       ]
+    },
+    {
+      "partnership_id": "partnership:winline-bratishkinoff",
+      "brand_id": "brand:winline",
+      "asset_id": "person:bratishkinoff",
+      "relationship_type": "ambassador",
+      "disciplines": [
+        "variety",
+        "cs2"
+      ],
+      "valid_from": "2025-02-05",
+      "valid_to": null,
+      "current_status": "current_unverified",
+      "exclusivity": null,
+      "rights": [
+        "content",
+        "community_cast"
+      ],
+      "activation_examples": [
+        "капитан команды на WINLINE Star Series Season 2",
+        "каст турниров, права на которые у Winline"
+      ],
+      "status": "corroborated",
+      "confidence": 0.9,
+      "observed_at": "2026-08-16",
+      "claim_ids": [],
+      "source_ids": [
+        "src:winline-bratishkinoff-deepins",
+        "src:legalbet-bratishkinoff"
+      ],
+      "notes": "Объявлено 05.02.2025. До этого работал с PARI, свободный агент с конца 2024. SLAY KING 2024, два года подряд лучший контент-мейкер SLAY. Актуальность на август 2026 публично не подтверждена."
+    },
+    {
+      "partnership_id": "partnership:winline-deepins02",
+      "brand_id": "brand:winline",
+      "asset_id": "person:deepins02",
+      "relationship_type": "ambassador",
+      "disciplines": [
+        "variety"
+      ],
+      "valid_from": "2025-02-05",
+      "valid_to": null,
+      "current_status": "current_unverified",
+      "exclusivity": null,
+      "rights": [
+        "content"
+      ],
+      "activation_examples": [],
+      "status": "corroborated",
+      "confidence": 0.88,
+      "observed_at": "2026-08-16",
+      "claim_ids": [],
+      "source_ids": [
+        "src:winline-bratishkinoff-deepins"
+      ],
+      "notes": "Объявлено 05.02.2025 вместе с Bratishkinoff. Стримит Just Chatting, ROBLOX, Minecraft — вне киберспортивных категорий. Актуальность на август 2026 публично не подтверждена."
+    },
+    {
+      "partnership_id": "partnership:winline-ramzes666",
+      "brand_id": "brand:winline",
+      "asset_id": "person:ramzes666",
+      "relationship_type": "ambassador",
+      "disciplines": [
+        "dota2"
+      ],
+      "valid_from": "2024-01-01",
+      "valid_to": null,
+      "current_status": "current_publicly_verified",
+      "exclusivity": null,
+      "rights": [
+        "content",
+        "community_cast"
+      ],
+      "activation_examples": [],
+      "status": "corroborated",
+      "confidence": 0.92,
+      "observed_at": "2026-08-16",
+      "claim_ids": [],
+      "source_ids": [
+        "src:winline-ambassadors-2026"
+      ],
+      "notes": "Указан среди амбассадоров Winline в обзоре от 30.06.2026. Совпадает с замером: канал ramzes нёс бренд Winline во время The International 2026 — 17 025 зрителей в момент замера."
     }
   ]
 }
