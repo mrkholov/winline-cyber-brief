@@ -548,6 +548,70 @@
           </div>
         </div>
         <div style="margin-top:16px;background:#1D1C1F;border-left:2px solid #FF6A1A;border-radius:0 10px 10px 0;padding:16px 20px;font-size:13px;line-height:1.6;color:#C7C6CC;">{{ eventsGap }}</div>
+
+        <div style="font-size:17px;font-weight:800;margin:34px 0 4px;">Собственные медийные мероприятия</div>
+        <div style="font-size:13px;color:#77767C;margin-bottom:14px;">Продукты Winline вне киберспортивных дисциплин, но на той же аудитории и с теми же лицами</div>
+        <sc-for list="{{ mediaEvents }}" as="e" hint-placeholder-count="1">
+          <div style="background:#141416;border:1px solid rgba(255,255,255,0.09);border-radius:14px;overflow:hidden;">
+            <div style="display:grid;grid-template-columns:1.05fr 1fr;gap:0;">
+              <div style="padding:24px 26px;">
+                <div style="display:flex;align-items:baseline;gap:12px;flex-wrap:wrap;">
+                  <div style="font-size:20px;font-weight:800;">{{ e.name }}</div>
+                  <sc-if value="{{ e.isLive }}" hint-placeholder-val="{{ true }}">
+                    <span style="font-size:10.5px;font-weight:800;letter-spacing:0.6px;background:#FF6A1A;color:#0A0A0C;border-radius:5px;padding:3px 8px;">В ЭФИРЕ {{ e.date }}</span>
+                  </sc-if>
+                </div>
+                <div style="font-size:13px;color:#9A9AA0;line-height:1.55;margin-top:8px;">{{ e.format }}</div>
+
+                <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:20px;">
+                  <div style="background:#1D1C1F;border-radius:10px;padding:14px 16px;">
+                    <div style="font-family:'JetBrains Mono',monospace;font-size:24px;font-weight:800;color:#FF6A1A;">{{ e.viewers }}</div>
+                    <div style="font-size:11.5px;color:#9A9AA0;line-height:1.4;margin-top:5px;">зрителей в момент наблюдения</div>
+                  </div>
+                  <div style="background:#1D1C1F;border-radius:10px;padding:14px 16px;">
+                    <div style="font-family:'JetBrains Mono',monospace;font-size:24px;font-weight:800;color:#FF6A1A;">{{ e.prize }}</div>
+                    <div style="font-size:11.5px;color:#9A9AA0;line-height:1.4;margin-top:5px;">призовой фонд</div>
+                  </div>
+                </div>
+
+                <div style="font-size:11.5px;font-weight:700;letter-spacing:0.6px;color:#77767C;margin:20px 0 9px;">КТО В КАДРЕ</div>
+                <div style="display:flex;flex-direction:column;gap:7px;">
+                  <sc-for list="{{ e.people }}" as="p" hint-placeholder-count="5">
+                    <div style="font-size:13px;line-height:1.4;">
+                      <span style="font-weight:800;{{ p.style }}">{{ p.name }}</span>
+                      <span style="color:#9A9AA0;"> — {{ p.role }}. {{ p.note }}</span>
+                    </div>
+                  </sc-for>
+                </div>
+
+                <div style="font-size:11.5px;font-weight:700;letter-spacing:0.6px;color:#77767C;margin:20px 0 9px;">ЧТО ВЕДЁТ К СТАВКЕ ПРЯМО В ЭФИРЕ</div>
+                <div style="display:flex;flex-direction:column;gap:6px;">
+                  <sc-for list="{{ e.mechanics }}" as="m" hint-placeholder-count="2">
+                    <div style="font-size:13px;color:#C7C6CC;line-height:1.45;">{{ m }}</div>
+                  </sc-for>
+                </div>
+
+                <div style="font-size:11.5px;color:#77767C;line-height:1.5;margin-top:18px;padding-top:14px;border-top:1px solid rgba(255,255,255,0.07);">Трансляция идёт на канале <a href="{{ e.channelUrl }}" target="_blank" rel="noreferrer">{{ e.channel }}</a> — {{ e.channelNote }}. Цифры сняты в момент наблюдения, итоговый пик и охват неизвестны.</div>
+              </div>
+
+              <div style="background:#0F0E11;display:flex;flex-direction:column;">
+                <img src="{{ e.image }}" alt="{{ e.imageCaption }}" style="width:100%;height:auto;display:block;object-fit:cover;">
+                <div style="font-size:11.5px;color:#77767C;line-height:1.5;padding:12px 20px;">{{ e.imageCaption }}</div>
+              </div>
+            </div>
+
+            <div style="border-top:1px solid rgba(255,255,255,0.08);padding:20px 26px;display:grid;grid-template-columns:1fr 1fr;gap:24px;">
+              <div>
+                <div style="font-size:11.5px;font-weight:700;letter-spacing:0.6px;color:#FF6A1A;margin-bottom:8px;">ЧТО ЭТО ЗНАЧИТ</div>
+                <div style="font-size:14px;line-height:1.55;color:#E7E6E2;">{{ e.meaning }}</div>
+              </div>
+              <div>
+                <div style="font-size:11.5px;font-weight:700;letter-spacing:0.6px;color:#77767C;margin-bottom:8px;">ВОПРОС К ОБСУЖДЕНИЮ</div>
+                <div style="font-size:14px;line-height:1.55;color:#9A9AA0;">{{ e.question }}</div>
+              </div>
+            </div>
+          </div>
+        </sc-for>
       </section>
       </sc-if>
 
@@ -789,10 +853,11 @@ class Component extends DCLogic {
       this.loadJson('./data/research/claims.json', signal),
       this.loadJson('./data/research/partnerships.json', signal),
       this.loadJson('./data/research/rosters.json', signal),
+      this.loadJson('./data/research/media-events.json', signal),
     ])
-      .then(([matrices, organizations, sources, claims, partnerships, rosters]) => {
+      .then(([matrices, organizations, sources, claims, partnerships, rosters, mediaEvents]) => {
         if (!Array.isArray(matrices.competitor_portfolio) || !Array.isArray(matrices.streamer_brand_signals) || !Array.isArray(matrices.streamer_matrix) || !Array.isArray(organizations.organizations)) throw new Error('research shape');
-        this.setState({ research: { matrices, organizations, sources, claims, partnerships, rosters } });
+        this.setState({ research: { matrices, organizations, sources, claims, partnerships, rosters, mediaEvents } });
       })
       .catch(error => {
         if (error.name !== 'AbortError' && !window.WINLINE_RESEARCH_DATA) this.setState({ researchError: true });
@@ -1003,6 +1068,29 @@ class Component extends DCLogic {
     const teamsIntro = matrixReady
       ? `${teamRows.length} партнёрств букмекеров с киберспортивными клубами и составами. По каждому проверено отдельно: доказано ли партнёрство источником и действует ли оно сейчас. Число строк нельзя превращать в рейтинг — срез собран не одинаково глубоко по всем брендам.`
       : '';
+    const mediaEvents = (research?.mediaEvents?.events || []).map(item => ({
+      name: item.name,
+      format: item.format,
+      date: '16 августа',
+      isLive: item.date_status === 'observed_live',
+      viewers: this.number(item.observed_concurrent_viewers),
+      prize: `${this.decimal(item.prize_pool.amount / 1000000)} млн ₽`,
+      channel: item.broadcast.channel,
+      channelUrl: item.broadcast.channel_url,
+      channelNote: item.broadcast.channel_note.toLowerCase(),
+      image: item.image,
+      imageCaption: item.image_caption,
+      mechanics: item.conversion_mechanics,
+      people: item.participants_observed.map(person => ({
+        name: person.name,
+        role: person.role,
+        note: person.note,
+        style: person.brand === 'brand:winline' ? 'color:#FF6A1A;'
+          : person.brand ? 'color:#E7E6E2;text-decoration:underline dotted;' : 'color:#E7E6E2;',
+      })),
+      meaning: 'Формат не киберспортивный, но собирает втрое больше зрителей, чем пиковый онлайн Winline Pro League Season 3, и стоит 5 млн ₽ — это второй призовой среди собственных продуктов после Standoff 2 Major. Трансляция идёт не на брендовом канале, а на личном канале амбассадора, и в кадре есть прямая механика перехода к ставке.',
+      question: 'Считается ли отдача таких мероприятий отдельно от киберспортивных турниров? И как в одном эфире оказывается стример из состава BetBoom — контракты не эксклюзивные или это разовая договорённость?',
+    }));
     const eventsIntro = matrixReady
       ? `${eventRows.length} партнёрств с турнирными операторами и трансляциями, плюс собственные турниры Winline. Спонсорство чужого турнира и свой продукт — разные модели: в первой покупается доступ к чужой аудитории, во второй аудитория выращивается.`
       : '';
@@ -1232,6 +1320,7 @@ class Component extends DCLogic {
       teamRows,
       eventsIntro: eventsIntro,
       eventRows,
+      mediaEvents,
       eventsGap: 'В данных нет WINLINE Star Series Season 3: турнир прошёл 1–9 августа 2026 с призовым 3,5 млн ₽ и десятью командами стримеров, то есть закончился за шесть дней до даты сбора. Это ближайшее, что нужно дособрать.',
       talentIntro: talentIntro,
       talentBrandTabs: Object.keys(talentBrands).map(key => ({

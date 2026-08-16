@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0.0",
   "research_cutoff": "2026-08-15",
-  "source_count": 63,
+  "source_count": 64,
   "sources": [
     {
       "source_id": "src:1xbet-esl",
@@ -567,6 +567,15 @@
       "publisher": "Cybersport.ru",
       "source_type": "secondary_media",
       "published_at": "2026-05-07",
+      "observed_at": "2026-08-16",
+      "access": "public"
+    },
+    {
+      "source_id": "src:king-pong-live",
+      "url": "https://www.twitch.tv/buster",
+      "publisher": "Twitch — канал buster, живая трансляция WINLINE KING PONG",
+      "source_type": "social_archive",
+      "published_at": "2026-08-16",
       "observed_at": "2026-08-16",
       "access": "public"
     }

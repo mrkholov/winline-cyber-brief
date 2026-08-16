@@ -1,0 +1,88 @@
+{
+  "schema_version": "1.0.0",
+  "research_cutoff": "2026-08-16",
+  "method": "Собственные медийные мероприятия Winline вне киберспортивных дисциплин. Данные по KING PONG сняты с живой трансляции 16 августа 2026 года: цифры относятся к моменту наблюдения, итоговый пик и охват неизвестны.",
+  "event_count": 1,
+  "events": [
+    {
+      "event_id": "event:winline-king-pong",
+      "name": "WINLINE KING PONG",
+      "format": "Настольный теннис между стримерами и медийными лицами, зрители в студии",
+      "discipline": "non_esports",
+      "organizer": "Winline",
+      "date": "2026-08-16",
+      "date_status": "observed_live",
+      "prize_pool": {
+        "amount": 5000000,
+        "currency": "RUB"
+      },
+      "broadcast": {
+        "platform": "Twitch",
+        "channel": "buster",
+        "channel_url": "https://www.twitch.tv/buster",
+        "channel_is_own": false,
+        "channel_note": "Личный канал амбассадора Winline, а не брендовый канал компании"
+      },
+      "observed_concurrent_viewers": 67190,
+      "observed_at": "2026-08-16",
+      "observed_stream_uptime": "1:30:06",
+      "observed_match": "LOVV66 vs DANONEFLEXIN, BO3, счёт 0:1",
+      "conversion_mechanics": [
+        "Постоянный оверлей «ФРИБЕТ 10К» в углу трансляции",
+        "Команда !сетка в заголовке стрима"
+      ],
+      "participants_observed": [
+        {
+          "name": "Buster",
+          "role": "ведущий и владелец канала",
+          "brand": "brand:winline",
+          "note": "амбассадор Winline с 2023 года"
+        },
+        {
+          "name": "Overdrive",
+          "role": "гость в студии",
+          "brand": "brand:betboom",
+          "note": "числится в составе стримеров BetBoom"
+        },
+        {
+          "name": "Limba",
+          "role": "гость в студии",
+          "brand": null,
+          "note": "музыкант, вне киберспорта"
+        },
+        {
+          "name": "LOVV66",
+          "role": "участник матча",
+          "brand": null,
+          "note": "музыкант"
+        },
+        {
+          "name": "DANONEFLEXIN",
+          "role": "участник матча",
+          "brand": null,
+          "note": "медийное лицо"
+        }
+      ],
+      "stream_tags_observed": [
+        "Общение",
+        "Полковник",
+        "Бустеренко",
+        "WW",
+        "Киберспорт",
+        "Бабочка",
+        "buster",
+        "эшкере",
+        "evelone",
+        "Русский"
+      ],
+      "image": "assets/king-pong.png",
+      "image_caption": "Студия WINLINE KING PONG: эфир идёт с дивана, в углу постоянный оверлей «ФРИБЕТ 10К»",
+      "status": "observed",
+      "confidence": 0.95,
+      "source_ids": [
+        "src:king-pong-live"
+      ],
+      "notes": "Призовой фонд 5 млн ₽ — второй по величине среди собственных продуктов Winline после Standoff 2 Major 2026 (6 млн ₽). 67 190 зрителей в момент наблюдения — примерно втрое больше пикового онлайна Winline Pro League Season 3 (21 485). Формат не киберспортивный."
+    }
+  ]
+}
