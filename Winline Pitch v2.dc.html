@@ -137,27 +137,68 @@
         <div style="display:flex;align-items:baseline;gap:14px;margin-bottom:14px;flex-wrap:wrap;">
           <div style="font-family:'JetBrains Mono',monospace;font-size:36.5px;font-weight:800;color:#FF6A1A;">{{ activeBrand.count }}</div>
           <div style="font-size:17px;font-weight:800;">{{ activeBrand.countLabel }}</div>
-          <div style="font-size:15px;color:#77767C;">{{ activeBrand.note }}</div>
+          
         </div>
 
         <div style="border:1px solid rgba(255,255,255,0.09);border-radius:14px;overflow:hidden;">
-          <div style="display:grid;grid-template-columns:1.05fr 0.92fr 0.6fr 0.62fr 0.55fr 1.15fr;background:#1D1C1F;padding:12px 18px;font-size:12px;font-weight:700;letter-spacing:0.5px;color:#9A9AA0;">
-            <div>СТРИМЕР</div><div>КТО ЭТО</div><div>ФОЛЛОВЕРЫ</div><div>СРЕДНИЙ ОНЛАЙН</div><div>ПИК</div><div>НАЙДЕН В ЭФИРЕ НА ЗАМЕРЕ</div>
+          <div style="display:grid;grid-template-columns:1.25fr 1fr 0.7fr 0.75fr 0.7fr;background:#1D1C1F;padding:12px 18px;font-size:12px;font-weight:700;letter-spacing:0.5px;color:#9A9AA0;">
+            <div>СТРИМЕР</div><div>КТО ЭТО</div><div>ФОЛЛОВЕРЫ</div><div>СРЕДНИЙ ОНЛАЙН</div><div>ПИК</div>
           </div>
           <div style="max-height:520px;overflow:auto;">
             <sc-for list="{{ activeBrand.people }}" as="p" hint-placeholder-count="12">
-              <div style="display:grid;grid-template-columns:1.05fr 0.92fr 0.6fr 0.62fr 0.55fr 1.15fr;padding:10px 18px;border-top:1px solid rgba(255,255,255,0.06);background:#121114;align-items:baseline;">
+              <div style="display:grid;grid-template-columns:1.25fr 1fr 0.7fr 0.75fr 0.7fr;padding:10px 18px;border-top:1px solid rgba(255,255,255,0.06);background:#121114;align-items:baseline;">
                 <div style="font-size:15px;{{ p.nameStyle }}">{{ p.name }}</div>
                 <div style="font-size:13px;{{ p.roleStyle }}">{{ p.role }}</div>
                 <div style="font-family:'JetBrains Mono',monospace;font-size:13px;color:#C7C6CC;">{{ p.followers }}</div>
                 <div style="font-family:'JetBrains Mono',monospace;font-size:13px;{{ p.avgStyle }}">{{ p.avgViewers }}</div>
                 <div style="font-family:'JetBrains Mono',monospace;font-size:13px;color:#9A9AA0;">{{ p.maxViewers }}</div>
-                <div style="font-size:13.5px;{{ p.observedStyle }}">{{ p.observed }}</div>
               </div>
             </sc-for>
           </div>
         </div>
-        <div style="font-size:13.5px;color:#77767C;line-height:1.55;margin-top:14px;">Источник: <a href="https://cyber.sports.ru/betting/blogs/3382281.html" target="_blank" rel="noreferrer">Sports.ru — Киберспорт, «Карта российского киберспортивного спонсорства в 2026 году»</a>, февраль 2026. Поимённые составы публично не раскрываются — доступны только итоговые числа. Фолловеры — Twitch API. Средний и пиковый онлайн — TwitchTracker, его срез примерно за последний месяц. Собрано {{ statsCollectedAt }}.</div>
+        <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:16px;">
+          <sc-for list="{{ activeBrand.totals }}" as="s" hint-placeholder-count="4">
+            <div style="background:#141416;border:1px solid rgba(255,255,255,0.09);border-radius:12px;padding:16px 18px;">
+              <div style="font-family:'JetBrains Mono',monospace;font-size:26px;font-weight:800;color:#FF6A1A;">{{ s.value }}</div>
+              <div style="font-size:13px;color:#9A9AA0;line-height:1.45;margin-top:6px;">{{ s.label }}</div>
+            </div>
+          </sc-for>
+        </div>
+
+        <div style="background:#141416;border:1px solid rgba(255,255,255,0.08);border-radius:12px;padding:16px 20px;margin-top:12px;">
+          <div style="font-size:12px;font-weight:700;letter-spacing:0.6px;color:#77767C;margin-bottom:11px;">СОСТАВ ПУЛА ПО ТИПАМ</div>
+          <div style="display:flex;flex-wrap:wrap;gap:7px;">
+            <sc-for list="{{ activeBrand.mix }}" as="m" hint-placeholder-count="6">
+              <span style="font-size:13px;background:#1D1C1F;border-radius:7px;padding:6px 12px;{{ m.style }}">{{ m.label }} — {{ m.count }}</span>
+            </sc-for>
+          </div>
+        </div>
+
+        <div style="font-size:19.5px;font-weight:800;margin:30px 0 12px;">Кто на кого делает ставку</div>
+        <div style="border:1px solid rgba(255,255,255,0.09);border-radius:14px;overflow:hidden;">
+          <div style="display:grid;grid-template-columns:0.85fr 0.6fr 0.75fr 0.85fr 0.85fr 0.9fr;background:#1D1C1F;padding:12px 18px;font-size:12px;font-weight:700;letter-spacing:0.5px;color:#9A9AA0;">
+            <div>БРЕНД</div><div>В ПУЛЕ</div><div>ИЗ КИБЕРА</div><div>СУММА СРЕДНЕГО</div><div>СУММА ПИКОВ</div><div>СРЕДНИЙ НА КАНАЛ</div>
+          </div>
+          <sc-for list="{{ brandTotals }}" as="b" hint-placeholder-count="4">
+            <div style="display:grid;grid-template-columns:0.85fr 0.6fr 0.75fr 0.85fr 0.85fr 0.9fr;padding:13px 18px;border-top:1px solid rgba(255,255,255,0.07);background:#121114;align-items:baseline;">
+              <div style="font-size:14px;font-weight:800;{{ b.style }}">{{ b.label }}</div>
+              <div style="font-family:'JetBrains Mono',monospace;font-size:13.5px;color:#C7C6CC;">{{ b.roster }}</div>
+              <div style="font-family:'JetBrains Mono',monospace;font-size:13.5px;{{ b.esportsStyle }}">{{ b.esports }}</div>
+              <div style="font-family:'JetBrains Mono',monospace;font-size:13.5px;color:#E7E6E2;">{{ b.sumAvg }}</div>
+              <div style="font-family:'JetBrains Mono',monospace;font-size:13.5px;color:#9A9AA0;">{{ b.sumMax }}</div>
+              <div style="font-family:'JetBrains Mono',monospace;font-size:13.5px;font-weight:700;{{ b.perChannelStyle }}">{{ b.perChannel }}</div>
+            </div>
+          </sc-for>
+        </div>
+        <div style="font-size:13px;color:#77767C;line-height:1.55;margin-top:10px;">Суммы считаются только по каналам, у которых есть аудиторные данные, поэтому они занижены относительно полного пула. «Из кибера» — доля тех, кто выступал на про-сцене или комментирует.</div>
+
+        <div class="mine" style="padding:22px 26px;margin-top:18px;">
+          <div class="mine-tag"><i>ЕХ</i>ВЫВОД</div>
+          <div style="font-size:19.5px;font-weight:800;line-height:1.4;">{{ talentVerdictTitle }}</div>
+          <div style="font-size:15.5px;line-height:1.6;margin-top:11px;">{{ talentVerdictText }}</div>
+        </div>
+
+        <div style="font-size:13.5px;color:#77767C;line-height:1.55;margin-top:18px;">Источник: <a href="https://cyber.sports.ru/betting/blogs/3382281.html" target="_blank" rel="noreferrer">Sports.ru — Киберспорт, «Карта российского киберспортивного спонсорства в 2026 году»</a>, февраль 2026. Поимённые составы публично не раскрываются — доступны только итоговые числа. Фолловеры — Twitch API. Средний и пиковый онлайн — TwitchTracker, его срез примерно за последний месяц. Собрано {{ statsCollectedAt }}.</div>
 
         <div style="font-size:19.5px;font-weight:800;margin:34px 0 12px;">Как конкурент объясняет свой подход</div>
         <div style="background:#141416;border:1px solid rgba(255,255,255,0.09);border-radius:14px;padding:24px 26px;">
@@ -1246,6 +1287,7 @@ class Component extends DCLogic {
           name,
           nameStyle: best ? 'color:#FF6A1A;font-weight:800;' : 'color:#E7E6E2;',
           role: roleLabel[role],
+          roleKey: role,
           roleStyle: roleColor[role],
           followers: stat?.followers ? compact(stat.followers) : '—',
           followersRaw: stat?.followers || 0,
@@ -1253,6 +1295,7 @@ class Component extends DCLogic {
           avgRaw: stat?.avg_viewers || 0,
           avgStyle: stat?.avg_viewers != null ? 'color:#E7E6E2;font-weight:700;' : 'color:#4A4950;',
           maxViewers: stat?.max_viewers != null ? this.number(stat.max_viewers) : '—',
+          maxRaw: stat?.max_viewers || 0,
           observed: best
             ? `${eventShort[best.snapshot_id] || best.snapshot_id} — ${this.number(best.viewers_at_observation)} зр.`
             : '—',
@@ -1261,9 +1304,27 @@ class Component extends DCLogic {
         };
       }).sort((left, right) => right.viewers - left.viewers || right.avgRaw - left.avgRaw || right.followersRaw - left.followersRaw || left.name.localeCompare(right.name));
       const confirmed = people.filter(p => p.viewers >= 0).length;
+      const withAudience = people.filter(p => p.avgRaw > 0);
+      const sumAvg = withAudience.reduce((sum, item) => sum + item.avgRaw, 0);
+      const sumMax = withAudience.reduce((sum, item) => sum + item.maxRaw, 0);
+      const esportsRoles = new Set(['pro', 'ex_pro', 'esports_scene', 'caster']);
+      const fromEsports = people.filter(item => esportsRoles.has(item.roleKey)).length;
+      const mixCount = {};
+      for (const item of people) mixCount[item.roleKey] = (mixCount[item.roleKey] || 0) + 1;
       return {
         label: entry.name,
         people,
+        sumAvg, sumMax, fromEsports,
+        withAudienceCount: withAudience.length,
+        totals: [
+          { value: this.number(sumAvg), label: 'суммарный средний онлайн пула' },
+          { value: this.number(sumMax), label: 'сумма пиковых онлайнов' },
+          { value: withAudience.length ? this.number(Math.round(sumAvg / withAudience.length)) : '—', label: 'средний онлайн на канал' },
+          { value: `${fromEsports} из ${people.length}`, label: 'из киберспорта: про, экс-про или комментатор' },
+        ],
+        mix: Object.entries(mixCount)
+          .sort((left, right) => right[1] - left[1])
+          .map(([key, count]) => ({ label: roleLabel[key], count, style: roleColor[key] })),
         count: entry.streamer_count,
         countLabel: plural(entry.streamer_count, 'стример в составе', 'стримера в составе', 'стримеров в составе'),
         note: confirmed === 0 ? 'в замерах на турнирах не встретился никто' : `${confirmed} ${plural(confirmed, 'подтвердился', 'подтвердились', 'подтвердились')} в замерах на турнирах`,
@@ -1635,6 +1696,30 @@ class Component extends DCLogic {
       eventRows,
       mediaEvents,
       eventsGap: 'В данных нет WINLINE Star Series Season 3: турнир прошёл 1–9 августа 2026 с призовым 3,5 млн ₽ и десятью командами стримеров, то есть закончился за шесть дней до даты сбора. Это ближайшее, что нужно дособрать.',
+      brandTotals: Object.keys(talentBrands).map(key => {
+        const brand = talentBrands[key];
+        return {
+          label: brand.label,
+          style: brand.label === 'Winline' ? 'color:#FF6A1A;' : 'color:#E7E6E2;',
+          roster: brand.count,
+          esports: `${brand.fromEsports} · ${Math.round(brand.fromEsports / brand.people.length * 100)}%`,
+          esportsStyle: brand.fromEsports / brand.people.length >= 0.35 ? 'color:#FF6A1A;font-weight:700;' : 'color:#9A9AA0;',
+          sumAvg: this.number(brand.sumAvg),
+          sumMax: this.number(brand.sumMax),
+          perChannel: brand.withAudienceCount ? this.number(Math.round(brand.sumAvg / brand.withAudienceCount)) : '—',
+          perChannelStyle: brand.withAudienceCount && brand.sumAvg / brand.withAudienceCount > 5000 ? 'color:#FF6A1A;' : 'color:#C7C6CC;',
+        };
+      }),
+      talentVerdictTitle: 'BetBoom набирает людей из киберспорта, Winline — стримеров',
+      talentVerdictText: (() => {
+        const w = talentBrands.winline, b = talentBrands.betboom;
+        if (!w || !b) return '';
+        const wShare = Math.round(w.fromEsports / w.people.length * 100);
+        const bShare = Math.round(b.fromEsports / b.people.length * 100);
+        const wPer = Math.round(w.sumAvg / w.withAudienceCount);
+        const bPer = Math.round(b.sumAvg / b.withAudienceCount);
+        return `У BetBoom ${bShare}% пула — про-игроки, бывшие про и комментаторы, у Winline ${wShare}%. При этом суммарный средний онлайн у них сопоставим: ${this.number(b.sumAvg)} против ${this.number(w.sumAvg)}. Разница в том, как он собран: у BetBoom ${this.number(bPer)} зрителей на канал против ${this.number(wPer)} у Winline, то есть тот же охват достаётся меньшим числом контрактов. Пул Winline шире и дешевле в пересчёте на человека, но каждый отдельный канал слабее, а значит и переговорная позиция по каждому — тоже.`;
+      })(),
       talentBrandTabs: Object.keys(talentBrands).map(key => ({
         label: talentBrands[key].label,
         go: goTB(key),
