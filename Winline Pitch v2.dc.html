@@ -365,6 +365,11 @@
                 </sc-for>
               </div>
 
+              <div style="display:grid;grid-template-columns:230px 1fr;gap:16px;align-items:center;margin-top:18px;padding:14px;background:#1D1C1F;border-radius:12px;">
+                <img src="assets/sold-out.png" alt="Яндекс Афиша: билеты проданы" style="width:100%;height:auto;display:block;border-radius:8px;">
+                <div style="font-size:14px;color:#C7C6CC;line-height:1.55;">Оформить билет на Афише уже нельзя — зал распродан. Спрос на офлайн-просмотр закрыт до начала турнира, и это единственная цифра по интересу к продукту, которую видно снаружи.</div>
+              </div>
+
               <div style="font-size:13px;font-weight:700;letter-spacing:0.6px;color:#77767C;margin:22px 0 10px;">ЧТО ПОКАЗАЛ ПРОШЛЫЙ ПАБСТОМП НА TI 2024</div>
               <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:10px;">
                 <sc-for list="{{ pubstompStats }}" as="s" hint-placeholder-count="4">
@@ -525,7 +530,7 @@
                   </div>
                 </sc-for>
               </div>
-              <div style="font-size:14px;line-height:1.55;margin-top:11px;">По этим креативам видно, что меняется только промокод и лицо, а оффер и макет общие. Масштабировать так удобно, но вклад самого оффера и момента показа при этом не отделить от вклада канала.</div>
+              <div style="font-size:14px;line-height:1.55;margin-top:11px;">Два амбассадора, два оффера, один макет: меняется промокод и лицо, а сам оффер и посадочная общие. Масштабировать так удобно, но вклад самого оффера и момента показа при этом не отделить от вклада канала.</div>
             </div>
 
             <div style="background:rgba(255,255,255,0.5);border-radius:12px;padding:20px 22px;">
@@ -1933,7 +1938,7 @@ class Component extends DCLogic {
         { label: 'КОГДА', value: '23 августа 2026, начало в 5 утра по Москве — под финал в Шанхае' },
         { label: 'ГДЕ', value: 'МТС Live Холл, Москва, 18+' },
         { label: 'КТО В ЗАЛЕ', value: 'RAMZES666, just_ns, DreadzTV, 9pasha, VooDooSh, korya_mc, Buster и другие стримеры и блогеры' },
-        { label: 'БИЛЕТЫ', value: 'от 2 000 ₽, продажа через Афишу и МТС Live' },
+        { label: 'БИЛЕТЫ', value: 'от 2 000 ₽, продажа через Афишу и МТС Live. Проданы: Афиша не даёт оформить заказ' },
         { label: 'ФОРМАТ', value: 'Просмотр финала на большом экране с комментаторами, тематика Древнего Китая, интерактивные зоны и розыгрыши' },
         { label: 'КАК ПРОДАЮТ', value: 'В момент замера ссылка на билеты стояла в панелях у ramzes, 9pasha и followKudes — это 18 945 из 40 405 зрителей Winline в срезе по Dota, почти половина' },
       ],
@@ -1944,10 +1949,10 @@ class Component extends DCLogic {
         { value: '100+', label: 'инфлюенсеров в проекте' },
       ],
       bannerShots: [
-        { src: 'assets/banner-1.png', caption: 'Фрибет 10 000 ₽, промокод NS' },
-        { src: 'assets/banner-3.png', caption: 'Тот же фрибет, промокод RAMZES' },
-        { src: 'assets/banner-2.png', caption: 'WinPass Season 3, лицо стримера' },
-        { src: 'assets/banner-4.png', caption: 'WinPass Season 3, другое лицо' },
+        { src: 'assets/banner-1.png', caption: 'just_ns · фрибет 10 000 ₽, промокод NS' },
+        { src: 'assets/banner-3.png', caption: 'RAMZES666 · тот же фрибет, промокод RAMZES' },
+        { src: 'assets/banner-2.png', caption: 'just_ns · WinPass Season 3' },
+        { src: 'assets/banner-4.png', caption: 'RAMZES666 · WinPass Season 3' },
       ],
       snapshotBlocks: matrixReady ? streamerSnapshots.map((snapshot, index) => {
         const magic = partnership('partnership:winline-magic');
