@@ -247,49 +247,45 @@
           <div style="font-size:14px;color:#77767C;margin-top:12px;">{{ pariQuote.attribution }} · <a href="{{ pariQuote.url }}" target="_blank" rel="noreferrer">{{ pariQuote.publisher }}</a></div>
           <div style="font-size:15.5px;color:#E7E6E2;line-height:1.6;margin-top:16px;padding-top:16px;border-top:1px solid rgba(255,255,255,0.08);">{{ pariQuote.meaning }}</div>
         </div>
-        <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:14px;">
-          <div style="background:#121114;border:1px solid rgba(255,255,255,0.08);border-radius:12px;padding:18px 20px;">
-            <div style="font-size:13px;color:#FF6A1A;font-weight:800;">СКОЛЬКО ЭТО СТОИТ ПО РЫНКУ</div>
-            <div style="font-size:16px;line-height:1.55;margin-top:8px;">{{ marketPrice.text }}</div>
-            <div style="font-size:14px;color:#C7C6CC;line-height:1.55;margin-top:10px;">{{ marketNote }}</div>
-            <div style="font-size:13px;color:#77767C;margin-top:8px;"><a href="{{ marketPrice.url }}" target="_blank" rel="noreferrer">{{ marketPrice.publisher }}</a></div>
-          </div>
-          <div class="mine" style="padding:20px 24px;">
-            <div class="mine-tag"><i>ЕХ</i>ВОПРОС</div>
-            <div style="font-size:17px;line-height:1.55;margin-top:9px;">{{ talentQuestion }}</div>
-          </div>
+        <div style="background:#121114;border:1px solid rgba(255,255,255,0.08);border-radius:12px;padding:20px 24px;margin-top:14px;">
+          <div style="font-size:13px;color:#FF6A1A;font-weight:800;letter-spacing:0.6px;">СКОЛЬКО ЭТО СТОИТ ПО РЫНКУ</div>
+          <div style="font-size:16px;line-height:1.6;margin-top:10px;max-width:1000px;">{{ marketPrice.text }}</div>
+          <div style="font-size:15px;color:#C7C6CC;line-height:1.6;margin-top:11px;max-width:1000px;">{{ marketNote }}</div>
+          <div style="font-size:13px;color:#77767C;margin-top:11px;"><a href="{{ marketPrice.url }}" target="_blank" rel="noreferrer">{{ marketPrice.publisher }}</a></div>
         </div>
 
-        <div style="font-size:19.5px;font-weight:800;margin:34px 0 4px;">Как я бы это измерял</div>
-        <div style="font-size:15px;color:#77767C;line-height:1.55;margin-bottom:16px;max-width:860px;">Четыре слоя, каждый отвечает на свой вопрос. Первые два дают цифру, третий возвращает тех, кто не дошёл, четвёртый показывает эффект, который теряется при подсчёте одних новых регистраций.</div>
+        <div class="mine" style="padding:26px 28px;margin-top:34px;">
+          <div class="mine-tag"><i>ЕХ</i>КАК Я БЫ ЭТО ИЗМЕРЯЛ</div>
+          <div style="font-size:26px;font-weight:800;letter-spacing:-0.3px;line-height:1.3;max-width:900px;">Четыре слоя, каждый отвечает на свой вопрос</div>
+          <div style="font-size:15.5px;line-height:1.6;margin-top:10px;max-width:900px;opacity:0.85;">Первые два дают цифру, третий возвращает тех, кто не дошёл, четвёртый показывает эффект, который теряется при подсчёте одних новых регистраций.</div>
 
-        <div style="display:flex;flex-direction:column;gap:12px;">
-          <sc-for list="{{ measureLayers }}" as="layer" hint-placeholder-count="4">
-            <div style="background:#141416;border:1px solid rgba(255,255,255,0.09);border-radius:14px;overflow:hidden;">
-              <div style="display:flex;align-items:baseline;gap:14px;padding:16px 22px;background:#1D1C1F;">
-                <span style="font-family:'JetBrains Mono',monospace;color:#FF6A1A;font-size:14px;font-weight:800;">{{ layer.n }}</span>
-                <span style="font-size:17px;font-weight:800;">{{ layer.title }}</span>
-                <span style="font-size:14px;color:#77767C;">{{ layer.answers }}</span>
-              </div>
-              <div style="padding:6px 22px 18px;">
-                <sc-for list="{{ layer.items }}" as="m" hint-placeholder-count="3">
-                  <div style="display:grid;grid-template-columns:1fr 1.35fr;gap:22px;padding:14px 0;border-top:1px solid rgba(255,255,255,0.07);align-items:start;">
-                    <div style="font-size:15.5px;font-weight:700;line-height:1.4;">{{ m.name }}</div>
-                    <div>
-                      <div style="font-size:14.5px;color:#C7C6CC;line-height:1.55;">{{ m.detail }}</div>
-                      <div style="font-size:13px;color:#77767C;line-height:1.5;margin-top:6px;">{{ m.limit }}</div>
+          <div style="display:flex;flex-direction:column;gap:12px;margin-top:22px;">
+            <sc-for list="{{ measureLayers }}" as="layer" hint-placeholder-count="4">
+              <div style="background:rgba(255,255,255,0.5);border-radius:12px;overflow:hidden;">
+                <div style="display:flex;align-items:baseline;gap:14px;padding:14px 20px;background:rgba(0,0,0,0.09);flex-wrap:wrap;">
+                  <span style="font-family:'JetBrains Mono',monospace;font-size:14px;font-weight:800;">{{ layer.n }}</span>
+                  <span style="font-size:17px;font-weight:800;">{{ layer.title }}</span>
+                  <span style="font-size:14px;opacity:0.65;">{{ layer.answers }}</span>
+                </div>
+                <div style="padding:4px 20px 16px;">
+                  <sc-for list="{{ layer.items }}" as="m" hint-placeholder-count="3">
+                    <div style="display:grid;grid-template-columns:1fr 1.35fr;gap:22px;padding:13px 0;border-top:1px solid rgba(0,0,0,0.12);align-items:start;">
+                      <div style="font-size:15.5px;font-weight:800;line-height:1.4;">{{ m.name }}</div>
+                      <div>
+                        <div style="font-size:14.5px;line-height:1.55;">{{ m.detail }}</div>
+                        <div style="font-size:13px;line-height:1.5;margin-top:6px;opacity:0.6;">{{ m.limit }}</div>
+                      </div>
                     </div>
-                  </div>
-                </sc-for>
+                  </sc-for>
+                </div>
               </div>
-            </div>
-          </sc-for>
-        </div>
+            </sc-for>
+          </div>
 
-        <div class="mine" style="padding:22px 26px;margin-top:14px;">
-          <div class="mine-tag"><i>ЕХ</i>ПРЕДЛОЖЕНИЕ</div>
-          <div style="font-size:19.5px;font-weight:800;line-height:1.4;">{{ measureVerdict.title }}</div>
-          <div style="font-size:15.5px;line-height:1.6;margin-top:11px;">{{ measureVerdict.text }}</div>
+          <div style="margin-top:20px;padding-top:18px;border-top:1px solid rgba(0,0,0,0.18);">
+            <div style="font-size:19.5px;font-weight:800;line-height:1.4;">{{ measureVerdict.title }}</div>
+            <div style="font-size:15.5px;line-height:1.6;margin-top:10px;max-width:1000px;">{{ measureVerdict.text }}</div>
+          </div>
         </div>
 
         <div style="font-size:19.5px;font-weight:800;margin:34px 0 12px;">Что нашлось в эфире на замерах</div>
@@ -1701,7 +1697,6 @@ class Component extends DCLogic {
       matrixReady,
       navLinks: [
         { href: '#opyt', label: 'Опыт' },
-        { href: '#analiz', label: 'Анализ активов' },
         { href: '#strimery', label: 'Стримеры' },
         { href: '#komandy', label: 'Команды' },
         { href: '#turniry', label: 'Турниры' },
@@ -1865,9 +1860,9 @@ class Component extends DCLogic {
               limit: 'Требует, чтобы посадочная страница была своя и пиксель на ней стоял заранее.',
             },
             {
-              name: 'Опрос по этой же аудитории',
-              detail: 'У тех, кто пришёл, но не зарегистрировался, спрашиваем узнаваемость и причину отказа. Это единственный способ узнать, что именно ломается: оффер, посадочная или сама подача у стримера.',
-              limit: 'Выборка смещена в сторону тех, кто вообще кликнул. Про не кликнувших так узнать нельзя.',
+              name: 'Догрев этой же аудитории в других каналах',
+              detail: 'Кликнувшие с эфира — это уже тёплый трафик, его не обязательно догонять только баннером. Собранный сегмент выгружается дальше: онлайн-кинотеатры, программатик, соцсети. Один и тот же человек получает второе и третье касание там, где стример его не достанет.',
+              limit: 'Сегмент ограничен теми, кто кликнул, и требует заранее поставленного пикселя на своей посадочной.',
             },
             {
               name: 'Розыгрыш вместо прямой регистрации',
@@ -1898,7 +1893,6 @@ class Component extends DCLogic {
         title: 'Пока измеримой части нет в контракте, её не появится в отчёте',
         text: 'Метка, промокод и право на собственную активацию — это не отчётность, это условия сделки. Их нужно закладывать при подписании, иначе через год снова придётся оценивать пул по числу подписчиков. Первые два слоя дают цифру уже в первом месяце, третий и четвёртый требуют доступа к CRM и посадочным.',
       },
-      talentQuestion: 'Если годовой контракт с топовым стримером стоит на уровне сотен тысяч долларов, а отдача по нему не считается отдельно от остального маркетинга — на основании чего продлевается пул из полусотни человек?',
       researchStats,
       statsRest: matrixReady ? researchStats.filter(item => item.group !== 'streamers') : [],
       insightCards: matrixReady ? [
