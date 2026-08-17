@@ -2,8 +2,8 @@
   "schema_version": "1.0.0",
   "collected_at": "2026-08-17",
   "window_days": 14,
-  "source": "Twitch Helix API",
-  "method": "Фолловеры — текущее значение из /channels/followers. Активность за 14 дней посчитана по записям трансляций (/videos, type=archive): число эфиров, суммарная длительность и просмотры записей. Средний онлайн Twitch в API не отдаёт.",
+  "source": "Twitch Helix API + TwitchTracker",
+  "method": "Фолловеры, число эфиров и часы за 14 дней — Twitch Helix (/channels/followers и /videos, type=archive). Средний онлайн, пиковый онлайн, часы просмотра и место в рейтинге — TwitchTracker (/api/channels/summary), его стандартный срез порядка последних 30 дней; период у эндпоинта не параметризуется, поэтому окна двух источников не совпадают.",
   "requested": 127,
   "resolved_count": 116,
   "records": [
@@ -18,11 +18,17 @@
       "channel_url": "https://www.twitch.tv/buster",
       "created_at": "2015-03-25T12:23:51Z",
       "description": "Всегда легко обидеть мать. Она обиду не заметит. И только может вам сказать — «Не простудись, сегодня ветер».   Реклама: buster@streamers-alliance.com / Регистрация в перечне владельцев страниц в соцсетях: https://www.gosuslugi.ru/snet/6787ae1e6aa9672b96b87d87",
-      "followers": 5203288,
+      "followers": 5203298,
       "streams_14d": 10,
       "hours_14d": 30.2,
       "vod_views_14d": 6813993,
-      "last_stream_at": "2026-08-16T13:54:21Z"
+      "last_stream_at": "2026-08-16T13:54:21Z",
+      "avg_viewers": 28166,
+      "max_viewers": 88809,
+      "hours_watched": 1524274,
+      "hours_streamed": 54.1,
+      "followers_gained": 93042,
+      "twitch_rank": 54
     },
     {
       "brand": "brand:winline",
@@ -35,11 +41,17 @@
       "channel_url": "https://www.twitch.tv/bysl4m",
       "created_at": "2012-12-25T22:57:46Z",
       "description": "Counter-Strike",
-      "followers": 554317,
+      "followers": 554316,
       "streams_14d": 0,
       "hours_14d": 0,
       "vod_views_14d": 0,
-      "last_stream_at": "2026-06-21T12:01:40Z"
+      "last_stream_at": "2026-06-21T12:01:40Z",
+      "avg_viewers": null,
+      "max_viewers": null,
+      "hours_watched": null,
+      "hours_streamed": null,
+      "followers_gained": null,
+      "twitch_rank": null
     },
     {
       "brand": "brand:winline",
@@ -52,11 +64,17 @@
       "channel_url": "https://www.twitch.tv/deepins02",
       "created_at": "2016-09-25T15:03:10Z",
       "description": "то ты это я иежду нами молния почта - deepins02twitch@gmail.com // deepins02@gca.holdings https://clck.ru/3FD9eZ",
-      "followers": 3139376,
+      "followers": 3139379,
       "streams_14d": 3,
       "hours_14d": 14,
       "vod_views_14d": 1408719,
-      "last_stream_at": "2026-08-06T16:22:39Z"
+      "last_stream_at": "2026-08-06T16:22:39Z",
+      "avg_viewers": 17945,
+      "max_viewers": 29575,
+      "hours_watched": 1012092,
+      "hours_streamed": 56.4,
+      "followers_gained": 38661,
+      "twitch_rank": 103
     },
     {
       "brand": "brand:winline",
@@ -73,7 +91,13 @@
       "streams_14d": 3,
       "hours_14d": 3.8,
       "vod_views_14d": 82231,
-      "last_stream_at": "2026-08-14T15:20:04Z"
+      "last_stream_at": "2026-08-14T15:20:04Z",
+      "avg_viewers": 2362,
+      "max_viewers": 6357,
+      "hours_watched": 144982,
+      "hours_streamed": 61.4,
+      "followers_gained": 1148,
+      "twitch_rank": 1203
     },
     {
       "brand": "brand:winline",
@@ -88,9 +112,15 @@
       "description": "Почта для сотрудничества - lixxx@streamers-alliance.com",
       "followers": 1911488,
       "streams_14d": 14,
-      "hours_14d": 55.8,
+      "hours_14d": 55.9,
       "vod_views_14d": 2095313,
-      "last_stream_at": "2026-08-17T08:45:34Z"
+      "last_stream_at": "2026-08-17T08:45:34Z",
+      "avg_viewers": 4783,
+      "max_viewers": 17805,
+      "hours_watched": 464312,
+      "hours_streamed": 97.1,
+      "followers_gained": 2007,
+      "twitch_rank": 346
     },
     {
       "brand": "brand:winline",
@@ -103,11 +133,17 @@
       "channel_url": "https://www.twitch.tv/dreadztv",
       "created_at": "2012-06-06T11:36:10Z",
       "description": "Человек, брат, сын, муж, отец. Андрей, 35 лет. После великолепной карьеры(нет) в дота, дота 2 занялся стримами и вот уже 13 лет тружусь не покладая рук. Автор знаменитой шутки про циклопа. Ведущий нашумевшего телеграм-канала. Остатки скилла и рассудка вы можете увидеть здесь.",
-      "followers": 724490,
+      "followers": 724489,
       "streams_14d": 5,
       "hours_14d": 18.8,
       "vod_views_14d": 129270,
-      "last_stream_at": "2026-08-16T07:43:14Z"
+      "last_stream_at": "2026-08-16T07:43:14Z",
+      "avg_viewers": 1681,
+      "max_viewers": 3744,
+      "hours_watched": 92206,
+      "hours_streamed": 54.9,
+      "followers_gained": -236,
+      "twitch_rank": 1883
     },
     {
       "brand": "brand:winline",
@@ -124,7 +160,13 @@
       "streams_14d": 7,
       "hours_14d": 21.1,
       "vod_views_14d": 204821,
-      "last_stream_at": "2026-08-11T12:38:18Z"
+      "last_stream_at": "2026-08-11T12:38:18Z",
+      "avg_viewers": 1017,
+      "max_viewers": 2153,
+      "hours_watched": 32093,
+      "hours_streamed": 31.6,
+      "followers_gained": 799,
+      "twitch_rank": 4136
     },
     {
       "brand": "brand:winline",
@@ -141,7 +183,13 @@
       "streams_14d": 13,
       "hours_14d": 116.1,
       "vod_views_14d": 451359,
-      "last_stream_at": "2026-08-15T18:35:56Z"
+      "last_stream_at": "2026-08-15T18:35:56Z",
+      "avg_viewers": 1380,
+      "max_viewers": 3159,
+      "hours_watched": 355656,
+      "hours_streamed": 257.7,
+      "followers_gained": 21,
+      "twitch_rank": 636
     },
     {
       "brand": "brand:winline",
@@ -154,11 +202,17 @@
       "channel_url": "https://www.twitch.tv/janichka",
       "created_at": "2018-12-20T22:21:46Z",
       "description": "Я слежу за тобой, а ты за мной слижешь?РКН № 6728821858",
-      "followers": 45143,
+      "followers": 45144,
       "streams_14d": 4,
       "hours_14d": 16.2,
       "vod_views_14d": 56924,
-      "last_stream_at": "2026-08-16T07:01:11Z"
+      "last_stream_at": "2026-08-16T07:01:11Z",
+      "avg_viewers": 363,
+      "max_viewers": 1213,
+      "hours_watched": 36101,
+      "hours_streamed": 99.5,
+      "followers_gained": 2126,
+      "twitch_rank": 5726
     },
     {
       "brand": "brand:winline",
@@ -174,8 +228,14 @@
       "followers": 790462,
       "streams_14d": 10,
       "hours_14d": 76,
-      "vod_views_14d": 2865441,
-      "last_stream_at": "2026-08-16T02:22:30Z"
+      "vod_views_14d": 2865451,
+      "last_stream_at": "2026-08-16T02:22:30Z",
+      "avg_viewers": 7801,
+      "max_viewers": 55807,
+      "hours_watched": 1450960,
+      "hours_streamed": 186,
+      "followers_gained": 192,
+      "twitch_rank": 91
     },
     {
       "brand": "brand:winline",
@@ -192,7 +252,13 @@
       "streams_14d": 0,
       "hours_14d": 0,
       "vod_views_14d": 0,
-      "last_stream_at": null
+      "last_stream_at": null,
+      "avg_viewers": 1488,
+      "max_viewers": 68823,
+      "hours_watched": 103111,
+      "hours_streamed": 69.3,
+      "followers_gained": 1058,
+      "twitch_rank": 1831
     },
     {
       "brand": "brand:winline",
@@ -209,7 +275,13 @@
       "streams_14d": 0,
       "hours_14d": 0,
       "vod_views_14d": 0,
-      "last_stream_at": null
+      "last_stream_at": null,
+      "avg_viewers": 2066,
+      "max_viewers": 5570,
+      "hours_watched": 26568,
+      "hours_streamed": 12.8,
+      "followers_gained": -14,
+      "twitch_rank": 2853
     },
     {
       "brand": "brand:winline",
@@ -224,9 +296,15 @@
       "description": "ЭТОТ КАНАЛ ПРОПИТАН УВАЖЕНИЕМ. Вопросы и предложения сюда - khvastounovpv@mail.ru  |  № 5421786954",
       "followers": 106123,
       "streams_14d": 13,
-      "hours_14d": 102.5,
-      "vod_views_14d": 598119,
-      "last_stream_at": "2026-08-17T07:29:22Z"
+      "hours_14d": 102.6,
+      "vod_views_14d": 598120,
+      "last_stream_at": "2026-08-17T07:29:22Z",
+      "avg_viewers": 1134,
+      "max_viewers": 6014,
+      "hours_watched": 217853,
+      "hours_streamed": 192.1,
+      "followers_gained": 556,
+      "twitch_rank": 1049
     },
     {
       "brand": "brand:winline",
@@ -239,11 +317,17 @@
       "channel_url": "https://www.twitch.tv/asiv0y",
       "created_at": "2022-07-13T17:25:51Z",
       "description": " РКН № 6201566774 ✵От нуля до Чайхоны два звонка.✵ -  Сотрудничество - lyyzzka@gmail.com",
-      "followers": 295248,
+      "followers": 295247,
       "streams_14d": 0,
       "hours_14d": 0,
       "vod_views_14d": 0,
-      "last_stream_at": null
+      "last_stream_at": null,
+      "avg_viewers": 3542,
+      "max_viewers": 18036,
+      "hours_watched": 140309,
+      "hours_streamed": 39.6,
+      "followers_gained": 16729,
+      "twitch_rank": 1018
     },
     {
       "brand": "brand:winline",
@@ -256,11 +340,17 @@
       "channel_url": "https://www.twitch.tv/bratishkinoff",
       "created_at": "2015-08-20T12:13:27Z",
       "description": "№ 4912195601",
-      "followers": 3773303,
+      "followers": 3773307,
       "streams_14d": 11,
       "hours_14d": 63.8,
-      "vod_views_14d": 5672259,
-      "last_stream_at": "2026-08-16T16:57:52Z"
+      "vod_views_14d": 5672264,
+      "last_stream_at": "2026-08-16T16:57:52Z",
+      "avg_viewers": 12869,
+      "max_viewers": 88513,
+      "hours_watched": 1289470,
+      "hours_streamed": 100.2,
+      "followers_gained": 19873,
+      "twitch_rank": 90
     },
     {
       "brand": "brand:winline",
@@ -273,11 +363,17 @@
       "channel_url": "https://www.twitch.tv/general_hs_",
       "created_at": "2014-05-15T18:02:55Z",
       "description": "МЕНТАЛ МОНСТЕР, БОГ ТОПА, СЕКС СИМВОЛ, ПОСЛЕДНЯЯ НАДЕЖДА СНГ, БУДУЩИЙ ЧЕМПИОН МИРА И БОСС КАЧАЛКИ!!! ",
-      "followers": 141662,
+      "followers": 141664,
       "streams_14d": 19,
-      "hours_14d": 81.6,
+      "hours_14d": 81.7,
       "vod_views_14d": 296175,
-      "last_stream_at": "2026-08-17T09:51:53Z"
+      "last_stream_at": "2026-08-17T09:51:53Z",
+      "avg_viewers": 1272,
+      "max_viewers": 2689,
+      "hours_watched": 271569,
+      "hours_streamed": 213.6,
+      "followers_gained": 343,
+      "twitch_rank": 847
     },
     {
       "brand": "brand:winline",
@@ -294,7 +390,13 @@
       "streams_14d": 0,
       "hours_14d": 0,
       "vod_views_14d": 0,
-      "last_stream_at": null
+      "last_stream_at": null,
+      "avg_viewers": null,
+      "max_viewers": null,
+      "hours_watched": null,
+      "hours_streamed": null,
+      "followers_gained": null,
+      "twitch_rank": null
     },
     {
       "brand": "brand:winline",
@@ -311,7 +413,13 @@
       "streams_14d": 12,
       "hours_14d": 69.9,
       "vod_views_14d": 197571,
-      "last_stream_at": "2026-08-15T16:39:59Z"
+      "last_stream_at": "2026-08-15T16:39:59Z",
+      "avg_viewers": 154,
+      "max_viewers": 859,
+      "hours_watched": 15449,
+      "hours_streamed": 100.3,
+      "followers_gained": 1213,
+      "twitch_rank": 12439
     },
     {
       "brand": "brand:winline",
@@ -328,7 +436,13 @@
       "streams_14d": 0,
       "hours_14d": 0,
       "vod_views_14d": 0,
-      "last_stream_at": null
+      "last_stream_at": null,
+      "avg_viewers": null,
+      "max_viewers": null,
+      "hours_watched": null,
+      "hours_streamed": null,
+      "followers_gained": null,
+      "twitch_rank": null
     },
     {
       "brand": "brand:winline",
@@ -341,11 +455,17 @@
       "channel_url": "https://www.twitch.tv/korya_mc",
       "created_at": "2021-03-31T08:03:51Z",
       "description": "Коря ʕ ᵔᴥᵔ ʔ твоя muscle mommy 💕",
-      "followers": 459944,
+      "followers": 459943,
       "streams_14d": 8,
       "hours_14d": 43.2,
-      "vod_views_14d": 918236,
-      "last_stream_at": "2026-08-15T13:44:28Z"
+      "vod_views_14d": 918237,
+      "last_stream_at": "2026-08-15T13:44:28Z",
+      "avg_viewers": 2255,
+      "max_viewers": 6190,
+      "hours_watched": 199789,
+      "hours_streamed": 88.6,
+      "followers_gained": 7792,
+      "twitch_rank": 957
     },
     {
       "brand": "brand:winline",
@@ -362,7 +482,13 @@
       "streams_14d": 0,
       "hours_14d": 0,
       "vod_views_14d": 0,
-      "last_stream_at": null
+      "last_stream_at": null,
+      "avg_viewers": 449,
+      "max_viewers": 1016,
+      "hours_watched": 9812,
+      "hours_streamed": 21.8,
+      "followers_gained": 238,
+      "twitch_rank": 10414
     },
     {
       "brand": "brand:winline",
@@ -379,7 +505,13 @@
       "streams_14d": 0,
       "hours_14d": 0,
       "vod_views_14d": 0,
-      "last_stream_at": null
+      "last_stream_at": null,
+      "avg_viewers": null,
+      "max_viewers": null,
+      "hours_watched": null,
+      "hours_streamed": null,
+      "followers_gained": null,
+      "twitch_rank": null
     },
     {
       "brand": "brand:winline",
@@ -392,11 +524,17 @@
       "channel_url": "https://www.twitch.tv/melharucos",
       "created_at": "2011-12-16T13:56:45Z",
       "description": "",
-      "followers": 468077,
+      "followers": 468076,
       "streams_14d": 1,
-      "hours_14d": 3.8,
+      "hours_14d": 3.9,
       "vod_views_14d": 700,
-      "last_stream_at": "2026-08-17T08:09:05Z"
+      "last_stream_at": "2026-08-17T08:09:05Z",
+      "avg_viewers": 2846,
+      "max_viewers": 4924,
+      "hours_watched": 39806,
+      "hours_streamed": 14,
+      "followers_gained": 583,
+      "twitch_rank": 2042
     },
     {
       "brand": "brand:winline",
@@ -409,11 +547,17 @@
       "channel_url": "https://www.twitch.tv/morphe_ya",
       "created_at": "2018-02-02T19:56:28Z",
       "description": "По вопросам рекламы и сотрудничества: TG: t.me/AleksFedosov / email: aleksf.pr@gmail.com",
-      "followers": 953404,
+      "followers": 953407,
       "streams_14d": 10,
       "hours_14d": 36.2,
       "vod_views_14d": 1031709,
-      "last_stream_at": "2026-08-15T13:55:56Z"
+      "last_stream_at": "2026-08-15T13:55:56Z",
+      "avg_viewers": 4128,
+      "max_viewers": 9874,
+      "hours_watched": 288642,
+      "hours_streamed": 69.9,
+      "followers_gained": 21211,
+      "twitch_rank": 573
     },
     {
       "brand": "brand:winline",
@@ -430,7 +574,13 @@
       "streams_14d": 11,
       "hours_14d": 55.2,
       "vod_views_14d": 291175,
-      "last_stream_at": "2026-08-16T12:22:22Z"
+      "last_stream_at": "2026-08-16T12:22:22Z",
+      "avg_viewers": 2560,
+      "max_viewers": 11107,
+      "hours_watched": 548729,
+      "hours_streamed": 214.3,
+      "followers_gained": 3508,
+      "twitch_rank": 342
     },
     {
       "brand": "brand:winline",
@@ -446,8 +596,14 @@
       "followers": 71279,
       "streams_14d": 6,
       "hours_14d": 37.4,
-      "vod_views_14d": 163286,
-      "last_stream_at": "2026-08-15T19:09:28Z"
+      "vod_views_14d": 163288,
+      "last_stream_at": "2026-08-15T19:09:28Z",
+      "avg_viewers": 578,
+      "max_viewers": 3630,
+      "hours_watched": 29182,
+      "hours_streamed": 50.5,
+      "followers_gained": 2618,
+      "twitch_rank": 5659
     },
     {
       "brand": "brand:winline",
@@ -463,8 +619,14 @@
       "followers": 660443,
       "streams_14d": 5,
       "hours_14d": 18,
-      "vod_views_14d": 3025835,
-      "last_stream_at": "2026-08-15T11:31:02Z"
+      "vod_views_14d": 3025872,
+      "last_stream_at": "2026-08-15T11:31:02Z",
+      "avg_viewers": 13070,
+      "max_viewers": 71255,
+      "hours_watched": 746721,
+      "hours_streamed": 57.1,
+      "followers_gained": 4656,
+      "twitch_rank": 171
     },
     {
       "brand": "brand:winline",
@@ -477,11 +639,17 @@
       "channel_url": "https://www.twitch.tv/rostislav_999",
       "created_at": "2019-12-02T14:40:36Z",
       "description": "№ 7870191008",
-      "followers": 1442560,
+      "followers": 1442559,
       "streams_14d": 4,
       "hours_14d": 20.8,
       "vod_views_14d": 2158082,
-      "last_stream_at": "2026-08-13T19:37:02Z"
+      "last_stream_at": "2026-08-13T19:37:02Z",
+      "avg_viewers": 12616,
+      "max_viewers": 39298,
+      "hours_watched": 624669,
+      "hours_streamed": 49.5,
+      "followers_gained": 42471,
+      "twitch_rank": 198
     },
     {
       "brand": "brand:winline",
@@ -498,7 +666,13 @@
       "streams_14d": 1,
       "hours_14d": 1.5,
       "vod_views_14d": 21,
-      "last_stream_at": "2026-08-12T19:55:57Z"
+      "last_stream_at": "2026-08-12T19:55:57Z",
+      "avg_viewers": null,
+      "max_viewers": null,
+      "hours_watched": null,
+      "hours_streamed": null,
+      "followers_gained": null,
+      "twitch_rank": null
     },
     {
       "brand": "brand:winline",
@@ -515,7 +689,13 @@
       "streams_14d": 8,
       "hours_14d": 47.6,
       "vod_views_14d": 389082,
-      "last_stream_at": "2026-08-13T14:59:06Z"
+      "last_stream_at": "2026-08-13T14:59:06Z",
+      "avg_viewers": 1205,
+      "max_viewers": 23758,
+      "hours_watched": 121752,
+      "hours_streamed": 101,
+      "followers_gained": 17657,
+      "twitch_rank": 1727
     },
     {
       "brand": "brand:winline",
@@ -532,7 +712,13 @@
       "streams_14d": 8,
       "hours_14d": 40.8,
       "vod_views_14d": 272245,
-      "last_stream_at": "2026-08-16T12:56:33Z"
+      "last_stream_at": "2026-08-16T12:56:33Z",
+      "avg_viewers": 874,
+      "max_viewers": 1832,
+      "hours_watched": 97793,
+      "hours_streamed": 111.9,
+      "followers_gained": 266,
+      "twitch_rank": 2219
     },
     {
       "brand": "brand:winline",
@@ -545,11 +731,17 @@
       "channel_url": "https://www.twitch.tv/sasavot",
       "created_at": "2015-04-21T13:35:02Z",
       "description": "Одинокий человек на скале стоит, взглядом пронзая алое небо. Где-то там, на прибое, чайка кричит, где-то люди поют на распевы. Ну, а ветер лишь тихо листвой шелестит, Он стирает с щеки омыватель. ",
-      "followers": 1824416,
+      "followers": 1824419,
       "streams_14d": 2,
       "hours_14d": 11.1,
       "vod_views_14d": 1096223,
-      "last_stream_at": "2026-08-13T16:11:21Z"
+      "last_stream_at": "2026-08-13T16:11:21Z",
+      "avg_viewers": 15315,
+      "max_viewers": 41050,
+      "hours_watched": 1814881,
+      "hours_streamed": 118.5,
+      "followers_gained": 16091,
+      "twitch_rank": 65
     },
     {
       "brand": "brand:winline",
@@ -566,7 +758,13 @@
       "streams_14d": 12,
       "hours_14d": 78.1,
       "vod_views_14d": 210178,
-      "last_stream_at": "2026-08-13T20:01:26Z"
+      "last_stream_at": "2026-08-13T20:01:26Z",
+      "avg_viewers": 478,
+      "max_viewers": 1969,
+      "hours_watched": 82634,
+      "hours_streamed": 172.9,
+      "followers_gained": 1162,
+      "twitch_rank": 2837
     },
     {
       "brand": "brand:winline",
@@ -583,7 +781,13 @@
       "streams_14d": 0,
       "hours_14d": 0,
       "vod_views_14d": 0,
-      "last_stream_at": "2026-06-20T13:41:26Z"
+      "last_stream_at": "2026-06-20T13:41:26Z",
+      "avg_viewers": 2507,
+      "max_viewers": 4102,
+      "hours_watched": 117911,
+      "hours_streamed": 47,
+      "followers_gained": 630,
+      "twitch_rank": 1349
     },
     {
       "brand": "brand:winline",
@@ -600,7 +804,13 @@
       "streams_14d": 12,
       "hours_14d": 72.9,
       "vod_views_14d": 228793,
-      "last_stream_at": "2026-08-12T15:24:57Z"
+      "last_stream_at": "2026-08-12T15:24:57Z",
+      "avg_viewers": 387,
+      "max_viewers": 2863,
+      "hours_watched": 39182,
+      "hours_streamed": 101.1,
+      "followers_gained": 1225,
+      "twitch_rank": 5310
     },
     {
       "brand": "brand:winline",
@@ -617,7 +827,13 @@
       "streams_14d": 12,
       "hours_14d": 70.7,
       "vod_views_14d": 311287,
-      "last_stream_at": "2026-08-14T02:06:27Z"
+      "last_stream_at": "2026-08-14T02:06:27Z",
+      "avg_viewers": 647,
+      "max_viewers": 4134,
+      "hours_watched": 68040,
+      "hours_streamed": 105.1,
+      "followers_gained": 2049,
+      "twitch_rank": 3109
     },
     {
       "brand": "brand:winline",
@@ -634,7 +850,13 @@
       "streams_14d": 3,
       "hours_14d": 11.2,
       "vod_views_14d": 54886,
-      "last_stream_at": "2026-08-14T07:48:35Z"
+      "last_stream_at": "2026-08-14T07:48:35Z",
+      "avg_viewers": 536,
+      "max_viewers": 1243,
+      "hours_watched": 25254,
+      "hours_streamed": 47.1,
+      "followers_gained": 67,
+      "twitch_rank": 6338
     },
     {
       "brand": "brand:winline",
@@ -651,7 +873,13 @@
       "streams_14d": 16,
       "hours_14d": 48.7,
       "vod_views_14d": 1507334,
-      "last_stream_at": "2026-08-17T07:49:17Z"
+      "last_stream_at": "2026-08-17T07:49:17Z",
+      "avg_viewers": 4200,
+      "max_viewers": 27633,
+      "hours_watched": 428918,
+      "hours_streamed": 102.1,
+      "followers_gained": 16400,
+      "twitch_rank": 391
     },
     {
       "brand": "brand:winline",
@@ -668,7 +896,13 @@
       "streams_14d": 2,
       "hours_14d": 5.4,
       "vod_views_14d": 70284,
-      "last_stream_at": "2026-08-09T18:36:08Z"
+      "last_stream_at": "2026-08-09T18:36:08Z",
+      "avg_viewers": 461,
+      "max_viewers": 653,
+      "hours_watched": 6508,
+      "hours_streamed": 14.1,
+      "followers_gained": 154,
+      "twitch_rank": 11589
     },
     {
       "brand": "brand:winline",
@@ -685,7 +919,13 @@
       "streams_14d": 4,
       "hours_14d": 9.3,
       "vod_views_14d": 131366,
-      "last_stream_at": "2026-08-09T18:51:40Z"
+      "last_stream_at": "2026-08-09T18:51:40Z",
+      "avg_viewers": 958,
+      "max_viewers": 1680,
+      "hours_watched": 17455,
+      "hours_streamed": 18.2,
+      "followers_gained": -684,
+      "twitch_rank": 5482
     },
     {
       "brand": "brand:winline",
@@ -701,8 +941,14 @@
       "followers": 378707,
       "streams_14d": 14,
       "hours_14d": 44.4,
-      "vod_views_14d": 681430,
-      "last_stream_at": "2026-08-17T06:38:05Z"
+      "vod_views_14d": 681431,
+      "last_stream_at": "2026-08-17T06:38:05Z",
+      "avg_viewers": 1546,
+      "max_viewers": 2475,
+      "hours_watched": 129502,
+      "hours_streamed": 83.8,
+      "followers_gained": -277,
+      "twitch_rank": 1536
     },
     {
       "brand": "brand:winline",
@@ -715,11 +961,17 @@
       "channel_url": "https://www.twitch.tv/davay_po_novoy",
       "created_at": "2016-03-29T18:24:46Z",
       "description": "№ 5196666323 - Номер заявления РКН",
-      "followers": 170822,
+      "followers": 170821,
       "streams_14d": 9,
       "hours_14d": 22.1,
       "vod_views_14d": 242761,
-      "last_stream_at": "2026-08-12T12:03:59Z"
+      "last_stream_at": "2026-08-12T12:03:59Z",
+      "avg_viewers": 713,
+      "max_viewers": 1543,
+      "hours_watched": 59888,
+      "hours_streamed": 84,
+      "followers_gained": -632,
+      "twitch_rank": 3320
     },
     {
       "brand": "brand:winline",
@@ -736,7 +988,13 @@
       "streams_14d": 5,
       "hours_14d": 14,
       "vod_views_14d": 337785,
-      "last_stream_at": "2026-08-14T09:28:33Z"
+      "last_stream_at": "2026-08-14T09:28:33Z",
+      "avg_viewers": 2563,
+      "max_viewers": 12927,
+      "hours_watched": 175358,
+      "hours_streamed": 68.4,
+      "followers_gained": 4522,
+      "twitch_rank": 1015
     },
     {
       "brand": "brand:winline",
@@ -749,11 +1007,17 @@
       "channel_url": "https://www.twitch.tv/enzzai",
       "created_at": "2019-10-14T01:39:54Z",
       "description": "Реклама: @HelloNextUp enzzai@nextupmedia.ru РКН: https://gosuslugi.ru/snet/67adfc928a84ac04ab3bd6f5",
-      "followers": 513456,
+      "followers": 513458,
       "streams_14d": 9,
       "hours_14d": 47,
-      "vod_views_14d": 3213142,
-      "last_stream_at": "2026-08-16T14:19:29Z"
+      "vod_views_14d": 3213145,
+      "last_stream_at": "2026-08-16T14:19:29Z",
+      "avg_viewers": 5035,
+      "max_viewers": 12303,
+      "hours_watched": 649219,
+      "hours_streamed": 128.9,
+      "followers_gained": 12232,
+      "twitch_rank": 255
     },
     {
       "brand": "brand:winline",
@@ -770,7 +1034,13 @@
       "streams_14d": 0,
       "hours_14d": 0,
       "vod_views_14d": 0,
-      "last_stream_at": null
+      "last_stream_at": null,
+      "avg_viewers": null,
+      "max_viewers": null,
+      "hours_watched": null,
+      "hours_streamed": null,
+      "followers_gained": null,
+      "twitch_rank": null
     },
     {
       "brand": "brand:winline",
@@ -783,11 +1053,17 @@
       "channel_url": "https://www.twitch.tv/poisonika",
       "created_at": "2023-04-07T18:01:35Z",
       "description": "Псих в сети.",
-      "followers": 92503,
+      "followers": 92510,
       "streams_14d": 14,
-      "hours_14d": 93.4,
+      "hours_14d": 93.5,
       "vod_views_14d": 576801,
-      "last_stream_at": "2026-08-17T09:54:37Z"
+      "last_stream_at": "2026-08-17T09:54:37Z",
+      "avg_viewers": 565,
+      "max_viewers": 2799,
+      "hours_watched": 90520,
+      "hours_streamed": 160.3,
+      "followers_gained": 3755,
+      "twitch_rank": 2565
     },
     {
       "brand": "brand:winline",
@@ -804,7 +1080,13 @@
       "streams_14d": 7,
       "hours_14d": 38,
       "vod_views_14d": 119121,
-      "last_stream_at": "2026-08-16T09:39:04Z"
+      "last_stream_at": "2026-08-16T09:39:04Z",
+      "avg_viewers": 278,
+      "max_viewers": 1637,
+      "hours_watched": 30844,
+      "hours_streamed": 111.1,
+      "followers_gained": -621,
+      "twitch_rank": 6827
     },
     {
       "brand": "brand:winline",
@@ -817,11 +1099,17 @@
       "channel_url": "https://www.twitch.tv/voodoosh",
       "created_at": "2015-04-04T14:48:37Z",
       "description": "https://rknn.link/uQ - Регистрация в РКН. Добро пожаловать, стримера зовут Александр. И он очень старается, чтобы тебе тут было хорошо! По вопросам рекламы и предложениям : Почта: voodoosh@gca.holdings",
-      "followers": 496764,
+      "followers": 496765,
       "streams_14d": 14,
-      "hours_14d": 81,
-      "vod_views_14d": 786324,
-      "last_stream_at": "2026-08-17T09:05:41Z"
+      "hours_14d": 81.1,
+      "vod_views_14d": 786343,
+      "last_stream_at": "2026-08-17T09:05:41Z",
+      "avg_viewers": 2403,
+      "max_viewers": 6059,
+      "hours_watched": 451292,
+      "hours_streamed": 187.8,
+      "followers_gained": 505,
+      "twitch_rank": 437
     },
     {
       "brand": "brand:winline",
@@ -838,7 +1126,13 @@
       "streams_14d": 0,
       "hours_14d": 0,
       "vod_views_14d": 0,
-      "last_stream_at": "2026-06-21T11:56:14Z"
+      "last_stream_at": "2026-06-21T11:56:14Z",
+      "avg_viewers": null,
+      "max_viewers": null,
+      "hours_watched": null,
+      "hours_streamed": null,
+      "followers_gained": null,
+      "twitch_rank": null
     },
     {
       "brand": "brand:betboom",
@@ -851,11 +1145,17 @@
       "channel_url": "https://www.twitch.tv/nix",
       "created_at": "2014-07-30T12:03:35Z",
       "description": "Фрукты не дышать корень имбиря стоять на голове холодный душ спать на полу с открытыми глазами",
-      "followers": 1195619,
+      "followers": 1195620,
       "streams_14d": 8,
       "hours_14d": 57.3,
       "vod_views_14d": 17905414,
-      "last_stream_at": "2026-08-16T03:08:51Z"
+      "last_stream_at": "2026-08-16T03:08:51Z",
+      "avg_viewers": 81633,
+      "max_viewers": 252101,
+      "hours_watched": 5895267,
+      "hours_streamed": 72.2,
+      "followers_gained": 78688,
+      "twitch_rank": 9
     },
     {
       "brand": "brand:betboom",
@@ -872,7 +1172,13 @@
       "streams_14d": 0,
       "hours_14d": 0,
       "vod_views_14d": 0,
-      "last_stream_at": "2026-06-19T23:55:36Z"
+      "last_stream_at": "2026-06-19T23:55:36Z",
+      "avg_viewers": null,
+      "max_viewers": null,
+      "hours_watched": null,
+      "hours_streamed": null,
+      "followers_gained": null,
+      "twitch_rank": null
     },
     {
       "brand": "brand:betboom",
@@ -889,7 +1195,13 @@
       "streams_14d": 0,
       "hours_14d": 0,
       "vod_views_14d": 0,
-      "last_stream_at": "2026-08-01T15:02:16Z"
+      "last_stream_at": "2026-08-01T15:02:16Z",
+      "avg_viewers": 1371,
+      "max_viewers": 2511,
+      "hours_watched": 141430,
+      "hours_streamed": 103.2,
+      "followers_gained": 414,
+      "twitch_rank": 1475
     },
     {
       "brand": "brand:betboom",
@@ -906,7 +1218,13 @@
       "streams_14d": 8,
       "hours_14d": 47.9,
       "vod_views_14d": 753781,
-      "last_stream_at": "2026-08-15T10:45:57Z"
+      "last_stream_at": "2026-08-15T10:45:57Z",
+      "avg_viewers": 1328,
+      "max_viewers": 4437,
+      "hours_watched": 174146,
+      "hours_streamed": 131.1,
+      "followers_gained": 1300,
+      "twitch_rank": 1242
     },
     {
       "brand": "brand:betboom",
@@ -923,7 +1241,13 @@
       "streams_14d": 2,
       "hours_14d": 8.2,
       "vod_views_14d": 103516,
-      "last_stream_at": "2026-08-12T16:28:04Z"
+      "last_stream_at": "2026-08-12T16:28:04Z",
+      "avg_viewers": 3672,
+      "max_viewers": 37106,
+      "hours_watched": 502091,
+      "hours_streamed": 136.8,
+      "followers_gained": 5024,
+      "twitch_rank": 347
     },
     {
       "brand": "brand:betboom",
@@ -940,7 +1264,13 @@
       "streams_14d": 0,
       "hours_14d": 0,
       "vod_views_14d": 0,
-      "last_stream_at": null
+      "last_stream_at": null,
+      "avg_viewers": null,
+      "max_viewers": null,
+      "hours_watched": null,
+      "hours_streamed": null,
+      "followers_gained": null,
+      "twitch_rank": null
     },
     {
       "brand": "brand:betboom",
@@ -957,7 +1287,13 @@
       "streams_14d": 0,
       "hours_14d": 0,
       "vod_views_14d": 0,
-      "last_stream_at": null
+      "last_stream_at": null,
+      "avg_viewers": null,
+      "max_viewers": null,
+      "hours_watched": null,
+      "hours_streamed": null,
+      "followers_gained": null,
+      "twitch_rank": null
     },
     {
       "brand": "brand:betboom",
@@ -970,11 +1306,17 @@
       "channel_url": "https://www.twitch.tv/ravshann",
       "created_at": "2015-05-27T15:35:08Z",
       "description": "Разум гения, душа ватаката! ",
-      "followers": 1262508,
+      "followers": 1262509,
       "streams_14d": 4,
       "hours_14d": 17.7,
-      "vod_views_14d": 1571724,
-      "last_stream_at": "2026-08-15T12:24:20Z"
+      "vod_views_14d": 1571783,
+      "last_stream_at": "2026-08-15T12:24:20Z",
+      "avg_viewers": 13011,
+      "max_viewers": 24107,
+      "hours_watched": 857433,
+      "hours_streamed": 65.9,
+      "followers_gained": 18175,
+      "twitch_rank": 147
     },
     {
       "brand": "brand:betboom",
@@ -991,7 +1333,13 @@
       "streams_14d": 7,
       "hours_14d": 25.3,
       "vod_views_14d": 1393428,
-      "last_stream_at": "2026-08-14T16:10:27Z"
+      "last_stream_at": "2026-08-14T16:10:27Z",
+      "avg_viewers": 4512,
+      "max_viewers": 7879,
+      "hours_watched": 195606,
+      "hours_streamed": 43.4,
+      "followers_gained": 1433,
+      "twitch_rank": 737
     },
     {
       "brand": "brand:betboom",
@@ -1008,7 +1356,13 @@
       "streams_14d": 0,
       "hours_14d": 0,
       "vod_views_14d": 0,
-      "last_stream_at": null
+      "last_stream_at": null,
+      "avg_viewers": null,
+      "max_viewers": null,
+      "hours_watched": null,
+      "hours_streamed": null,
+      "followers_gained": null,
+      "twitch_rank": null
     },
     {
       "brand": "brand:betboom",
@@ -1025,7 +1379,13 @@
       "streams_14d": 0,
       "hours_14d": 0,
       "vod_views_14d": 0,
-      "last_stream_at": null
+      "last_stream_at": null,
+      "avg_viewers": null,
+      "max_viewers": null,
+      "hours_watched": null,
+      "hours_streamed": null,
+      "followers_gained": null,
+      "twitch_rank": null
     },
     {
       "brand": "brand:betboom",
@@ -1042,7 +1402,13 @@
       "streams_14d": 0,
       "hours_14d": 0,
       "vod_views_14d": 0,
-      "last_stream_at": null
+      "last_stream_at": null,
+      "avg_viewers": null,
+      "max_viewers": null,
+      "hours_watched": null,
+      "hours_streamed": null,
+      "followers_gained": null,
+      "twitch_rank": null
     },
     {
       "brand": "brand:betboom",
@@ -1059,7 +1425,13 @@
       "streams_14d": 4,
       "hours_14d": 39.9,
       "vod_views_14d": 1524388,
-      "last_stream_at": "2026-08-16T02:11:19Z"
+      "last_stream_at": "2026-08-16T02:11:19Z",
+      "avg_viewers": 4793,
+      "max_viewers": 37561,
+      "hours_watched": 257188,
+      "hours_streamed": 53.7,
+      "followers_gained": 9885,
+      "twitch_rank": 588
     },
     {
       "brand": "brand:betboom",
@@ -1078,11 +1450,17 @@
       "channel_url": "https://www.twitch.tv/paradeev1ch",
       "created_at": "2020-04-16T08:02:55Z",
       "description": "Сотрудничество - contact@paradeevich.ru№ 4926836745",
-      "followers": 2540410,
+      "followers": 2540411,
       "streams_14d": 0,
       "hours_14d": 0,
       "vod_views_14d": 0,
-      "last_stream_at": "2026-07-06T17:17:47Z"
+      "last_stream_at": "2026-07-06T17:17:47Z",
+      "avg_viewers": null,
+      "max_viewers": null,
+      "hours_watched": null,
+      "hours_streamed": null,
+      "followers_gained": null,
+      "twitch_rank": null
     },
     {
       "brand": "brand:betboom",
@@ -1095,11 +1473,17 @@
       "channel_url": "https://www.twitch.tv/koreshzy",
       "created_at": "2017-07-17T20:18:26Z",
       "description": "сотрудничество - contact@mediakoresh.ru",
-      "followers": 2343642,
+      "followers": 2343641,
       "streams_14d": 0,
       "hours_14d": 0,
       "vod_views_14d": 0,
-      "last_stream_at": "2026-07-30T18:48:31Z"
+      "last_stream_at": "2026-07-30T18:48:31Z",
+      "avg_viewers": 11420,
+      "max_viewers": 16867,
+      "hours_watched": 69521,
+      "hours_streamed": 6.1,
+      "followers_gained": 12181,
+      "twitch_rank": 524
     },
     {
       "brand": "brand:betboom",
@@ -1116,7 +1500,13 @@
       "streams_14d": 0,
       "hours_14d": 0,
       "vod_views_14d": 0,
-      "last_stream_at": null
+      "last_stream_at": null,
+      "avg_viewers": null,
+      "max_viewers": null,
+      "hours_watched": null,
+      "hours_streamed": null,
+      "followers_gained": null,
+      "twitch_rank": null
     },
     {
       "brand": "brand:betboom",
@@ -1129,11 +1519,17 @@
       "channel_url": "https://www.twitch.tv/by_owl",
       "created_at": "2013-08-22T16:16:48Z",
       "description": "i can't sleep",
-      "followers": 725992,
+      "followers": 725993,
       "streams_14d": 4,
       "hours_14d": 17.7,
-      "vod_views_14d": 596770,
-      "last_stream_at": "2026-08-12T16:55:17Z"
+      "vod_views_14d": 596777,
+      "last_stream_at": "2026-08-12T16:55:17Z",
+      "avg_viewers": 3756,
+      "max_viewers": 11472,
+      "hours_watched": 396631,
+      "hours_streamed": 105.6,
+      "followers_gained": 6440,
+      "twitch_rank": 446
     },
     {
       "brand": "brand:betboom",
@@ -1150,7 +1546,13 @@
       "streams_14d": 0,
       "hours_14d": 0,
       "vod_views_14d": 0,
-      "last_stream_at": null
+      "last_stream_at": null,
+      "avg_viewers": null,
+      "max_viewers": null,
+      "hours_watched": null,
+      "hours_streamed": null,
+      "followers_gained": null,
+      "twitch_rank": null
     },
     {
       "brand": "brand:betboom",
@@ -1167,7 +1569,13 @@
       "streams_14d": 9,
       "hours_14d": 91.6,
       "vod_views_14d": 49546,
-      "last_stream_at": "2026-08-16T17:41:29Z"
+      "last_stream_at": "2026-08-16T17:41:29Z",
+      "avg_viewers": 187,
+      "max_viewers": 317,
+      "hours_watched": 41580,
+      "hours_streamed": 222,
+      "followers_gained": -416,
+      "twitch_rank": 5816
     },
     {
       "brand": "brand:betboom",
@@ -1190,7 +1598,13 @@
       "streams_14d": 0,
       "hours_14d": 0,
       "vod_views_14d": 0,
-      "last_stream_at": null
+      "last_stream_at": null,
+      "avg_viewers": null,
+      "max_viewers": null,
+      "hours_watched": null,
+      "hours_streamed": null,
+      "followers_gained": null,
+      "twitch_rank": null
     },
     {
       "brand": "brand:betboom",
@@ -1207,7 +1621,13 @@
       "streams_14d": 0,
       "hours_14d": 0,
       "vod_views_14d": 0,
-      "last_stream_at": "2026-07-24T12:08:24Z"
+      "last_stream_at": "2026-07-24T12:08:24Z",
+      "avg_viewers": 408,
+      "max_viewers": 573,
+      "hours_watched": 3905,
+      "hours_streamed": 9.6,
+      "followers_gained": -249,
+      "twitch_rank": 13993
     },
     {
       "brand": "brand:betboom",
@@ -1224,7 +1644,13 @@
       "streams_14d": 0,
       "hours_14d": 0,
       "vod_views_14d": 0,
-      "last_stream_at": null
+      "last_stream_at": null,
+      "avg_viewers": null,
+      "max_viewers": null,
+      "hours_watched": null,
+      "hours_streamed": null,
+      "followers_gained": null,
+      "twitch_rank": null
     },
     {
       "brand": "brand:betboom",
@@ -1247,7 +1673,13 @@
       "streams_14d": 0,
       "hours_14d": 0,
       "vod_views_14d": 0,
-      "last_stream_at": null
+      "last_stream_at": null,
+      "avg_viewers": null,
+      "max_viewers": null,
+      "hours_watched": null,
+      "hours_streamed": null,
+      "followers_gained": null,
+      "twitch_rank": null
     },
     {
       "brand": "brand:betboom",
@@ -1263,8 +1695,14 @@
       "followers": 927135,
       "streams_14d": 11,
       "hours_14d": 53.7,
-      "vod_views_14d": 1076338,
-      "last_stream_at": "2026-08-16T13:56:52Z"
+      "vod_views_14d": 1076340,
+      "last_stream_at": "2026-08-16T13:56:52Z",
+      "avg_viewers": 4959,
+      "max_viewers": 8677,
+      "hours_watched": 576139,
+      "hours_streamed": 116.2,
+      "followers_gained": 379,
+      "twitch_rank": 282
     },
     {
       "brand": "brand:betboom",
@@ -1277,11 +1715,17 @@
       "channel_url": "https://www.twitch.tv/ct0m",
       "created_at": "2019-02-06T18:02:41Z",
       "description": "По вопросам рекламы и предложениям: TG: https://telegram.me/JiraiyaRice VK: https://vk.com/jira1yarice ",
-      "followers": 554109,
+      "followers": 554111,
       "streams_14d": 7,
       "hours_14d": 31.7,
       "vod_views_14d": 1876876,
-      "last_stream_at": "2026-08-16T08:10:57Z"
+      "last_stream_at": "2026-08-16T08:10:57Z",
+      "avg_viewers": 7958,
+      "max_viewers": 17144,
+      "hours_watched": 671892,
+      "hours_streamed": 84.4,
+      "followers_gained": 22332,
+      "twitch_rank": 224
     },
     {
       "brand": "brand:betboom",
@@ -1298,7 +1742,13 @@
       "streams_14d": 0,
       "hours_14d": 0,
       "vod_views_14d": 0,
-      "last_stream_at": null
+      "last_stream_at": null,
+      "avg_viewers": null,
+      "max_viewers": null,
+      "hours_watched": null,
+      "hours_streamed": null,
+      "followers_gained": null,
+      "twitch_rank": null
     },
     {
       "brand": "brand:betboom",
@@ -1314,8 +1764,14 @@
       "followers": 68080,
       "streams_14d": 3,
       "hours_14d": 8.6,
-      "vod_views_14d": 174821,
-      "last_stream_at": "2026-08-14T16:33:51Z"
+      "vod_views_14d": 174822,
+      "last_stream_at": "2026-08-14T16:33:51Z",
+      "avg_viewers": 845,
+      "max_viewers": 3509,
+      "hours_watched": 38923,
+      "hours_streamed": 46,
+      "followers_gained": 1517,
+      "twitch_rank": 4076
     },
     {
       "brand": "brand:betboom",
@@ -1332,7 +1788,13 @@
       "streams_14d": 7,
       "hours_14d": 30.4,
       "vod_views_14d": 1190889,
-      "last_stream_at": "2026-08-16T10:03:15Z"
+      "last_stream_at": "2026-08-16T10:03:15Z",
+      "avg_viewers": 3543,
+      "max_viewers": 8128,
+      "hours_watched": 221983,
+      "hours_streamed": 62.6,
+      "followers_gained": 7176,
+      "twitch_rank": 752
     },
     {
       "brand": "brand:betboom",
@@ -1349,7 +1811,13 @@
       "streams_14d": 0,
       "hours_14d": 0,
       "vod_views_14d": 0,
-      "last_stream_at": null
+      "last_stream_at": null,
+      "avg_viewers": 393,
+      "max_viewers": 1855,
+      "hours_watched": 13661,
+      "hours_streamed": 34.8,
+      "followers_gained": 2,
+      "twitch_rank": 9764
     },
     {
       "brand": "brand:betboom",
@@ -1377,8 +1845,14 @@
       "followers": 796894,
       "streams_14d": 6,
       "hours_14d": 23.1,
-      "vod_views_14d": 1161314,
-      "last_stream_at": "2026-08-15T15:18:55Z"
+      "vod_views_14d": 1161317,
+      "last_stream_at": "2026-08-15T15:18:55Z",
+      "avg_viewers": 7736,
+      "max_viewers": 36751,
+      "hours_watched": 473505,
+      "hours_streamed": 61.2,
+      "followers_gained": 10568,
+      "twitch_rank": 286
     },
     {
       "brand": "brand:betboom",
@@ -1394,8 +1868,14 @@
       "followers": 1782748,
       "streams_14d": 4,
       "hours_14d": 31.2,
-      "vod_views_14d": 569476,
-      "last_stream_at": "2026-08-15T18:25:26Z"
+      "vod_views_14d": 569496,
+      "last_stream_at": "2026-08-15T18:25:26Z",
+      "avg_viewers": 7476,
+      "max_viewers": 52950,
+      "hours_watched": 1304986,
+      "hours_streamed": 174.6,
+      "followers_gained": 6974,
+      "twitch_rank": 108
     },
     {
       "brand": "brand:betboom",
@@ -1412,7 +1892,13 @@
       "streams_14d": 0,
       "hours_14d": 0,
       "vod_views_14d": 0,
-      "last_stream_at": null
+      "last_stream_at": null,
+      "avg_viewers": null,
+      "max_viewers": null,
+      "hours_watched": null,
+      "hours_streamed": null,
+      "followers_gained": null,
+      "twitch_rank": null
     },
     {
       "brand": "brand:betboom",
@@ -1435,7 +1921,13 @@
       "streams_14d": 0,
       "hours_14d": 0,
       "vod_views_14d": 0,
-      "last_stream_at": null
+      "last_stream_at": null,
+      "avg_viewers": null,
+      "max_viewers": null,
+      "hours_watched": null,
+      "hours_streamed": null,
+      "followers_gained": null,
+      "twitch_rank": null
     },
     {
       "brand": "brand:betboom",
@@ -1448,11 +1940,17 @@
       "channel_url": "https://www.twitch.tv/morphilina",
       "created_at": "2019-02-23T17:37:17Z",
       "description": " /ᐠ - ˕ -マ ",
-      "followers": 344821,
+      "followers": 344820,
       "streams_14d": 5,
       "hours_14d": 16,
       "vod_views_14d": 447274,
-      "last_stream_at": "2026-08-12T18:53:38Z"
+      "last_stream_at": "2026-08-12T18:53:38Z",
+      "avg_viewers": 2273,
+      "max_viewers": 4746,
+      "hours_watched": 124197,
+      "hours_streamed": 54.6,
+      "followers_gained": 4933,
+      "twitch_rank": 1363
     },
     {
       "brand": "brand:betboom",
@@ -1475,7 +1973,13 @@
       "streams_14d": 10,
       "hours_14d": 43.8,
       "vod_views_14d": 1149426,
-      "last_stream_at": "2026-08-15T10:31:45Z"
+      "last_stream_at": "2026-08-15T10:31:45Z",
+      "avg_viewers": 2759,
+      "max_viewers": 9321,
+      "hours_watched": 450253,
+      "hours_streamed": 163.2,
+      "followers_gained": 4727,
+      "twitch_rank": 419
     },
     {
       "brand": "brand:betboom",
@@ -1488,11 +1992,17 @@
       "channel_url": "https://www.twitch.tv/solo",
       "created_at": "2012-08-22T18:38:58Z",
       "description": "Сотрудничество — TG: @onleeking | Вопросы и предложения: 21withsolo@gmail.com | РКН — https://gclnk.com/nOzmtXgl",
-      "followers": 342860,
+      "followers": 342862,
       "streams_14d": 4,
       "hours_14d": 46.3,
-      "vod_views_14d": 2223610,
-      "last_stream_at": "2026-08-16T01:59:39Z"
+      "vod_views_14d": 2223655,
+      "last_stream_at": "2026-08-16T01:59:39Z",
+      "avg_viewers": 17100,
+      "max_viewers": 70039,
+      "hours_watched": 1114635,
+      "hours_streamed": 65.2,
+      "followers_gained": 7528,
+      "twitch_rank": 95
     },
     {
       "brand": "brand:betboom",
@@ -1505,11 +2015,17 @@
       "channel_url": "https://www.twitch.tv/mariachi",
       "created_at": "2013-02-25T14:31:05Z",
       "description": "Dota 2 player  // ~ 14 000 MMR max.       Сотрудничество: m87.anastasia@gmail.com",
-      "followers": 61459,
+      "followers": 61462,
       "streams_14d": 13,
-      "hours_14d": 129.5,
+      "hours_14d": 129.6,
       "vod_views_14d": 630007,
-      "last_stream_at": "2026-08-17T02:46:31Z"
+      "last_stream_at": "2026-08-17T02:46:31Z",
+      "avg_viewers": 651,
+      "max_viewers": 2186,
+      "hours_watched": 149184,
+      "hours_streamed": 229.3,
+      "followers_gained": 864,
+      "twitch_rank": 1637
     },
     {
       "brand": "brand:betboom",
@@ -1526,7 +2042,13 @@
       "streams_14d": 5,
       "hours_14d": 27.7,
       "vod_views_14d": 166241,
-      "last_stream_at": "2026-08-16T10:48:07Z"
+      "last_stream_at": "2026-08-16T10:48:07Z",
+      "avg_viewers": 1004,
+      "max_viewers": 3428,
+      "hours_watched": 60988,
+      "hours_streamed": 60.7,
+      "followers_gained": 911,
+      "twitch_rank": 2934
     },
     {
       "brand": "brand:betboom",
@@ -1543,7 +2065,13 @@
       "streams_14d": 0,
       "hours_14d": 0,
       "vod_views_14d": 0,
-      "last_stream_at": null
+      "last_stream_at": null,
+      "avg_viewers": null,
+      "max_viewers": null,
+      "hours_watched": null,
+      "hours_streamed": null,
+      "followers_gained": null,
+      "twitch_rank": null
     },
     {
       "brand": "brand:betboom",
@@ -1560,7 +2088,13 @@
       "streams_14d": 0,
       "hours_14d": 0,
       "vod_views_14d": 0,
-      "last_stream_at": null
+      "last_stream_at": null,
+      "avg_viewers": null,
+      "max_viewers": null,
+      "hours_watched": null,
+      "hours_streamed": null,
+      "followers_gained": null,
+      "twitch_rank": null
     },
     {
       "brand": "brand:betboom",
@@ -1577,7 +2111,13 @@
       "streams_14d": 6,
       "hours_14d": 20.1,
       "vod_views_14d": 45440,
-      "last_stream_at": "2026-08-07T15:35:31Z"
+      "last_stream_at": "2026-08-07T15:35:31Z",
+      "avg_viewers": 638,
+      "max_viewers": 1918,
+      "hours_watched": 25289,
+      "hours_streamed": 39.6,
+      "followers_gained": 22,
+      "twitch_rank": 5882
     },
     {
       "brand": "brand:betboom",
@@ -1590,11 +2130,17 @@
       "channel_url": "https://www.twitch.tv/rachelr",
       "created_at": "2015-10-12T18:35:45Z",
       "description": "Почта чайного пьяницы для рекламы - Rachel.PR@yandex.ruРКН - № 6474396884",
-      "followers": 412197,
+      "followers": 412194,
       "streams_14d": 9,
       "hours_14d": 44.5,
-      "vod_views_14d": 559382,
-      "last_stream_at": "2026-08-16T09:51:36Z"
+      "vod_views_14d": 559385,
+      "last_stream_at": "2026-08-16T09:51:36Z",
+      "avg_viewers": 995,
+      "max_viewers": 4052,
+      "hours_watched": 134560,
+      "hours_streamed": 135.3,
+      "followers_gained": 1350,
+      "twitch_rank": 1667
     },
     {
       "brand": "brand:betboom",
@@ -1607,11 +2153,17 @@
       "channel_url": "https://www.twitch.tv/avice",
       "created_at": "2018-04-19T08:06:19Z",
       "description": "№ 4971641330 morph - 4000 games, 60 wr / top 1 opendota, ex top 2 dotabuff Для сотрудничества: @nightmortannnnnn @nikg14 @tarasofgang",
-      "followers": 295638,
+      "followers": 295639,
       "streams_14d": 12,
       "hours_14d": 78.9,
-      "vod_views_14d": 2849921,
-      "last_stream_at": "2026-08-16T12:28:31Z"
+      "vod_views_14d": 2849922,
+      "last_stream_at": "2026-08-16T12:28:31Z",
+      "avg_viewers": 7416,
+      "max_viewers": 25974,
+      "hours_watched": 1315172,
+      "hours_streamed": 177.3,
+      "followers_gained": 18485,
+      "twitch_rank": 106
     },
     {
       "brand": "brand:betboom",
@@ -1628,7 +2180,13 @@
       "streams_14d": 13,
       "hours_14d": 58.7,
       "vod_views_14d": 34674,
-      "last_stream_at": "2026-08-15T16:57:14Z"
+      "last_stream_at": "2026-08-15T16:57:14Z",
+      "avg_viewers": 128,
+      "max_viewers": 1710,
+      "hours_watched": 18244,
+      "hours_streamed": 142,
+      "followers_gained": 695,
+      "twitch_rank": 11528
     },
     {
       "brand": "brand:betboom",
@@ -1645,7 +2203,13 @@
       "streams_14d": 0,
       "hours_14d": 0,
       "vod_views_14d": 0,
-      "last_stream_at": null
+      "last_stream_at": null,
+      "avg_viewers": null,
+      "max_viewers": null,
+      "hours_watched": null,
+      "hours_streamed": null,
+      "followers_gained": null,
+      "twitch_rank": null
     },
     {
       "brand": "brand:betboom",
@@ -1662,7 +2226,13 @@
       "streams_14d": 0,
       "hours_14d": 0,
       "vod_views_14d": 0,
-      "last_stream_at": "2026-08-01T10:16:55Z"
+      "last_stream_at": "2026-08-01T10:16:55Z",
+      "avg_viewers": 60,
+      "max_viewers": 98,
+      "hours_watched": 388,
+      "hours_streamed": 6.5,
+      "followers_gained": -26,
+      "twitch_rank": 76067
     },
     {
       "brand": "brand:betboom",
@@ -1678,8 +2248,14 @@
       "followers": 270247,
       "streams_14d": 7,
       "hours_14d": 29.3,
-      "vod_views_14d": 320209,
-      "last_stream_at": "2026-08-13T15:27:10Z"
+      "vod_views_14d": 320210,
+      "last_stream_at": "2026-08-13T15:27:10Z",
+      "avg_viewers": 2541,
+      "max_viewers": 6587,
+      "hours_watched": 147233,
+      "hours_streamed": 57.9,
+      "followers_gained": 196,
+      "twitch_rank": 1147
     },
     {
       "brand": "brand:betboom",
@@ -1696,7 +2272,13 @@
       "streams_14d": 0,
       "hours_14d": 0,
       "vod_views_14d": 0,
-      "last_stream_at": null
+      "last_stream_at": null,
+      "avg_viewers": null,
+      "max_viewers": null,
+      "hours_watched": null,
+      "hours_streamed": null,
+      "followers_gained": null,
+      "twitch_rank": null
     },
     {
       "brand": "brand:betboom",
@@ -1713,7 +2295,13 @@
       "streams_14d": 0,
       "hours_14d": 0,
       "vod_views_14d": 0,
-      "last_stream_at": null
+      "last_stream_at": null,
+      "avg_viewers": null,
+      "max_viewers": null,
+      "hours_watched": null,
+      "hours_streamed": null,
+      "followers_gained": null,
+      "twitch_rank": null
     },
     {
       "brand": "brand:betboom",
@@ -1728,9 +2316,15 @@
       "description": "Сотрудничество: partnerkeysie@gmail.com ",
       "followers": 45981,
       "streams_14d": 9,
-      "hours_14d": 63.8,
+      "hours_14d": 64,
       "vod_views_14d": 33180,
-      "last_stream_at": "2026-08-17T08:41:39Z"
+      "last_stream_at": "2026-08-17T08:41:39Z",
+      "avg_viewers": 119,
+      "max_viewers": 487,
+      "hours_watched": 15373,
+      "hours_streamed": 129,
+      "followers_gained": -153,
+      "twitch_rank": 13167
     },
     {
       "brand": "brand:betboom",
@@ -1747,7 +2341,13 @@
       "streams_14d": 0,
       "hours_14d": 0,
       "vod_views_14d": 0,
-      "last_stream_at": null
+      "last_stream_at": null,
+      "avg_viewers": null,
+      "max_viewers": null,
+      "hours_watched": null,
+      "hours_streamed": null,
+      "followers_gained": null,
+      "twitch_rank": null
     },
     {
       "brand": "brand:fonbet",
@@ -1764,7 +2364,13 @@
       "streams_14d": 0,
       "hours_14d": 0,
       "vod_views_14d": 0,
-      "last_stream_at": "2026-07-05T17:41:47Z"
+      "last_stream_at": "2026-07-05T17:41:47Z",
+      "avg_viewers": null,
+      "max_viewers": null,
+      "hours_watched": null,
+      "hours_streamed": null,
+      "followers_gained": null,
+      "twitch_rank": null
     },
     {
       "brand": "brand:fonbet",
@@ -1777,11 +2383,17 @@
       "channel_url": "https://www.twitch.tv/t2x2",
       "created_at": "2013-08-27T09:11:03Z",
       "description": "Привет, я крутой! Стримлю всякое разное и буду очень рад тебя видеть ❤ Business only: t2x2@gca.holdings | РКН - https://clck.ru/3QnrP4 ",
-      "followers": 2259607,
+      "followers": 2259613,
       "streams_14d": 14,
       "hours_14d": 56,
-      "vod_views_14d": 3605769,
-      "last_stream_at": "2026-08-16T13:58:49Z"
+      "vod_views_14d": 3605790,
+      "last_stream_at": "2026-08-16T13:58:49Z",
+      "avg_viewers": 11888,
+      "max_viewers": 21178,
+      "hours_watched": 1362331,
+      "hours_streamed": 114.6,
+      "followers_gained": 61751,
+      "twitch_rank": 86
     },
     {
       "brand": "brand:fonbet",
@@ -1794,11 +2406,17 @@
       "channel_url": "https://www.twitch.tv/strogo",
       "created_at": "2018-06-24T11:25:28Z",
       "description": "Я Ванек ",
-      "followers": 2217015,
+      "followers": 2217113,
       "streams_14d": 13,
-      "hours_14d": 59.7,
-      "vod_views_14d": 5611761,
-      "last_stream_at": "2026-08-17T11:45:56Z"
+      "hours_14d": 59.8,
+      "vod_views_14d": 5611769,
+      "last_stream_at": "2026-08-17T11:45:56Z",
+      "avg_viewers": 22418,
+      "max_viewers": 125522,
+      "hours_watched": 2848923,
+      "hours_streamed": 127.1,
+      "followers_gained": 25277,
+      "twitch_rank": 32
     },
     {
       "brand": "brand:fonbet",
@@ -1811,11 +2429,17 @@
       "channel_url": "https://www.twitch.tv/des0ut",
       "created_at": "2013-01-08T16:39:50Z",
       "description": "Умные всегда побеждают сильных!",
-      "followers": 641238,
+      "followers": 641242,
       "streams_14d": 2,
-      "hours_14d": 9.9,
+      "hours_14d": 10,
       "vod_views_14d": 50177,
-      "last_stream_at": "2026-08-17T07:08:50Z"
+      "last_stream_at": "2026-08-17T07:08:50Z",
+      "avg_viewers": 2202,
+      "max_viewers": 5665,
+      "hours_watched": 237599,
+      "hours_streamed": 107.9,
+      "followers_gained": 761,
+      "twitch_rank": 851
     },
     {
       "brand": "brand:fonbet",
@@ -1828,11 +2452,17 @@
       "channel_url": "https://www.twitch.tv/pch3lk1n",
       "created_at": "2013-09-14T16:12:30Z",
       "description": "Алексей \"PCH3LK1N\" Пчёлкин - амбассадор FONBET, комментатор 2023 года (SLAY), создатель школы киберспортивных комментаторов, стример, киберспортивный комментатор CS 2, ведущий, автор проектов RAPКинообзор, RAPGAMEOBZOR на YouTube. Сотрудничество - PCH3LK1N@streamers-alliance.com. № 4935565942",
-      "followers": 579574,
+      "followers": 579575,
       "streams_14d": 17,
       "hours_14d": 46.7,
-      "vod_views_14d": 554742,
-      "last_stream_at": "2026-08-16T08:25:37Z"
+      "vod_views_14d": 554743,
+      "last_stream_at": "2026-08-16T08:25:37Z",
+      "avg_viewers": 1417,
+      "max_viewers": 3167,
+      "hours_watched": 123350,
+      "hours_streamed": 87,
+      "followers_gained": 1011,
+      "twitch_rank": 1631
     },
     {
       "brand": "brand:fonbet",
@@ -1845,11 +2475,17 @@
       "channel_url": "https://www.twitch.tv/closetape",
       "created_at": "2020-03-31T15:23:43Z",
       "description": "Костик , 18 лет Москва , не обижайте меня 🙄Сотрудничество : TG : @imkostikk , почта : closetapework@bk.ru Номер ркн : 5039045728",
-      "followers": 107722,
+      "followers": 107721,
       "streams_14d": 12,
       "hours_14d": 53,
       "vod_views_14d": 475518,
-      "last_stream_at": "2026-08-17T04:13:05Z"
+      "last_stream_at": "2026-08-17T04:13:05Z",
+      "avg_viewers": 601,
+      "max_viewers": 1202,
+      "hours_watched": 59286,
+      "hours_streamed": 98.6,
+      "followers_gained": 284,
+      "twitch_rank": 3501
     },
     {
       "brand": "brand:fonbet",
@@ -1862,11 +2498,17 @@
       "channel_url": "https://www.twitch.tv/anarabdullaev",
       "created_at": "2023-06-14T10:54:20Z",
       "description": "Сотрудничество — TG: http://t.me/Kishenin_Alexandr | email: alexandr.kishenin@mail.ru № 5753678050",
-      "followers": 1490327,
+      "followers": 1490330,
       "streams_14d": 0,
       "hours_14d": 0,
       "vod_views_14d": 0,
-      "last_stream_at": null
+      "last_stream_at": null,
+      "avg_viewers": 28553,
+      "max_viewers": 49065,
+      "hours_watched": 1673192,
+      "hours_streamed": 58.6,
+      "followers_gained": 34890,
+      "twitch_rank": 50
     },
     {
       "brand": "brand:fonbet",
@@ -1889,7 +2531,13 @@
       "streams_14d": 0,
       "hours_14d": 0,
       "vod_views_14d": 0,
-      "last_stream_at": null
+      "last_stream_at": null,
+      "avg_viewers": null,
+      "max_viewers": null,
+      "hours_watched": null,
+      "hours_streamed": null,
+      "followers_gained": null,
+      "twitch_rank": null
     },
     {
       "brand": "brand:fonbet",
@@ -1906,7 +2554,13 @@
       "streams_14d": 0,
       "hours_14d": 0,
       "vod_views_14d": 0,
-      "last_stream_at": null
+      "last_stream_at": null,
+      "avg_viewers": null,
+      "max_viewers": null,
+      "hours_watched": null,
+      "hours_streamed": null,
+      "followers_gained": null,
+      "twitch_rank": null
     },
     {
       "brand": "brand:fonbet",
@@ -1934,8 +2588,14 @@
       "followers": 1985089,
       "streams_14d": 13,
       "hours_14d": 105.4,
-      "vod_views_14d": 4714877,
-      "last_stream_at": "2026-08-16T13:45:00Z"
+      "vod_views_14d": 4714892,
+      "last_stream_at": "2026-08-16T13:45:00Z",
+      "avg_viewers": 8361,
+      "max_viewers": 16264,
+      "hours_watched": 2165156,
+      "hours_streamed": 258.9,
+      "followers_gained": 15224,
+      "twitch_rank": 59
     },
     {
       "brand": "brand:pari",
@@ -1952,7 +2612,13 @@
       "streams_14d": 7,
       "hours_14d": 36,
       "vod_views_14d": 339813,
-      "last_stream_at": "2026-08-13T04:04:28Z"
+      "last_stream_at": "2026-08-13T04:04:28Z",
+      "avg_viewers": 1031,
+      "max_viewers": 31787,
+      "hours_watched": 36984,
+      "hours_streamed": 35.9,
+      "followers_gained": 275,
+      "twitch_rank": 3845
     },
     {
       "brand": "brand:pari",
@@ -1969,7 +2635,13 @@
       "streams_14d": 0,
       "hours_14d": 0,
       "vod_views_14d": 0,
-      "last_stream_at": null
+      "last_stream_at": null,
+      "avg_viewers": null,
+      "max_viewers": null,
+      "hours_watched": null,
+      "hours_streamed": null,
+      "followers_gained": null,
+      "twitch_rank": null
     },
     {
       "brand": "brand:pari",
@@ -1986,7 +2658,13 @@
       "streams_14d": 0,
       "hours_14d": 0,
       "vod_views_14d": 0,
-      "last_stream_at": null
+      "last_stream_at": null,
+      "avg_viewers": null,
+      "max_viewers": null,
+      "hours_watched": null,
+      "hours_streamed": null,
+      "followers_gained": null,
+      "twitch_rank": null
     },
     {
       "brand": "brand:pari",
@@ -2003,7 +2681,13 @@
       "streams_14d": 0,
       "hours_14d": 0,
       "vod_views_14d": 0,
-      "last_stream_at": null
+      "last_stream_at": null,
+      "avg_viewers": null,
+      "max_viewers": null,
+      "hours_watched": null,
+      "hours_streamed": null,
+      "followers_gained": null,
+      "twitch_rank": null
     },
     {
       "brand": "brand:pari",
@@ -2026,7 +2710,13 @@
       "streams_14d": 8,
       "hours_14d": 10.3,
       "vod_views_14d": 20267,
-      "last_stream_at": "2026-08-12T14:42:32Z"
+      "last_stream_at": "2026-08-12T14:42:32Z",
+      "avg_viewers": 89,
+      "max_viewers": 155,
+      "hours_watched": 1256,
+      "hours_streamed": 14.2,
+      "followers_gained": 6,
+      "twitch_rank": 46843
     },
     {
       "brand": "brand:pari",
@@ -2043,7 +2733,13 @@
       "streams_14d": 3,
       "hours_14d": 9,
       "vod_views_14d": 42694,
-      "last_stream_at": "2026-08-08T14:09:44Z"
+      "last_stream_at": "2026-08-08T14:09:44Z",
+      "avg_viewers": 385,
+      "max_viewers": 706,
+      "hours_watched": 12032,
+      "hours_streamed": 31.2,
+      "followers_gained": 6,
+      "twitch_rank": 10413
     }
   ]
 }

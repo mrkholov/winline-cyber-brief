@@ -24,6 +24,28 @@ const HEADERS = { Authorization: `Bearer ${token}`, 'Client-Id': CLIENT_ID };
 
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 
+/**
+ * TwitchTracker считает то, чего нет в Helix: средний онлайн, пик и часы просмотра.
+ * Эндпоинт отдаёт свой стандартный срез (порядка последних 30 дней), период не параметризуется.
+ */
+const TT_HEADERS = {
+  'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0 Safari/537.36',
+  Accept: 'application/json',
+};
+async function twitchTracker(login, attempt = 0) {
+  try {
+    const res = await fetch(`https://twitchtracker.com/api/channels/summary/${encodeURIComponent(login)}`, { headers: TT_HEADERS });
+    if (res.status === 429 && attempt < 4) {
+      await sleep(3000 * (attempt + 1));
+      return twitchTracker(login, attempt + 1);
+    }
+    if (!res.ok) return null;
+    return res.json();
+  } catch {
+    return null;
+  }
+}
+
 async function helix(endpoint, attempt = 0) {
   const res = await fetch(`https://api.twitch.tv/helix/${endpoint}`, { headers: HEADERS });
   if (res.status === 429 && attempt < 5) {
@@ -86,6 +108,8 @@ function durationToHours(text) {
     }
 
     const followers = await helix(`channels/followers?broadcaster_id=${user.id}&first=1`);
+    const tracker = await twitchTracker(user.login);
+    await sleep(250);
     const videos = await helix(`videos?user_id=${user.id}&type=archive&first=100`);
     const recent = (videos.data || []).filter((v) => new Date(v.created_at).getTime() >= since);
 
@@ -105,6 +129,12 @@ function durationToHours(text) {
       hours_14d: Number(recent.reduce((sum, v) => sum + durationToHours(v.duration), 0).toFixed(1)),
       vod_views_14d: recent.reduce((sum, v) => sum + (v.view_count || 0), 0),
       last_stream_at: recent[0]?.created_at || (videos.data || [])[0]?.created_at || null,
+      avg_viewers: tracker?.avg_viewers ?? null,
+      max_viewers: tracker?.max_viewers ?? null,
+      hours_watched: tracker?.hours_watched ?? null,
+      hours_streamed: tracker?.minutes_streamed != null ? Number((tracker.minutes_streamed / 60).toFixed(1)) : null,
+      followers_gained: tracker?.followers ?? null,
+      twitch_rank: tracker?.rank ?? null,
     });
   }
   console.log();
@@ -114,9 +144,9 @@ function durationToHours(text) {
     schema_version: '1.0.0',
     collected_at: new Date().toISOString().slice(0, 10),
     window_days: WINDOW_DAYS,
-    source: 'Twitch Helix API',
+    source: 'Twitch Helix API + TwitchTracker',
     method:
-      'Фолловеры — текущее значение из /channels/followers. Активность за 14 дней посчитана по записям трансляций (/videos, type=archive): число эфиров, суммарная длительность и просмотры записей. Средний онлайн Twitch в API не отдаёт.',
+      'Фолловеры, число эфиров и часы за 14 дней — Twitch Helix (/channels/followers и /videos, type=archive). Средний онлайн, пиковый онлайн, часы просмотра и место в рейтинге — TwitchTracker (/api/channels/summary), его стандартный срез порядка последних 30 дней; период у эндпоинта не параметризуется, поэтому окна двух источников не совпадают.',
     requested: records.length,
     resolved_count: found.length,
     records,
