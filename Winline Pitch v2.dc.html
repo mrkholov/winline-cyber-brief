@@ -40,23 +40,6 @@
 
   <!-- ==================== ПИТЧ ==================== -->
   <div style="max-width:1240px;margin:0 auto;padding:0 40px;">
-    <section id="ramka" style="padding:96px 0 80px;">
-      <div style="font-family:'JetBrains Mono',monospace;font-size:12.5px;color:#FF6A1A;font-weight:600;letter-spacing:1.2px;margin-bottom:26px;">РАМКА</div>
-      <div style="font-size:46px;line-height:1.15;font-weight:800;max-width:960px;letter-spacing:-0.8px;">Связываю команды, партнёрства, стримеров и события с измеримым вкладом в регистрации, депозиты и маржу.</div>
-      <div style="display:flex;gap:12px;margin-top:44px;flex-wrap:wrap;">
-        <sc-for list="{{ routeSteps }}" as="step" hint-placeholder-count="3">
-          <div style="display:flex;align-items:center;gap:12px;">
-            <div style="display:flex;align-items:center;gap:10px;background:#141416;border:1px solid rgba(255,255,255,0.1);border-radius:10px;padding:13px 18px;">
-              <span style="font-family:'JetBrains Mono',monospace;color:#FF6A1A;font-size:12.5px;font-weight:700;">{{ step.n }}</span>
-              <span style="font-size:15px;font-weight:600;">{{ step.label }}</span>
-            </div>
-            <sc-if value="{{ step.hasArrow }}" hint-placeholder-val="{{ true }}">
-              <span style="color:#4A4950;font-size:17px;">→</span>
-            </sc-if>
-          </div>
-        </sc-for>
-      </div>
-    </section>
     <section id="opyt" style="padding:80px 0;border-top:1px solid rgba(255,255,255,0.07);">
       <div style="font-family:'JetBrains Mono',monospace;font-size:12.5px;color:#FF6A1A;font-weight:600;letter-spacing:1.2px;margin-bottom:14px;">ОЖИДАНИЯ VS ОПЫТ</div>
       <div style="font-size:32px;font-weight:800;letter-spacing:-0.4px;margin-bottom:34px;">Что в роли критично — и чем это закрыто</div>
@@ -223,7 +206,7 @@
       <section id="komandy" style="padding:16px 0 60px;">
         <div style="font-size:24px;font-weight:800;margin-bottom:8px;">Команды: ростеры и спонсорство</div>
         <div style="font-size:13.5px;color:#77767C;margin-bottom:22px;">{{ teamsIntro }}</div>
-        <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:18px;">
+        <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:20px;">
           <sc-for list="{{ teamsSummary }}" as="s" hint-placeholder-count="3">
             <div style="background:#141416;border:1px solid rgba(255,255,255,0.09);border-radius:12px;padding:17px 19px;">
               <div style="font-family:'JetBrains Mono',monospace;font-size:26px;font-weight:800;color:#FF6A1A;">{{ s.value }}</div>
@@ -233,41 +216,26 @@
           </sc-for>
         </div>
 
-        <div style="font-size:17px;font-weight:800;margin-bottom:4px;">Весь портфель по типам активов</div>
-        <div style="font-size:13px;color:#77767C;margin-bottom:14px;">Общая рамка перед разбором команд: что есть у каждого бренда. Названия кликабельны там, где партнёрство подтверждено отдельным источником.</div>
-        <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:10px;margin-bottom:12px;">
-          <sc-for list="{{ brandAssets }}" as="brand" hint-placeholder-count="4">
-            <div style="background:#141416;border:1px solid rgba(255,255,255,0.09);border-radius:12px;overflow:hidden;display:flex;flex-direction:column;">
-              <div style="padding:14px 18px;background:#1D1C1F;display:flex;align-items:baseline;justify-content:space-between;gap:10px;">
-                <span style="font-size:15px;font-weight:800;{{ brand.style }}">{{ brand.label }}</span>
-                <span style="font-family:'JetBrains Mono',monospace;font-size:13px;color:#9A9AA0;">{{ brand.total }}</span>
-              </div>
-              <div style="padding:16px 18px;display:flex;flex-direction:column;gap:15px;">
-                <sc-for list="{{ brand.groups }}" as="g" hint-placeholder-count="4">
-                  <div>
-                    <div style="font-size:10.5px;font-weight:700;letter-spacing:0.6px;color:#77767C;padding-bottom:7px;border-bottom:1px solid rgba(255,255,255,0.09);">{{ g.title }} · {{ g.count }}</div>
-                    <div style="display:flex;flex-direction:column;gap:6px;margin-top:9px;">
-                      <sc-for list="{{ g.items }}" as="a" hint-placeholder-count="4">
-                        <div style="font-size:13px;line-height:1.35;">
-                          <sc-if value="{{ a.hasUrl }}" hint-placeholder-val="{{ true }}"><a href="{{ a.url }}" target="_blank" rel="noreferrer" style="{{ a.style }}">{{ a.name }}</a></sc-if>
-                          <sc-if value="{{ a.hasUrl }}" hint-placeholder-val="{{ false }}"><span style="{{ a.style }}">{{ a.name }}</span></sc-if>
-                          <span title="{{ a.markTitle }}" style="{{ a.markStyle }}">{{ a.mark }}</span><span style="font-size:10.5px;color:#77767C;"> {{ a.note }}</span>
-                        </div>
-                      </sc-for>
-                    </div>
-                  </div>
-                </sc-for>
+        <div style="border:1px solid rgba(255,255,255,0.09);border-radius:14px;overflow:hidden;">
+          <div style="display:grid;grid-template-columns:0.7fr 1.2fr 1fr 1.05fr 1.05fr;background:#1D1C1F;padding:13px 18px;font-size:10.5px;font-weight:700;letter-spacing:0.5px;color:#9A9AA0;">
+            <div>БРЕНД</div><div>КОМАНДА</div><div>ТИП СВЯЗИ</div><div>СТАТУС СЕЙЧАС</div><div>СРОК И ИСТОЧНИК</div>
+          </div>
+          <sc-for list="{{ teamTable }}" as="p" hint-placeholder-count="12">
+            <div style="display:grid;grid-template-columns:0.7fr 1.2fr 1fr 1.05fr 1.05fr;padding:13px 18px;border-top:1px solid rgba(255,255,255,0.07);background:#121114;align-items:start;">
+              <div style="font-size:13px;font-weight:800;{{ p.brandStyle }}">{{ p.brand }}</div>
+              <div style="font-size:13.5px;font-weight:700;{{ p.nameStyle }}">{{ p.name }}</div>
+              <div style="font-size:12.5px;color:#C7C6CC;">{{ p.relation }}</div>
+              <div style="font-size:12.5px;font-weight:700;{{ p.statusStyle }}">{{ p.status }}</div>
+              <div>
+                <div style="font-size:11.5px;color:#9A9AA0;">{{ p.period }}</div>
+                <sc-if value="{{ p.hasUrl }}" hint-placeholder-val="{{ true }}"><a href="{{ p.url }}" target="_blank" rel="noreferrer" style="font-size:11px;font-weight:700;">{{ p.publisher }}</a></sc-if>
               </div>
             </div>
           </sc-for>
         </div>
-
-        <div style="display:flex;flex-wrap:wrap;gap:18px;align-items:center;font-size:11.5px;color:#77767C;margin-bottom:32px;padding:12px 16px;background:#141416;border:1px solid rgba(255,255,255,0.07);border-radius:10px;">
-          <span><span style="color:#FF6A1A;font-weight:700;">Оранжевый*</span> — актив назван именем букмекера</span>
-          <span><span style="color:#FF6A1A;font-weight:800;">?</span> — партнёрство доказано, но актуальность сейчас не подтверждена</span>
-          <span><span style="color:#FF6A1A;">+</span> — объявлено только что</span>
-          <span><span style="color:#77767C;">×</span> — завершено или истекло</span>
-          <span>Без пометки — подтверждено действующим источником</span>
+        <div style="display:flex;flex-wrap:wrap;gap:18px;align-items:center;font-size:11.5px;color:#77767C;margin-top:12px;">
+          <span><span style="color:#FF6A1A;font-weight:700;">Оранжевое название*</span> — команда носит имя букмекера</span>
+          <span>Пустой источник — связь взята из карты рынка без отдельной публикации</span>
         </div>
 
         <div style="border:1px solid rgba(255,255,255,0.09);border-radius:14px;overflow:hidden;">
@@ -362,6 +330,42 @@
       <section id="turniry" style="padding:16px 0 60px;">
         <div style="font-size:24px;font-weight:800;margin-bottom:8px;">Турниры и трансляции</div>
         <div style="font-size:13.5px;color:#77767C;margin-bottom:22px;">{{ eventsIntro }}</div>
+
+        <div style="font-size:17px;font-weight:800;margin-bottom:4px;">Турниры, организации и студии по брендам</div>
+        <div style="font-size:13px;color:#77767C;margin-bottom:14px;">Всё, кроме команд: собственные турниры, партнёрства с операторами и студиями. Названия кликабельны там, где партнёрство подтверждено отдельным источником.</div>
+        <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:10px;margin-bottom:12px;">
+          <sc-for list="{{ eventAssets }}" as="brand" hint-placeholder-count="5">
+            <div style="background:#141416;border:1px solid rgba(255,255,255,0.09);border-radius:12px;overflow:hidden;display:flex;flex-direction:column;">
+              <div style="padding:14px 18px;background:#1D1C1F;display:flex;align-items:baseline;justify-content:space-between;gap:10px;">
+                <span style="font-size:15px;font-weight:800;{{ brand.style }}">{{ brand.label }}</span>
+                <span style="font-family:'JetBrains Mono',monospace;font-size:13px;color:#9A9AA0;">{{ brand.total }}</span>
+              </div>
+              <div style="padding:16px 18px;display:flex;flex-direction:column;gap:15px;">
+                <sc-for list="{{ brand.groups }}" as="g" hint-placeholder-count="3">
+                  <div>
+                    <div style="font-size:10.5px;font-weight:700;letter-spacing:0.6px;color:#77767C;padding-bottom:7px;border-bottom:1px solid rgba(255,255,255,0.09);">{{ g.title }} · {{ g.count }}</div>
+                    <div style="display:flex;flex-direction:column;gap:6px;margin-top:9px;">
+                      <sc-for list="{{ g.items }}" as="a" hint-placeholder-count="4">
+                        <div style="font-size:13px;line-height:1.35;">
+                          <sc-if value="{{ a.hasUrl }}" hint-placeholder-val="{{ true }}"><a href="{{ a.url }}" target="_blank" rel="noreferrer" style="{{ a.style }}">{{ a.name }}</a></sc-if>
+                          <sc-if value="{{ a.hasUrl }}" hint-placeholder-val="{{ false }}"><span style="{{ a.style }}">{{ a.name }}</span></sc-if>
+                          <span title="{{ a.markTitle }}" style="{{ a.markStyle }}">{{ a.mark }}</span><span style="font-size:10.5px;color:#77767C;"> {{ a.note }}</span>
+                        </div>
+                      </sc-for>
+                    </div>
+                  </div>
+                </sc-for>
+              </div>
+            </div>
+          </sc-for>
+        </div>
+        <div style="display:flex;flex-wrap:wrap;gap:18px;align-items:center;font-size:11.5px;color:#77767C;margin-bottom:32px;">
+          <span><span style="color:#FF6A1A;font-weight:700;">Оранжевый*</span> — актив назван именем букмекера</span>
+          <span><span style="color:#FF6A1A;font-weight:800;">?</span> — нужно подтверждение актуальности</span>
+          <span><span style="color:#77767C;">×</span> — завершено</span>
+        </div>
+
+
 
         <div style="background:#141416;border:1px solid rgba(255,255,255,0.08);border-radius:14px;padding:22px 24px;margin-top:14px;">
           <div style="font-size:11.5px;font-weight:700;letter-spacing:0.6px;color:#FF6A1A;">ГЛАВНАЯ ПОПРАВКА</div>
@@ -1305,6 +1309,11 @@ class Component extends DCLogic {
           mark: flag.mark, markStyle: flag.style, markTitle: flag.title,
           url: deal ? (firstSource(deal.source_ids)?.url || '') : '',
           hasUrl: Boolean(deal && firstSource(deal.source_ids)?.url),
+          relation: deal ? (relationRu[deal.relationship_type] || deal.relationship_type) : 'по карте рынка',
+          statusText: deal ? (currentStatusRu[deal.current_status] || deal.current_status) : 'отдельно не проверено',
+          statusColor: deal ? statusStyleFor(deal.current_status) : 'color:#77767C;',
+          period: deal ? `${deal.valid_from || 'начало не указано'} → ${deal.valid_to || 'окончание не объявлено'}` : '',
+          publisher: deal ? (firstSource(deal.source_ids)?.publisher || '') : '',
         });
       }
       for (const deal of deals) {
@@ -1321,6 +1330,11 @@ class Component extends DCLogic {
           mark: flag.mark, markStyle: flag.style, markTitle: flag.title,
           url: firstSource(deal.source_ids)?.url || '',
           hasUrl: Boolean(firstSource(deal.source_ids)?.url),
+          relation: relationRu[deal.relationship_type] || deal.relationship_type,
+          statusText: currentStatusRu[deal.current_status] || deal.current_status,
+          statusColor: statusStyleFor(deal.current_status),
+          period: `${deal.valid_from || 'начало не указано'} → ${deal.valid_to || 'окончание не объявлено'}`,
+          publisher: firstSource(deal.source_ids)?.publisher || '',
         });
       }
       const groups = assetKindOrder
@@ -1472,7 +1486,6 @@ class Component extends DCLogic {
       matrixError: this.state.researchError,
       matrixReady,
       navLinks: [
-        { href: '#ramka', label: 'Рамка' },
         { href: '#opyt', label: 'Опыт' },
         { href: '#analiz', label: 'Анализ активов' },
         { href: '#komandy', label: 'Команды' },
@@ -1484,7 +1497,32 @@ class Component extends DCLogic {
         { href: '#cv', label: 'CV' },
       ],
 
-      brandAssets: mergedBrandAssets,
+      teamTable: mergedBrandAssets.flatMap(brand =>
+        (brand.groups.find(group => group.title === 'Команды')?.items || []).map(item => ({
+          brand: brand.label,
+          brandStyle: brand.label === 'Winline' ? 'color:#FF6A1A;' : 'color:#C7C6CC;',
+          name: item.name,
+          nameStyle: item.style,
+          relation: item.relation || '—',
+          status: item.statusText,
+          statusStyle: item.statusColor,
+          period: item.period || '',
+          url: item.url,
+          hasUrl: item.hasUrl,
+          publisher: item.publisher || '',
+        }))),
+      eventAssets: mergedBrandAssets
+        .map(brand => ({
+          label: brand.label,
+          style: brand.style,
+          groups: brand.groups.filter(group => group.title !== 'Команды'),
+        }))
+        .filter(brand => brand.groups.length > 0)
+        .map(brand => ({
+          ...brand,
+          total: brand.groups.reduce((sum, group) => sum + group.count, 0) + ' ' +
+            plural(brand.groups.reduce((sum, group) => sum + group.count, 0), 'актив', 'актива', 'активов'),
+        })),
       __unusedBrandAssets: ['winline', 'betboom', 'fonbet', 'pari']
         .map(key => talentBrands[key])
         .filter(Boolean)
@@ -1873,37 +1911,27 @@ class Component extends DCLogic {
           q: 'Контракт с magic подписан совсем недавно (11 августа), поэтому в цифрах пока нет истории прошлых активаций, которая исказит старт. Такой чистый момент бывает редко — предлагаю использовать его для первого пилотного замера: как именно мерить, показано в разделе Pitch, в блоке про magic × EWC.'
         },
         {
-          n: 'R2', title: 'Партнёрства, а не рейтинг портфелей', source: 'Открытые публикации клубов и брендов',
-          facts: ['18 отобранных партнёрств букмекеров с киберспортивными активами — клубами, турнирами, трансляциями — проверены по двум параметрам отдельно: насколько твёрдо доказано само партнёрство и актуально ли оно сейчас.', 'У Winline: три партнёрства подтверждены и активны сейчас, одно нужно перепроверить, три — завершены или, по данным источников, истекли.', 'PGL — важная поправка: права на русскоязычную трансляцию держит Paragon Events, а Winline в этом партнёрстве — спонсор эфира, а не владелец медиаправ.', 'Срез по конкурентам собран не полностью и не одинаково для всех брендов, поэтому по числу найденных партнёрств нельзя ранжировать бренды между собой.'],
-          q: 'Чтобы выбирать между несколькими партнёрствами и ставкой на одно крупное, сначала нужен полный внутренний реестр контрактов и такой же по глубине аудит у конкурентов.'
-        },
-        {
-          n: 'R3', title: 'Точечные замеры по стримерам CS2 и Dota 2', source: 'Twitch Helix API и публичный GQL панелей',
-          facts: ['CS2: 96 живых RU-каналов, охват топ-50 — 60 105 зрителей, бренд найден у 11 каналов — 10 BetBoom, 1 Winline.', 'Dota 2 во время TI: 97 каналов, охват топ-50 ~197 000 без официальных каналов Valve. Бренд у 15 каналов — 7 BetBoom, 5 Winline, 3 Fonbet.', 'Ядро топа — экс- и действующие про-игроки (Nix 131 109, ramzes, Solo, avice) и профильные аналитики (just_ns 20 174, nicoleheart23 12 343).', 'Незаконтрактованные кандидаты: nicoleheart23 — крупнее большинства каналов с рекламой Winline, без бренда в панели; godota2bets — беттинг-тематика в тайтлах, без контракта. Канал Nix несёт в панели одновременно BetBoom и Playerok.'],
-          q: 'Готовый список кандидатов на первый месяц — конкретные имена и онлайн, а не тезис «рынок не поделён».'
-        },
-        {
-          n: 'R4', title: 'TI15 — кто в сетке главного турнира года', source: 'Проверка составов и трансляций, плей-офф',
+          n: 'R2', title: 'TI15 — кто в сетке главного турнира года', source: 'Проверка составов и трансляций, плей-офф',
           facts: ['4 из 16 команд плей-офф — собственные клубы букмекеров: BETBOOM Team, PARIVISION, L1ga Team, 1win.', 'Ещё 3 — независимые команды со спонсорством: Spirit (BetBoom), Aurora (1xBet), OG (Melbet).', 'Активов Winline в сетке нет: Tundra не квалифицировалась.', 'Официальная трансляция dota2ti_ru — канал Valve, 0 ссылок и 0 спонсоров в панели: призовой из Battle Pass, реклама букмекеров запрещена правилами.'],
           q: 'Официальный эфир закрыт для всех одинаково — значит бюджет борьбы за внимание уходит в независимые ко-стримы. Это рамка приоритизации, а не просто факт.'
         },
         {
-          n: 'R5', title: 'Медиаправа и кейс Evelone', source: 'Публикации отрасли, часть цифр — слухи рынка',
+          n: 'R3', title: 'Медиаправа и кейс Evelone', source: 'Публикации отрасли, часть цифр — слухи рынка',
           facts: ['Слой прав: владельцы IP (Valve, ESL FACEIT Group, PGL, BLAST) → держатели RU-прав (Paragon Events — эксклюзив ESL с 2023 и PGL с 2024, RuHub) → букмекер спонсирует трансляцию посредника.', 'В октябре 2025 StarLadder продал RU-права на каст Budapest Major стримеру Evelone; изначально права предлагались букмекерам дороже, конкретные суммы — слухи рынка, не подтверждённый факт.', 'На собственной трансляции Evelone собрал 484 000 зрителей на пике — лучший результат среди CS-стримеров за год.', 'Evelone — амбассадор BetBoom и получатель Porsche от 1win. Контракта с Winline нет.'],
           q: 'Альтернативный канал закупки прав: прямая сделка с медийной фигурой вместо посредника. Экономику стоит проверить на следующем крупном тайтле — до продления через студию.'
         },
         {
-          n: 'R6', title: 'SLAY и Пабстомп — событийная экспертиза', source: 'Публикации организаторов и отраслевые премии',
+          n: 'R4', title: 'SLAY и Пабстомп — событийная экспертиза', source: 'Публикации организаторов и отраслевые премии',
           facts: ['SLAY 2025: 750 000+ зрителей на Twitch — рекорд СНГ для некиберспортивной трансляции. Первая премия для контентмейкеров в России и СНГ, проводится с 2023.', 'Winline Пабстомп TI 2024: 4 000+ гостей офлайн, 1,32 млн просмотров трансляции, охват кампании 43 млн, Gold E+ Awards.', 'После SLAY 2025 стримеры публично заявляли о накрутке голосов и онлайна. Независимо от справедливости обвинений, у флагманского актива нет независимо проверяемого замера.'],
           q: 'Сильное место, которое легко упустить: SLAY уже бьёт рекорды охвата. Приоритет — защитить актив независимым счётчиком, а не запускать новый.'
         },
         {
-          n: 'R7', title: 'Блогеры и амбассадоры вне кибера', source: 'Открытые публикации, не внутренний реестр',
+          n: 'R5', title: 'Блогеры и амбассадоры вне кибера', source: 'Открытые публикации, не внутренний реестр',
           facts: ['~50 амбассадоров — один из крупнейших портфелей среди российских букмекеров, включая 15 комиков.', 'Спортивные комментаторы, музыканты, блогеры: Нобель Арустамян, Константин Генич, Денис Казанский, Дина Саева, Элджей и другие.', { pre: 'Media Poker #8, октябрь 2025: приз $76 782, ', linkText: '43 468 пик и 777 838 часов просмотра', url: 'https://escharts.com/tournaments/poker/winline-media-poker-8', post: '.' }, { pre: 'Media Football League сезон 3: ', linkText: '231 604 пика и 3,3 млн часов просмотра', url: 'https://escharts.com/organizers/winline', post: ' — больше любого киберспортивного продукта Winline.' }, 'Список собран по открытым источникам и не проверен поимённо.'],
           q: 'Недоиспользованная синергия: плейбук амбассадоров отработан в соседних вертикалях, а кросс-промо с кибер-стримерами дешевле нового бюджета на охват.'
         },
         {
-          n: 'R8', title: 'Методология: мониторинг, пересечение аудиторий, антифрод', source: 'Проверено на этом ресёрче, Twitch Helix API',
+          n: 'R6', title: 'Методология: мониторинг, пересечение аудиторий, антифрод', source: 'Проверено на этом ресёрче, Twitch Helix API',
           facts: ['Мониторинг: опрос Helix и панелей раз в 30–60 минут по списку партнёров даёт таймлайн вместо разовых точек — ловит «партнёр перестал стримить», «ссылка пропала из панели», «стрим не в заявленной игре».', 'Overlap: уникальные ники в чатах двух каналов при одновременном эфире, эвристика по расписанию и дисциплине, при необходимости — платные соцграф-инструменты.', 'Антифрод: сообщения чата на 1000 зрителей, форма кривой онлайна, хвост просмотров VOD, возраст канала и история контента.', 'Структурно недоступно без сотрудничества стримера: гео, устройство, уникальные зрители — эти данные Twitch отдаёт только владельцу канала.'],
           q: 'Готовый к внедрению инструмент, а не идея: этими же методами собран весь ресерч выше.'
         },
