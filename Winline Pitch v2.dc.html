@@ -120,37 +120,11 @@
   <div style="max-width:1240px;margin:0 auto;padding:0 40px;">
       <section id="analiz" style="padding:16px 0 60px;">
 
-        <div style="background:#141416;border:1px solid rgba(255,255,255,0.08);border-radius:14px;padding:22px 26px;margin-bottom:20px;">
-          <div style="font-size:13px;font-weight:700;letter-spacing:0.6px;color:#77767C;margin-bottom:11px;">ЧТО ИМЕННО ИЗМЕРЕНО</div>
-          <div style="font-size:16.5px;line-height:1.65;color:#E7E6E2;">{{ scopeNote }}</div>
-        </div>
-
-        <div style="display:grid;grid-template-columns:minmax(280px,0.55fr) 1fr;gap:12px;margin-bottom:40px;">
-          <sc-for list="{{ statsStreamers }}" as="s" hint-placeholder-count="1">
-            <div style="background:#141416;border:1px solid rgba(255,255,255,0.08);border-radius:14px;padding:21px 22px;">
-              <div style="font-family:'JetBrains Mono',monospace;font-size:31px;font-weight:800;color:#FF6A1A;">{{ s.value }}</div>
-              <div style="font-size:15px;color:#E7E6E2;font-weight:700;line-height:1.4;margin-top:7px;">{{ s.label }}</div>
-              <div style="font-size:13px;color:#77767C;line-height:1.5;margin-top:8px;">{{ s.note }}</div>
-              <sc-if value="{{ s.expandable }}" hint-placeholder-val="{{ true }}">
-                <details style="margin-top:14px;">
-                  <summary style="font-size:13.5px;font-weight:700;color:#E7E6E2;cursor:pointer;">{{ s.action }}</summary>
-                  <div style="max-height:280px;overflow:auto;margin-top:12px;border-top:1px solid rgba(255,255,255,0.08);">
-                    <sc-for list="{{ s.items }}" as="item" hint-placeholder-count="5">
-                      <div style="padding:10px 0;border-bottom:1px solid rgba(255,255,255,0.06);">
-                        <a href="{{ item.url }}" target="_blank" rel="noreferrer" style="display:block;font-size:13.5px;font-weight:700;line-height:1.4;">{{ item.label }}</a>
-                        <div style="font-size:12px;color:#77767C;line-height:1.45;margin-top:4px;">{{ item.meta }}</div>
-                      </div>
-                    </sc-for>
-                  </div>
-                </details>
-              </sc-if>
-            </div>
-          </sc-for>
-        </div>
+        
 
       <section id="strimery" style="padding:16px 0 60px;">
         <div style="font-size:27.5px;font-weight:800;margin-bottom:8px;">Стримеры и амбассадоры</div>
-        <div style="font-size:15.5px;color:#77767C;margin-bottom:22px;">{{ talentIntro }}</div>
+        
 
         
 
@@ -1380,9 +1354,7 @@ class Component extends DCLogic {
         groups,
       };
     }).filter(brand => brand.groups.length > 0) : [];
-    const talentIntro = 'Сначала масштаб пулов по рынку, затем контракты, подтверждённые поимённо, и в конце — что нашлось в эфире на двух турнирных замерах.';
     const snapshotNote = 'Три замера: обычный день по CS2, матчи Esports World Cup 2026 по CS2 и матчи The International 2026 по Dota 2.';
-    const scopeNote = 'Winline и пять конкурентов: BetBoom, PARI, 1xBet, FONBET, Лига Ставок. Все публичные данные собраны по состоянию на 15 августа 2026 года. Замеры Twitch — это точечный срез двух игровых категорий, Counter-Strike 2 и Dota 2, снятый во время матчей Esports World Cup 2026 и The International 2026. Он показывает, кто был в эфире в конкретный момент, и не описывает ни рынок целиком, ни другие категории.';
     const portfolioOrder = ['brand:winline', 'brand:betboom', 'brand:pari', 'brand:1xbet', 'brand:fonbet', 'brand:liga-stavok'];
     const portfolioRows = matrixReady
       ? portfolioOrder.map(brandId => {
@@ -1645,7 +1617,6 @@ class Component extends DCLogic {
       eventRows,
       mediaEvents,
       eventsGap: 'В данных нет WINLINE Star Series Season 3: турнир прошёл 1–9 августа 2026 с призовым 3,5 млн ₽ и десятью командами стримеров, то есть закончился за шесть дней до даты сбора. Это ближайшее, что нужно дособрать.',
-      talentIntro: talentIntro,
       talentBrandTabs: Object.keys(talentBrands).map(key => ({
         label: talentBrands[key].label,
         go: goTB(key),
@@ -1671,9 +1642,7 @@ class Component extends DCLogic {
         url: 'https://cyber.sports.ru/streamers-twitch/1117039708-meddison-ya-svobodnyj-agent-i-ya-gotov-winline-moj-lyubimyj-bukmeker-k.html',
       },
       talentQuestion: 'Если годовой контракт с топовым стримером стоит на уровне сотен тысяч долларов, а отдача по нему не считается отдельно от остального маркетинга — на основании чего продлевается пул из полусотни человек?',
-      scopeNote: scopeNote,
       researchStats,
-      statsStreamers: matrixReady ? researchStats.filter(item => item.group === 'streamers') : [],
       statsRest: matrixReady ? researchStats.filter(item => item.group !== 'streamers') : [],
       insightCards: matrixReady ? [
         {
