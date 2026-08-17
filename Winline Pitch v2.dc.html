@@ -1211,8 +1211,26 @@ class Component extends DCLogic {
     const bgDoc = research?.streamerBackground;
     const statsByName = new Map((statsDoc?.records || []).map(item => [normName(item.name), item]));
     const bgByName = new Map(Object.entries(bgDoc?.people || {}).map(([key, value]) => [normName(key), value]));
-    const roleLabel = { pro: 'действующий про', ex_pro: 'бывший про', caster: 'комментатор', streamer: 'стример', unknown: '—' };
-    const roleColor = { pro: 'color:#FF6A1A;font-weight:700;', ex_pro: 'color:#E7E6E2;', caster: 'color:#C7C6CC;', streamer: 'color:#9A9AA0;', unknown: 'color:#4A4950;' };
+    const roleLabel = {
+      pro: 'действующий про',
+      ex_pro: 'бывший про',
+      esports_scene: 'про-сцена',
+      caster: 'комментатор',
+      game_streamer: 'игровой стример',
+      variety: 'вэрайети',
+      streamer: 'стример',
+      unknown: '—',
+    };
+    const roleColor = {
+      pro: 'color:#FF6A1A;font-weight:700;',
+      ex_pro: 'color:#FF8A47;font-weight:700;',
+      esports_scene: 'color:#E7E6E2;',
+      caster: 'color:#C7C6CC;',
+      game_streamer: 'color:#9A9AA0;',
+      variety: 'color:#9A9AA0;',
+      streamer: 'color:#9A9AA0;',
+      unknown: 'color:#4A4950;',
+    };
     const compact = value => value >= 1000000 ? `${this.decimal(value / 1000000)} млн` : value >= 1000 ? `${Math.round(value / 1000)}K` : String(value);
     const buildBrand = key => {
       const entry = (rosterDoc?.brands || []).find(item => brandKeyById[item.brand_id] === key);

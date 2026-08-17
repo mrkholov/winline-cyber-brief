@@ -2,64 +2,627 @@
   "schema_version": "1.0.0",
   "research_cutoff": "2026-08-17",
   "status": "editorial",
-  "method": "Классификация по публично известной карьере. Заполнена только там, где статус устанавливается уверенно; остальные помечены как не определённые. Это редакторская разметка, а не выгрузка из источника.",
+  "method": "Ручные записи заполнены по публично известной карьере. Остальные размечены автоматически: наличие страницы игрока на Liquipedia означает выступления на про-сцене, категория канала в Twitch отличает вэрайети от игровых. Скрипт scripts/enrich-streamer-background.js.",
   "categories": {
     "pro": "действующий про-игрок",
     "ex_pro": "бывший про-игрок",
+    "esports_scene": "выступал на про-сцене",
     "caster": "комментатор или аналитик",
+    "game_streamer": "игровой стример",
+    "variety": "вэрайети-стример",
     "streamer": "стример без про-карьеры",
     "unknown": "не определено"
   },
   "people": {
-    "Nix": { "category": "ex_pro", "discipline": "dota2", "note": "бывший про-игрок Dota 2" },
-    "ramzes": { "category": "ex_pro", "discipline": "dota2", "note": "чемпион мейджоров, завершил карьеру" },
-    "solo": { "category": "ex_pro", "discipline": "dota2", "note": "капитан Virtus.pro в прошлом" },
-    "just_ns": { "category": "ex_pro", "discipline": "dota2", "note": "про-игрок, затем комментатор" },
-    "Illidan": { "category": "ex_pro", "discipline": "dota2", "note": "бывший про-игрок Dota 2" },
-    "Silvername": { "category": "ex_pro", "discipline": "dota2", "note": "бывший про-игрок Dota 2" },
-    "Hooch": { "category": "ex_pro", "discipline": "dota2", "note": "бывший про-игрок Dota 2" },
-    "Avice": { "category": "ex_pro", "discipline": "dota2", "note": "бывший про-игрок Dota 2" },
-    "dyrachyo": { "category": "pro", "discipline": "dota2", "note": "действующий про-игрок Dota 2" },
-    "9pasha": { "category": "caster", "discipline": "dota2", "note": "комментатор и аналитик" },
-    "Maelstorm": { "category": "caster", "discipline": "dota2", "note": "комментатор" },
-    "Adekvat": { "category": "caster", "discipline": "dota2", "note": "комментатор" },
-    "Mager": { "category": "caster", "discipline": "dota2", "note": "комментатор" },
-    "Sqreendota2": { "category": "caster", "discipline": "dota2", "note": "комментатор" },
-    "Аналитика Ошибок": { "category": "caster", "discipline": "dota2", "note": "аналитический канал" },
-    "Divan_analitik": { "category": "caster", "discipline": "dota2", "note": "аналитический канал" },
-    "FalleN": { "category": "pro", "discipline": "cs2", "note": "действующий про-игрок CS2" },
-    "Chopper": { "category": "pro", "discipline": "cs2", "note": "действующий про-игрок CS2" },
-    "Recrent": { "category": "ex_pro", "discipline": "cs2", "note": "бывший про-игрок CS, ведущий стример дисциплины" },
-    "buster": { "category": "ex_pro", "discipline": "cs2", "note": "бывший про-игрок, комментатор ESL" },
-    "Stray228": { "category": "ex_pro", "discipline": "cs2", "note": "бывший про-игрок CS" },
-    "ZoneR": { "category": "ex_pro", "discipline": "cs2", "note": "бывший про-игрок CS" },
-    "Overdrive": { "category": "caster", "discipline": "cs2", "note": "комментатор" },
-    "Pch3lk1n": { "category": "ex_pro", "discipline": "cs2", "note": "бывший про-игрок CS" },
-    "Strogo": { "category": "streamer", "discipline": "cs2", "note": "стример по CS2" },
-    "StRoGo": { "category": "streamer", "discipline": "cs2", "note": "стример по CS2" },
-    "bySL4M": { "category": "streamer", "discipline": "cs2", "note": "стример по CS2" },
-    "QRUSHcsgo": { "category": "streamer", "discipline": "cs2", "note": "стример по CS2" },
-    "bratishkinoff": { "category": "streamer", "discipline": "variety", "note": "вэрайети-стример, SLAY KING 2024" },
-    "deepins02": { "category": "streamer", "discipline": "variety", "note": "вэрайети-стример, Just Chatting и игры" },
-    "Paradeev1ch": { "category": "streamer", "discipline": "variety", "note": "вэрайети-стример" },
-    "Koreshzy": { "category": "streamer", "discipline": "variety", "note": "вэрайети-стример" },
-    "T2x2": { "category": "streamer", "discipline": "variety", "note": "вэрайети-стример" },
-    "Dmitry_Lixxx": { "category": "streamer", "discipline": "variety", "note": "вэрайети-стример" },
-    "sasavot": { "category": "streamer", "discipline": "variety", "note": "вэрайети-стример" },
-    "dinablin": { "category": "streamer", "discipline": "variety", "note": "ведущая шоу-форматов" },
-    "SNAILKICK": { "category": "streamer", "discipline": "variety", "note": "вэрайети-стример, шоу-форматы" },
-    "WorldEdit": { "category": "streamer", "discipline": "variety", "note": "вэрайети-стример" },
-    "Lebwa": { "category": "streamer", "discipline": "wot", "note": "стример по World of Tanks" },
-    "Diamondprox": { "category": "ex_pro", "discipline": "lol", "note": "бывший про-игрок League of Legends" },
-    "Morphilina": { "category": "streamer", "discipline": "cs2", "note": "стример по CS2" },
-    "morphe_ya": { "category": "streamer", "discipline": "cs2", "note": "стример по CS2" },
-    "Aunkere": { "category": "streamer", "discipline": "cs2", "note": "стример по CS2" },
-    "dayneez": { "category": "streamer", "discipline": "cs2", "note": "стример по CS2" },
-    "lentbb": { "category": "streamer", "discipline": "cs2", "note": "стример по CS2" },
-    "VooDooSh": { "category": "streamer", "discipline": "variety", "note": "стример, ведущий Media Poker" },
-    "poisonika": { "category": "streamer", "discipline": "dota2", "note": "стример по Dota 2" },
-    "egxrdemxn": { "category": "streamer", "discipline": "dota2", "note": "высокий рейтинг Dota 2, стример" },
-    "DreadzTV": { "category": "streamer", "discipline": "dota2", "note": "стример по Dota 2" },
-    "FORZOREZOR": { "category": "streamer", "discipline": "variety", "note": "медийный футбол и CS2" }
+    "Nix": {
+      "category": "ex_pro",
+      "discipline": "dota2",
+      "note": "бывший про-игрок Dota 2"
+    },
+    "ramzes": {
+      "category": "ex_pro",
+      "discipline": "dota2",
+      "note": "чемпион мейджоров, завершил карьеру"
+    },
+    "solo": {
+      "category": "ex_pro",
+      "discipline": "dota2",
+      "note": "капитан Virtus.pro в прошлом"
+    },
+    "just_ns": {
+      "category": "ex_pro",
+      "discipline": "dota2",
+      "note": "про-игрок, затем комментатор"
+    },
+    "Illidan": {
+      "category": "ex_pro",
+      "discipline": "dota2",
+      "note": "бывший про-игрок Dota 2"
+    },
+    "Silvername": {
+      "category": "ex_pro",
+      "discipline": "dota2",
+      "note": "бывший про-игрок Dota 2"
+    },
+    "Hooch": {
+      "category": "ex_pro",
+      "discipline": "dota2",
+      "note": "бывший про-игрок Dota 2"
+    },
+    "Avice": {
+      "category": "ex_pro",
+      "discipline": "dota2",
+      "note": "бывший про-игрок Dota 2"
+    },
+    "dyrachyo": {
+      "category": "pro",
+      "discipline": "dota2",
+      "note": "действующий про-игрок Dota 2"
+    },
+    "9pasha": {
+      "category": "caster",
+      "discipline": "dota2",
+      "note": "комментатор и аналитик"
+    },
+    "Maelstorm": {
+      "category": "caster",
+      "discipline": "dota2",
+      "note": "комментатор"
+    },
+    "Adekvat": {
+      "category": "caster",
+      "discipline": "dota2",
+      "note": "комментатор"
+    },
+    "Mager": {
+      "category": "caster",
+      "discipline": "dota2",
+      "note": "комментатор"
+    },
+    "Sqreendota2": {
+      "category": "caster",
+      "discipline": "dota2",
+      "note": "комментатор"
+    },
+    "Аналитика Ошибок": {
+      "category": "caster",
+      "discipline": "dota2",
+      "note": "аналитический канал"
+    },
+    "Divan_analitik": {
+      "category": "caster",
+      "discipline": "dota2",
+      "note": "аналитический канал"
+    },
+    "FalleN": {
+      "category": "pro",
+      "discipline": "cs2",
+      "note": "действующий про-игрок CS2"
+    },
+    "Chopper": {
+      "category": "pro",
+      "discipline": "cs2",
+      "note": "действующий про-игрок CS2"
+    },
+    "Recrent": {
+      "category": "ex_pro",
+      "discipline": "cs2",
+      "note": "бывший про-игрок CS, ведущий стример дисциплины"
+    },
+    "buster": {
+      "category": "ex_pro",
+      "discipline": "cs2",
+      "note": "бывший про-игрок, комментатор ESL"
+    },
+    "Stray228": {
+      "category": "ex_pro",
+      "discipline": "cs2",
+      "note": "бывший про-игрок CS"
+    },
+    "ZoneR": {
+      "category": "ex_pro",
+      "discipline": "cs2",
+      "note": "бывший про-игрок CS"
+    },
+    "Overdrive": {
+      "category": "caster",
+      "discipline": "cs2",
+      "note": "комментатор"
+    },
+    "Pch3lk1n": {
+      "category": "ex_pro",
+      "discipline": "cs2",
+      "note": "бывший про-игрок CS"
+    },
+    "Strogo": {
+      "category": "streamer",
+      "discipline": "cs2",
+      "note": "стример по CS2"
+    },
+    "StRoGo": {
+      "category": "streamer",
+      "discipline": "cs2",
+      "note": "стример по CS2"
+    },
+    "bySL4M": {
+      "category": "streamer",
+      "discipline": "cs2",
+      "note": "стример по CS2"
+    },
+    "QRUSHcsgo": {
+      "category": "streamer",
+      "discipline": "cs2",
+      "note": "стример по CS2"
+    },
+    "bratishkinoff": {
+      "category": "streamer",
+      "discipline": "variety",
+      "note": "вэрайети-стример, SLAY KING 2024"
+    },
+    "deepins02": {
+      "category": "streamer",
+      "discipline": "variety",
+      "note": "вэрайети-стример, Just Chatting и игры"
+    },
+    "Paradeev1ch": {
+      "category": "streamer",
+      "discipline": "variety",
+      "note": "вэрайети-стример"
+    },
+    "Koreshzy": {
+      "category": "streamer",
+      "discipline": "variety",
+      "note": "вэрайети-стример"
+    },
+    "T2x2": {
+      "category": "streamer",
+      "discipline": "variety",
+      "note": "вэрайети-стример"
+    },
+    "Dmitry_Lixxx": {
+      "category": "streamer",
+      "discipline": "variety",
+      "note": "вэрайети-стример"
+    },
+    "sasavot": {
+      "category": "streamer",
+      "discipline": "variety",
+      "note": "вэрайети-стример"
+    },
+    "dinablin": {
+      "category": "streamer",
+      "discipline": "variety",
+      "note": "ведущая шоу-форматов"
+    },
+    "SNAILKICK": {
+      "category": "streamer",
+      "discipline": "variety",
+      "note": "вэрайети-стример, шоу-форматы"
+    },
+    "WorldEdit": {
+      "category": "streamer",
+      "discipline": "variety",
+      "note": "вэрайети-стример"
+    },
+    "Lebwa": {
+      "category": "streamer",
+      "discipline": "wot",
+      "note": "стример по World of Tanks"
+    },
+    "Diamondprox": {
+      "category": "ex_pro",
+      "discipline": "lol",
+      "note": "бывший про-игрок League of Legends"
+    },
+    "Morphilina": {
+      "category": "streamer",
+      "discipline": "cs2",
+      "note": "стример по CS2"
+    },
+    "morphe_ya": {
+      "category": "streamer",
+      "discipline": "cs2",
+      "note": "стример по CS2"
+    },
+    "Aunkere": {
+      "category": "streamer",
+      "discipline": "cs2",
+      "note": "стример по CS2"
+    },
+    "dayneez": {
+      "category": "streamer",
+      "discipline": "cs2",
+      "note": "стример по CS2"
+    },
+    "lentbb": {
+      "category": "streamer",
+      "discipline": "cs2",
+      "note": "стример по CS2"
+    },
+    "VooDooSh": {
+      "category": "streamer",
+      "discipline": "variety",
+      "note": "стример, ведущий Media Poker"
+    },
+    "poisonika": {
+      "category": "streamer",
+      "discipline": "dota2",
+      "note": "стример по Dota 2"
+    },
+    "egxrdemxn": {
+      "category": "streamer",
+      "discipline": "dota2",
+      "note": "высокий рейтинг Dota 2, стример"
+    },
+    "DreadzTV": {
+      "category": "streamer",
+      "discipline": "dota2",
+      "note": "стример по Dota 2"
+    },
+    "FORZOREZOR": {
+      "category": "streamer",
+      "discipline": "variety",
+      "note": "медийный футбол и CS2"
+    },
+    "guit88man": {
+      "category": "game_streamer",
+      "discipline": "dead cells",
+      "note": "игровой канал, последняя категория — Dead Cells"
+    },
+    "janichka": {
+      "category": "game_streamer",
+      "discipline": "cs2",
+      "note": "игровой канал, последняя категория — Counter-Strike"
+    },
+    "m1xerboy": {
+      "category": "variety",
+      "discipline": "variety",
+      "note": "канал в разделе «Общение», игровой специализации нет"
+    },
+    "asiv0y": {
+      "category": "game_streamer",
+      "discipline": "grand theft auto v",
+      "note": "игровой канал, последняя категория — Grand Theft Auto V"
+    },
+    "GeneraL_HS_": {
+      "category": "game_streamer",
+      "discipline": "league of legends",
+      "note": "игровой канал, последняя категория — League of Legends"
+    },
+    "gr0mjkeee": {
+      "category": "variety",
+      "discipline": "variety",
+      "note": "канал в разделе «Общение», игровой специализации нет"
+    },
+    "kartash0v": {
+      "category": "game_streamer",
+      "discipline": "cs2",
+      "note": "игровой канал, последняя категория — Counter-Strike"
+    },
+    "KEFIR": {
+      "category": "variety",
+      "discipline": "variety",
+      "note": "канал в разделе «Общение», игровой специализации нет"
+    },
+    "korya_mc": {
+      "category": "variety",
+      "discipline": "variety",
+      "note": "канал в разделе «Общение», игровой специализации нет"
+    },
+    "LAGODA": {
+      "category": "game_streamer",
+      "discipline": "euro truck simulator 2",
+      "note": "игровой канал, последняя категория — Euro Truck Simulator 2"
+    },
+    "linaone": {
+      "category": "variety",
+      "discipline": "variety",
+      "note": "канал в разделе «Общение», игровой специализации нет"
+    },
+    "melharucos": {
+      "category": "game_streamer",
+      "discipline": "lineage ii",
+      "note": "игровой канал, последняя категория — Lineage II"
+    },
+    "pathofexilebota": {
+      "category": "game_streamer",
+      "discipline": "path of exile",
+      "note": "игровой канал, последняя категория — Path of Exile"
+    },
+    "r4dom1r": {
+      "category": "game_streamer",
+      "discipline": "dota2",
+      "note": "игровой канал, последняя категория — Dota 2"
+    },
+    "rostislav_999": {
+      "category": "game_streamer",
+      "discipline": "irl",
+      "note": "игровой канал, последняя категория — IRL"
+    },
+    "ROUNDZ": {
+      "category": "game_streamer",
+      "discipline": "age of empires iv",
+      "note": "игровой канал, последняя категория — Age of Empires IV"
+    },
+    "RUSLANDVIP": {
+      "category": "variety",
+      "discipline": "variety",
+      "note": "канал в разделе «Общение», игровой специализации нет"
+    },
+    "samuraj": {
+      "category": "game_streamer",
+      "discipline": "valorant",
+      "note": "игровой канал, последняя категория — VALORANT"
+    },
+    "Shiishak": {
+      "category": "game_streamer",
+      "discipline": "dota2",
+      "note": "игровой канал, последняя категория — Dota 2"
+    },
+    "yurapivo": {
+      "category": "game_streamer",
+      "discipline": "dota2",
+      "note": "игровой канал, последняя категория — Dota 2"
+    },
+    "Zark": {
+      "category": "game_streamer",
+      "discipline": "grand theft auto v",
+      "note": "игровой канал, последняя категория — Grand Theft Auto V"
+    },
+    "m3wsu": {
+      "category": "esports_scene",
+      "discipline": "cs2",
+      "note": "есть страница игрока на Liquipedia (cs2)"
+    },
+    "Mabelend": {
+      "category": "variety",
+      "discipline": "variety",
+      "note": "канал в разделе «Общение», игровой специализации нет"
+    },
+    "actor_step": {
+      "category": "game_streamer",
+      "discipline": "grand theft auto v",
+      "note": "игровой канал, последняя категория — Grand Theft Auto V"
+    },
+    "davay_po_novoy": {
+      "category": "game_streamer",
+      "discipline": "dota2",
+      "note": "игровой канал, последняя категория — Dota 2"
+    },
+    "GAECHKATM": {
+      "category": "variety",
+      "discipline": "variety",
+      "note": "канал в разделе «Общение», игровой специализации нет"
+    },
+    "enzzai": {
+      "category": "variety",
+      "discipline": "variety",
+      "note": "канал в разделе «Общение», игровой специализации нет"
+    },
+    "sayurri": {
+      "category": "variety",
+      "discipline": "variety",
+      "note": "канал в разделе «Общение», игровой специализации нет"
+    },
+    "Tankzor": {
+      "category": "esports_scene",
+      "discipline": "valorant",
+      "note": "есть страница игрока на Liquipedia (valorant)"
+    },
+    "watchfulTV": {
+      "category": "game_streamer",
+      "discipline": "cs2",
+      "note": "игровой канал, последняя категория — Counter-Strike"
+    },
+    "JustCooman": {
+      "category": "game_streamer",
+      "discipline": "dota2",
+      "note": "игровой канал, последняя категория — Dota 2"
+    },
+    "RelaxCIS": {
+      "category": "game_streamer",
+      "discipline": "valorant",
+      "note": "игровой канал, последняя категория — VALORANT"
+    },
+    "Vovapain": {
+      "category": "game_streamer",
+      "discipline": "dota2",
+      "note": "игровой канал, последняя категория — Dota 2"
+    },
+    "blindzone": {
+      "category": "variety",
+      "discipline": "variety",
+      "note": "канал в разделе «Общение», игровой специализации нет"
+    },
+    "hhakuu": {
+      "category": "variety",
+      "discipline": "variety",
+      "note": "канал в разделе «Общение», игровой специализации нет"
+    },
+    "RavshanN": {
+      "category": "game_streamer",
+      "discipline": "irl",
+      "note": "игровой канал, последняя категория — IRL"
+    },
+    "renatko": {
+      "category": "variety",
+      "discipline": "variety",
+      "note": "канал в разделе «Общение», игровой специализации нет"
+    },
+    "sony9sha": {
+      "category": "variety",
+      "discipline": "variety",
+      "note": "канал в разделе «Общение», игровой специализации нет"
+    },
+    "Danila Gorilla": {
+      "category": "variety",
+      "discipline": "variety",
+      "note": "канал в разделе «Общение», игровой специализации нет"
+    },
+    "By_owl": {
+      "category": "variety",
+      "discipline": "variety",
+      "note": "канал в разделе «Общение», игровой специализации нет"
+    },
+    "Shadowkek": {
+      "category": "game_streamer",
+      "discipline": "dota2",
+      "note": "игровой канал, последняя категория — Dota 2"
+    },
+    "mantis": {
+      "category": "esports_scene",
+      "discipline": "dota2",
+      "note": "есть страница игрока на Liquipedia (dota2)"
+    },
+    "1cen1ce": {
+      "category": "variety",
+      "discipline": "variety",
+      "note": "канал в разделе «Общение», игровой специализации нет"
+    },
+    "cheatbanned": {
+      "category": "game_streamer",
+      "discipline": "pubg: battlegrounds",
+      "note": "игровой канал, последняя категория — PUBG: BATTLEGROUNDS"
+    },
+    "Exile": {
+      "category": "esports_scene",
+      "discipline": "valorant",
+      "note": "есть страница игрока на Liquipedia (valorant)"
+    },
+    "ct0m": {
+      "category": "esports_scene",
+      "discipline": "cs2",
+      "note": "есть страница игрока на Liquipedia (cs2)"
+    },
+    "mugretnug": {
+      "category": "variety",
+      "discipline": "variety",
+      "note": "канал в разделе «Общение», игровой специализации нет"
+    },
+    "whylollycry": {
+      "category": "variety",
+      "discipline": "variety",
+      "note": "канал в разделе «Общение», игровой специализации нет"
+    },
+    "korb3n": {
+      "category": "esports_scene",
+      "discipline": "dota2",
+      "note": "есть страница игрока на Liquipedia (dota2)"
+    },
+    "steel": {
+      "category": "esports_scene",
+      "discipline": "cs2",
+      "note": "есть страница игрока на Liquipedia (cs2)"
+    },
+    "strimans": {
+      "category": "variety",
+      "discipline": "variety",
+      "note": "канал в разделе «Общение», игровой специализации нет"
+    },
+    "Mariachi": {
+      "category": "game_streamer",
+      "discipline": "dota2",
+      "note": "игровой канал, последняя категория — Dota 2"
+    },
+    "Handy": {
+      "category": "esports_scene",
+      "discipline": "r6",
+      "note": "есть страница игрока на Liquipedia (r6)"
+    },
+    "RachelR": {
+      "category": "game_streamer",
+      "discipline": "cs2",
+      "note": "игровой канал, последняя категория — Counter-Strike"
+    },
+    "Dabex": {
+      "category": "game_streamer",
+      "discipline": "dota2",
+      "note": "игровой канал, последняя категория — Dota 2"
+    },
+    "Dadte": {
+      "category": "game_streamer",
+      "discipline": "cs2",
+      "note": "игровой канал, последняя категория — Counter-Strike"
+    },
+    "elwycco": {
+      "category": "variety",
+      "discipline": "variety",
+      "note": "канал в разделе «Общение», игровой специализации нет"
+    },
+    "Smurf": {
+      "category": "game_streamer",
+      "discipline": "world of warcraft",
+      "note": "игровой канал, последняя категория — World of Warcraft"
+    },
+    "Keysie": {
+      "category": "esports_scene",
+      "discipline": "lol",
+      "note": "есть страница игрока на Liquipedia (lol)"
+    },
+    "k1tava": {
+      "category": "esports_scene",
+      "discipline": "lol",
+      "note": "есть страница игрока на Liquipedia (lol)"
+    },
+    "Cake": {
+      "category": "esports_scene",
+      "discipline": "lol",
+      "note": "есть страница игрока на Liquipedia (lol)"
+    },
+    "des0ut": {
+      "category": "variety",
+      "discipline": "variety",
+      "note": "канал в разделе «Общение», игровой специализации нет"
+    },
+    "closetape": {
+      "category": "game_streamer",
+      "discipline": "cs2",
+      "note": "игровой канал, последняя категория — Counter-Strike"
+    },
+    "AnarAbdullaev": {
+      "category": "game_streamer",
+      "discipline": "irl",
+      "note": "игровой канал, последняя категория — IRL"
+    },
+    "ILTW": {
+      "category": "variety",
+      "discipline": "variety",
+      "note": "канал в разделе «Общение», игровой специализации нет"
+    },
+    "BAXA": {
+      "category": "variety",
+      "discipline": "variety",
+      "note": "канал в разделе «Общение», игровой специализации нет"
+    },
+    "Afoninje": {
+      "category": "esports_scene",
+      "discipline": "dota2",
+      "note": "есть страница игрока на Liquipedia (dota2)"
+    },
+    "Jerry": {
+      "category": "esports_scene",
+      "discipline": "cs2",
+      "note": "есть страница игрока на Liquipedia (cs2)"
+    },
+    "formix": {
+      "category": "variety",
+      "discipline": "variety",
+      "note": "канал в разделе «Общение», игровой специализации нет"
+    },
+    "tried": {
+      "category": "variety",
+      "discipline": "variety",
+      "note": "канал в разделе «Общение», игровой специализации нет"
+    },
+    "Miller_Gena": {
+      "category": "game_streamer",
+      "discipline": "irl",
+      "note": "игровой канал, последняя категория — IRL"
+    },
+    "Wonderful_Liar": {
+      "category": "variety",
+      "discipline": "variety",
+      "note": "канал в разделе «Общение», игровой специализации нет"
+    }
   }
 }
