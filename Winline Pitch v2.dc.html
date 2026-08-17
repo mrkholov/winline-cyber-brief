@@ -388,7 +388,7 @@
           <div style="border-top:1px solid rgba(255,255,255,0.08);padding:22px 26px;">
             <div class="mine" style="padding:22px 26px;">
               <div class="mine-tag"><i>ЕХ</i>ВЫВОД</div>
-              <div style="font-size:19px;font-weight:800;line-height:1.4;">Это классный актив в портфеле по возможности замера: у офлайн-ивента есть билет, а значит есть контакт.</div>
+              <div style="font-size:19px;font-weight:800;line-height:1.4;">Это классный актив в портфеле по возможности замера: у офлайн-ивента есть билет, а значит есть контакт.</div>
               <div style="font-size:15.5px;line-height:1.6;margin-top:11px;max-width:1000px;">Стрим даёт только просмотр, а билет даёт имя, телефон и почту человека, который сам заплатил за то, чтобы смотреть Dota. Такую базу можно сверить с игроками, разделить на новых и действующих, догреть после ивента и посчитать выручку на одного пришедшего. Продажа идёт через панели стримеров — значит уже сейчас видно, чей канал приводит покупателей, и это готовый рейтинг пула по отдаче, а не по подписчикам.</div>
             </div>
           </div>
@@ -446,7 +446,7 @@
                 </div>
                 <div style="font-size:13.5px;color:#C7C6CC;line-height:1.55;margin-top:12px;padding:11px 14px;background:#1D1C1F;border-left:2px solid #FF6A1A;border-radius:0 8px 8px 0;">{{ e.measurementNote }}</div>
 
-                <div style="font-size:13px;color:#77767C;line-height:1.5;margin-top:18px;padding-top:14px;border-top:1px solid rgba(255,255,255,0.07);">Трансляция идёт на канале <a href="{{ e.channelUrl }}" target="_blank" rel="noreferrer">{{ e.channel }}</a> — {{ e.channelNote }}. Цифры сняты в момент наблюдения, итоговый пик и охват неизвестны.</div>
+                <div style="font-size:13px;color:#77767C;line-height:1.5;margin-top:18px;padding-top:14px;border-top:1px solid rgba(255,255,255,0.07);">Трансляция идёт на канале <a href="{{ e.channelUrl }}" target="_blank" rel="noreferrer">{{ e.broadcastChannel }}</a> — {{ e.channelNote }}. Цифры сняты в момент наблюдения, итоговый пик и охват неизвестны.</div>
               </div>
 
               <div style="background:#0F0E11;display:flex;flex-direction:column;">
@@ -1263,9 +1263,9 @@ class Component extends DCLogic {
       isLive: item.date_status === 'observed_live',
       viewers: this.number(item.observed_concurrent_viewers),
       prize: `${this.decimal(item.prize_pool.amount / 1000000)} млн ₽`,
-      channel: item.broadcast.channel,
+      broadcastChannel: item.broadcast.channel,
       channelUrl: item.broadcast.channel_url,
-      channelNote: item.broadcast.channel_note.toLowerCase(),
+      channelNote: item.broadcast.channel_note,
       image: item.image,
       imageCaption: item.image_caption,
       mechanics: item.conversion_mechanics.map(mech => ({
@@ -1936,7 +1936,7 @@ class Component extends DCLogic {
       pubstompFacts: [
         { label: 'КОГДА', value: '23 августа 2026, начало в 5 утра по Москве — под финал в Шанхае' },
         { label: 'ГДЕ', value: 'МТС Live Холл, Москва, 18+' },
-        { label: 'КТО В ЗАЛЕ', value: 'RAMZES666, just_ns, DreadzTV, 9pasha, VooDooSh, korya_mc и другие стримеры и блогеры' },
+        { label: 'КТО В ЗАЛЕ', value: 'RAMZES666, just_ns, DreadzTV, 9pasha, VooDooSh, korya_mc, Buster и другие стримеры и блогеры' },
         { label: 'БИЛЕТЫ', value: 'от 2 000 ₽, продажа через Афишу и МТС Live' },
         { label: 'ФОРМАТ', value: 'Просмотр финала на большом экране с комментаторами, тематика Древнего Китая, интерактивные зоны и розыгрыши' },
         { label: 'КАК ПРОДАЮТ', value: 'В момент замера ссылка на билеты стояла в панелях у ramzes, 9pasha и followKudes — это 18 945 из 40 405 зрителей Winline в срезе по Dota, почти половина' },

@@ -18,10 +18,10 @@
       },
       "broadcast": {
         "platform": "Twitch",
-        "channel": "buster",
+        "channel": "Buster",
         "channel_url": "https://www.twitch.tv/buster",
         "channel_is_own": false,
-        "channel_note": "Личный канал амбассадора Winline, а не брендовый канал компании"
+        "channel_note": "личный канал амбассадора Winline, а не брендовый канал компании"
       },
       "observed_concurrent_viewers": 67190,
       "observed_at": "2026-08-16",
