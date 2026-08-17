@@ -287,62 +287,51 @@
 
         </div>
 
-        <div style="font-size:19.5px;font-weight:800;margin:34px 0 12px;">Что нашлось в эфире на замерах</div>
-        <div style="background:#141416;border:1px solid rgba(255,255,255,0.08);border-radius:12px;padding:16px 20px;margin-bottom:14px;">
-          <div style="font-size:13px;font-weight:700;letter-spacing:0.6px;color:#77767C;margin-bottom:10px;">КАК ЧИТАТЬ КОЛОНКУ «ГДЕ НАЙДЕН»</div>
-          <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:14px;">
-            <sc-for list="{{ evidenceLegend }}" as="e" hint-placeholder-count="3">
-              <div>
-                <div style="font-size:15px;font-weight:800;color:#E7E6E2;">{{ e.name }}</div>
-                <div style="font-size:13px;color:#9A9AA0;line-height:1.5;margin-top:5px;">{{ e.text }}</div>
-                <div style="font-size:12.5px;color:#77767C;line-height:1.45;margin-top:5px;">{{ e.strength }}</div>
-              </div>
-            </sc-for>
-          </div>
+        <div style="display:flex;align-items:center;gap:12px;margin:34px 0 6px;flex-wrap:wrap;">
+          <div style="font-size:19.5px;font-weight:800;">Срез стримеров в момент Инта и EWC</div>
+          <span style="display:inline-flex;align-items:center;gap:6px;background:#2A1216;border:1px solid #E2354A;border-radius:999px;padding:4px 11px;">
+            <span style="width:7px;height:7px;border-radius:50%;background:#E2354A;display:inline-block;"></span>
+            <span style="font-size:11.5px;font-weight:800;letter-spacing:0.7px;color:#E2354A;">LIVE</span>
+          </span>
         </div>
-        <div style="display:grid;grid-template-columns:1fr 1fr;gap:18px;">
-          <sc-for list="{{ liveSnapshots }}" as="s" hint-placeholder-count="2">
-            <div style="background:#141416;border:1px solid rgba(255,255,255,0.09);border-radius:14px;overflow:hidden;">
-              <div style="padding:19px 21px;background:#1D1C1F;">
-                <div style="font-size:19.5px;font-weight:800;">{{ s.title }}</div>
-                <div style="font-size:13px;color:#77767C;margin-top:5px;">{{ s.meta }}</div>
-              </div>
-              <div style="display:grid;grid-template-columns:1.2fr 0.7fr 1fr;padding:11px 18px;font-size:12px;color:#77767C;font-weight:700;">
-                <div>БРЕНД</div><div>КАНАЛОВ</div><div>ЗРИТЕЛЕЙ В МОМЕНТЕ</div>
-              </div>
-              <sc-for list="{{ s.rows }}" as="r" hint-placeholder-count="5">
-                <div style="display:grid;grid-template-columns:1.2fr 0.7fr 1fr;padding:12px 18px;border-top:1px solid rgba(255,255,255,0.06);align-items:center;">
-                  <div style="font-size:15.5px;font-weight:700;{{ r.brandStyle }}">{{ r.brand }}</div>
-                  <div style="font-family:'JetBrains Mono',monospace;font-size:15px;">{{ r.channels }}</div>
-                  <div style="font-family:'JetBrains Mono',monospace;font-size:15px;">{{ r.viewers }}</div>
-                </div>
-              </sc-for>
-              <div style="padding:16px 18px;border-top:1px solid rgba(255,255,255,0.08);font-size:15px;line-height:1.5;color:#C7C6CC;">{{ s.takeaway }}</div>
-            </div>
-          </sc-for>
-        </div>
+        <div style="font-size:15px;color:#77767C;line-height:1.55;margin-bottom:18px;max-width:860px;">Оба замера сняты во время матчей: сетка каналов и бренды в них зафиксированы в конкретную минуту турнира.</div>
 
-        <div style="font-size:19.5px;font-weight:800;margin:34px 0 4px;">Каналы на каждом турнире в момент замера</div>
-        <div style="font-size:15px;color:#77767C;margin-bottom:12px;">Два отдельных замера. Каждый описывает только свой турнир в конкретный момент и не переносится на другие дни, категории или рынок целиком.</div>
-        <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:14px;">
-          <sc-for list="{{ streamerSnapshots }}" as="s" hint-placeholder-count="2">
-            <div style="background:#141416;border:1px solid rgba(255,255,255,0.09);border-radius:14px;overflow:hidden;">
-              <div style="padding:17px 18px;background:#1D1C1F;">
-                <div style="font-size:17px;font-weight:800;">{{ s.title }}</div>
-                <div style="font-size:12px;color:#77767C;line-height:1.4;margin-top:5px;">{{ s.note }}</div>
+        <div style="display:flex;flex-direction:column;gap:26px;">
+          <sc-for list="{{ snapshotBlocks }}" as="s" hint-placeholder-count="2">
+            <div>
+              <div style="display:flex;align-items:baseline;gap:12px;flex-wrap:wrap;margin-bottom:4px;">
+                <div style="font-size:19.5px;font-weight:800;">{{ s.title }}</div>
               </div>
-              <div style="display:grid;grid-template-columns:1.1fr 1fr 0.65fr 0.65fr;padding:10px 14px;font-size:11px;font-weight:700;color:#77767C;">
-                <div>КАНАЛ</div><div>БРЕНД</div><div>ЗРИТЕЛИ</div><div>ГДЕ НАЙДЕН</div>
-              </div>
-              <div style="max-height:330px;overflow:auto;">
-                <sc-for list="{{ s.rows }}" as="r" hint-placeholder-count="10">
-                  <div style="display:grid;grid-template-columns:1.1fr 1fr 0.65fr 0.65fr;padding:11px 14px;border-top:1px solid rgba(255,255,255,0.06);align-items:start;">
-                    <a href="{{ r.channelUrl }}" target="_blank" rel="noreferrer" style="font-size:13px;font-weight:800;overflow-wrap:anywhere;">{{ r.streamer }}</a>
-                    <div style="font-size:12.5px;font-weight:700;line-height:1.4;{{ r.brandStyle }}">{{ r.brands }}</div>
-                    <div style="font-family:'JetBrains Mono',monospace;font-size:12.5px;">{{ r.viewers }}</div>
-                    <div style="font-size:11px;color:#77767C;line-height:1.4;">{{ r.evidence }}</div>
+              <div style="font-size:14px;color:#77767C;line-height:1.5;margin-bottom:12px;">{{ s.note }}</div>
+
+              <div style="border:1px solid rgba(255,255,255,0.09);border-radius:14px;overflow:hidden;">
+                <div style="display:grid;grid-template-columns:1.15fr 0.9fr 0.65fr 1fr;background:#1D1C1F;padding:12px 18px;font-size:12px;font-weight:700;letter-spacing:0.5px;color:#9A9AA0;">
+                  <div>КАНАЛ</div><div>БРЕНД</div><div>ЗРИТЕЛИ</div><div>ГДЕ НАЙДЕН</div>
+                </div>
+                <sc-for list="{{ s.rows }}" as="r" hint-placeholder-count="12">
+                  <div style="display:grid;grid-template-columns:1.15fr 0.9fr 0.65fr 1fr;padding:11px 18px;border-top:1px solid rgba(255,255,255,0.06);background:#121114;align-items:baseline;">
+                    <a href="{{ r.channelUrl }}" target="_blank" rel="noreferrer" style="font-size:14px;font-weight:800;overflow-wrap:anywhere;">{{ r.streamer }}</a>
+                    <div style="font-size:13.5px;font-weight:700;{{ r.brandStyle }}">{{ r.brands }}</div>
+                    <div style="font-family:'JetBrains Mono',monospace;font-size:13.5px;">{{ r.viewers }}</div>
+                    <div style="font-size:12.5px;color:#77767C;">{{ r.evidence }}</div>
                   </div>
                 </sc-for>
+              </div>
+
+              <div style="display:grid;grid-template-columns:1.1fr 1fr;gap:14px;margin-top:14px;align-items:start;">
+                <div style="border:1px solid rgba(255,255,255,0.09);border-radius:12px;overflow:hidden;">
+                  <div style="display:grid;grid-template-columns:1.2fr 0.7fr 1fr;padding:11px 18px;background:#1D1C1F;font-size:12px;font-weight:700;letter-spacing:0.5px;color:#9A9AA0;">
+                    <div>БРЕНД</div><div>КАНАЛОВ</div><div>ЗРИТЕЛЕЙ В МОМЕНТЕ</div>
+                  </div>
+                  <sc-for list="{{ s.brandRows }}" as="r" hint-placeholder-count="4">
+                    <div style="display:grid;grid-template-columns:1.2fr 0.7fr 1fr;padding:11px 18px;border-top:1px solid rgba(255,255,255,0.06);background:#121114;align-items:baseline;">
+                      <div style="font-size:15px;font-weight:800;{{ r.brandStyle }}">{{ r.brand }}</div>
+                      <div style="font-family:'JetBrains Mono',monospace;font-size:14px;">{{ r.channels }}</div>
+                      <div style="font-family:'JetBrains Mono',monospace;font-size:14px;">{{ r.viewers }}</div>
+                    </div>
+                  </sc-for>
+                </div>
+                <div style="background:#141416;border:1px solid rgba(255,255,255,0.08);border-radius:12px;padding:16px 20px;font-size:15px;line-height:1.6;color:#C7C6CC;">{{ s.takeaway }}</div>
               </div>
             </div>
           </sc-for>
@@ -1795,11 +1784,6 @@ class Component extends DCLogic {
       })),
       activeBrand,
       talentRows,
-      evidenceLegend: [
-        { name: 'Ссылка в панели', text: 'Постоянная ссылка в блоке под плеером на странице канала. В данных встречаются партнёрские ссылки с трекинг-кодом, например betboom-link.ru/link/…', strength: 'Самое сильное доказательство: висит всегда и обычно означает деньги.' },
-        { name: 'Название стрима', text: 'Бренд или его чат-команда упомянуты в заголовке трансляции — например «!bb» в названии.', strength: 'Среднее: живёт только пока идёт этот эфир.' },
-        { name: 'Тег', text: 'Тег стрима на Twitch. Может относиться к клубу BetBoom Team, а не к букмекеру.', strength: 'Самое слабое: только на теге держатся 3 строки из 44, все мельче 60 зрителей.' },
-      ],
       pariQuote: {
         text: 'Нет смысла содержать огромный пул из 10–12 человек. Годовые контракты себя изжили — теперь берём конкретного человека под конкретный ивент',
         attribution: 'PARI об амбассадорах',
@@ -1976,23 +1960,27 @@ class Component extends DCLogic {
       ] : [],
       portfolioRows,
       portfolioSummary,
-      streamerSnapshots,
+      snapshotBlocks: matrixReady ? streamerSnapshots.map((snapshot, index) => {
+        const live = [
+          {
+            rows: snapshotRows('twitch:cs2-ewc-live'),
+            takeaway: `BetBoom: ${ewcBetBoom.observed_channel_count} каналов и ${this.number(ewcBetBoom.viewers_at_observation)} зрителей в моменте. Winline: ${ewcWinline.observed_channel_count} канала и ${this.number(ewcWinline.viewers_at_observation)} зрителей. На каналах с сигналом BetBoom зрителей в ${this.decimal(ewcBetBoom.viewers_at_observation / ewcWinline.viewers_at_observation)} раза больше.`,
+          },
+          {
+            rows: snapshotRows('twitch:dota2'),
+            takeaway: `У BetBoom и Winline по ${dotaWinline.observed_channel_count} каналов с сигналом. Но зрителей на каналах BetBoom в ${this.decimal(dotaBetBoom.viewers_at_observation / dotaWinline.viewers_at_observation)} раза больше: ${this.number(dotaBetBoom.viewers_at_observation)} против ${this.number(dotaWinline.viewers_at_observation)}.`,
+          },
+        ][index];
+        return {
+          title: snapshot.title,
+          note: snapshot.note,
+          rows: snapshot.rows,
+          brandRows: live.rows,
+          takeaway: live.takeaway,
+        };
+      }) : [],
       streamerPartnershipRows,
       streamerSignalStats,
-      liveSnapshots: matrixReady ? [
-        {
-          title: 'CS2 · EWC 2026',
-          meta: 'twitch:cs2-ewc-live · observed',
-          rows: snapshotRows('twitch:cs2-ewc-live'),
-          takeaway: `BetBoom: ${ewcBetBoom.observed_channel_count} каналов и ${this.number(ewcBetBoom.viewers_at_observation)} зрителей в моменте. Winline: ${ewcWinline.observed_channel_count} канала и ${this.number(ewcWinline.viewers_at_observation)} зрителей. На каналах с сигналом BetBoom зрителей в ${this.decimal(ewcBetBoom.viewers_at_observation / ewcWinline.viewers_at_observation)} раза больше.`,
-        },
-        {
-          title: 'Dota 2 · The International 2026',
-          meta: 'twitch:dota2 · observed',
-          rows: snapshotRows('twitch:dota2'),
-          takeaway: `У BetBoom и Winline по ${dotaWinline.observed_channel_count} каналов с сигналом. Но зрителей на каналах BetBoom в ${this.decimal(dotaBetBoom.viewers_at_observation / dotaWinline.viewers_at_observation)} раза больше: ${this.number(dotaBetBoom.viewers_at_observation)} против ${this.number(dotaWinline.viewers_at_observation)}.`,
-        },
-      ] : [],
       liveActions: [
         { label: '01 · ВИДИМОСТЬ', action: 'Опрос title, tags и panels каждые 30–60 минут', metric: 'Доля обязательств, реально видимых в эфире' },
         { label: '02 · ПЕРЕСЕЧЕНИЕ', action: 'Чат, расписание и first-party ID по одновременным эфирам', metric: 'Уникальный контакт вместо суммы онлайнов' },
