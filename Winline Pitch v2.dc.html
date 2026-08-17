@@ -25,6 +25,7 @@
   * { box-sizing:border-box; font-family:'Golos Text',sans-serif; }
   ::selection { background:#FF6A1A; color:#0A0A0C; }
   .mine ::selection, .mine::selection { background:#0A0A0C; color:#FF6A1A; }
+  .mine .hl { background:#0A0A0C; color:#FF6A1A !important; padding:2px 7px; border-radius:5px; font-weight:700; box-decoration-break:clone; -webkit-box-decoration-break:clone; }
 </style>
 <script>
 (function () {
@@ -273,7 +274,7 @@
                     <div style="display:grid;grid-template-columns:1fr 1.35fr;gap:22px;padding:13px 0;border-top:1px solid rgba(0,0,0,0.12);align-items:start;">
                       <div style="font-size:15.5px;font-weight:800;line-height:1.4;">{{ m.name }}</div>
                       <div>
-                        <div style="font-size:14.5px;line-height:1.55;">{{ m.detail }}</div>
+                        <div style="font-size:14.5px;line-height:1.55;">{{ m.detail }}<sc-if value="{{ m.hasHighlight }}" hint-placeholder-val="{{ false }}"><span class="hl">{{ m.highlight }}</span>{{ m.detailTail }}</sc-if></div>
                         <div style="font-size:13px;line-height:1.5;margin-top:6px;opacity:0.6;">{{ m.limit }}</div>
                       </div>
                     </div>
@@ -1881,7 +1882,10 @@ class Component extends DCLogic {
           items: [
             {
               name: 'Динамическая посадочная, которая узнаёт игрока',
-              detail: 'Страница определяет по кукам, кто на неё пришёл: новый пользователь, действующий игрок или ушедший. Каждому показывается свой оффер, а не один общий на всех. В World of Tanks я собрал такую механику, и она дала +$85 тысяч в месяц на возврате ушедших против +$18 тысяч на активных — то есть основные деньги оказались именно в реактивации, а не в привлечении.',
+              detail: 'Страница определяет по кукам, кто на неё пришёл: новый пользователь, действующий игрок или ушедший. Каждому показывается свой оффер, а не один общий на всех. ',
+              hasHighlight: true,
+              highlight: 'В World of Tanks я собрал такую механику, и она дала +$85 тысяч в месяц на возврате ушедших против +$18 тысяч на активных',
+              detailTail: ' — то есть основные деньги оказались именно в реактивации, а не в привлечении.',
               limit: 'Работает на своей посадочной и пока жива кука. Часть аудитории с чужого устройства не опознается, поэтому эффект всегда занижен.',
             },
             {
