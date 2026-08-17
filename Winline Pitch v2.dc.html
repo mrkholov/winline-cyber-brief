@@ -36,7 +36,7 @@
     var links = document.querySelectorAll('a[data-nav]');
     if (!links.length) return;
 
-    // какая секция сейчас в фокусе: последняя, чей верх выше линии под шапкой
+    // какая секция сейчас в фокусе: последняя, чей верх выше линии под шапкой
     var line = 140;
     var current = '';
     var sections = document.querySelectorAll('section[id]');
@@ -331,7 +331,7 @@
                     </div>
                   </sc-for>
                 </div>
-                <div style="background:#141416;border:1px solid rgba(255,255,255,0.08);border-radius:12px;padding:16px 20px;font-size:15px;line-height:1.6;color:#C7C6CC;">{{ s.takeaway }}</div>
+                <div style="background:rgba(255,106,26,0.11);border:1px solid rgba(255,106,26,0.34);border-radius:12px;padding:16px 20px;font-size:15px;line-height:1.6;color:#F0DFD2;">{{ s.takeaway }}</div>
               </div>
             </div>
           </sc-for>
@@ -373,7 +373,7 @@
         </div>
 
         <div style="font-size:27.5px;font-weight:800;margin-bottom:8px;">Анализ медиаактивов и конкурентов</div>
-        <div style="font-size:15.5px;color:#77767C;margin-bottom:22px;">Сначала цифры, под ними — что из них следует и чего в них не хватает</div>
+        <div style="font-size:15.5px;color:#77767C;margin-bottom:22px;">Сначала цифры, под ними — что из них следует и чего в них не хватает</div>
 
         <div style="display:flex;flex-direction:column;gap:16px;">
           <sc-for list="{{ insightCards }}" as="i" hint-placeholder-count="3">
@@ -536,7 +536,7 @@
                     <span style="font-size:14px;background:#2A1A10;border-radius:7px;padding:6px 12px;color:#FF6A1A;">{{ t }}</span>
                   </sc-for>
                 </div>
-                <div style="font-size:15.5px;line-height:1.6;color:#C7C6CC;">Имя стоит на турнирах и мероприятиях, а команды идут без него. Взамен есть полный контроль над форматом, дистрибуцией и правами — и продукт не пропадёт, если состав распадётся.</div>
+                <div style="font-size:15.5px;line-height:1.6;color:#C7C6CC;">Имя стоит на турнирах и мероприятиях, а команды идут без него. Взамен есть полный контроль над форматом, дистрибуцией и правами — и продукт не пропадёт, если состав распадётся.</div>
               </div>
             </div>
             <div style="font-size:17px;font-weight:700;line-height:1.55;margin-top:20px;padding-top:18px;border-top:1px solid rgba(255,255,255,0.09);">Обе модели решают одну задачу — донести бренд до момента наивысшего внимания. Вопрос, который стоит задать до следующего продления: сравнивались ли они между собой по стоимости качественного контакта.</div>
@@ -632,7 +632,7 @@
           <div class="mine-tag"><i>ЕХ</i>ВЫВОД</div>
           <div style="font-size:18px;font-weight:800;line-height:1.45;">Собственные продукты Winline выходят на каналах собственных же законтрактованных стримеров, а не на брендовом канале.</div>
           <div style="font-size:15.5px;color:#C7C6CC;line-height:1.6;margin-top:11px;">KING PONG идёт на канале <a href="https://www.twitch.tv/buster" target="_blank" rel="noreferrer">buster</a>, Media Poker — на канале <a href="https://www.twitch.tv/voodoosh" target="_blank" rel="noreferrer">VooDooSh</a>, плюс YouTube «Площадка» и сообщество во ВКонтакте. Оба стримера есть в составе Winline из 49 человек, и оба несли бренд в наших замерах. То есть пул амбассадоров работает не только как реклама, но и как готовая сеть дистрибуции для своих мероприятий.</div>
-          <div style="font-size:13.5px;color:#77767C;line-height:1.55;margin-top:11px;">Это меняет вопрос о стоимости контрактов: часть гонорара окупается не рекламными интеграциями, а сэкономленной закупкой охвата под собственные продукты. Считать эти два эффекта нужно раздельно. Источники: <a href="https://winline.ru/blog/posts/mediapoker-9-2026" target="_blank" rel="noreferrer">Winline о трансляциях Media Poker</a> · <a href="https://www.twitch.tv/voodoosh/clip/FantasticIronicFennelOSsloth-w1PBzBuIlcAWgjfX" target="_blank" rel="noreferrer">клип Media Poker 6 на канале VooDooSh</a></div>
+          <div style="font-size:13.5px;color:#77767C;line-height:1.55;margin-top:11px;">Это меняет вопрос о стоимости контрактов: часть гонорара окупается не рекламными интеграциями, а сэкономленной закупкой охвата под собственные продукты. Считать эти два эффекта нужно раздельно. Источники: <a href="https://winline.ru/blog/posts/mediapoker-9-2026" target="_blank" rel="noreferrer">Winline о трансляциях Media Poker</a> · <a href="https://www.twitch.tv/voodoosh/clip/FantasticIronicFennelOSsloth-w1PBzBuIlcAWgjfX" target="_blank" rel="noreferrer">клип Media Poker 6 на канале VooDooSh</a></div>
         </div>
 
         <div style="font-size:19.5px;font-weight:800;margin:34px 0 4px;">Собственные медийные мероприятия</div>
@@ -770,7 +770,7 @@
     <section id="research" style="padding:80px 0 40px;">
       <div style="font-family:'JetBrains Mono',monospace;font-size:14px;color:#FF6A1A;font-weight:600;letter-spacing:1.2px;margin-bottom:20px;">RESEARCH — СОБРАН К ЭТОЙ ВСТРЕЧЕ</div>
       <div style="font-size:43.5px;font-weight:800;max-width:900px;letter-spacing:-0.6px;line-height:1.2;">Открытые данные, Esports Charts и точечные замеры Twitch API</div>
-      <div style="font-size:17px;color:#9A9AA0;max-width:760px;line-height:1.6;margin-top:20px;">Каждый блок — что нашёл и что беру во внимание, по приоритету. Внутренняя экономика Winline не публична, поэтому окончательных выводов об эффективности активов здесь нет.</div>
+      <div style="font-size:17px;color:#9A9AA0;max-width:760px;line-height:1.6;margin-top:20px;">Каждый блок — что нашёл и что беру во внимание, по приоритету. Внутренняя экономика Winline не публична, поэтому окончательных выводов об эффективности активов здесь нет.</div>
     </section>
 
     <sc-for list="{{ researchBlocks }}" as="r" hint-placeholder-count="8">
@@ -926,7 +926,7 @@
     </section>
 
     <section style="padding:48px 0;border-top:1px solid rgba(255,255,255,0.07);">
-      <div style="font-size:27.5px;font-weight:800;margin-bottom:26px;">Три кейса под этот периметр</div>
+      <div style="font-size:27.5px;font-weight:800;margin-bottom:26px;">Три кейса под этот периметр</div>
       <div style="display:flex;flex-direction:column;gap:14px;">
         <sc-for list="{{ cvCases }}" as="c" hint-placeholder-count="3">
           <div style="background:#141416;border:1px solid rgba(255,255,255,0.09);border-radius:14px;padding:26px 28px;">
@@ -1304,7 +1304,7 @@ class Component extends DCLogic {
       winline: 'Самый широкий пул после BetBoom. В замерах подтвердились пятеро — все в Dota 2 на The International. По остальным сорока с лишним публично известно только имя: ни формата интеграции, ни гонорара, ни результата.',
       betboom: 'Самый большой пул на рынке и самый широкий набор активов: три команды, четыре организации и семь собственных турниров. В замерах подтвердились пятеро.',
       fonbet: 'Небольшой пул при заметном наборе активов: MOUZ, ESL, PGL, студия Paragon и собственная Media League. Ставка смещена в сторону команд и трансляций, а не отдельных стримеров.',
-      pari: 'Самый маленький пул на рынке и единственный актив — собственная команда PARIVISION. Это совпадает с публично заявленной стратегией: отказ от большого штата в пользу точечных сделок под конкретное событие.',
+      pari: 'Самый маленький пул на рынке и единственный актив — собственная команда PARIVISION. Это совпадает с публично заявленной стратегией: отказ от большого штата в пользу точечных сделок под конкретное событие.',
     };
     const statsDoc = research?.streamerStats;
     const bgDoc = research?.streamerBackground;
@@ -1775,7 +1775,7 @@ class Component extends DCLogic {
         const bShare = Math.round(b.fromEsports / b.people.length * 100);
         const wPer = Math.round(w.sumAvg / w.withAudienceCount);
         const bPer = Math.round(b.sumAvg / b.withAudienceCount);
-        return `У BetBoom ${bShare}% пула — про-игроки, бывшие про и комментаторы, у Winline ${wShare}%. При этом суммарный средний онлайн у них сопоставим: ${this.number(b.sumAvg)} против ${this.number(w.sumAvg)}. Разница в том, как он собран: у BetBoom ${this.number(bPer)} зрителей на канал против ${this.number(wPer)} у Winline — тот же охват достаётся меньшим числом контрактов.`;
+        return `У BetBoom ${bShare}% пула — про-игроки, бывшие про и комментаторы, у Winline ${wShare}%. При этом суммарный средний онлайн у них сопоставим: ${this.number(b.sumAvg)} против ${this.number(w.sumAvg)}. Разница в том, как он собран: у BetBoom ${this.number(bPer)} зрителей на канал против ${this.number(wPer)} у Winline — тот же охват достаётся меньшим числом контрактов.`;
       })(),
       talentBrandTabs: Object.keys(talentBrands).map(key => ({
         label: talentBrands[key].label,
@@ -1785,14 +1785,14 @@ class Component extends DCLogic {
       activeBrand,
       talentRows,
       pariQuote: {
-        text: 'Нет смысла содержать огромный пул из 10–12 человек. Годовые контракты себя изжили — теперь берём конкретного человека под конкретный ивент',
-        attribution: 'PARI об амбассадорах',
+        text: 'Нет смысла содержать огромный пул из 10–12 человек. Годовые контракты себя изжили — теперь берём конкретного человека под конкретный ивент',
+        attribution: 'PARI об амбассадорах',
         publisher: 'Sports.ru — Беттинг-индустрия',
         url: 'https://www.sports.ru/betting/industry/1117155820-pari-ob-ambassadorax-net-smysla-soderzhat-ogromnyj-pul-iz-10-12-chelov.html',
-        meaning: 'PARI публично отказывается от большого пула амбассадоров и переходит на точечные сделки под события. Winline держит один из крупнейших пулов на рынке — около 50 человек.',
+        meaning: 'PARI публично отказывается от большого пула амбассадоров и переходит на точечные сделки под события. Winline держит один из крупнейших пулов на рынке — около 50 человек.',
       },
       marketPrice: {
-        text: 'Средняя интеграция на Twitch — 40,3 тысячи рублей: эфир, голосовая вставка или чат-бот плюс баннер под трансляцией. Спецстрим у топового стримера уходит за миллион, у нижней части рейтинга — меньше ста тысяч. Весь рынок рекламы на Twitch оценивали в миллиард рублей в год по пятидесяти крупнейшим каналам.',
+        text: 'Средняя интеграция на Twitch — 40,3 тысячи рублей: эфир, голосовая вставка или чат-бот плюс баннер под трансляцией. Спецстрим у топового стримера уходит за миллион, у нижней части рейтинга — меньше ста тысяч. Весь рынок рекламы на Twitch оценивали в миллиард рублей в год по пятидесяти крупнейшим каналам.',
         publisher: 'Оценка Ассоциации блогеров и агентств, февраль 2023',
         url: 'https://www.sostav.ru/publication/twitch-59117.html',
       },
@@ -1804,8 +1804,8 @@ class Component extends DCLogic {
           answers: 'кто именно пришёл с эфира',
           items: [
             {
-              name: 'Метка в ссылке под трансляцией и в чат-команде',
-              detail: 'Ссылка в панели и та, что выдаёт бот по команде, размечаются под конкретного стримера и конкретный эфир. Дальше переход, регистрация, KYC и депозит собираются в одну цепочку по одному идентификатору кампании.',
+              name: 'Метка в ссылке под трансляцией и в чат-команде',
+              detail: 'Ссылка в панели и та, что выдаёт бот по команде, размечаются под конкретного стримера и конкретный эфир. Дальше переход, регистрация, KYC и депозит собираются в одну цепочку по одному идентификатору кампании.',
               limit: 'Занижает: часть смотрит с телефона, а заходит позже с другого устройства — такой переход по метке не увидит.',
             },
             {
@@ -1964,7 +1964,7 @@ class Component extends DCLogic {
         const live = [
           {
             rows: snapshotRows('twitch:cs2-ewc-live'),
-            takeaway: `BetBoom: ${ewcBetBoom.observed_channel_count} каналов и ${this.number(ewcBetBoom.viewers_at_observation)} зрителей в моменте. Winline: ${ewcWinline.observed_channel_count} канала и ${this.number(ewcWinline.viewers_at_observation)} зрителей. На каналах с сигналом BetBoom зрителей в ${this.decimal(ewcBetBoom.viewers_at_observation / ewcWinline.viewers_at_observation)} раза больше.`,
+            takeaway: `BetBoom: ${ewcBetBoom.observed_channel_count} каналов и ${this.number(ewcBetBoom.viewers_at_observation)} зрителей в моменте. Много фокуса на бывших про-игроков и стримеров с высоким уровнем ELO.`,
           },
           {
             rows: snapshotRows('twitch:dota2'),
@@ -2036,7 +2036,7 @@ class Component extends DCLogic {
       ],
 
       routeSteps: [
-        { n: '01', label: 'Опыт под задачи роли', hasArrow: true },
+        { n: '01', label: 'Опыт под задачи роли', hasArrow: true },
         { n: '02', label: 'Что показал ресерч', hasArrow: true },
         { n: '03', label: 'Воронка и пример на живом активе', hasArrow: false },
       ],
@@ -2115,7 +2115,7 @@ class Component extends DCLogic {
       ],
       funnelStages: arrows(['Целевая аудитория 18+', 'Подтверждённый контакт', 'Внимание', 'Идентифицируемое действие', 'Регистрация/KYC', 'FTD', 'Повторная активность', 'Turnover/NGR', 'Инкрементальный вклад']),
       gapTools: [
-        { gap: 'Контакт есть, атрибуции нет', tool: 'Разметка на каждом касании: campaign ID, промокод, QR, chat-команда, размеченный лендинг под конкретный матч', proof: '120+ интеграций/мес по меткам, промокодам и QR' },
+        { gap: 'Контакт есть, атрибуции нет', tool: 'Разметка на каждом касании: campaign ID, промокод, QR, chat-команда, размеченный лендинг под конкретный матч', proof: '120+ интеграций/мес по меткам, промокодам и QR' },
         { gap: 'Медийный эффект не в last-click', tool: 'Post-view отдельно от post-click, целевые и контрольные группы, вклад медийных конверсий в решение по бюджету', proof: 'Измерение охватных кампаний Wargaming' },
         { gap: 'Бренд усиливается, но не считается', tool: 'Brand lift через геймифицированные опросы аудитории, видевшей интеграцию, против контрольной', proof: 'Статзначимый инкремент знания бренда' },
         { gap: 'Платим дважды за одну аудиторию', tool: 'Пересечение аудиторий: уникальные ники в чатах при одновременных эфирах, эвристика по расписанию и дисциплине, гео и first-party ID', proof: 'Методология спроектирована на Twitch API' },
@@ -2125,7 +2125,7 @@ class Component extends DCLogic {
       showcaseSteps: [
         { n: '01', label: 'Baseline до активации', metric: 'Регистрации и FTD по CS2-аудитории за 4 недели до' },
         { n: '02', label: 'Stream и voice integration на партнёрских каналах', metric: 'Уникальные часы просмотра, стоимость часа' },
-        { n: '03', label: 'Chat-команда и размеченный лендинг под матч magic', metric: 'Post-click: переходы → регистрации → FTD' },
+        { n: '03', label: 'Chat-команда и размеченный лендинг под матч magic', metric: 'Post-click: переходы → регистрации → FTD' },
         { n: '04', label: 'Telegram и соцсети партнёров', metric: 'Post-view и вклад вторичных касаний' },
         { n: '05', label: 'Offline/watch-party вокруг матчей', metric: 'Явка, охват PR, brand lift по опросу' },
         { n: '06', label: 'CRM follow-up по когорте', metric: 'Повторные депозиты, удержание, LTV' },
