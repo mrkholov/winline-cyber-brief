@@ -485,14 +485,10 @@
               </div>
             </div>
 
-            <div style="border-top:1px solid rgba(255,255,255,0.08);padding:20px 26px;display:grid;grid-template-columns:1fr 1fr;gap:24px;">
-              <div class="mine" style="padding:20px 22px;">
+            <div style="border-top:1px solid rgba(255,255,255,0.08);padding:20px 26px;">
+              <div class="mine" style="padding:22px 24px;">
                 <div class="mine-tag"><i>ЕХ</i>ВЫВОД</div>
-                <div style="font-size:16px;line-height:1.55;color:#E7E6E2;">{{ e.meaning }}</div>
-              </div>
-              <div class="mine" style="padding:20px 22px;">
-                <div class="mine-tag"><i>ЕХ</i>ВОПРОС</div>
-                <div style="font-size:16px;line-height:1.55;color:#9A9AA0;">{{ e.question }}</div>
+                <div style="font-size:16px;line-height:1.6;max-width:1000px;">{{ e.meaning }}</div>
               </div>
             </div>
           </div>
@@ -1302,7 +1298,6 @@ class Component extends DCLogic {
           : person.brand ? 'color:#E7E6E2;text-decoration:underline dotted;' : 'color:#E7E6E2;',
       })),
       meaning: 'Здесь уже стоят обе механики с прямой атрибуцией: баннер-ссылка в панели и промокод. То есть путь от зрителя до депозита технически прослеживается, и вопрос только в том, сводят ли эти данные в одну цепочку. При этом формат не киберспортивный, а собирает втрое больше зрителей, чем пиковый онлайн Winline Pro League Season 3, при призовом 5 млн ₽ — втором среди собственных продуктов после Standoff 2 Major.',
-      question: 'Сводятся ли переходы по панели и активации промокода в общую воронку до депозита — или считаются отдельно от киберспортивных турниров? И как в одном эфире оказывается стример из состава BetBoom: контракты не эксклюзивные или это разовая договорённость?',
     }));
     const eventsIntro = matrixReady
       ? `${eventRows.length} партнёрств с турнирными операторами и трансляциями, плюс собственные турниры Winline. Спонсорство чужого турнира и свой продукт — разные модели: в первой покупается доступ к чужой аудитории, во второй аудитория выращивается.`
