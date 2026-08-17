@@ -15,6 +15,8 @@
   body { margin:0; background:#0A0A0C; }
   a { color:#FF6A1A; text-decoration:none; }
   a:hover { color:#FF8A47; }
+  html { scroll-behavior:smooth; }
+  section[id] { scroll-margin-top:86px; }
   * { box-sizing:border-box; font-family:'Golos Text',sans-serif; }
   ::selection { background:#FF6A1A; color:#0A0A0C; }
 </style>
@@ -39,7 +41,7 @@
   <!-- ==================== ПИТЧ ==================== -->
   <div style="max-width:1240px;margin:0 auto;padding:0 40px;">
     <section id="ramka" style="padding:96px 0 80px;">
-      <div style="font-family:'JetBrains Mono',monospace;font-size:12.5px;color:#FF6A1A;font-weight:600;letter-spacing:1.2px;margin-bottom:26px;">01 — РАМКА</div>
+      <div style="font-family:'JetBrains Mono',monospace;font-size:12.5px;color:#FF6A1A;font-weight:600;letter-spacing:1.2px;margin-bottom:26px;">РАМКА</div>
       <div style="font-size:46px;line-height:1.15;font-weight:800;max-width:960px;letter-spacing:-0.8px;">Связываю команды, партнёрства, стримеров и события с измеримым вкладом в регистрации, депозиты и маржу.</div>
       <div style="display:flex;gap:12px;margin-top:44px;flex-wrap:wrap;">
         <sc-for list="{{ routeSteps }}" as="step" hint-placeholder-count="3">
@@ -56,7 +58,7 @@
       </div>
     </section>
     <section id="opyt" style="padding:80px 0;border-top:1px solid rgba(255,255,255,0.07);">
-      <div style="font-family:'JetBrains Mono',monospace;font-size:12.5px;color:#FF6A1A;font-weight:600;letter-spacing:1.2px;margin-bottom:14px;">02 — ОЖИДАНИЯ VS ОПЫТ</div>
+      <div style="font-family:'JetBrains Mono',monospace;font-size:12.5px;color:#FF6A1A;font-weight:600;letter-spacing:1.2px;margin-bottom:14px;">ОЖИДАНИЯ VS ОПЫТ</div>
       <div style="font-size:32px;font-weight:800;letter-spacing:-0.4px;margin-bottom:34px;">Что в роли критично — и чем это закрыто</div>
       <div style="position:sticky;top:65px;z-index:10;display:grid;grid-template-columns:1.1fr 1.3fr;gap:28px;padding:0 0 12px;background:#0A0A0C;border-bottom:1px solid rgba(255,255,255,0.15);">
         <div style="font-size:11.5px;font-weight:700;letter-spacing:0.6px;color:#77767C;">НАПРАВЛЕНИЕ</div>
@@ -230,6 +232,44 @@
             </div>
           </sc-for>
         </div>
+
+        <div style="font-size:17px;font-weight:800;margin-bottom:4px;">Весь портфель по типам активов</div>
+        <div style="font-size:13px;color:#77767C;margin-bottom:14px;">Общая рамка перед разбором команд: что есть у каждого бренда. Названия кликабельны там, где партнёрство подтверждено отдельным источником.</div>
+        <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:10px;margin-bottom:12px;">
+          <sc-for list="{{ brandAssets }}" as="brand" hint-placeholder-count="4">
+            <div style="background:#141416;border:1px solid rgba(255,255,255,0.09);border-radius:12px;overflow:hidden;display:flex;flex-direction:column;">
+              <div style="padding:14px 18px;background:#1D1C1F;display:flex;align-items:baseline;justify-content:space-between;gap:10px;">
+                <span style="font-size:15px;font-weight:800;{{ brand.style }}">{{ brand.label }}</span>
+                <span style="font-family:'JetBrains Mono',monospace;font-size:13px;color:#9A9AA0;">{{ brand.total }}</span>
+              </div>
+              <div style="padding:16px 18px;display:flex;flex-direction:column;gap:15px;">
+                <sc-for list="{{ brand.groups }}" as="g" hint-placeholder-count="4">
+                  <div>
+                    <div style="font-size:10.5px;font-weight:700;letter-spacing:0.6px;color:#77767C;padding-bottom:7px;border-bottom:1px solid rgba(255,255,255,0.09);">{{ g.title }} · {{ g.count }}</div>
+                    <div style="display:flex;flex-direction:column;gap:6px;margin-top:9px;">
+                      <sc-for list="{{ g.items }}" as="a" hint-placeholder-count="4">
+                        <div style="font-size:13px;line-height:1.35;">
+                          <sc-if value="{{ a.hasUrl }}" hint-placeholder-val="{{ true }}"><a href="{{ a.url }}" target="_blank" rel="noreferrer" style="{{ a.style }}">{{ a.name }}</a></sc-if>
+                          <sc-if value="{{ a.hasUrl }}" hint-placeholder-val="{{ false }}"><span style="{{ a.style }}">{{ a.name }}</span></sc-if>
+                          <span title="{{ a.markTitle }}" style="{{ a.markStyle }}">{{ a.mark }}</span><span style="font-size:10.5px;color:#77767C;"> {{ a.note }}</span>
+                        </div>
+                      </sc-for>
+                    </div>
+                  </div>
+                </sc-for>
+              </div>
+            </div>
+          </sc-for>
+        </div>
+
+        <div style="display:flex;flex-wrap:wrap;gap:18px;align-items:center;font-size:11.5px;color:#77767C;margin-bottom:32px;padding:12px 16px;background:#141416;border:1px solid rgba(255,255,255,0.07);border-radius:10px;">
+          <span><span style="color:#FF6A1A;font-weight:700;">Оранжевый*</span> — актив назван именем букмекера</span>
+          <span><span style="color:#FF6A1A;font-weight:800;">?</span> — партнёрство доказано, но актуальность сейчас не подтверждена</span>
+          <span><span style="color:#FF6A1A;">+</span> — объявлено только что</span>
+          <span><span style="color:#77767C;">×</span> — завершено или истекло</span>
+          <span>Без пометки — подтверждено действующим источником</span>
+        </div>
+
         <div style="border:1px solid rgba(255,255,255,0.09);border-radius:14px;overflow:hidden;">
           <div style="display:grid;grid-template-columns:0.75fr 1.1fr 0.95fr 1fr 1.05fr;background:#1D1C1F;padding:13px 18px;font-size:10.5px;font-weight:700;letter-spacing:0.5px;color:#9A9AA0;">
             <div>БРЕНД</div><div>С КЕМ</div><div>ТИП</div><div>СТАТУС СЕЙЧАС</div><div>СРОК И ИСТОЧНИК</div>
@@ -322,43 +362,6 @@
       <section id="turniry" style="padding:16px 0 60px;">
         <div style="font-size:24px;font-weight:800;margin-bottom:8px;">Турниры и трансляции</div>
         <div style="font-size:13.5px;color:#77767C;margin-bottom:22px;">{{ eventsIntro }}</div>
-
-        <div style="font-size:17px;font-weight:800;margin-bottom:4px;">Что есть у каждого бренда</div>
-        <div style="font-size:13px;color:#77767C;margin-bottom:14px;">Команды, турниры, организации и студии по каждому бренду. Названия кликабельны там, где партнёрство подтверждено отдельным источником.</div>
-        <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:10px;margin-bottom:12px;">
-          <sc-for list="{{ brandAssets }}" as="brand" hint-placeholder-count="4">
-            <div style="background:#141416;border:1px solid rgba(255,255,255,0.09);border-radius:12px;overflow:hidden;display:flex;flex-direction:column;">
-              <div style="padding:14px 18px;background:#1D1C1F;display:flex;align-items:baseline;justify-content:space-between;gap:10px;">
-                <span style="font-size:15px;font-weight:800;{{ brand.style }}">{{ brand.label }}</span>
-                <span style="font-family:'JetBrains Mono',monospace;font-size:13px;color:#9A9AA0;">{{ brand.total }}</span>
-              </div>
-              <div style="padding:16px 18px;display:flex;flex-direction:column;gap:15px;">
-                <sc-for list="{{ brand.groups }}" as="g" hint-placeholder-count="4">
-                  <div>
-                    <div style="font-size:10.5px;font-weight:700;letter-spacing:0.6px;color:#77767C;padding-bottom:7px;border-bottom:1px solid rgba(255,255,255,0.09);">{{ g.title }} · {{ g.count }}</div>
-                    <div style="display:flex;flex-direction:column;gap:6px;margin-top:9px;">
-                      <sc-for list="{{ g.items }}" as="a" hint-placeholder-count="4">
-                        <div style="font-size:13px;line-height:1.35;">
-                          <sc-if value="{{ a.hasUrl }}" hint-placeholder-val="{{ true }}"><a href="{{ a.url }}" target="_blank" rel="noreferrer" style="{{ a.style }}">{{ a.name }}</a></sc-if>
-                          <sc-if value="{{ a.hasUrl }}" hint-placeholder-val="{{ false }}"><span style="{{ a.style }}">{{ a.name }}</span></sc-if>
-                          <span title="{{ a.markTitle }}" style="{{ a.markStyle }}">{{ a.mark }}</span><span style="font-size:10.5px;color:#77767C;"> {{ a.note }}</span>
-                        </div>
-                      </sc-for>
-                    </div>
-                  </div>
-                </sc-for>
-              </div>
-            </div>
-          </sc-for>
-        </div>
-
-        <div style="display:flex;flex-wrap:wrap;gap:18px;align-items:center;font-size:11.5px;color:#77767C;margin-bottom:32px;padding:12px 16px;background:#141416;border:1px solid rgba(255,255,255,0.07);border-radius:10px;">
-          <span><span style="color:#FF6A1A;font-weight:700;">Оранжевый*</span> — актив назван именем букмекера</span>
-          <span><span style="color:#FF6A1A;font-weight:800;">?</span> — партнёрство доказано, но актуальность сейчас не подтверждена</span>
-          <span><span style="color:#FF6A1A;">+</span> — объявлено только что</span>
-          <span><span style="color:#77767C;">×</span> — завершено или истекло</span>
-          <span>Без пометки — подтверждено действующим источником</span>
-        </div>
 
         <div style="background:#141416;border:1px solid rgba(255,255,255,0.08);border-radius:14px;padding:22px 24px;margin-top:14px;">
           <div style="font-size:11.5px;font-weight:700;letter-spacing:0.6px;color:#FF6A1A;">ГЛАВНАЯ ПОПРАВКА</div>
@@ -648,55 +651,13 @@
         </div>
         <div style="margin-top:18px;border-left:2px solid #FF6A1A;padding-left:22px;font-size:14px;line-height:1.6;color:#E7E6E2;">Мой опыт: построил работу с инфлюенсерами с $1,5K до $70K в месяц при том же ДРР — через команду менеджеров, метки, модели CPA и бартера и аналитику по каждому партнёру. Здесь та же операционная задача.</div>
       </section>
-      <section id="reshenie" style="padding:16px 0 60px;">
-        <div style="font-size:24px;font-weight:800;margin-bottom:8px;">Приоритет по дисциплинам: где быстрее всего получится измеримый результат</div>
-        <div style="font-size:13.5px;color:#77767C;margin-bottom:22px;">Оценка сравнивает только то, что видно снаружи: сколько букмекеров в дисциплине, сколько турниров, качество доступного замера. Это не окупаемость и не готовая рекомендация двигать бюджет.</div>
-        <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:14px;">
-          <sc-for list="{{ disciplineCards }}" as="d" hint-placeholder-count="3">
-            <div style="background:#141416;border:1px solid rgba(255,255,255,0.09);border-radius:14px;padding:22px;">
-              <div style="display:flex;align-items:baseline;justify-content:space-between;gap:12px;">
-                <div style="font-size:18px;font-weight:800;">{{ d.name }}</div>
-                <div style="font-family:'JetBrains Mono',monospace;font-size:25px;font-weight:800;{{ d.scoreStyle }}">{{ d.score }}</div>
-              </div>
-              <div style="font-size:11px;color:#77767C;margin-top:5px;">надёжность оценки {{ d.confidence }} · расчёт по открытым данным</div>
-              <div style="font-size:13px;line-height:1.55;margin-top:16px;">{{ d.evidence }}</div>
-              <div style="font-size:13px;font-weight:700;line-height:1.5;margin-top:15px;padding-top:15px;border-top:1px solid rgba(255,255,255,0.07);">{{ d.decision }}</div>
-            </div>
-          </sc-for>
-        </div>
-        <div style="font-size:20px;font-weight:800;margin:36px 0 16px;">Каких данных не хватает, чтобы посчитать прибыльность</div>
-        <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:12px;">
-          <sc-for list="{{ completenessRows }}" as="c" hint-placeholder-count="3">
-            <div style="background:#121114;border:1px solid rgba(255,255,255,0.08);border-radius:12px;padding:18px;">
-              <div style="font-size:12px;color:#FF6A1A;font-weight:800;">{{ c.label }} · {{ c.records }} записей</div>
-              <div style="font-size:13px;color:#C7C6CC;line-height:1.55;margin-top:9px;">{{ c.missing }}</div>
-            </div>
-          </sc-for>
-        </div>
-        <div style="font-size:20px;font-weight:800;margin:36px 0 16px;">Как превращу это в решения за первые 30 дней</div>
-        <div style="display:flex;flex-direction:column;gap:10px;">
-          <sc-for list="{{ decisionSteps }}" as="d" hint-placeholder-count="4">
-            <div style="display:grid;grid-template-columns:52px 130px 1.35fr 1.25fr;gap:18px;align-items:center;background:#141416;border:1px solid rgba(255,255,255,0.08);border-radius:11px;padding:17px 20px;">
-              <div style="font-family:'JetBrains Mono',monospace;color:#FF6A1A;font-size:14px;font-weight:800;">{{ d.n }}</div>
-              <div style="font-size:12px;color:#9A9AA0;font-weight:700;">{{ d.period }}</div>
-              <div style="font-size:14px;font-weight:700;line-height:1.45;">{{ d.action }}</div>
-              <div style="font-size:12.5px;color:#9A9AA0;line-height:1.5;">{{ d.output }}</div>
-            </div>
-          </sc-for>
-        </div>
-        <div style="margin-top:20px;background:#FF6A1A;color:#0A0A0C;border-radius:14px;padding:24px 28px;">
-          <div style="font-size:21px;font-weight:900;">На выходе: один паспорт на каждый актив и одно из четырёх решений</div>
-          <div style="font-size:15px;font-weight:800;margin-top:8px;">масштабировать · изменить · перезаключить · остановить</div>
-          <div style="font-size:13px;font-weight:700;line-height:1.5;margin-top:10px;">Критерий — инкрементальный NGR минус права, гонорары, продакшн, усиление охвата, бонусы и операционные расходы.</div>
-        </div>
-      </section>
   </div>
   </sc-if>
 
   <!-- ==================== RESEARCH ==================== -->
   <div style="max-width:1240px;margin:0 auto;padding:0 40px;">
     <section id="vyvody" style="padding:80px 0;border-top:1px solid rgba(255,255,255,0.07);">
-      <div style="font-family:'JetBrains Mono',monospace;font-size:12.5px;color:#FF6A1A;font-weight:600;letter-spacing:1.2px;margin-bottom:14px;">03 — ЧТО ПОКАЗАЛ РЕСЕРЧ</div>
+      <div style="font-family:'JetBrains Mono',monospace;font-size:12.5px;color:#FF6A1A;font-weight:600;letter-spacing:1.2px;margin-bottom:14px;">ЧТО ПОКАЗАЛ РЕСЕРЧ</div>
       <div style="font-size:32px;font-weight:800;letter-spacing:-0.4px;margin-bottom:12px;">Я собрал публичные данные по направлению — и увидел три нюанса</div>
       <div style="font-size:15.5px;color:#9A9AA0;max-width:760px;line-height:1.6;margin-bottom:34px;">Открытые источники, Esports Charts и точечные замеры Twitch API в реальном времени — кто сейчас в эфире и у кого чей бренд светится. Три момента ниже — самое важное для разговора; весь ресёрч целиком — в разделе Research.</div>
       <div style="display:flex;flex-direction:column;gap:14px;">
@@ -755,7 +716,7 @@
   <!-- ==================== ВОРОНКА ==================== -->
   <div style="max-width:1240px;margin:0 auto;padding:0 40px;">
     <section id="voronka" style="padding:80px 0;border-top:1px solid rgba(255,255,255,0.07);">
-      <div style="font-family:'JetBrains Mono',monospace;font-size:12.5px;color:#FF6A1A;font-weight:600;letter-spacing:1.2px;margin-bottom:14px;">04 — ПОЭТОМУ ВОРОНКА</div>
+      <div style="font-family:'JetBrains Mono',monospace;font-size:12.5px;color:#FF6A1A;font-weight:600;letter-spacing:1.2px;margin-bottom:14px;">ПОЭТОМУ ВОРОНКА</div>
       <div style="font-size:32px;font-weight:800;letter-spacing:-0.4px;margin-bottom:12px;">Поэтому воронку я бы строил так — и вот чем закрываю каждый разрыв</div>
       <div style="font-size:15.5px;color:#9A9AA0;max-width:760px;line-height:1.6;margin-bottom:34px;">Медиаактив в кибере почти никогда не даёт last-click — считать нужно по слоям, а не одной метрикой.</div>
       <div style="display:flex;flex-wrap:wrap;align-items:center;margin-bottom:38px;">
@@ -778,7 +739,7 @@
       <div style="margin-top:34px;background:#141416;border:1px solid #FF6A1A;border-radius:14px;padding:24px 28px;font-family:'JetBrains Mono',monospace;font-size:14px;line-height:1.9;">Инкрементальный NGR − права − гонорары − продакшн − усиление охвата − бонусы − операционные расходы</div>
     </section>
     <section style="padding:80px 0;border-top:1px solid rgba(255,255,255,0.07);">
-      <div style="font-family:'JetBrains Mono',monospace;font-size:12.5px;color:#FF6A1A;font-weight:600;letter-spacing:1.2px;margin-bottom:14px;">05 — ТА ЖЕ ВОРОНКА НА ЖИВОМ АКТИВЕ</div>
+      <div style="font-family:'JetBrains Mono',monospace;font-size:12.5px;color:#FF6A1A;font-weight:600;letter-spacing:1.2px;margin-bottom:14px;">ТА ЖЕ ВОРОНКА НА ЖИВОМ АКТИВЕ</div>
       <div style="font-size:32px;font-weight:800;letter-spacing:-0.4px;margin-bottom:12px;">Как я бы отслеживал эту воронку на magic × EWC</div>
       <div style="font-size:15.5px;color:#9A9AA0;max-width:800px;line-height:1.6;margin-bottom:16px;">Те же шесть разрывов выше, но на конкретном активе: контракт с magic подписан 13 августа, команда уже играет — точка отсчёта ещё не размыта активациями.</div>
       <div style="background:#1D1C1F;border-left:2px solid #FF6A1A;border-radius:0 10px 10px 0;padding:18px 22px;font-size:14.5px;line-height:1.6;color:#E7E6E2;max-width:800px;margin-bottom:32px;">Точечный срез на 4-й день группового этапа: два канала из топ-15 CS2 (lentbb, dayneez) смотрели матч <b>magic vs 3DMAX</b> — актив Winline — с баннером BetBoom в панели. Внимание вокруг собственного матча монетизирует конкурент.</div>
@@ -792,6 +753,51 @@
         </sc-for>
       </div>
     </section>
+  </div>
+
+  <div style="max-width:1240px;margin:0 auto;padding:0 40px;">
+      <section id="reshenie" style="padding:16px 0 60px;">
+        <div style="font-size:24px;font-weight:800;margin-bottom:8px;">Приоритет по дисциплинам: где быстрее всего получится измеримый результат</div>
+        <div style="font-size:13.5px;color:#77767C;margin-bottom:22px;">Оценка сравнивает только то, что видно снаружи: сколько букмекеров в дисциплине, сколько турниров, качество доступного замера. Это не окупаемость и не готовая рекомендация двигать бюджет.</div>
+        <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:14px;">
+          <sc-for list="{{ disciplineCards }}" as="d" hint-placeholder-count="3">
+            <div style="background:#141416;border:1px solid rgba(255,255,255,0.09);border-radius:14px;padding:22px;">
+              <div style="display:flex;align-items:baseline;justify-content:space-between;gap:12px;">
+                <div style="font-size:18px;font-weight:800;">{{ d.name }}</div>
+                <div style="font-family:'JetBrains Mono',monospace;font-size:25px;font-weight:800;{{ d.scoreStyle }}">{{ d.score }}</div>
+              </div>
+              <div style="font-size:11px;color:#77767C;margin-top:5px;">надёжность оценки {{ d.confidence }} · расчёт по открытым данным</div>
+              <div style="font-size:13px;line-height:1.55;margin-top:16px;">{{ d.evidence }}</div>
+              <div style="font-size:13px;font-weight:700;line-height:1.5;margin-top:15px;padding-top:15px;border-top:1px solid rgba(255,255,255,0.07);">{{ d.decision }}</div>
+            </div>
+          </sc-for>
+        </div>
+        <div style="font-size:20px;font-weight:800;margin:36px 0 16px;">Каких данных не хватает, чтобы посчитать прибыльность</div>
+        <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:12px;">
+          <sc-for list="{{ completenessRows }}" as="c" hint-placeholder-count="3">
+            <div style="background:#121114;border:1px solid rgba(255,255,255,0.08);border-radius:12px;padding:18px;">
+              <div style="font-size:12px;color:#FF6A1A;font-weight:800;">{{ c.label }} · {{ c.records }} записей</div>
+              <div style="font-size:13px;color:#C7C6CC;line-height:1.55;margin-top:9px;">{{ c.missing }}</div>
+            </div>
+          </sc-for>
+        </div>
+        <div style="font-size:20px;font-weight:800;margin:36px 0 16px;">Как превращу это в решения за первые 30 дней</div>
+        <div style="display:flex;flex-direction:column;gap:10px;">
+          <sc-for list="{{ decisionSteps }}" as="d" hint-placeholder-count="4">
+            <div style="display:grid;grid-template-columns:52px 130px 1.35fr 1.25fr;gap:18px;align-items:center;background:#141416;border:1px solid rgba(255,255,255,0.08);border-radius:11px;padding:17px 20px;">
+              <div style="font-family:'JetBrains Mono',monospace;color:#FF6A1A;font-size:14px;font-weight:800;">{{ d.n }}</div>
+              <div style="font-size:12px;color:#9A9AA0;font-weight:700;">{{ d.period }}</div>
+              <div style="font-size:14px;font-weight:700;line-height:1.45;">{{ d.action }}</div>
+              <div style="font-size:12.5px;color:#9A9AA0;line-height:1.5;">{{ d.output }}</div>
+            </div>
+          </sc-for>
+        </div>
+        <div style="margin-top:20px;background:#FF6A1A;color:#0A0A0C;border-radius:14px;padding:24px 28px;">
+          <div style="font-size:21px;font-weight:900;">На выходе: один паспорт на каждый актив и одно из четырёх решений</div>
+          <div style="font-size:15px;font-weight:800;margin-top:8px;">масштабировать · изменить · перезаключить · остановить</div>
+          <div style="font-size:13px;font-weight:700;line-height:1.5;margin-top:10px;">Критерий — инкрементальный NGR минус права, гонорары, продакшн, усиление охвата, бонусы и операционные расходы.</div>
+        </div>
+      </section>
   </div>
 
   <!-- ==================== CV ==================== -->
@@ -886,7 +892,7 @@
   <!-- ==================== ВОПРОСЫ ==================== -->
   <div style="max-width:1240px;margin:0 auto;padding:0 40px;">
     <section id="voprosy" style="padding:80px 0 40px;border-top:1px solid rgba(255,255,255,0.07);">
-      <div style="font-family:'JetBrains Mono',monospace;font-size:12.5px;color:#FF6A1A;font-weight:600;letter-spacing:1.2px;margin-bottom:14px;">06 — К ШАМИЛЮ</div>
+      <div style="font-family:'JetBrains Mono',monospace;font-size:12.5px;color:#FF6A1A;font-weight:600;letter-spacing:1.2px;margin-bottom:14px;">К ШАМИЛЮ</div>
       <div style="font-size:32px;font-weight:800;letter-spacing:-0.4px;margin-bottom:34px;">Четыре вопроса, с которых начну диалог</div>
       <sc-for list="{{ closingQuestions }}" as="q" hint-placeholder-count="4">
         <div style="display:flex;gap:22px;padding:24px 0;border-top:1px solid rgba(255,255,255,0.08);align-items:baseline;">
@@ -1472,9 +1478,9 @@ class Component extends DCLogic {
         { href: '#komandy', label: 'Команды' },
         { href: '#turniry', label: 'Турниры' },
         { href: '#strimery', label: 'Стримеры' },
-        { href: '#reshenie', label: '30 дней' },
         { href: '#research', label: 'Research' },
         { href: '#voronka', label: 'Воронка' },
+        { href: '#reshenie', label: '30 дней' },
         { href: '#cv', label: 'CV' },
       ],
 
