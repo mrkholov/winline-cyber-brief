@@ -305,7 +305,11 @@
       "hours_watched": 308588,
       "audience_scope_complete": false,
       "status": "corroborated",
-      "confidence": 0.97
+      "confidence": 0.97,
+      "audience_source": "Esports Charts",
+      "audience_platforms": [
+        "Twitch"
+      ]
     },
     {
       "tournament_id": "tournament:standoff-major-2024",
@@ -323,7 +327,11 @@
       "hours_watched": 176257,
       "audience_scope_complete": false,
       "status": "corroborated",
-      "confidence": 0.94
+      "confidence": 0.94,
+      "audience_source": "Esports Charts",
+      "audience_platforms": [
+        "Twitch"
+      ]
     },
     {
       "tournament_id": "tournament:standoff-major-2026",
@@ -374,7 +382,12 @@
       "hours_watched": 13511,
       "audience_scope_complete": false,
       "status": "corroborated",
-      "confidence": 0.92
+      "confidence": 0.92,
+      "audience_source": "Esports Charts",
+      "audience_platforms": [
+        "Twitch"
+      ],
+      "airtime": "55–56 часов эфира"
     },
     {
       "tournament_id": "tournament:wpl-s3",
@@ -392,7 +405,13 @@
       "hours_watched": 150735,
       "audience_scope_complete": false,
       "status": "corroborated",
-      "confidence": 0.94
+      "confidence": 0.94,
+      "audience_source": "Esports Charts",
+      "audience_platforms": [
+        "Twitch",
+        "Kick"
+      ],
+      "airtime": "61 час 35 минут эфира"
     },
     {
       "tournament_id": "tournament:wss-s2-cs2",

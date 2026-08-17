@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0.0",
   "research_cutoff": "2026-08-15",
-  "source_count": 64,
+  "source_count": 73,
   "sources": [
     {
       "source_id": "src:1xbet-esl",
@@ -576,6 +576,87 @@
       "publisher": "Twitch — канал buster, живая трансляция WINLINE KING PONG",
       "source_type": "social_archive",
       "published_at": "2026-08-16",
+      "observed_at": "2026-08-16",
+      "access": "public"
+    },
+    {
+      "source_id": "src:escharts-wpl-s2",
+      "url": "https://escharts.com/tournaments/csgo/winline-pro-league-season-2",
+      "publisher": "Esports Charts — Winline Pro League Season 2",
+      "source_type": "analytics",
+      "published_at": null,
+      "observed_at": "2026-08-16",
+      "access": "public"
+    },
+    {
+      "source_id": "src:escharts-wpl-s3",
+      "url": "https://escharts.com/tournaments/csgo/winline-pro-league-season-3",
+      "publisher": "Esports Charts — Winline Pro League Season 3",
+      "source_type": "analytics",
+      "published_at": null,
+      "observed_at": "2026-08-16",
+      "access": "public"
+    },
+    {
+      "source_id": "src:escharts-standoff-2023",
+      "url": "https://escharts.com/tournaments/standoff-2/winline-epic-standoff-2-major",
+      "publisher": "Esports Charts — Winline EPIC Standoff 2 Major 2023",
+      "source_type": "analytics",
+      "published_at": null,
+      "observed_at": "2026-08-16",
+      "access": "public"
+    },
+    {
+      "source_id": "src:escharts-standoff-2024",
+      "url": "https://escharts.com/tournaments/standoff-2/winline-epic-standoff-2-major-2024",
+      "publisher": "Esports Charts — Winline EPIC Standoff 2 Major 2024",
+      "source_type": "analytics",
+      "published_at": null,
+      "observed_at": "2026-08-16",
+      "access": "public"
+    },
+    {
+      "source_id": "src:escharts-winline-organizer",
+      "url": "https://escharts.com/organizers/winline",
+      "publisher": "Esports Charts — все турниры организатора Winline",
+      "source_type": "analytics",
+      "published_at": null,
+      "observed_at": "2026-08-16",
+      "access": "public"
+    },
+    {
+      "source_id": "src:winline-media-poker-where",
+      "url": "https://winline.ru/blog/posts/mediapoker-9-2026",
+      "publisher": "Winline — где смотреть Media Poker",
+      "source_type": "official",
+      "published_at": null,
+      "observed_at": "2026-08-16",
+      "access": "public"
+    },
+    {
+      "source_id": "src:escharts-media-poker",
+      "url": "https://escharts.com/tournaments/poker/winline-media-poker",
+      "publisher": "Esports Charts — Winline Media Poker",
+      "source_type": "analytics",
+      "published_at": null,
+      "observed_at": "2026-08-16",
+      "access": "public"
+    },
+    {
+      "source_id": "src:voodoosh-poker-clip",
+      "url": "https://www.twitch.tv/voodoosh/clip/FantasticIronicFennelOSsloth-w1PBzBuIlcAWgjfX",
+      "publisher": "Twitch — клип «WINLINE MEDIA POKER 6, День 1» на канале VooDooSh",
+      "source_type": "social_archive",
+      "published_at": null,
+      "observed_at": "2026-08-16",
+      "access": "public"
+    },
+    {
+      "source_id": "src:escharts-media-poker-8",
+      "url": "https://escharts.com/tournaments/poker/winline-media-poker-8",
+      "publisher": "Esports Charts — Winline Media Poker #8",
+      "source_type": "analytics",
+      "published_at": null,
       "observed_at": "2026-08-16",
       "access": "public"
     }

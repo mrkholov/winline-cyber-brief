@@ -175,7 +175,8 @@
         "claim:tournament:standoff-major-2023"
       ],
       "source_ids": [
-        "src:standoff-2023"
+        "src:standoff-2023",
+        "src:escharts-standoff-2023"
       ]
     },
     {
@@ -200,7 +201,8 @@
         "claim:tournament:standoff-major-2024"
       ],
       "source_ids": [
-        "src:standoff-2024"
+        "src:standoff-2024",
+        "src:escharts-standoff-2024"
       ]
     },
     {
@@ -272,7 +274,8 @@
         "claim:tournament:wpl-s2"
       ],
       "source_ids": [
-        "src:wpl-s2-audience"
+        "src:wpl-s2-audience",
+        "src:escharts-wpl-s2"
       ]
     },
     {
@@ -297,7 +300,8 @@
         "claim:tournament:wpl-s3"
       ],
       "source_ids": [
-        "src:wpl-s3"
+        "src:wpl-s3",
+        "src:escharts-wpl-s3"
       ]
     },
     {
