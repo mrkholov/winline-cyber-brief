@@ -422,6 +422,11 @@
                   </div>
                 </div>
 
+                <div class="mine" style="padding:18px 20px;margin-top:12px;">
+                  <div class="mine-tag"><i>ЕХ</i>ВЫВОД</div>
+                  <div style="font-size:16px;line-height:1.55;">{{ e.meaning }}</div>
+                </div>
+
                 <div style="font-size:13px;font-weight:700;letter-spacing:0.6px;color:#77767C;margin:20px 0 9px;">КТО В КАДРЕ</div>
                 <div style="display:flex;flex-direction:column;gap:7px;">
                   <sc-for list="{{ e.people }}" as="p" hint-placeholder-count="5">
@@ -452,14 +457,12 @@
               <div style="background:#0F0E11;display:flex;flex-direction:column;">
                 <img src="{{ e.image }}" alt="{{ e.imageCaption }}" style="width:100%;height:auto;display:block;object-fit:cover;">
                 <div style="font-size:13px;color:#77767C;line-height:1.5;padding:12px 20px;">{{ e.imageCaption }}</div>
-                <img src="{{ e.channel.image }}" alt="{{ e.channel.imageCaption }}" style="width:100%;height:auto;display:block;border-top:1px solid rgba(255,255,255,0.09);">
-                <div style="font-size:13px;color:#77767C;line-height:1.5;padding:12px 20px;">{{ e.channel.imageCaption }}</div>
               </div>
             </div>
 
             <div style="border-top:1px solid rgba(255,255,255,0.08);padding:22px 26px;">
               <div style="font-size:13px;font-weight:700;letter-spacing:0.6px;color:#77767C;margin-bottom:14px;">КУДА ВЕДЁТ КОМАНДА !СЕТКА ИЗ ЧАТА</div>
-              <div>
+              <div style="display:grid;grid-template-columns:1fr 300px;gap:26px;align-items:start;">
                 <div>
                   <div style="font-size:18px;font-weight:800;">{{ e.channel.name }} · {{ e.channel.platform }}</div>
                   <div style="font-size:15px;color:#9A9AA0;line-height:1.55;margin-top:7px;">{{ e.channel.imageCaption }}</div>
@@ -482,15 +485,12 @@
 
                   <div style="font-size:15.5px;line-height:1.6;color:#E7E6E2;margin-top:18px;padding:13px 16px;background:#1D1C1F;border-left:2px solid #FF6A1A;border-radius:0 8px 8px 0;">{{ e.channel.takeaway }}</div>
                 </div>
+                <div style="background:#0F0E11;border:1px solid rgba(255,255,255,0.09);border-radius:12px;overflow:hidden;">
+                  <img src="{{ e.channel.image }}" alt="{{ e.channel.imageCaption }}" style="width:100%;height:auto;display:block;">
+                </div>
               </div>
             </div>
 
-            <div style="border-top:1px solid rgba(255,255,255,0.08);padding:20px 26px;">
-              <div class="mine" style="padding:22px 24px;">
-                <div class="mine-tag"><i>ЕХ</i>ВЫВОД</div>
-                <div style="font-size:16px;line-height:1.6;max-width:1000px;">{{ e.meaning }}</div>
-              </div>
-            </div>
           </div>
         </sc-for>
 
@@ -1293,7 +1293,7 @@ class Component extends DCLogic {
         style: person.brand === 'brand:winline' ? 'color:#FF6A1A;'
           : person.brand ? 'color:#E7E6E2;text-decoration:underline dotted;' : 'color:#E7E6E2;',
       })),
-      meaning: 'Здесь уже стоят обе механики с прямой атрибуцией: баннер-ссылка в панели и промокод. То есть путь от зрителя до депозита технически прослеживается, и вопрос только в том, сводят ли эти данные в одну цепочку. При этом формат не киберспортивный, а собирает втрое больше зрителей, чем пиковый онлайн Winline Pro League Season 3, при призовом 5 млн ₽ — втором среди собственных продуктов после Standoff 2 Major.',
+      meaning: 'Формат не киберспортивный, а собирает втрое больше зрителей, чем пиковый онлайн Winline Pro League Season 3, при призовом 5 млн ₽ — втором среди собственных продуктов после Standoff 2 Major.',
     }));
     const eventsIntro = matrixReady
       ? `${eventRows.length} партнёрств с турнирными операторами и трансляциями, плюс собственные турниры Winline. Спонсорство чужого турнира и свой продукт — разные модели: в первой покупается доступ к чужой аудитории, во второй аудитория выращивается.`
