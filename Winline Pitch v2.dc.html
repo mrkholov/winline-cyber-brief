@@ -17,9 +17,11 @@
   a:hover { color:#FF8A47; }
   html { scroll-behavior:smooth; }
   section[id] { scroll-margin-top:86px; }
-  .mine { background:#181310; border-left:3px solid #FF6A1A; border-radius:0 14px 14px 0; }
-  .mine-tag { display:inline-flex; align-items:center; gap:8px; font-size:13px; font-weight:800; letter-spacing:0.8px; color:#FF6A1A; margin-bottom:11px; }
-  .mine-tag i { font-style:normal; background:#FF6A1A; color:#0A0A0C; border-radius:4px; padding:2px 6px; font-size:12px; letter-spacing:0.4px; }
+  .mine { background:#FF6A1A; border-radius:14px; border:0 !important; }
+  .mine, .mine div, .mine span, .mine b, .mine li { color:#0A0A0C !important; }
+  .mine a { color:#0A0A0C !important; text-decoration:underline; }
+  .mine-tag { display:inline-flex; align-items:center; gap:8px; font-size:13px; font-weight:800; letter-spacing:0.8px; margin-bottom:11px; }
+  .mine-tag i { font-style:normal; background:#0A0A0C; color:#FF6A1A !important; border-radius:4px; padding:2px 6px; font-size:12px; letter-spacing:0.4px; }
   * { box-sizing:border-box; font-family:'Golos Text',sans-serif; }
   ::selection { background:#FF6A1A; color:#0A0A0C; }
 </style>
@@ -180,20 +182,24 @@
                   </sc-for>
                 </div>
 
-                <div style="margin-top:16px;background:#0F0E11;border:1px solid rgba(255,255,255,0.08);border-radius:10px;padding:14px 18px;display:flex;align-items:baseline;gap:14px;flex-wrap:wrap;">
-                  <span style="font-size:12.5px;font-weight:700;letter-spacing:0.6px;color:#77767C;">РАСЧЁТ</span>
-                  <span style="font-family:'JetBrains Mono',monospace;font-size:17px;color:#E7E6E2;">{{ i.calc }}</span>
-                </div>
+                <sc-if value="{{ i.hasCalc }}" hint-placeholder-val="{{ true }}">
+                  <div style="margin-top:16px;background:#0F0E11;border:1px solid rgba(255,255,255,0.08);border-radius:10px;padding:14px 18px;display:flex;align-items:baseline;gap:14px;flex-wrap:wrap;">
+                    <span style="font-size:12.5px;font-weight:700;letter-spacing:0.6px;color:#77767C;">РАСЧЁТ</span>
+                    <span style="font-family:'JetBrains Mono',monospace;font-size:17px;color:#E7E6E2;">{{ i.calc }}</span>
+                  </div>
+                </sc-if>
 
                 <div style="display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:20px;">
                   <div>
                     <div style="font-size:13px;font-weight:700;letter-spacing:0.6px;color:#FF6A1A;margin-bottom:8px;">ВЫВОД</div>
                     <div style="font-size:16.5px;line-height:1.55;color:#E7E6E2;">{{ i.conclusion }}</div>
                   </div>
-                  <div>
-                    <div style="font-size:13px;font-weight:700;letter-spacing:0.6px;color:#77767C;margin-bottom:8px;">ЧЕГО В ЭТИХ ДАННЫХ НЕТ</div>
-                    <div style="font-size:16.5px;line-height:1.55;color:#9A9AA0;">{{ i.caveat }}</div>
-                  </div>
+                  <sc-if value="{{ i.hasCaveat }}" hint-placeholder-val="{{ true }}">
+                    <div>
+                      <div style="font-size:13px;font-weight:700;letter-spacing:0.6px;color:#77767C;margin-bottom:8px;">ЧЕГО В ЭТИХ ДАННЫХ НЕТ</div>
+                      <div style="font-size:16.5px;line-height:1.55;color:#9A9AA0;">{{ i.caveat }}</div>
+                    </div>
+                  </sc-if>
                 </div>
 
                 <div style="margin-top:18px;padding-top:16px;border-top:1px solid rgba(255,255,255,0.07);">
@@ -205,10 +211,6 @@
           </sc-for>
         </div>
 
-        <div style="margin-top:20px;background:#FF6A1A;color:#0A0A0C;border-radius:14px;padding:22px 26px;display:grid;grid-template-columns:1.2fr 1fr;gap:28px;align-items:center;">
-          <div style="font-size:23px;font-weight:900;line-height:1.35;">Открытые данные показывают, где Winline теряет видимость. Сколько это стоит и что менять — считается только на внутренних цифрах.</div>
-          <div style="font-size:15.5px;font-weight:700;line-height:1.5;">Дальше по вкладкам: партнёрства, замеры по стримерам, собственные турниры и план на первые 30 дней.</div>
-        </div>
       </section>
       <section id="komandy" style="padding:16px 0 60px;">
         <div style="font-size:27.5px;font-weight:800;margin-bottom:8px;">Команды: ростеры и спонсорство</div>
@@ -245,26 +247,10 @@
           <span>Пустой источник — связь взята из карты рынка без отдельной публикации</span>
         </div>
 
-        <div style="border:1px solid rgba(255,255,255,0.09);border-radius:14px;overflow:hidden;">
-          <div style="display:grid;grid-template-columns:0.75fr 1.1fr 0.95fr 1fr 1.05fr;background:#1D1C1F;padding:13px 18px;font-size:12px;font-weight:700;letter-spacing:0.5px;color:#9A9AA0;">
-            <div>БРЕНД</div><div>С КЕМ</div><div>ТИП</div><div>СТАТУС СЕЙЧАС</div><div>СРОК И ИСТОЧНИК</div>
-          </div>
-          <sc-for list="{{ teamRows }}" as="p" hint-placeholder-count="8">
-            <div style="display:grid;grid-template-columns:0.75fr 1.1fr 0.95fr 1fr 1.05fr;padding:14px 18px;border-top:1px solid rgba(255,255,255,0.07);background:#121114;align-items:start;">
-              <div style="font-size:15.5px;font-weight:800;{{ p.brandStyle }}">{{ p.brand }}</div>
-              <div style="font-size:15.5px;font-weight:700;">{{ p.asset }}</div>
-              <div style="font-size:14px;color:#C7C6CC;">{{ p.relation }}</div>
-              <div style="font-size:14px;font-weight:700;{{ p.statusStyle }}">{{ p.status }}</div>
-              <div>
-                <div style="font-size:13px;color:#9A9AA0;">{{ p.period }}</div>
-                <a href="{{ p.url }}" target="_blank" rel="noreferrer" style="font-size:12.5px;font-weight:700;">{{ p.publisher }}</a>
-              </div>
-            </div>
-          </sc-for>
-        </div>
+        
         <div style="margin-top:26px;border:1px solid rgba(255,255,255,0.09);border-radius:16px;overflow:hidden;">
 
-          <div style="padding:26px 28px;background:#1D1C1F;">
+          <div class="mine" style="padding:26px 28px;border-radius:14px 14px 0 0;">
             <div class="mine-tag"><i>ЕХ</i>ВЫВОД</div>
             <div style="font-size:29.5px;font-weight:800;letter-spacing:-0.4px;line-height:1.25;max-width:900px;">Логотип на форме в киберспорте почти не попадает в те секунды, ради которых включают трансляцию</div>
           </div>
@@ -274,7 +260,7 @@
               <div style="font-size:13px;font-weight:700;letter-spacing:0.6px;color:#77767C;margin-bottom:10px;">КАК ЭТО РАБОТАЕТ В СПОРТЕ</div>
               <div style="font-size:16.5px;line-height:1.6;color:#E7E6E2;">Момент, который потом повторят двадцать раз, создаёт сам игрок. И в каждом повторе он в форме — логотип спонсора виден нормально, крупно и вместе с эмоцией.</div>
             </div>
-            <div style="padding:24px 28px;">
+            <div class="mine" style="padding:24px 28px;border-radius:0;">
               <div class="mine-tag"><i>ЕХ</i>ВЫВОД</div><div style="font-size:13px;font-weight:700;letter-spacing:0.6px;color:#77767C;margin-bottom:10px;">КАК ЭТО РАБОТАЕТ В КИБЕРСПОРТЕ</div>
               <div style="font-size:16.5px;line-height:1.6;color:#E7E6E2;">Момент тоже создаёт игрок, но внутри игры. В кадре прицел и карта, формы там нет. Логотип остаётся на строке счёта, в сетке и на маленькой вебке — то есть там, куда в этот момент никто не смотрит. А когда нарезку выкладывают в шортсы и телеграм, от трансляции остаются только игровые секунды, и брендирование студии отваливается на монтаже.</div>
             </div>
@@ -340,7 +326,7 @@
 
         <div style="font-size:19.5px;font-weight:800;margin-bottom:4px;">Турниры, организации и студии по брендам</div>
         <div style="font-size:15px;color:#77767C;margin-bottom:14px;">Всё, кроме команд: собственные турниры, партнёрства с операторами и студиями. Названия кликабельны там, где партнёрство подтверждено отдельным источником.</div>
-        <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:10px;margin-bottom:12px;">
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(215px,1fr));gap:12px;margin-bottom:12px;">
           <sc-for list="{{ eventAssets }}" as="brand" hint-placeholder-count="5">
             <div style="background:#141416;border:1px solid rgba(255,255,255,0.09);border-radius:12px;overflow:hidden;display:flex;flex-direction:column;">
               <div style="padding:14px 18px;background:#1D1C1F;display:flex;align-items:baseline;justify-content:space-between;gap:10px;">
@@ -411,7 +397,7 @@
             <div style="font-size:13px;color:#77767C;font-weight:800;">ЧТО ИЗ ЭТОГО СЛЕДУЕТ</div>
             <div style="font-size:18px;font-weight:800;line-height:1.45;margin-top:9px;">Призовой фонд не объясняет рост внимания. Формат, площадки трансляции и медийные участники влияют сильнее бюджета.</div>
           </div>
-          <div style="border-left:2px solid #FF6A1A;padding:4px 0 4px 22px;">
+          <div class="mine" style="padding:20px 24px;">
             <div class="mine-tag"><i>ЕХ</i>ПРЕДЛОЖЕНИЕ</div>
             <div style="font-size:17px;line-height:1.55;margin-top:9px;">Post-view отдельно от post-click, замер узнаваемости бренда, контрольные группы и проверка прироста по географии. Рост нужно раскладывать на проверяемые причины.</div>
           </div>
@@ -480,15 +466,14 @@
               <div style="background:#0F0E11;display:flex;flex-direction:column;">
                 <img src="{{ e.image }}" alt="{{ e.imageCaption }}" style="width:100%;height:auto;display:block;object-fit:cover;">
                 <div style="font-size:13px;color:#77767C;line-height:1.5;padding:12px 20px;">{{ e.imageCaption }}</div>
+                <img src="{{ e.channel.image }}" alt="{{ e.channel.imageCaption }}" style="width:100%;height:auto;display:block;border-top:1px solid rgba(255,255,255,0.09);">
+                <div style="font-size:13px;color:#77767C;line-height:1.5;padding:12px 20px;">{{ e.channel.imageCaption }}</div>
               </div>
             </div>
 
             <div style="border-top:1px solid rgba(255,255,255,0.08);padding:22px 26px;">
               <div style="font-size:13px;font-weight:700;letter-spacing:0.6px;color:#77767C;margin-bottom:14px;">КУДА ВЕДЁТ КОМАНДА !СЕТКА ИЗ ЧАТА</div>
-              <div style="display:grid;grid-template-columns:300px 1fr;gap:26px;align-items:start;">
-                <div style="border:1px solid rgba(255,255,255,0.09);border-radius:10px;overflow:hidden;background:#0F0E11;">
-                  <img src="{{ e.channel.image }}" alt="{{ e.channel.imageCaption }}" style="width:100%;height:auto;display:block;">
-                </div>
+              <div>
                 <div>
                   <div style="font-size:18px;font-weight:800;">{{ e.channel.name }} · {{ e.channel.platform }}</div>
                   <div style="font-size:15px;color:#9A9AA0;line-height:1.55;margin-top:7px;">{{ e.channel.imageCaption }}</div>
@@ -515,11 +500,11 @@
             </div>
 
             <div style="border-top:1px solid rgba(255,255,255,0.08);padding:20px 26px;display:grid;grid-template-columns:1fr 1fr;gap:24px;">
-              <div>
+              <div class="mine" style="padding:20px 22px;">
                 <div class="mine-tag"><i>ЕХ</i>ВЫВОД</div>
                 <div style="font-size:16px;line-height:1.55;color:#E7E6E2;">{{ e.meaning }}</div>
               </div>
-              <div>
+              <div class="mine" style="padding:20px 22px;">
                 <div class="mine-tag"><i>ЕХ</i>ВОПРОС</div>
                 <div style="font-size:16px;line-height:1.55;color:#9A9AA0;">{{ e.question }}</div>
               </div>
@@ -584,7 +569,7 @@
             <div style="font-size:16px;line-height:1.55;margin-top:8px;">{{ marketPrice.text }}</div>
             <div style="font-size:13px;color:#77767C;margin-top:8px;"><a href="{{ marketPrice.url }}" target="_blank" rel="noreferrer">{{ marketPrice.publisher }}</a></div>
           </div>
-          <div style="border-left:2px solid #FF6A1A;padding:4px 0 4px 22px;">
+          <div class="mine" style="padding:20px 24px;">
             <div class="mine-tag"><i>ЕХ</i>ВОПРОС</div>
             <div style="font-size:17px;line-height:1.55;margin-top:9px;">{{ talentQuestion }}</div>
           </div>
@@ -1196,7 +1181,7 @@ class Component extends DCLogic {
           { value: this.number(item.owned_channel.pinned_participants), label: 'участников розыгрыша мерча в закреплённом посте' },
           { value: this.number(item.owned_channel.last_post_views), label: 'просмотров у последнего поста с карточкой матча' },
         ],
-        takeaway: 'Это единственное место во всей цепочке, где аудитория остаётся у бренда после конца эфира. Twitch-канал чужой, зрители там разойдутся, а подписчики телеграма остаются активом Winline и доступны для следующего мероприятия без повторной закупки охвата.',
+        takeaway: 'Трансляция идёт на чужом канале, и после эфира зрители там расходятся. Подписчики телеграма остаются активом Winline и доступны для следующего мероприятия без повторной закупки охвата.',
       } : null,
       people: item.participants_observed.map(person => ({
         name: person.name,
@@ -1650,6 +1635,8 @@ class Component extends DCLogic {
       insightCards: matrixReady ? [
         {
           n: '01',
+          hasCalc: true,
+          hasCaveat: true,
           title: `CS2 на Esports World Cup: у каналов с брендом BetBoom в ${this.decimal(ewcBetBoom.viewers_at_observation / ewcWinline.viewers_at_observation)} раза больше зрителей, чем у каналов с брендом Winline`,
           dataLabel: `963 русскоязычных стрима по CS2 в момент замера. Бренд букмекера найден у 17 каналов — вот они`,
           groups: [
@@ -1664,6 +1651,8 @@ class Component extends DCLogic {
         },
         {
           n: '02',
+          hasCalc: false,
+          hasCaveat: false,
           title: `Dota 2 на The International: каналов с брендом поровну — по ${dotaWinline.observed_channel_count}, но зрителей у BetBoom в ${this.decimal(dotaBetBoom.viewers_at_observation / dotaWinline.viewers_at_observation)} раза больше`,
           dataLabel: '94 русскоязычных стрима по Dota 2 в момент замера. Бренд букмекера найден у 16 каналов — вот каналы двух брендов',
           groups: [
@@ -1678,6 +1667,8 @@ class Component extends DCLogic {
         },
         {
           n: '03',
+          hasCalc: true,
+          hasCaveat: true,
           title: `Winline Pro League: онлайн между вторым и третьим сезоном вырос в ${this.decimal(wpl3.peak_viewers / wpl2.peak_viewers)} раза, а призовой фонд — на ${this.decimal((wpl3.prize_pool.amount / wpl2.prize_pool.amount - 1) * 100)}%`,
           dataLabel: 'Публичные метрики двух сезонов собственного турнира Winline',
           groups: [seasonGroup('Сезон 2', wpl2), seasonGroup('Сезон 3', wpl3)],
