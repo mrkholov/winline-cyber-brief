@@ -357,6 +357,7 @@
           <span><span style="color:#FF6A1A;font-weight:800;">?</span> — нужно подтверждение актуальности</span>
           <span><span style="color:#77767C;">×</span> — завершено</span>
         </div>
+        <div style="font-size:13px;color:#77767C;line-height:1.55;margin-bottom:32px;">{{ eventAssetsNote }}</div>
 
 
 
@@ -993,6 +994,7 @@ class Component extends DCLogic {
       'brand:1xbet': '1xBet',
       'brand:fonbet': 'FONBET',
       'brand:liga-stavok': 'Лига Ставок',
+      'brand:bet-m': 'Бет-М',
     };
     const sourceTypeRu = {
       official: 'официальный сайт',
@@ -1275,13 +1277,16 @@ class Component extends DCLogic {
       : status === 'fresh_public_announcement' ? { mark: '+', style: 'color:#FF6A1A;', title: 'только что объявлено' }
       : { mark: '', style: '', title: '' };
     const partnershipsFor = brandId => (research?.partnerships.partnerships || []).filter(item => item.brand_id === brandId);
-    const brandOrderForAssets = [
-      { key: 'winline', id: 'brand:winline' },
-      { key: 'betboom', id: 'brand:betboom' },
-      { key: 'fonbet', id: 'brand:fonbet' },
-      { key: 'pari', id: 'brand:pari' },
-      { key: '1xbet', id: 'brand:1xbet' },
-    ];
+    const brandOrderForAssets = (() => {
+      const preferred = ['brand:winline', 'brand:betboom', 'brand:pari', 'brand:1xbet', 'brand:fonbet', 'brand:liga-stavok', 'brand:bet-m'];
+      const seen = new Set([
+        ...(rosterDoc?.brands || []).map(item => item.brand_id),
+        ...(research?.partnerships.partnerships || []).map(item => item.brand_id),
+      ]);
+      const ordered = preferred.filter(id => seen.has(id));
+      for (const id of seen) if (!ordered.includes(id)) ordered.push(id);
+      return ordered.map(id => ({ key: id.replace('brand:', ''), id }));
+    })();
     const assetKindForPartnership = item => {
       const kind = assetKind(item.asset_id);
       return kind === 'talent' ? null : kind === 'event' ? 'organization' : 'team';
@@ -1512,9 +1517,18 @@ class Component extends DCLogic {
         .filter(brand => brand.groups.length > 0)
         .map(brand => ({
           ...brand,
+          isEmpty: false,
           total: brand.groups.reduce((sum, group) => sum + group.count, 0) + ' ' +
             plural(brand.groups.reduce((sum, group) => sum + group.count, 0), 'актив', 'актива', 'активов'),
         })),
+      eventAssetsNote: (() => {
+        const only = mergedBrandAssets
+          .filter(brand => brand.groups.every(group => group.title === 'Команды'))
+          .map(brand => brand.label);
+        return only.length
+          ? `${only.join(', ')} в этот срез не попали: у них в портфеле только команда, турниров и студий нет. Их связи — в таблице выше.`
+          : '';
+      })(),
       __unusedBrandAssets: ['winline', 'betboom', 'fonbet', 'pari']
         .map(key => talentBrands[key])
         .filter(Boolean)
