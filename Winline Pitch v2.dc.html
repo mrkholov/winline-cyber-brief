@@ -337,19 +337,9 @@
           </sc-for>
         </div>
 
-        <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:18px;">
-          <sc-for list="{{ liveActions }}" as="a" hint-placeholder-count="3">
-            <div style="background:#121114;border:1px solid rgba(255,255,255,0.08);border-radius:12px;padding:18px;">
-              <div style="font-size:12.5px;color:#FF6A1A;font-weight:800;">{{ a.label }}</div>
-              <div style="font-size:16px;font-weight:700;line-height:1.45;margin-top:8px;">{{ a.action }}</div>
-              <div style="font-size:13.5px;color:#77767C;line-height:1.5;margin-top:8px;">{{ a.metric }}</div>
-            </div>
-          </sc-for>
-        </div>
-        <div style="margin-top:18px;border-left:2px solid #FF6A1A;padding-left:22px;font-size:16px;line-height:1.6;color:#E7E6E2;">Мой опыт: построил работу с инфлюенсерами с $1,5K до $70K в месяц при том же ДРР — через команду менеджеров, метки, модели CPA и бартера и аналитику по каждому партнёру. Здесь та же операционная задача.</div>
       </section>
 
-        <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:44px;">
+        <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:12px;">
           <sc-for list="{{ statsRest }}" as="s" hint-placeholder-count="3">
             <div style="background:#141416;border:1px solid rgba(255,255,255,0.08);border-radius:14px;padding:21px 22px;">
               <div style="font-family:'JetBrains Mono',monospace;font-size:31px;font-weight:800;color:#FF6A1A;">{{ s.value }}</div>
@@ -372,67 +362,6 @@
           </sc-for>
         </div>
 
-        <div style="font-size:27.5px;font-weight:800;margin-bottom:8px;">Анализ медиаактивов и конкурентов</div>
-        <div style="font-size:15.5px;color:#77767C;margin-bottom:22px;">Сначала цифры, под ними — что из них следует и чего в них не хватает</div>
-
-        <div style="display:flex;flex-direction:column;gap:16px;">
-          <sc-for list="{{ insightCards }}" as="i" hint-placeholder-count="3">
-            <div style="background:#141416;border:1px solid rgba(255,255,255,0.09);border-radius:14px;overflow:hidden;">
-
-              <div style="padding:22px 26px;background:#1D1C1F;display:flex;align-items:baseline;gap:14px;">
-                <span style="font-family:'JetBrains Mono',monospace;color:#FF6A1A;font-size:15px;font-weight:700;flex-shrink:0;">{{ i.n }}</span>
-                <span style="font-size:21.5px;font-weight:800;line-height:1.35;">{{ i.title }}</span>
-              </div>
-
-              <div style="padding:22px 26px;">
-                <div style="font-size:13px;font-weight:700;letter-spacing:0.6px;color:#77767C;margin-bottom:14px;">{{ i.dataLabel }}</div>
-
-                <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;">
-                  <sc-for list="{{ i.groups }}" as="g" hint-placeholder-count="2">
-                    <div style="border:1px solid rgba(255,255,255,0.08);border-radius:10px;overflow:hidden;">
-                      <div style="padding:11px 14px;background:#1A191D;font-size:14px;font-weight:800;{{ g.headStyle }}">{{ g.heading }}</div>
-                      <sc-for list="{{ g.rows }}" as="r" hint-placeholder-count="5">
-                        <div style="display:grid;grid-template-columns:1.15fr 0.5fr 1fr;gap:10px;padding:9px 14px;border-top:1px solid rgba(255,255,255,0.06);align-items:baseline;">
-                          <a href="{{ r.url }}" target="_blank" rel="noreferrer" style="font-size:13.5px;font-weight:700;overflow-wrap:anywhere;">{{ r.name }}</a>
-                          <div style="font-family:'JetBrains Mono',monospace;font-size:13.5px;text-align:right;">{{ r.value }}</div>
-                          <div style="font-size:12px;color:#77767C;line-height:1.4;">{{ r.note }}</div>
-                        </div>
-                      </sc-for>
-                      <sc-if value="{{ g.hasMore }}" hint-placeholder-val="{{ false }}">
-                        <div style="padding:9px 14px;border-top:1px solid rgba(255,255,255,0.06);font-size:12.5px;color:#77767C;">{{ g.more }}</div>
-                      </sc-if>
-                    </div>
-                  </sc-for>
-                </div>
-
-                <sc-if value="{{ i.hasCalc }}" hint-placeholder-val="{{ true }}">
-                  <div style="margin-top:16px;background:#0F0E11;border:1px solid rgba(255,255,255,0.08);border-radius:10px;padding:14px 18px;display:flex;align-items:baseline;gap:14px;flex-wrap:wrap;">
-                    <span style="font-size:12.5px;font-weight:700;letter-spacing:0.6px;color:#77767C;">РАСЧЁТ</span>
-                    <span style="font-family:'JetBrains Mono',monospace;font-size:17px;color:#E7E6E2;">{{ i.calc }}</span>
-                  </div>
-                </sc-if>
-
-                <div style="display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:20px;">
-                  <div>
-                    <div style="font-size:13px;font-weight:700;letter-spacing:0.6px;color:#FF6A1A;margin-bottom:8px;">ВЫВОД</div>
-                    <div style="font-size:16.5px;line-height:1.55;color:#E7E6E2;">{{ i.conclusion }}</div>
-                  </div>
-                  <sc-if value="{{ i.hasCaveat }}" hint-placeholder-val="{{ true }}">
-                    <div>
-                      <div style="font-size:13px;font-weight:700;letter-spacing:0.6px;color:#77767C;margin-bottom:8px;">ЧЕГО В ЭТИХ ДАННЫХ НЕТ</div>
-                      <div style="font-size:16.5px;line-height:1.55;color:#9A9AA0;">{{ i.caveat }}</div>
-                    </div>
-                  </sc-if>
-                </div>
-
-                <div style="margin-top:18px;padding-top:16px;border-top:1px solid rgba(255,255,255,0.07);">
-                  <div style="font-size:16.5px;line-height:1.55;"><b>Что делать:</b> {{ i.action }}</div>
-                  <div style="font-size:14px;color:#77767C;line-height:1.5;margin-top:7px;">Мой опыт: {{ i.experience }}</div>
-                </div>
-              </div>
-            </div>
-          </sc-for>
-        </div>
 
       </section>
       <section id="komandy" style="padding:16px 0 60px;">
@@ -1068,7 +997,6 @@ class Component extends DCLogic {
     const signal = (snapshotId, brand) => matrices?.streamer_brand_signals.find(item => item.snapshot_id === snapshotId && item.brand === brand);
     const tournament = id => matrices?.tournament_matrix.find(item => item.tournament_id === id);
     const ewcBetBoom = signal('twitch:cs2-ewc-live', 'BetBoom');
-    const ewcWinline = signal('twitch:cs2-ewc-live', 'Winline');
     const dotaBetBoom = signal('twitch:dota2', 'BetBoom');
     const dotaWinline = signal('twitch:dota2', 'Winline');
     const wpl2 = tournament('tournament:wpl-s2');
@@ -1142,37 +1070,6 @@ class Component extends DCLogic {
       for (const item of list) result[key(item)] = (result[key(item)] || 0) + 1;
       return result;
     };
-    const channelGroup = (snapshotId, brand, limit) => {
-      const rows = (matrices?.streamer_matrix || [])
-        .filter(item => item.snapshot_id === snapshotId && item.brand === brand)
-        .sort((left, right) => right.viewers_at_observation - left.viewers_at_observation);
-      const total = rows.reduce((sum, item) => sum + item.viewers_at_observation, 0);
-      const hidden = rows.length - limit;
-      return {
-        heading: `${brand} · ${rows.length} ${plural(rows.length, 'канал', 'канала', 'каналов')} · ${this.number(total)} ${plural(total, 'зритель', 'зрителя', 'зрителей')}`,
-        headStyle: brand === 'Winline' ? 'color:#FF6A1A;' : 'color:#E7E6E2;',
-        rows: rows.slice(0, limit).map(item => ({
-          name: item.streamer_display_name,
-          url: item.channel_url,
-          value: this.number(item.viewers_at_observation),
-          note: item.evidence_sources.map(evidenceRu).join(', '),
-        })),
-        hasMore: hidden > 0,
-        more: hidden > 0 ? `+ ещё ${hidden} ${plural(hidden, 'канал', 'канала', 'каналов')} — полный список на вкладке «Стримеры»` : '',
-      };
-    };
-    const seasonGroup = (label, season) => ({
-      heading: label,
-      headStyle: 'color:#E7E6E2;',
-      rows: [
-        { name: 'Пиковый онлайн', url: '#', value: this.number(season.peak_viewers), note: 'максимум одновременных зрителей' },
-        { name: 'Средний онлайн', url: '#', value: this.number(season.average_viewers), note: 'в среднем за трансляции' },
-        { name: 'Часы просмотра', url: '#', value: this.number(season.hours_watched), note: 'суммарно за сезон' },
-        { name: 'Призовой фонд', url: '#', value: `${this.decimal(season.prize_pool.amount / 1000000)} млн ₽`, note: 'объявлено организатором' },
-      ],
-      hasMore: false,
-      more: '',
-    });
     const sourceTypeNote = matrixReady
       ? Object.entries(countBy(research.sources.sources, item => sourceTypeRu[item.source_type] || item.source_type))
           .sort((left, right) => right[1] - left[1])
@@ -1193,9 +1090,6 @@ class Component extends DCLogic {
           return `У Winline — ${winline.sampled_relationship_count}, у ${rivals} ${plural(rivals, 'конкурента', 'конкурентов', 'конкурентов')} — ${total - winline.sampled_relationship_count}. Разобраны отдельно: действует сейчас, нужно перепроверить, завершено.`;
         })()
       : '';
-    const topDotaBetBoom = (matrices?.streamer_matrix || [])
-      .filter(item => item.snapshot_id === 'twitch:dota2' && item.brand === 'BetBoom')
-      .sort((left, right) => right.viewers_at_observation - left.viewers_at_observation)[0] || { viewers_at_observation: 0 };
     const orgById = new Map((research?.organizations.organizations || []).map(item => [item.organization_id, item]));
     const assetKind = id => {
       if (id.startsWith('person:')) return 'talent';
@@ -1564,9 +1458,7 @@ class Component extends DCLogic {
                 viewers: this.number(item.viewers),
                 brands: [...item.brands].sort().join(' · '),
                 brandStyle: item.brands.has('Winline') ? 'color:#FF6A1A;' : '',
-                evidence: [...item.evidence].sort().map(value =>
-                  value === 'panel_url' ? 'panel' : value
-                ).join(' · '),
+                evidence: [...item.evidence].sort().map(evidenceRu).join(' · '),
               })),
           };
         })
@@ -1911,53 +1803,6 @@ class Component extends DCLogic {
       ],
       researchStats,
       statsRest: matrixReady ? researchStats.filter(item => item.group !== 'streamers') : [],
-      insightCards: matrixReady ? [
-        {
-          n: '01',
-          hasCalc: true,
-          hasCaveat: true,
-          title: `CS2 на Esports World Cup: у каналов с брендом BetBoom в ${this.decimal(ewcBetBoom.viewers_at_observation / ewcWinline.viewers_at_observation)} раза больше зрителей, чем у каналов с брендом Winline`,
-          dataLabel: `963 русскоязычных стрима по CS2 в момент замера. Бренд букмекера найден у 17 каналов — вот они`,
-          groups: [
-            channelGroup('twitch:cs2-ewc-live', 'BetBoom', 5),
-            channelGroup('twitch:cs2-ewc-live', 'Winline', 5),
-          ],
-          calc: `${this.number(ewcBetBoom.viewers_at_observation)} ÷ ${this.number(ewcWinline.viewers_at_observation)} = ${this.decimal(ewcBetBoom.viewers_at_observation / ewcWinline.viewers_at_observation)}`,
-          conclusion: 'Winline купил спонсорство команды magic, которая играет на этом турнире, но вокруг матчей внимание собирают каналы с брендом конкурента. Логотип в составе команды не даёт присутствия в эфире, где сидит аудитория.',
-          caveat: 'Замер разовый, сделан один раз во время матчей. Бренд в панели или названии стрима не доказывает действующий контракт. Сумма зрителей — не уникальные люди.',
-          action: 'Проверить по каждому оплаченному CS2-активу, где он физически виден зрителю, и поставить регулярный замер видимости вместо разовых проверок.',
-          experience: 'построил систему работы с инфлюенсерами с $1,5K до $70K в месяц — через метки, аналитику по каждому партнёру и управление командой менеджеров.',
-        },
-        {
-          n: '02',
-          hasCalc: false,
-          hasCaveat: false,
-          title: `Dota 2 на The International: каналов с брендом поровну — по ${dotaWinline.observed_channel_count}, но зрителей у BetBoom в ${this.decimal(dotaBetBoom.viewers_at_observation / dotaWinline.viewers_at_observation)} раза больше`,
-          dataLabel: '94 русскоязычных стрима по Dota 2 в момент замера. Бренд букмекера найден у 16 каналов — вот каналы двух брендов',
-          groups: [
-            channelGroup('twitch:dota2', 'BetBoom', 6),
-            channelGroup('twitch:dota2', 'Winline', 6),
-          ],
-          calc: `${this.number(dotaBetBoom.viewers_at_observation)} ÷ ${this.number(dotaWinline.viewers_at_observation)} = ${this.decimal(dotaBetBoom.viewers_at_observation / dotaWinline.viewers_at_observation)}`,
-          conclusion: `У BetBoom один канал Nix даёт ${this.number(topDotaBetBoom.viewers_at_observation)} зрителей — больше, чем все шесть каналов Winline вместе. При равном числе партнёров результат определяет размер самого крупного из них.`,
-          caveat: 'Один канал может нести несколько брендов одновременно. Стоимость контракта с каждым стримером неизвестна, поэтому сказать, кто заплатил больше за зрителя, по этим данным нельзя.',
-          action: 'Считать стоимость подтверждённого часа просмотра по каждому партнёру и проверять пересечение аудиторий между каналами перед закупкой охвата.',
-          experience: 'тесты на Twitch в Wargaming снизили стоимость привлечения нового игрока втрое.',
-        },
-        {
-          n: '03',
-          hasCalc: true,
-          hasCaveat: true,
-          title: `Winline Pro League: онлайн между вторым и третьим сезоном вырос в ${this.decimal(wpl3.peak_viewers / wpl2.peak_viewers)} раза, а призовой фонд — на ${this.decimal((wpl3.prize_pool.amount / wpl2.prize_pool.amount - 1) * 100)}%`,
-          dataLabel: 'Публичные метрики двух сезонов собственного турнира Winline',
-          groups: [seasonGroup('Сезон 2', wpl2), seasonGroup('Сезон 3', wpl3)],
-          calc: `${this.number(wpl3.peak_viewers)} ÷ ${this.number(wpl2.peak_viewers)} = ${this.decimal(wpl3.peak_viewers / wpl2.peak_viewers)} по пиковому онлайну, при росте призового на ${this.decimal((wpl3.prize_pool.amount / wpl2.prize_pool.amount - 1) * 100)}%`,
-          conclusion: 'Деньги в призовом фонде не объясняют рост: он вырос на треть, а аудитория — в десятки раз. Значит сработало что-то другое — формат, площадки трансляции или участники. Это самый недооценённый собственный актив в портфеле.',
-          caveat: 'Season 2 Esports Charts считал только по Twitch, Season 3 — по Twitch и Kick. Прежде чем объяснять рост продуктом, нужно вычесть вклад новой площадки.',
-          action: 'Разобрать, за счёт чего вырос третий сезон, и повторить это в следующем — вместо того чтобы поднимать призовой фонд.',
-          experience: 'замерял вклад медийных кампаний через контрольные группы и опросы на узнаваемость бренда — то же самое применимо здесь.',
-        },
-      ] : [],
       portfolioRows,
       portfolioSummary,
       snapshotBlocks: matrixReady ? streamerSnapshots.map((snapshot, index) => {
@@ -1981,11 +1826,6 @@ class Component extends DCLogic {
       }) : [],
       streamerPartnershipRows,
       streamerSignalStats,
-      liveActions: [
-        { label: '01 · ВИДИМОСТЬ', action: 'Опрос title, tags и panels каждые 30–60 минут', metric: 'Доля обязательств, реально видимых в эфире' },
-        { label: '02 · ПЕРЕСЕЧЕНИЕ', action: 'Чат, расписание и first-party ID по одновременным эфирам', metric: 'Уникальный контакт вместо суммы онлайнов' },
-        { label: '03 · ЦЕННОСТЬ', action: 'Campaign ID → registration/KYC → FTD → NGR', metric: 'Стоимость результата по партнёру и формату' },
-      ],
       ownedComparisons: matrixReady ? [
         {
           title: 'Winline Pro League · Season 2 → Season 3',
