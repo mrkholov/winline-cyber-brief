@@ -25,6 +25,46 @@
   * { box-sizing:border-box; font-family:'Golos Text',sans-serif; }
   ::selection { background:#FF6A1A; color:#0A0A0C; }
 </style>
+<script>
+(function () {
+  var raf = null;
+
+  function update() {
+    raf = null;
+    var links = document.querySelectorAll('a[data-nav]');
+    if (!links.length) return;
+
+    // какая секция сейчас в фокусе: последняя, чей верх выше линии под шапкой
+    var line = 140;
+    var current = '';
+    var sections = document.querySelectorAll('section[id]');
+    for (var i = 0; i < sections.length; i++) {
+      if (sections[i].getBoundingClientRect().top <= line) current = sections[i].id;
+    }
+    // у самого низа страницы подсвечиваем последний пункт меню
+    if (window.innerHeight + window.scrollY >= document.body.scrollHeight - 4) {
+      var last = links[links.length - 1].getAttribute('href');
+      if (last) current = last.slice(1);
+    }
+
+    for (var j = 0; j < links.length; j++) {
+      var on = links[j].getAttribute('href') === '#' + current;
+      links[j].style.background = on ? '#FF6A1A' : 'transparent';
+      links[j].style.color = on ? '#0A0A0C' : '#9A9AA0';
+    }
+  }
+
+  function schedule() {
+    if (raf === null) raf = window.requestAnimationFrame(update);
+  }
+
+  window.addEventListener('scroll', schedule, { passive: true });
+  window.addEventListener('resize', schedule, { passive: true });
+  window.addEventListener('load', schedule);
+  document.addEventListener('DOMContentLoaded', schedule);
+  setTimeout(schedule, 400);
+})();
+</script>
 </helmet>
 
 <div style="background:#0A0A0C;color:#F2F1EE;min-height:100vh;">
@@ -37,7 +77,7 @@
       </div>
       <div style="display:flex;gap:3px;flex-wrap:wrap;">
         <sc-for list="{{ navLinks }}" as="n" hint-placeholder-count="9">
-          <a href="{{ n.href }}" style="padding:7px 12px;border-radius:999px;font-size:14px;font-weight:700;color:#9A9AA0;text-decoration:none;white-space:nowrap;" style-hover="background:#1D1C1F;color:#F2F1EE;">{{ n.label }}</a>
+          <a href="{{ n.href }}" data-nav="1" style="padding:7px 12px;border-radius:999px;font-size:14px;font-weight:700;color:#9A9AA0;text-decoration:none;white-space:nowrap;transition:background 0.15s,color 0.15s;" style-hover="background:#1D1C1F;color:#F2F1EE;">{{ n.label }}</a>
         </sc-for>
       </div>
     </div>
@@ -104,7 +144,7 @@
   <div style="max-width:1240px;margin:0 auto;padding:0 40px;">
     <section id="matrix" style="padding:74px 0 20px;">
       <div style="font-family:'JetBrains Mono',monospace;font-size:14px;color:#FF6A1A;font-weight:600;letter-spacing:1.2px;margin-bottom:18px;">ДАННЫЕ, КОТОРЫЕ Я СОБРАЛ К ЭТОЙ ВСТРЕЧЕ</div>
-      <div style="font-size:45.5px;font-weight:800;max-width:960px;letter-spacing:-0.7px;line-height:1.16;">Что видно по открытым данным</div>
+      <div style="font-size:45.5px;font-weight:800;max-width:960px;letter-spacing:-0.7px;line-height:1.16;">Анализ активов по открытым данным</div>
     </section>
   </div>
     <sc-if value="{{ matrixLoading }}" hint-placeholder-val="{{ false }}">
@@ -1662,9 +1702,9 @@ class Component extends DCLogic {
       navLinks: [
         { href: '#opyt', label: 'Опыт' },
         { href: '#analiz', label: 'Анализ активов' },
+        { href: '#strimery', label: 'Стримеры' },
         { href: '#komandy', label: 'Команды' },
         { href: '#turniry', label: 'Турниры' },
-        { href: '#strimery', label: 'Стримеры' },
         { href: '#research', label: 'Research' },
         { href: '#voronka', label: 'Воронка' },
         { href: '#reshenie', label: '30 дней' },
@@ -1805,12 +1845,12 @@ class Component extends DCLogic {
             {
               name: 'Всплески в минуты эфира против базовой линии',
               detail: 'Эфиры идут в известное время. Поминутная выгрузка регистраций и депозитов накладывается на расписание трансляций и сравнивается с модельным ожиданием по тем же часам обычных дней.',
-              limit: 'Эффект одного среднего канала утонет в шуме. Метод работает на крупных эфирах и на сумме за месяц, а не на каждом стриме.',
+              limit: 'Трафик разнородный, и на среднем канале эффект утонет в шуме. Но у Winline есть и накопленная история по своим эфирам, и партнёры с онлайном в десятки тысяч — на таком объёме всплеск отделяется от фона.',
             },
             {
               name: 'Брендовый поиск в дни трансляций',
               detail: 'Всплеск запросов по названию бренда вокруг эфира виден в Вордстате и стоит ноль рублей. Работает как независимая проверка: если поиска нет, то и внимания не было.',
-              limit: 'Показывает интерес, а не деньги. Годится как подтверждение, а не как основная метрика.',
+              limit: 'Показывает интерес, а не деньги, и на мелких каналах ничего не даст. Зато считается по многолетней истории запросов и не требует ни доступа, ни бюджета.',
             },
           ],
         },
