@@ -19,6 +19,8 @@ DATASETS = {
     'partnerships': 'partnerships',
     'rosters': 'rosters',
     'media-events': 'mediaEvents',
+    'streamer-stats': 'streamerStats',
+    'streamer-background': 'streamerBackground',
 }
 
 bundle = {}

@@ -152,21 +152,9 @@
         <div style="font-size:27.5px;font-weight:800;margin-bottom:8px;">Стримеры и амбассадоры</div>
         <div style="font-size:15.5px;color:#77767C;margin-bottom:22px;">{{ talentIntro }}</div>
 
-        <div style="font-size:19.5px;font-weight:800;margin-bottom:4px;">Сколько стримеров подписано у каждого букмекера</div>
-        <div style="font-size:15px;color:#77767C;margin-bottom:12px;">{{ rosterNote }}</div>
-        <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:10px;">
-          <sc-for list="{{ rosterScale }}" as="r" hint-placeholder-count="4">
-            <div style="background:#141416;border:1px solid rgba(255,255,255,0.09);border-radius:12px;padding:18px 20px;">
-              <div style="font-family:'JetBrains Mono',monospace;font-size:34px;font-weight:800;{{ r.style }}">{{ r.count }}</div>
-              <div style="font-size:16px;font-weight:800;margin-top:5px;{{ r.style }}">{{ r.brand }}</div>
-              <div style="font-size:13px;color:#77767C;line-height:1.45;margin-top:7px;">{{ r.note }}</div>
-            </div>
-          </sc-for>
-        </div>
-        <div style="font-size:13.5px;color:#77767C;margin-bottom:26px;">Источник: <a href="{{ rosterSource.url }}" target="_blank" rel="noreferrer">{{ rosterSource.publisher }}</a>, {{ rosterSource.date }}. Поимённые составы публично не раскрываются — доступны только итоговые числа.</div>
+        
 
-        <div style="font-size:19.5px;font-weight:800;margin-bottom:4px;">Кто подписан у каждого бренда</div>
-        <div style="font-size:15px;color:#77767C;margin-bottom:14px;">{{ rosterTableNote }}</div>
+        
         <div style="display:flex;gap:4px;background:#151417;border:1px solid rgba(255,255,255,0.08);border-radius:999px;padding:4px;width:fit-content;margin-bottom:16px;flex-wrap:wrap;">
           <sc-for list="{{ talentBrandTabs }}" as="b" hint-placeholder-count="4">
             <button onClick="{{ b.go }}" style="border:0;padding:9px 20px;border-radius:999px;font-size:15px;font-weight:700;cursor:pointer;{{ b.style }}">{{ b.label }}</button>
@@ -179,19 +167,22 @@
         </div>
 
         <div style="border:1px solid rgba(255,255,255,0.09);border-radius:14px;overflow:hidden;">
-          <div style="display:grid;grid-template-columns:1fr 1.4fr;background:#1D1C1F;padding:12px 18px;font-size:12px;font-weight:700;letter-spacing:0.5px;color:#9A9AA0;">
-            <div>СТРИМЕР</div><div>НАЙДЕН В ЭФИРЕ НА ЗАМЕРЕ</div>
+          <div style="display:grid;grid-template-columns:1.15fr 1fr 0.62fr 0.72fr 1.25fr;background:#1D1C1F;padding:12px 18px;font-size:12px;font-weight:700;letter-spacing:0.5px;color:#9A9AA0;">
+            <div>СТРИМЕР</div><div>КТО ЭТО</div><div>ФОЛЛОВЕРЫ</div><div>ЭФИРЫ ЗА 14 ДНЕЙ</div><div>НАЙДЕН В ЭФИРЕ НА ЗАМЕРЕ</div>
           </div>
           <div style="max-height:520px;overflow:auto;">
             <sc-for list="{{ activeBrand.people }}" as="p" hint-placeholder-count="12">
-              <div style="display:grid;grid-template-columns:1fr 1.4fr;padding:10px 18px;border-top:1px solid rgba(255,255,255,0.06);background:#121114;align-items:baseline;">
+              <div style="display:grid;grid-template-columns:1.15fr 1fr 0.62fr 0.72fr 1.25fr;padding:10px 18px;border-top:1px solid rgba(255,255,255,0.06);background:#121114;align-items:baseline;">
                 <div style="font-size:15px;{{ p.nameStyle }}">{{ p.name }}</div>
+                <div style="font-size:13px;{{ p.roleStyle }}">{{ p.role }}</div>
+                <div style="font-family:'JetBrains Mono',monospace;font-size:13px;color:#C7C6CC;">{{ p.followers }}</div>
+                <div style="font-family:'JetBrains Mono',monospace;font-size:13px;{{ p.activityStyle }}">{{ p.activity }}</div>
                 <div style="font-size:13.5px;{{ p.observedStyle }}">{{ p.observed }}</div>
               </div>
             </sc-for>
           </div>
         </div>
-        <div style="font-size:13.5px;color:#77767C;line-height:1.55;margin-top:12px;">{{ activeBrand.gap }}</div>
+        <div style="font-size:13.5px;color:#77767C;line-height:1.55;margin-top:14px;">Источник: <a href="https://cyber.sports.ru/betting/blogs/3382281.html" target="_blank" rel="noreferrer">Sports.ru — Киберспорт, «Карта российского киберспортивного спонсорства в 2026 году»</a>, февраль 2026. Поимённые составы публично не раскрываются — доступны только итоговые числа. Статистика каналов — Twitch API, {{ statsCollectedAt }}.</div>
 
         <div style="font-size:19.5px;font-weight:800;margin:34px 0 12px;">Как конкурент объясняет свой подход</div>
         <div style="background:#141416;border:1px solid rgba(255,255,255,0.09);border-radius:14px;padding:24px 26px;">
@@ -959,10 +950,12 @@ class Component extends DCLogic {
       this.loadJson('./data/research/partnerships.json', signal),
       this.loadJson('./data/research/rosters.json', signal),
       this.loadJson('./data/research/media-events.json', signal),
+      this.loadJson('./data/research/streamer-stats.json', signal),
+      this.loadJson('./data/research/streamer-background.json', signal),
     ])
-      .then(([matrices, organizations, sources, claims, partnerships, rosters, mediaEvents]) => {
+      .then(([matrices, organizations, sources, claims, partnerships, rosters, mediaEvents, streamerStats, streamerBackground]) => {
         if (!Array.isArray(matrices.competitor_portfolio) || !Array.isArray(matrices.streamer_brand_signals) || !Array.isArray(matrices.streamer_matrix) || !Array.isArray(organizations.organizations)) throw new Error('research shape');
-        this.setState({ research: { matrices, organizations, sources, claims, partnerships, rosters, mediaEvents } });
+        this.setState({ research: { matrices, organizations, sources, claims, partnerships, rosters, mediaEvents, streamerStats, streamerBackground } });
       })
       .catch(error => {
         if (error.name !== 'AbortError' && !window.WINLINE_RESEARCH_DATA) this.setState({ researchError: true });
@@ -1009,7 +1002,7 @@ class Component extends DCLogic {
     const standoff2023 = tournament('tournament:standoff-major-2023');
     const standoff2024 = tournament('tournament:standoff-major-2024');
     const standoff2026 = tournament('tournament:standoff-major-2026');
-    const matrixReady = Boolean(research && matrices && research.rosters);
+    const matrixReady = Boolean(research && matrices && research.rosters && research.streamerStats);
     const brandNames = {
       'brand:winline': 'Winline',
       'brand:betboom': 'BetBoom',
@@ -1239,6 +1232,13 @@ class Component extends DCLogic {
       fonbet: 'Небольшой пул при заметном наборе активов: MOUZ, ESL, PGL, студия Paragon и собственная Media League. Ставка смещена в сторону команд и трансляций, а не отдельных стримеров.',
       pari: 'Самый маленький пул на рынке и единственный актив — собственная команда PARIVISION. Это совпадает с публично заявленной стратегией: отказ от большого штата в пользу точечных сделок под конкретное событие.',
     };
+    const statsDoc = research?.streamerStats;
+    const bgDoc = research?.streamerBackground;
+    const statsByName = new Map((statsDoc?.records || []).map(item => [normName(item.name), item]));
+    const bgByName = new Map(Object.entries(bgDoc?.people || {}).map(([key, value]) => [normName(key), value]));
+    const roleLabel = { pro: 'действующий про', ex_pro: 'бывший про', caster: 'комментатор', streamer: 'стример', unknown: '—' };
+    const roleColor = { pro: 'color:#FF6A1A;font-weight:700;', ex_pro: 'color:#E7E6E2;', caster: 'color:#C7C6CC;', streamer: 'color:#9A9AA0;', unknown: 'color:#4A4950;' };
+    const compact = value => value >= 1000000 ? `${this.decimal(value / 1000000)} млн` : value >= 1000 ? `${Math.round(value / 1000)}K` : String(value);
     const buildBrand = key => {
       const entry = (rosterDoc?.brands || []).find(item => brandKeyById[item.brand_id] === key);
       if (!entry) return { label: key, count: 0, countLabel: '', note: '', people: [], assetGroups: [], gap: '' };
@@ -1246,16 +1246,27 @@ class Component extends DCLogic {
         const shown = ['twitch:cs2-ewc-live', 'twitch:dota2'];
         const own = (signalsByName.get(normName(name)) || []).filter(row => row.brand === entry.name && shown.includes(row.snapshot_id));
         const best = own.sort((left, right) => right.viewers_at_observation - left.viewers_at_observation)[0];
+        const stat = statsByName.get(normName(name));
+        const bg = bgByName.get(normName(name));
+        const role = bg?.category || 'unknown';
         return {
           name,
           nameStyle: best ? 'color:#FF6A1A;font-weight:800;' : 'color:#E7E6E2;',
+          role: roleLabel[role],
+          roleStyle: roleColor[role],
+          followers: stat?.followers ? compact(stat.followers) : '—',
+          followersRaw: stat?.followers || 0,
+          activity: stat && stat.resolved
+            ? (stat.streams_14d > 0 ? `${stat.streams_14d} · ${stat.hours_14d} ч` : 'не выходил')
+            : '—',
+          activityStyle: stat && stat.streams_14d > 0 ? 'color:#C7C6CC;' : 'color:#4A4950;',
           observed: best
             ? `${eventShort[best.snapshot_id] || best.snapshot_id} — ${this.number(best.viewers_at_observation)} зр.`
             : '—',
           observedStyle: best ? 'color:#E7E6E2;' : 'color:#4A4950;',
           viewers: best ? best.viewers_at_observation : -1,
         };
-      }).sort((left, right) => right.viewers - left.viewers || left.name.localeCompare(right.name));
+      }).sort((left, right) => right.viewers - left.viewers || right.followersRaw - left.followersRaw || left.name.localeCompare(right.name));
       const confirmed = people.filter(p => p.viewers >= 0).length;
       return {
         label: entry.name,
@@ -1558,6 +1569,7 @@ class Component extends DCLogic {
   ] : [];
 
     return {
+      statsCollectedAt: statsDoc?.collected_at || '',
       matrixLoading: !matrixReady && !this.state.researchError,
       matrixError: this.state.researchError,
       matrixReady,
