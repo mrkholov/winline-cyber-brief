@@ -331,7 +331,12 @@
                     </div>
                   </sc-for>
                 </div>
-                <div style="background:rgba(255,106,26,0.11);border:1px solid rgba(255,106,26,0.34);border-radius:12px;padding:16px 20px;font-size:15px;line-height:1.6;color:#F0DFD2;">{{ s.takeaway }}</div>
+                <div style="background:rgba(255,106,26,0.11);border:1px solid rgba(255,106,26,0.34);border-radius:12px;padding:16px 20px;font-size:15px;line-height:1.6;color:#F0DFD2;">
+                  <div>{{ s.takeaway }}</div>
+                  <sc-if value="{{ s.hasFollowUp }}" hint-placeholder-val="{{ true }}">
+                    <div style="margin-top:14px;padding-top:14px;border-top:1px solid rgba(255,106,26,0.28);">{{ s.followUp }} <a href="{{ s.followUpUrl }}" target="_blank" rel="noreferrer" style="color:#FF9351;font-weight:700;">{{ s.followUpPublisher }}</a></div>
+                  </sc-if>
+                </div>
               </div>
             </div>
           </sc-for>
@@ -755,7 +760,7 @@
     <section style="padding:80px 0;border-top:1px solid rgba(255,255,255,0.07);">
       <div style="font-family:'JetBrains Mono',monospace;font-size:14px;color:#FF6A1A;font-weight:600;letter-spacing:1.2px;margin-bottom:14px;">ТА ЖЕ ВОРОНКА НА ЖИВОМ АКТИВЕ</div>
       <div style="font-size:36.5px;font-weight:800;letter-spacing:-0.4px;margin-bottom:12px;">Как я бы отслеживал эту воронку на magic × EWC</div>
-      <div style="font-size:17.5px;color:#9A9AA0;max-width:800px;line-height:1.6;margin-bottom:16px;">Те же шесть разрывов выше, но на конкретном активе: контракт с magic подписан 13 августа, команда уже играет — точка отсчёта ещё не размыта активациями.</div>
+      <div style="font-size:17.5px;color:#9A9AA0;max-width:800px;line-height:1.6;margin-bottom:16px;">Те же шесть разрывов выше, но на конкретном активе: контракт с magic подписан 11 августа, команда уже играет — точка отсчёта ещё не размыта активациями.</div>
       <div style="background:#1D1C1F;border-left:2px solid #FF6A1A;border-radius:0 10px 10px 0;padding:18px 22px;font-size:16.5px;line-height:1.6;color:#E7E6E2;max-width:800px;margin-bottom:32px;">Точечный срез на 4-й день группового этапа: два канала из топ-15 CS2 (lentbb, dayneez) смотрели матч <b>magic vs 3DMAX</b> — актив Winline — с баннером BetBoom в панели. Внимание вокруг собственного матча монетизирует конкурент.</div>
       <div style="display:flex;flex-direction:column;gap:10px;">
         <sc-for list="{{ showcaseSteps }}" as="s" hint-placeholder-count="7">
@@ -994,6 +999,12 @@ class Component extends DCLogic {
       return organizationNames.get(id) || id.split(':').pop().replaceAll('-', ' ');
     };
     const firstSource = sourceIds => sourceById.get(sourceIds?.[0]);
+    const monthsRu = ['января', 'февраля', 'марта', 'апреля', 'мая', 'июня', 'июля', 'августа', 'сентября', 'октября', 'ноября', 'декабря'];
+    const dateRu = value => {
+      const [year, month, day] = String(value).split('-').map(Number);
+      return `${day} ${monthsRu[month - 1]} ${year}`;
+    };
+    const partnership = id => (research?.partnerships.partnerships || []).find(item => item.partnership_id === id);
     const signal = (snapshotId, brand) => matrices?.streamer_brand_signals.find(item => item.snapshot_id === snapshotId && item.brand === brand);
     const tournament = id => matrices?.tournament_matrix.find(item => item.tournament_id === id);
     const ewcBetBoom = signal('twitch:cs2-ewc-live', 'BetBoom');
@@ -1806,9 +1817,14 @@ class Component extends DCLogic {
       portfolioRows,
       portfolioSummary,
       snapshotBlocks: matrixReady ? streamerSnapshots.map((snapshot, index) => {
+        const magic = partnership('partnership:winline-magic');
+        const magicSource = firstSource(magic?.source_ids?.slice().reverse());
         const live = [
           {
             rows: snapshotRows('twitch:cs2-ewc-live'),
+            followUp: `Winline поддерживает CS2-команду magic: беттинг-партнёрство объявлено ${dateRu(magic.valid_from)}, права — логотип на форме. Команда играет на этом турнире.`,
+            followUpUrl: magicSource.url,
+            followUpPublisher: `${magicSource.publisher}, ${dateRu(magicSource.published_at)}`,
             takeaway: `BetBoom: ${ewcBetBoom.observed_channel_count} каналов и ${this.number(ewcBetBoom.viewers_at_observation)} зрителей в моменте. Много фокуса на бывших про-игроков и стримеров с высоким уровнем ELO.`,
           },
           {
@@ -1822,6 +1838,10 @@ class Component extends DCLogic {
           rows: snapshot.rows,
           brandRows: live.rows,
           takeaway: live.takeaway,
+          hasFollowUp: Boolean(live.followUp),
+          followUp: live.followUp || '',
+          followUpUrl: live.followUpUrl || '',
+          followUpPublisher: live.followUpPublisher || '',
         };
       }) : [],
       streamerPartnershipRows,
