@@ -287,8 +287,10 @@
 
         </div>
 
-        <div style="display:flex;align-items:center;gap:12px;margin:34px 0 6px;flex-wrap:wrap;">
-          <div style="font-size:19.5px;font-weight:800;">Срез стримеров в момент Инта и EWC</div>
+        <div style="height:1px;background:rgba(255,255,255,0.09);margin:44px 0 0;"></div>
+
+        <div style="display:flex;align-items:center;gap:12px;margin:30px 0 6px;flex-wrap:wrap;">
+          <div style="font-size:19.5px;font-weight:800;">Срез стримеров в момент Инта и EWC</div>
           <span style="display:inline-flex;align-items:center;gap:6px;background:#2A1216;border:1px solid #E2354A;border-radius:999px;padding:4px 11px;">
             <span style="width:7px;height:7px;border-radius:50%;background:#E2354A;display:inline-block;"></span>
             <span style="font-size:11.5px;font-weight:800;letter-spacing:0.7px;color:#E2354A;">LIVE</span>
@@ -340,6 +342,220 @@
               </div>
             </div>
           </sc-for>
+        </div>
+
+
+        <div style="height:1px;background:rgba(255,255,255,0.09);margin:44px 0 0;"></div>
+
+        <div style="display:flex;align-items:center;gap:12px;margin:30px 0 6px;flex-wrap:wrap;">
+          <div style="font-size:19.5px;font-weight:800;">WINLINE PUBSTOMP · финал The International 2026</div>
+          <span style="font-size:12px;font-weight:800;letter-spacing:0.6px;background:#FF6A1A;color:#0A0A0C;border-radius:5px;padding:4px 9px;">23 АВГУСТА</span>
+        </div>
+        <div style="font-size:15px;color:#77767C;line-height:1.55;margin-bottom:16px;max-width:900px;">Пока идёт турнир, Winline собирает офлайн-просмотр финала в Москве — и продаёт на него билеты через панели тех же стримеров, что в таблице выше.</div>
+
+        <div style="background:#141416;border:1px solid rgba(255,255,255,0.09);border-radius:14px;overflow:hidden;">
+          <div style="display:grid;grid-template-columns:1.05fr 1fr;">
+            <div style="padding:24px 26px;">
+              <div style="display:flex;flex-direction:column;gap:11px;">
+                <sc-for list="{{ pubstompFacts }}" as="f" hint-placeholder-count="5">
+                  <div style="display:grid;grid-template-columns:150px 1fr;gap:16px;align-items:baseline;">
+                    <div style="font-size:12.5px;font-weight:700;letter-spacing:0.5px;color:#77767C;">{{ f.label }}</div>
+                    <div style="font-size:15px;line-height:1.5;color:#E7E6E2;">{{ f.value }}</div>
+                  </div>
+                </sc-for>
+              </div>
+
+              <div style="font-size:13px;font-weight:700;letter-spacing:0.6px;color:#77767C;margin:22px 0 10px;">ЧТО ПОКАЗАЛ ПРОШЛЫЙ ПАБСТОМП НА TI 2024</div>
+              <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:10px;">
+                <sc-for list="{{ pubstompStats }}" as="s" hint-placeholder-count="4">
+                  <div style="background:#1D1C1F;border-radius:10px;padding:13px 15px;">
+                    <div style="font-family:'JetBrains Mono',monospace;font-size:24px;font-weight:800;color:#FF6A1A;">{{ s.value }}</div>
+                    <div style="font-size:12.5px;color:#9A9AA0;line-height:1.4;margin-top:5px;">{{ s.label }}</div>
+                  </div>
+                </sc-for>
+              </div>
+              <div style="font-size:13px;color:#77767C;line-height:1.5;margin-top:12px;">Источники: <a href="https://afisha.yandex.ru/moscow/sport/winline-pubstomp-the-international" target="_blank" rel="noreferrer">Яндекс Афиша</a> · <a href="https://msk-live-hall.mts.ru/winlinepubstomp" target="_blank" rel="noreferrer">МТС Live Холл</a> · <a href="https://winners.eplus.marketing/2025/osnovnye-nominafii/industrial-nye-nominafii/geiming-i-kibersport/winline-pabstomp-the-international-vozrozhdenie-kibersportivnykh-iventov-v-rf" target="_blank" rel="noreferrer">E+ Awards, разбор кампании TI 2024</a></div>
+            </div>
+
+            <div style="background:#0F0E11;display:flex;flex-direction:column;">
+              <img src="assets/pubstomp-1.png" alt="Зона активации Bounty Hunt на пабстомпе" style="width:100%;height:auto;display:block;">
+              <div style="font-size:13px;color:#77767C;line-height:1.5;padding:12px 20px;">Зона активации Bounty Hunt: очередь к стенду с ящиками и призами</div>
+              <img src="assets/pubstomp-2.png" alt="Зал во время финала" style="width:100%;height:auto;display:block;border-top:1px solid rgba(255,255,255,0.09);">
+              <div style="font-size:13px;color:#77767C;line-height:1.5;padding:12px 20px;">Зал во время матча: трибуны заполнены, экран на всю арену</div>
+            </div>
+          </div>
+
+          <div style="border-top:1px solid rgba(255,255,255,0.08);padding:22px 26px;">
+            <div class="mine" style="padding:22px 26px;">
+              <div class="mine-tag"><i>ЕХ</i>ВЫВОД</div>
+              <div style="font-size:19px;font-weight:800;line-height:1.4;">Это лучший актив в портфеле по возможности замера: у офлайн-ивента есть билет, а значит есть контакт.</div>
+              <div style="font-size:15.5px;line-height:1.6;margin-top:11px;max-width:1000px;">Стрим даёт только просмотр, а билет даёт имя, телефон и почту человека, который сам заплатил за то, чтобы смотреть Dota. Такую базу можно сверить с игроками, разделить на новых и действующих, догреть после ивента и посчитать выручку на одного пришедшего. Продажа идёт через панели стримеров — значит уже сейчас видно, чей канал приводит покупателей, и это готовый рейтинг пула по отдаче, а не по подписчикам.</div>
+            </div>
+          </div>
+        </div>
+
+
+        <div style="height:1px;background:rgba(255,255,255,0.09);margin:44px 0 30px;"></div>
+
+        <div style="font-size:19.5px;font-weight:800;margin:0 0 4px;">Собственные медийные мероприятия</div>
+        <div style="font-size:15px;color:#77767C;margin-bottom:14px;">Продукты Winline вне киберспортивных дисциплин, но на той же аудитории и с теми же лицами</div>
+        <sc-for list="{{ mediaEvents }}" as="e" hint-placeholder-count="1">
+          <div style="background:#141416;border:1px solid rgba(255,255,255,0.09);border-radius:14px;overflow:hidden;">
+            <div style="display:grid;grid-template-columns:1.05fr 1fr;gap:0;">
+              <div style="padding:24px 26px;">
+                <div style="display:flex;align-items:baseline;gap:12px;flex-wrap:wrap;">
+                  <div style="font-size:23px;font-weight:800;">{{ e.name }}</div>
+                  <sc-if value="{{ e.isLive }}" hint-placeholder-val="{{ true }}">
+                    <span style="font-size:12px;font-weight:800;letter-spacing:0.6px;background:#FF6A1A;color:#0A0A0C;border-radius:5px;padding:3px 8px;">В ЭФИРЕ {{ e.date }}</span>
+                  </sc-if>
+                </div>
+                <div style="font-size:15px;color:#9A9AA0;line-height:1.55;margin-top:8px;">{{ e.format }}</div>
+
+                <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:20px;">
+                  <div style="background:#1D1C1F;border-radius:10px;padding:14px 16px;">
+                    <div style="font-family:'JetBrains Mono',monospace;font-size:27.5px;font-weight:800;color:#FF6A1A;">{{ e.viewers }}</div>
+                    <div style="font-size:13px;color:#9A9AA0;line-height:1.4;margin-top:5px;">зрителей в момент наблюдения</div>
+                  </div>
+                  <div style="background:#1D1C1F;border-radius:10px;padding:14px 16px;">
+                    <div style="font-family:'JetBrains Mono',monospace;font-size:27.5px;font-weight:800;color:#FF6A1A;">{{ e.prize }}</div>
+                    <div style="font-size:13px;color:#9A9AA0;line-height:1.4;margin-top:5px;">призовой фонд</div>
+                  </div>
+                </div>
+
+                <div style="font-size:13px;font-weight:700;letter-spacing:0.6px;color:#77767C;margin:20px 0 9px;">КТО В КАДРЕ</div>
+                <div style="display:flex;flex-direction:column;gap:7px;">
+                  <sc-for list="{{ e.people }}" as="p" hint-placeholder-count="5">
+                    <div style="font-size:15px;line-height:1.4;">
+                      <span style="font-weight:800;{{ p.style }}">{{ p.name }}</span>
+                      <span style="color:#9A9AA0;"> — {{ p.role }}. {{ p.note }}</span>
+                    </div>
+                  </sc-for>
+                </div>
+
+                <div style="font-size:13px;font-weight:700;letter-spacing:0.6px;color:#77767C;margin:20px 0 10px;">ЧТО ВЕДЁТ К СТАВКЕ ПРЯМО В ЭФИРЕ</div>
+                <div style="display:flex;flex-direction:column;gap:10px;">
+                  <sc-for list="{{ e.mechanics }}" as="m" hint-placeholder-count="4">
+                    <div style="display:grid;grid-template-columns:14px 1fr;gap:10px;align-items:start;">
+                      <div style="font-size:17px;line-height:1.3;{{ m.markStyle }}">{{ m.mark }}</div>
+                      <div>
+                        <div style="font-size:15.5px;font-weight:700;line-height:1.35;{{ m.nameStyle }}">{{ m.name }}<span style="font-size:12.5px;font-weight:600;color:#77767C;"> · считается {{ m.measurable }}</span></div>
+                        <div style="font-size:13.5px;color:#9A9AA0;line-height:1.5;margin-top:3px;">{{ m.detail }}</div>
+                      </div>
+                    </div>
+                  </sc-for>
+                </div>
+                <div style="font-size:13.5px;color:#C7C6CC;line-height:1.55;margin-top:12px;padding:11px 14px;background:#1D1C1F;border-left:2px solid #FF6A1A;border-radius:0 8px 8px 0;">{{ e.measurementNote }}</div>
+
+                <div style="font-size:13px;color:#77767C;line-height:1.5;margin-top:18px;padding-top:14px;border-top:1px solid rgba(255,255,255,0.07);">Трансляция идёт на канале <a href="{{ e.channelUrl }}" target="_blank" rel="noreferrer">{{ e.channel }}</a> — {{ e.channelNote }}. Цифры сняты в момент наблюдения, итоговый пик и охват неизвестны.</div>
+              </div>
+
+              <div style="background:#0F0E11;display:flex;flex-direction:column;">
+                <img src="{{ e.image }}" alt="{{ e.imageCaption }}" style="width:100%;height:auto;display:block;object-fit:cover;">
+                <div style="font-size:13px;color:#77767C;line-height:1.5;padding:12px 20px;">{{ e.imageCaption }}</div>
+                <img src="{{ e.channel.image }}" alt="{{ e.channel.imageCaption }}" style="width:100%;height:auto;display:block;border-top:1px solid rgba(255,255,255,0.09);">
+                <div style="font-size:13px;color:#77767C;line-height:1.5;padding:12px 20px;">{{ e.channel.imageCaption }}</div>
+              </div>
+            </div>
+
+            <div style="border-top:1px solid rgba(255,255,255,0.08);padding:22px 26px;">
+              <div style="font-size:13px;font-weight:700;letter-spacing:0.6px;color:#77767C;margin-bottom:14px;">КУДА ВЕДЁТ КОМАНДА !СЕТКА ИЗ ЧАТА</div>
+              <div>
+                <div>
+                  <div style="font-size:18px;font-weight:800;">{{ e.channel.name }} · {{ e.channel.platform }}</div>
+                  <div style="font-size:15px;color:#9A9AA0;line-height:1.55;margin-top:7px;">{{ e.channel.imageCaption }}</div>
+
+                  <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:18px;">
+                    <sc-for list="{{ e.channel.stats }}" as="s" hint-placeholder-count="3">
+                      <div style="background:#1D1C1F;border-radius:10px;padding:13px 15px;">
+                        <div style="font-family:'JetBrains Mono',monospace;font-size:24px;font-weight:800;color:#FF6A1A;">{{ s.value }}</div>
+                        <div style="font-size:12.5px;color:#9A9AA0;line-height:1.4;margin-top:5px;">{{ s.label }}</div>
+                      </div>
+                    </sc-for>
+                  </div>
+
+                  <div style="font-size:13px;font-weight:700;letter-spacing:0.6px;color:#77767C;margin:18px 0 8px;">КНОПКИ В ПОСТЕ</div>
+                  <div style="display:flex;flex-wrap:wrap;gap:7px;">
+                    <sc-for list="{{ e.channel.buttons }}" as="btn" hint-placeholder-count="2">
+                      <span style="font-size:14px;background:#1D1C1F;border-radius:7px;padding:6px 12px;color:#E7E6E2;">{{ btn }}</span>
+                    </sc-for>
+                  </div>
+
+                  <div style="font-size:15.5px;line-height:1.6;color:#E7E6E2;margin-top:18px;padding:13px 16px;background:#1D1C1F;border-left:2px solid #FF6A1A;border-radius:0 8px 8px 0;">{{ e.channel.takeaway }}</div>
+                </div>
+              </div>
+            </div>
+
+            <div style="border-top:1px solid rgba(255,255,255,0.08);padding:20px 26px;display:grid;grid-template-columns:1fr 1fr;gap:24px;">
+              <div class="mine" style="padding:20px 22px;">
+                <div class="mine-tag"><i>ЕХ</i>ВЫВОД</div>
+                <div style="font-size:16px;line-height:1.55;color:#E7E6E2;">{{ e.meaning }}</div>
+              </div>
+              <div class="mine" style="padding:20px 22px;">
+                <div class="mine-tag"><i>ЕХ</i>ВОПРОС</div>
+                <div style="font-size:16px;line-height:1.55;color:#9A9AA0;">{{ e.question }}</div>
+              </div>
+            </div>
+          </div>
+        </sc-for>
+
+        <div class="mine" style="padding:22px 26px;margin-top:18px;">
+          <div class="mine-tag"><i>ЕХ</i>ВЫВОД</div>
+          <div style="font-size:18px;font-weight:800;line-height:1.45;">Собственные продукты Winline выходят на каналах собственных же законтрактованных стримеров, а не на брендовом канале.</div>
+          <div style="font-size:15.5px;color:#C7C6CC;line-height:1.6;margin-top:11px;">KING PONG идёт на канале <a href="https://www.twitch.tv/buster" target="_blank" rel="noreferrer">buster</a>, Media Poker — на канале <a href="https://www.twitch.tv/voodoosh" target="_blank" rel="noreferrer">VooDooSh</a>, плюс YouTube «Площадка» и сообщество во ВКонтакте. Оба стримера есть в составе Winline из 49 человек, и оба несли бренд в наших замерах. То есть пул амбассадоров работает не только как реклама, но и как готовая сеть дистрибуции для своих мероприятий.</div>
+          <div style="font-size:13.5px;color:#77767C;line-height:1.55;margin-top:11px;">Это меняет вопрос о стоимости контрактов: часть гонорара окупается не рекламными интеграциями, а сэкономленной закупкой охвата под собственные продукты. Считать эти два эффекта нужно раздельно. Источники: <a href="https://winline.ru/blog/posts/mediapoker-9-2026" target="_blank" rel="noreferrer">Winline о трансляциях Media Poker</a> · <a href="https://www.twitch.tv/voodoosh/clip/FantasticIronicFennelOSsloth-w1PBzBuIlcAWgjfX" target="_blank" rel="noreferrer">клип Media Poker 6 на канале VooDooSh</a></div>
+        </div>
+
+        <div style="height:1px;background:rgba(255,255,255,0.09);margin:44px 0 0;"></div>
+
+        <div class="mine" style="padding:26px 28px;margin-top:30px;">
+          <div class="mine-tag"><i>ЕХ</i>ИДЕИ ПО СТРИМЕРАМ</div>
+          <div style="font-size:26px;font-weight:800;letter-spacing:-0.3px;line-height:1.3;max-width:900px;">Четыре вещи, которые я бы сделал с этим пулом в первую очередь</div>
+
+          <div style="display:flex;flex-direction:column;gap:12px;margin-top:22px;">
+            <div style="background:rgba(255,255,255,0.5);border-radius:12px;padding:20px 22px;">
+              <div style="display:flex;align-items:baseline;gap:12px;">
+                <span style="font-family:'JetBrains Mono',monospace;font-size:14px;font-weight:800;">01</span>
+                <span style="font-size:18px;font-weight:800;">Динамическая связка вместо статичной</span>
+              </div>
+              <div style="font-size:15px;line-height:1.6;margin-top:10px;">Сейчас связка собрана из четырёх элементов: баннер под трансляцией, сообщение в чате, контент на лендинге и оверлей на самом стриме. Все четыре статичные — меняются вручную и живут неделями.</div>
+              <div style="font-size:15px;line-height:1.6;margin-top:9px;">Их можно обновлять на лету. Идёт матч конкретных команд — в баннер подставляются их логотипы и коэффициент с призывом поставить прямо сейчас. Оверлей в это же время несёт свой месседж под момент эфира, а не общий слоган.</div>
+
+              <div style="font-size:12.5px;font-weight:800;letter-spacing:0.5px;margin:20px 0 10px;opacity:0.7;">ЧТО СЕЙЧАС: РАЗНЫЕ АМБАССАДОРЫ, ОДИН И ТОТ ЖЕ ОФФЕР</div>
+              <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:10px;">
+                <sc-for list="{{ bannerShots }}" as="b" hint-placeholder-count="4">
+                  <div style="background:rgba(0,0,0,0.08);border-radius:10px;overflow:hidden;">
+                    <img src="{{ b.src }}" alt="{{ b.caption }}" style="width:100%;height:auto;display:block;">
+                    <div style="font-size:12.5px;line-height:1.4;padding:9px 11px;">{{ b.caption }}</div>
+                  </div>
+                </sc-for>
+              </div>
+              <div style="font-size:14px;line-height:1.55;margin-top:11px;">Меняется только промокод и лицо — оффер, посадочная и креатив общие. Это удобно масштабировать, но невозможно понять, что сработало: канал, оффер или момент показа.</div>
+            </div>
+
+            <div style="background:rgba(255,255,255,0.5);border-radius:12px;padding:20px 22px;">
+              <div style="display:flex;align-items:baseline;gap:12px;">
+                <span style="font-family:'JetBrains Mono',monospace;font-size:14px;font-weight:800;">02</span>
+                <span style="font-size:18px;font-weight:800;">Скаутинг новых стримеров через API</span>
+              </div>
+              <div style="font-size:15px;line-height:1.6;margin-top:10px;">Тот же обход категорий, что я сделал для этого среза, ставится на расписание: кто впервые появился в топе по дисциплине, как быстро растёт, есть ли уже букмекер в панели. Свободный растущий канал видно за недели до того, как он подорожает, и весь скаутинг сводится к списку, а не к ручному просмотру эфиров.</div>
+            </div>
+
+            <div style="background:rgba(255,255,255,0.5);border-radius:12px;padding:20px 22px;">
+              <div style="display:flex;align-items:baseline;gap:12px;">
+                <span style="font-family:'JetBrains Mono',monospace;font-size:14px;font-weight:800;">03</span>
+                <span style="font-size:18px;font-weight:800;">Проверка накрутки перед закупкой</span>
+              </div>
+              <div style="font-size:15px;line-height:1.6;margin-top:10px;">Накрутка видна по совокупности сигналов: онлайн не проседает между матчами, чат молчит при высоких цифрах, зрители приходят и уходят ровными ступенями, доля подписчиков не бьётся с онлайном. Это отсекает каналы, где платишь за ботов, и оставляет тех, у кого цена за реального зрителя честная.</div>
+            </div>
+
+            <div style="background:rgba(255,255,255,0.5);border-radius:12px;padding:20px 22px;">
+              <div style="display:flex;align-items:baseline;gap:12px;">
+                <span style="font-family:'JetBrains Mono',monospace;font-size:14px;font-weight:800;">04</span>
+                <span style="font-size:18px;font-weight:800;">Отдельно посмотреть на PUBG</span>
+              </div>
+              <div style="font-size:15px;line-height:1.6;margin-top:10px;">В срезе я собирал CS2 и Dota, поэтому долю PUBG по букмекерам не знаю. Смотреть туда стоит по другой причине: аудитория игры старше, и в ней выше готовность платить внутри самой игры. Это ближе к профилю человека, который делает ставку, чем аудитория школьных дисциплин. Первый шаг — такой же обход категории и проверка, кто из букмекеров там уже стоит.</div>
+            </div>
+          </div>
         </div>
 
       </section>
@@ -562,113 +778,6 @@
         </div>
         <div style="margin-top:16px;background:#1D1C1F;border-left:2px solid #FF6A1A;border-radius:0 10px 10px 0;padding:16px 20px;font-size:15px;line-height:1.6;color:#C7C6CC;">{{ eventsGap }}</div>
 
-        <div class="mine" style="padding:22px 26px;margin-top:18px;">
-          <div class="mine-tag"><i>ЕХ</i>ВЫВОД</div>
-          <div style="font-size:18px;font-weight:800;line-height:1.45;">Собственные продукты Winline выходят на каналах собственных же законтрактованных стримеров, а не на брендовом канале.</div>
-          <div style="font-size:15.5px;color:#C7C6CC;line-height:1.6;margin-top:11px;">KING PONG идёт на канале <a href="https://www.twitch.tv/buster" target="_blank" rel="noreferrer">buster</a>, Media Poker — на канале <a href="https://www.twitch.tv/voodoosh" target="_blank" rel="noreferrer">VooDooSh</a>, плюс YouTube «Площадка» и сообщество во ВКонтакте. Оба стримера есть в составе Winline из 49 человек, и оба несли бренд в наших замерах. То есть пул амбассадоров работает не только как реклама, но и как готовая сеть дистрибуции для своих мероприятий.</div>
-          <div style="font-size:13.5px;color:#77767C;line-height:1.55;margin-top:11px;">Это меняет вопрос о стоимости контрактов: часть гонорара окупается не рекламными интеграциями, а сэкономленной закупкой охвата под собственные продукты. Считать эти два эффекта нужно раздельно. Источники: <a href="https://winline.ru/blog/posts/mediapoker-9-2026" target="_blank" rel="noreferrer">Winline о трансляциях Media Poker</a> · <a href="https://www.twitch.tv/voodoosh/clip/FantasticIronicFennelOSsloth-w1PBzBuIlcAWgjfX" target="_blank" rel="noreferrer">клип Media Poker 6 на канале VooDooSh</a></div>
-        </div>
-
-        <div style="font-size:19.5px;font-weight:800;margin:34px 0 4px;">Собственные медийные мероприятия</div>
-        <div style="font-size:15px;color:#77767C;margin-bottom:14px;">Продукты Winline вне киберспортивных дисциплин, но на той же аудитории и с теми же лицами</div>
-        <sc-for list="{{ mediaEvents }}" as="e" hint-placeholder-count="1">
-          <div style="background:#141416;border:1px solid rgba(255,255,255,0.09);border-radius:14px;overflow:hidden;">
-            <div style="display:grid;grid-template-columns:1.05fr 1fr;gap:0;">
-              <div style="padding:24px 26px;">
-                <div style="display:flex;align-items:baseline;gap:12px;flex-wrap:wrap;">
-                  <div style="font-size:23px;font-weight:800;">{{ e.name }}</div>
-                  <sc-if value="{{ e.isLive }}" hint-placeholder-val="{{ true }}">
-                    <span style="font-size:12px;font-weight:800;letter-spacing:0.6px;background:#FF6A1A;color:#0A0A0C;border-radius:5px;padding:3px 8px;">В ЭФИРЕ {{ e.date }}</span>
-                  </sc-if>
-                </div>
-                <div style="font-size:15px;color:#9A9AA0;line-height:1.55;margin-top:8px;">{{ e.format }}</div>
-
-                <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:20px;">
-                  <div style="background:#1D1C1F;border-radius:10px;padding:14px 16px;">
-                    <div style="font-family:'JetBrains Mono',monospace;font-size:27.5px;font-weight:800;color:#FF6A1A;">{{ e.viewers }}</div>
-                    <div style="font-size:13px;color:#9A9AA0;line-height:1.4;margin-top:5px;">зрителей в момент наблюдения</div>
-                  </div>
-                  <div style="background:#1D1C1F;border-radius:10px;padding:14px 16px;">
-                    <div style="font-family:'JetBrains Mono',monospace;font-size:27.5px;font-weight:800;color:#FF6A1A;">{{ e.prize }}</div>
-                    <div style="font-size:13px;color:#9A9AA0;line-height:1.4;margin-top:5px;">призовой фонд</div>
-                  </div>
-                </div>
-
-                <div style="font-size:13px;font-weight:700;letter-spacing:0.6px;color:#77767C;margin:20px 0 9px;">КТО В КАДРЕ</div>
-                <div style="display:flex;flex-direction:column;gap:7px;">
-                  <sc-for list="{{ e.people }}" as="p" hint-placeholder-count="5">
-                    <div style="font-size:15px;line-height:1.4;">
-                      <span style="font-weight:800;{{ p.style }}">{{ p.name }}</span>
-                      <span style="color:#9A9AA0;"> — {{ p.role }}. {{ p.note }}</span>
-                    </div>
-                  </sc-for>
-                </div>
-
-                <div style="font-size:13px;font-weight:700;letter-spacing:0.6px;color:#77767C;margin:20px 0 10px;">ЧТО ВЕДЁТ К СТАВКЕ ПРЯМО В ЭФИРЕ</div>
-                <div style="display:flex;flex-direction:column;gap:10px;">
-                  <sc-for list="{{ e.mechanics }}" as="m" hint-placeholder-count="4">
-                    <div style="display:grid;grid-template-columns:14px 1fr;gap:10px;align-items:start;">
-                      <div style="font-size:17px;line-height:1.3;{{ m.markStyle }}">{{ m.mark }}</div>
-                      <div>
-                        <div style="font-size:15.5px;font-weight:700;line-height:1.35;{{ m.nameStyle }}">{{ m.name }}<span style="font-size:12.5px;font-weight:600;color:#77767C;"> · считается {{ m.measurable }}</span></div>
-                        <div style="font-size:13.5px;color:#9A9AA0;line-height:1.5;margin-top:3px;">{{ m.detail }}</div>
-                      </div>
-                    </div>
-                  </sc-for>
-                </div>
-                <div style="font-size:13.5px;color:#C7C6CC;line-height:1.55;margin-top:12px;padding:11px 14px;background:#1D1C1F;border-left:2px solid #FF6A1A;border-radius:0 8px 8px 0;">{{ e.measurementNote }}</div>
-
-                <div style="font-size:13px;color:#77767C;line-height:1.5;margin-top:18px;padding-top:14px;border-top:1px solid rgba(255,255,255,0.07);">Трансляция идёт на канале <a href="{{ e.channelUrl }}" target="_blank" rel="noreferrer">{{ e.channel }}</a> — {{ e.channelNote }}. Цифры сняты в момент наблюдения, итоговый пик и охват неизвестны.</div>
-              </div>
-
-              <div style="background:#0F0E11;display:flex;flex-direction:column;">
-                <img src="{{ e.image }}" alt="{{ e.imageCaption }}" style="width:100%;height:auto;display:block;object-fit:cover;">
-                <div style="font-size:13px;color:#77767C;line-height:1.5;padding:12px 20px;">{{ e.imageCaption }}</div>
-                <img src="{{ e.channel.image }}" alt="{{ e.channel.imageCaption }}" style="width:100%;height:auto;display:block;border-top:1px solid rgba(255,255,255,0.09);">
-                <div style="font-size:13px;color:#77767C;line-height:1.5;padding:12px 20px;">{{ e.channel.imageCaption }}</div>
-              </div>
-            </div>
-
-            <div style="border-top:1px solid rgba(255,255,255,0.08);padding:22px 26px;">
-              <div style="font-size:13px;font-weight:700;letter-spacing:0.6px;color:#77767C;margin-bottom:14px;">КУДА ВЕДЁТ КОМАНДА !СЕТКА ИЗ ЧАТА</div>
-              <div>
-                <div>
-                  <div style="font-size:18px;font-weight:800;">{{ e.channel.name }} · {{ e.channel.platform }}</div>
-                  <div style="font-size:15px;color:#9A9AA0;line-height:1.55;margin-top:7px;">{{ e.channel.imageCaption }}</div>
-
-                  <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:18px;">
-                    <sc-for list="{{ e.channel.stats }}" as="s" hint-placeholder-count="3">
-                      <div style="background:#1D1C1F;border-radius:10px;padding:13px 15px;">
-                        <div style="font-family:'JetBrains Mono',monospace;font-size:24px;font-weight:800;color:#FF6A1A;">{{ s.value }}</div>
-                        <div style="font-size:12.5px;color:#9A9AA0;line-height:1.4;margin-top:5px;">{{ s.label }}</div>
-                      </div>
-                    </sc-for>
-                  </div>
-
-                  <div style="font-size:13px;font-weight:700;letter-spacing:0.6px;color:#77767C;margin:18px 0 8px;">КНОПКИ В ПОСТЕ</div>
-                  <div style="display:flex;flex-wrap:wrap;gap:7px;">
-                    <sc-for list="{{ e.channel.buttons }}" as="btn" hint-placeholder-count="2">
-                      <span style="font-size:14px;background:#1D1C1F;border-radius:7px;padding:6px 12px;color:#E7E6E2;">{{ btn }}</span>
-                    </sc-for>
-                  </div>
-
-                  <div style="font-size:15.5px;line-height:1.6;color:#E7E6E2;margin-top:18px;padding:13px 16px;background:#1D1C1F;border-left:2px solid #FF6A1A;border-radius:0 8px 8px 0;">{{ e.channel.takeaway }}</div>
-                </div>
-              </div>
-            </div>
-
-            <div style="border-top:1px solid rgba(255,255,255,0.08);padding:20px 26px;display:grid;grid-template-columns:1fr 1fr;gap:24px;">
-              <div class="mine" style="padding:20px 22px;">
-                <div class="mine-tag"><i>ЕХ</i>ВЫВОД</div>
-                <div style="font-size:16px;line-height:1.55;color:#E7E6E2;">{{ e.meaning }}</div>
-              </div>
-              <div class="mine" style="padding:20px 22px;">
-                <div class="mine-tag"><i>ЕХ</i>ВОПРОС</div>
-                <div style="font-size:16px;line-height:1.55;color:#9A9AA0;">{{ e.question }}</div>
-              </div>
-            </div>
-          </div>
-        </sc-for>
       </section>
   </div>
   </sc-if>
@@ -1006,6 +1115,10 @@ class Component extends DCLogic {
     };
     const partnership = id => (research?.partnerships.partnerships || []).find(item => item.partnership_id === id);
     const signal = (snapshotId, brand) => matrices?.streamer_brand_signals.find(item => item.snapshot_id === snapshotId && item.brand === brand);
+    // каналы с единичным онлайном не показываем: сигнал есть, аудитории нет
+    const hiddenSnapshotLogins = ['zaharpuzo77'];
+    const snapshotMatrix = snapshotId => (matrices?.streamer_matrix || [])
+      .filter(item => item.snapshot_id === snapshotId && !hiddenSnapshotLogins.includes(item.streamer_login));
     const tournament = id => matrices?.tournament_matrix.find(item => item.tournament_id === id);
     const ewcBetBoom = signal('twitch:cs2-ewc-live', 'BetBoom');
     const dotaBetBoom = signal('twitch:dota2', 'BetBoom');
@@ -1446,7 +1559,7 @@ class Component extends DCLogic {
     const streamerSnapshots = matrixReady
       ? streamerSnapshotDefinitions.map(snapshot => {
           const rowsByStreamer = new Map();
-          for (const item of matrices.streamer_matrix.filter(row => row.snapshot_id === snapshot.snapshotId)) {
+          for (const item of snapshotMatrix(snapshot.snapshotId)) {
             const current = rowsByStreamer.get(item.streamer_id) || {
               streamer: item.streamer_display_name,
               channelUrl: item.channel_url,
@@ -1493,15 +1606,24 @@ class Component extends DCLogic {
           brands: new Set(matrices.streamer_matrix.map(item => item.brand)).size,
         }
       : { signals: 0, channelSnapshots: 0, brands: 0 };
-    const snapshotRows = snapshotId => (matrices?.streamer_brand_signals || [])
-      .filter(item => item.snapshot_id === snapshotId)
-      .sort((left, right) => right.viewers_at_observation - left.viewers_at_observation)
-      .map(item => ({
-        brand: item.brand,
-        brandStyle: bStyle(item.brand),
-        channels: this.number(item.observed_channel_count),
-        viewers: this.number(item.viewers_at_observation),
-      }));
+    // сводка по брендам считается из тех же строк, что и таблица каналов, — чтобы числа не разъезжались
+    const snapshotRows = snapshotId => {
+      const byBrand = new Map();
+      for (const item of snapshotMatrix(snapshotId)) {
+        const current = byBrand.get(item.brand) || { brand: item.brand, channels: new Set(), viewers: 0 };
+        if (!current.channels.has(item.streamer_id)) current.viewers += item.viewers_at_observation;
+        current.channels.add(item.streamer_id);
+        byBrand.set(item.brand, current);
+      }
+      return [...byBrand.values()]
+        .sort((left, right) => right.viewers - left.viewers)
+        .map(item => ({
+          brand: item.brand,
+          brandStyle: bStyle(item.brand),
+          channels: this.number(item.channels.size),
+          viewers: this.number(item.viewers),
+        }));
+    };
     const disciplineDecisions = {
       cs2: 'Здесь проще всего построить замер. Взять magic как пилот: замер до активации → активация → расчёт прибыльности.',
       dota2: 'Самый большой охват по открытым данным. Проверить, на скольких каналах он держится и сколько стоит, прежде чем наращивать.',
@@ -1816,20 +1938,43 @@ class Component extends DCLogic {
       statsRest: matrixReady ? researchStats.filter(item => item.group !== 'streamers') : [],
       portfolioRows,
       portfolioSummary,
+      pubstompFacts: [
+        { label: 'КОГДА', value: '23 августа 2026, начало в 5 утра по Москве — под финал в Шанхае' },
+        { label: 'ГДЕ', value: 'МТС Live Холл, Москва, 18+' },
+        { label: 'КТО В ЗАЛЕ', value: 'RAMZES666, just_ns, DreadzTV, 9pasha, VooDooSh, korya_mc и другие стримеры и блогеры' },
+        { label: 'БИЛЕТЫ', value: 'от 2 000 ₽, продажа через Афишу и МТС Live' },
+        { label: 'ФОРМАТ', value: 'Просмотр финала на большом экране с комментаторами, тематика Древнего Китая, интерактивные зоны и розыгрыши' },
+        { label: 'КАК ПРОДАЮТ', value: 'В момент замера ссылка на билеты стояла в панелях у ramzes, 9pasha и followKudes — это 18 945 из 40 405 зрителей Winline в срезе по Dota, почти половина' },
+      ],
+      pubstompStats: [
+        { value: '4 000+', label: 'гостей в зале' },
+        { value: '1,32 млн', label: 'просмотров трансляции ивента' },
+        { value: '43 млн', label: 'охват кампании, OTS' },
+        { value: '100+', label: 'инфлюенсеров в проекте' },
+      ],
+      bannerShots: [
+        { src: 'assets/banner-1.png', caption: 'Фрибет 10 000 ₽, промокод NS' },
+        { src: 'assets/banner-3.png', caption: 'Тот же фрибет, промокод RAMZES' },
+        { src: 'assets/banner-2.png', caption: 'WinPass Season 3, лицо стримера' },
+        { src: 'assets/banner-4.png', caption: 'WinPass Season 3, другое лицо' },
+      ],
       snapshotBlocks: matrixReady ? streamerSnapshots.map((snapshot, index) => {
         const magic = partnership('partnership:winline-magic');
+        const topDota = snapshotMatrix('twitch:dota2')
+          .filter(item => item.brand === 'BetBoom')
+          .sort((left, right) => right.viewers_at_observation - left.viewers_at_observation)[0];
         const magicSource = firstSource(magic?.source_ids?.slice().reverse());
         const live = [
           {
             rows: snapshotRows('twitch:cs2-ewc-live'),
-            followUp: `Winline поддерживает CS2-команду magic: беттинг-партнёрство объявлено ${dateRu(magic.valid_from)}, права — логотип на форме. Команда играет на этом турнире.`,
+            followUp: `Winline поддерживает CS2-команду magic: беттинг-партнёрство объявлено ${dateRu(magic.valid_from)}.`,
             followUpUrl: magicSource.url,
             followUpPublisher: `${magicSource.publisher}, ${dateRu(magicSource.published_at)}`,
             takeaway: `BetBoom: ${ewcBetBoom.observed_channel_count} каналов и ${this.number(ewcBetBoom.viewers_at_observation)} зрителей в моменте. Много фокуса на бывших про-игроков и стримеров с высоким уровнем ELO.`,
           },
           {
             rows: snapshotRows('twitch:dota2'),
-            takeaway: `У BetBoom и Winline по ${dotaWinline.observed_channel_count} каналов с сигналом. Но зрителей на каналах BetBoom в ${this.decimal(dotaBetBoom.viewers_at_observation / dotaWinline.viewers_at_observation)} раза больше: ${this.number(dotaBetBoom.viewers_at_observation)} против ${this.number(dotaWinline.viewers_at_observation)}.`,
+            takeaway: `У BetBoom и Winline по ${dotaWinline.observed_channel_count} каналов с сигналом. Но зрителей на каналах BetBoom в ${this.decimal(dotaBetBoom.viewers_at_observation / dotaWinline.viewers_at_observation)} раза больше: ${this.number(dotaBetBoom.viewers_at_observation)} против ${this.number(dotaWinline.viewers_at_observation)}. Основной вклад даёт один канал — ${topDota.streamer_display_name}: ${this.number(topDota.viewers_at_observation)} зрителей, это ${this.decimal(topDota.viewers_at_observation / dotaBetBoom.viewers_at_observation * 100)}% всего онлайна BetBoom в срезе.`,
           },
         ][index];
         return {
