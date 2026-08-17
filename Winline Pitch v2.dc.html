@@ -105,7 +105,6 @@
     <section id="matrix" style="padding:74px 0 20px;">
       <div style="font-family:'JetBrains Mono',monospace;font-size:14px;color:#FF6A1A;font-weight:600;letter-spacing:1.2px;margin-bottom:18px;">ДАННЫЕ, КОТОРЫЕ Я СОБРАЛ К ЭТОЙ ВСТРЕЧЕ</div>
       <div style="font-size:45.5px;font-weight:800;max-width:960px;letter-spacing:-0.7px;line-height:1.16;">Что видно по открытым данным</div>
-      <div style="font-size:17.5px;color:#9A9AA0;max-width:820px;line-height:1.6;margin-top:18px;">По каждому блоку сначала данные и расчёт, затем вывод и то, чего в данных не хватает. Внутренняя экономика Winline не публична, поэтому выводов об окупаемости активов здесь нет.</div>
     </section>
   </div>
     <sc-if value="{{ matrixLoading }}" hint-placeholder-val="{{ false }}">
@@ -126,8 +125,167 @@
           <div style="font-size:16.5px;line-height:1.65;color:#E7E6E2;">{{ scopeNote }}</div>
         </div>
 
-        <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:44px;">
-          <sc-for list="{{ researchStats }}" as="s" hint-placeholder-count="4">
+        <div style="display:grid;grid-template-columns:minmax(280px,0.55fr) 1fr;gap:12px;margin-bottom:40px;">
+          <sc-for list="{{ statsStreamers }}" as="s" hint-placeholder-count="1">
+            <div style="background:#141416;border:1px solid rgba(255,255,255,0.08);border-radius:14px;padding:21px 22px;">
+              <div style="font-family:'JetBrains Mono',monospace;font-size:31px;font-weight:800;color:#FF6A1A;">{{ s.value }}</div>
+              <div style="font-size:15px;color:#E7E6E2;font-weight:700;line-height:1.4;margin-top:7px;">{{ s.label }}</div>
+              <div style="font-size:13px;color:#77767C;line-height:1.5;margin-top:8px;">{{ s.note }}</div>
+              <sc-if value="{{ s.expandable }}" hint-placeholder-val="{{ true }}">
+                <details style="margin-top:14px;">
+                  <summary style="font-size:13.5px;font-weight:700;color:#E7E6E2;cursor:pointer;">{{ s.action }}</summary>
+                  <div style="max-height:280px;overflow:auto;margin-top:12px;border-top:1px solid rgba(255,255,255,0.08);">
+                    <sc-for list="{{ s.items }}" as="item" hint-placeholder-count="5">
+                      <div style="padding:10px 0;border-bottom:1px solid rgba(255,255,255,0.06);">
+                        <a href="{{ item.url }}" target="_blank" rel="noreferrer" style="display:block;font-size:13.5px;font-weight:700;line-height:1.4;">{{ item.label }}</a>
+                        <div style="font-size:12px;color:#77767C;line-height:1.45;margin-top:4px;">{{ item.meta }}</div>
+                      </div>
+                    </sc-for>
+                  </div>
+                </details>
+              </sc-if>
+            </div>
+          </sc-for>
+        </div>
+
+      <section id="strimery" style="padding:16px 0 60px;">
+        <div style="font-size:27.5px;font-weight:800;margin-bottom:8px;">Стримеры и амбассадоры</div>
+        <div style="font-size:15.5px;color:#77767C;margin-bottom:22px;">{{ talentIntro }}</div>
+
+        <div style="font-size:19.5px;font-weight:800;margin-bottom:4px;">Сколько стримеров подписано у каждого букмекера</div>
+        <div style="font-size:15px;color:#77767C;margin-bottom:12px;">{{ rosterNote }}</div>
+        <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:10px;">
+          <sc-for list="{{ rosterScale }}" as="r" hint-placeholder-count="4">
+            <div style="background:#141416;border:1px solid rgba(255,255,255,0.09);border-radius:12px;padding:18px 20px;">
+              <div style="font-family:'JetBrains Mono',monospace;font-size:34px;font-weight:800;{{ r.style }}">{{ r.count }}</div>
+              <div style="font-size:16px;font-weight:800;margin-top:5px;{{ r.style }}">{{ r.brand }}</div>
+              <div style="font-size:13px;color:#77767C;line-height:1.45;margin-top:7px;">{{ r.note }}</div>
+            </div>
+          </sc-for>
+        </div>
+        <div style="font-size:13.5px;color:#77767C;margin-bottom:26px;">Источник: <a href="{{ rosterSource.url }}" target="_blank" rel="noreferrer">{{ rosterSource.publisher }}</a>, {{ rosterSource.date }}. Поимённые составы публично не раскрываются — доступны только итоговые числа.</div>
+
+        <div style="font-size:19.5px;font-weight:800;margin-bottom:4px;">Кто подписан у каждого бренда</div>
+        <div style="font-size:15px;color:#77767C;margin-bottom:14px;">{{ rosterTableNote }}</div>
+        <div style="display:flex;gap:4px;background:#151417;border:1px solid rgba(255,255,255,0.08);border-radius:999px;padding:4px;width:fit-content;margin-bottom:16px;flex-wrap:wrap;">
+          <sc-for list="{{ talentBrandTabs }}" as="b" hint-placeholder-count="4">
+            <button onClick="{{ b.go }}" style="border:0;padding:9px 20px;border-radius:999px;font-size:15px;font-weight:700;cursor:pointer;{{ b.style }}">{{ b.label }}</button>
+          </sc-for>
+        </div>
+        <div style="display:flex;align-items:baseline;gap:14px;margin-bottom:14px;flex-wrap:wrap;">
+          <div style="font-family:'JetBrains Mono',monospace;font-size:36.5px;font-weight:800;color:#FF6A1A;">{{ activeBrand.count }}</div>
+          <div style="font-size:17px;font-weight:800;">{{ activeBrand.countLabel }}</div>
+          <div style="font-size:15px;color:#77767C;">{{ activeBrand.note }}</div>
+        </div>
+
+        <div style="border:1px solid rgba(255,255,255,0.09);border-radius:14px;overflow:hidden;">
+          <div style="display:grid;grid-template-columns:1fr 1.4fr;background:#1D1C1F;padding:12px 18px;font-size:12px;font-weight:700;letter-spacing:0.5px;color:#9A9AA0;">
+            <div>СТРИМЕР</div><div>НАЙДЕН В ЭФИРЕ НА ЗАМЕРЕ</div>
+          </div>
+          <div style="max-height:520px;overflow:auto;">
+            <sc-for list="{{ activeBrand.people }}" as="p" hint-placeholder-count="12">
+              <div style="display:grid;grid-template-columns:1fr 1.4fr;padding:10px 18px;border-top:1px solid rgba(255,255,255,0.06);background:#121114;align-items:baseline;">
+                <div style="font-size:15px;{{ p.nameStyle }}">{{ p.name }}</div>
+                <div style="font-size:13.5px;{{ p.observedStyle }}">{{ p.observed }}</div>
+              </div>
+            </sc-for>
+          </div>
+        </div>
+        <div style="font-size:13.5px;color:#77767C;line-height:1.55;margin-top:12px;">{{ activeBrand.gap }}</div>
+
+        <div style="font-size:19.5px;font-weight:800;margin:34px 0 12px;">Как конкурент объясняет свой подход</div>
+        <div style="background:#141416;border:1px solid rgba(255,255,255,0.09);border-radius:14px;padding:24px 26px;">
+          <div style="font-size:20.5px;font-weight:700;line-height:1.5;font-style:italic;color:#F2F1EE;">«{{ pariQuote.text }}»</div>
+          <div style="font-size:14px;color:#77767C;margin-top:12px;">{{ pariQuote.attribution }} · <a href="{{ pariQuote.url }}" target="_blank" rel="noreferrer">{{ pariQuote.publisher }}</a></div>
+          <div style="font-size:15.5px;color:#E7E6E2;line-height:1.6;margin-top:16px;padding-top:16px;border-top:1px solid rgba(255,255,255,0.08);">{{ pariQuote.meaning }}</div>
+        </div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:14px;">
+          <div style="background:#121114;border:1px solid rgba(255,255,255,0.08);border-radius:12px;padding:18px 20px;">
+            <div style="font-size:13px;color:#FF6A1A;font-weight:800;">РЫНОЧНЫЙ ОРИЕНТИР ПО ЦЕНЕ</div>
+            <div style="font-size:16px;line-height:1.55;margin-top:8px;">{{ marketPrice.text }}</div>
+            <div style="font-size:13px;color:#77767C;margin-top:8px;"><a href="{{ marketPrice.url }}" target="_blank" rel="noreferrer">{{ marketPrice.publisher }}</a></div>
+          </div>
+          <div class="mine" style="padding:20px 24px;">
+            <div class="mine-tag"><i>ЕХ</i>ВОПРОС</div>
+            <div style="font-size:17px;line-height:1.55;margin-top:9px;">{{ talentQuestion }}</div>
+          </div>
+        </div>
+
+        <div style="font-size:19.5px;font-weight:800;margin:34px 0 12px;">Что нашлось в эфире на замерах</div>
+        <div style="background:#141416;border:1px solid rgba(255,255,255,0.08);border-radius:12px;padding:16px 20px;margin-bottom:14px;">
+          <div style="font-size:13px;font-weight:700;letter-spacing:0.6px;color:#77767C;margin-bottom:10px;">КАК ЧИТАТЬ КОЛОНКУ «ГДЕ НАЙДЕН»</div>
+          <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:14px;">
+            <sc-for list="{{ evidenceLegend }}" as="e" hint-placeholder-count="3">
+              <div>
+                <div style="font-size:15px;font-weight:800;color:#E7E6E2;">{{ e.name }}</div>
+                <div style="font-size:13px;color:#9A9AA0;line-height:1.5;margin-top:5px;">{{ e.text }}</div>
+                <div style="font-size:12.5px;color:#77767C;line-height:1.45;margin-top:5px;">{{ e.strength }}</div>
+              </div>
+            </sc-for>
+          </div>
+        </div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:18px;">
+          <sc-for list="{{ liveSnapshots }}" as="s" hint-placeholder-count="2">
+            <div style="background:#141416;border:1px solid rgba(255,255,255,0.09);border-radius:14px;overflow:hidden;">
+              <div style="padding:19px 21px;background:#1D1C1F;">
+                <div style="font-size:19.5px;font-weight:800;">{{ s.title }}</div>
+                <div style="font-size:13px;color:#77767C;margin-top:5px;">{{ s.meta }}</div>
+              </div>
+              <div style="display:grid;grid-template-columns:1.2fr 0.7fr 1fr;padding:11px 18px;font-size:12px;color:#77767C;font-weight:700;">
+                <div>БРЕНД</div><div>КАНАЛОВ</div><div>ЗРИТЕЛЕЙ В МОМЕНТЕ</div>
+              </div>
+              <sc-for list="{{ s.rows }}" as="r" hint-placeholder-count="5">
+                <div style="display:grid;grid-template-columns:1.2fr 0.7fr 1fr;padding:12px 18px;border-top:1px solid rgba(255,255,255,0.06);align-items:center;">
+                  <div style="font-size:15.5px;font-weight:700;{{ r.brandStyle }}">{{ r.brand }}</div>
+                  <div style="font-family:'JetBrains Mono',monospace;font-size:15px;">{{ r.channels }}</div>
+                  <div style="font-family:'JetBrains Mono',monospace;font-size:15px;">{{ r.viewers }}</div>
+                </div>
+              </sc-for>
+              <div style="padding:16px 18px;border-top:1px solid rgba(255,255,255,0.08);font-size:15px;line-height:1.5;color:#C7C6CC;">{{ s.takeaway }}</div>
+            </div>
+          </sc-for>
+        </div>
+
+        <div style="font-size:19.5px;font-weight:800;margin:34px 0 4px;">Каналы на каждом турнире в момент замера</div>
+        <div style="font-size:15px;color:#77767C;margin-bottom:12px;">Два отдельных замера. Каждый описывает только свой турнир в конкретный момент и не переносится на другие дни, категории или рынок целиком.</div>
+        <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:14px;">
+          <sc-for list="{{ streamerSnapshots }}" as="s" hint-placeholder-count="2">
+            <div style="background:#141416;border:1px solid rgba(255,255,255,0.09);border-radius:14px;overflow:hidden;">
+              <div style="padding:17px 18px;background:#1D1C1F;">
+                <div style="font-size:17px;font-weight:800;">{{ s.title }}</div>
+                <div style="font-size:12px;color:#77767C;line-height:1.4;margin-top:5px;">{{ s.note }}</div>
+              </div>
+              <div style="display:grid;grid-template-columns:1.1fr 1fr 0.65fr 0.65fr;padding:10px 14px;font-size:11px;font-weight:700;color:#77767C;">
+                <div>КАНАЛ</div><div>БРЕНД</div><div>ЗРИТЕЛИ</div><div>ГДЕ НАЙДЕН</div>
+              </div>
+              <div style="max-height:330px;overflow:auto;">
+                <sc-for list="{{ s.rows }}" as="r" hint-placeholder-count="10">
+                  <div style="display:grid;grid-template-columns:1.1fr 1fr 0.65fr 0.65fr;padding:11px 14px;border-top:1px solid rgba(255,255,255,0.06);align-items:start;">
+                    <a href="{{ r.channelUrl }}" target="_blank" rel="noreferrer" style="font-size:13px;font-weight:800;overflow-wrap:anywhere;">{{ r.streamer }}</a>
+                    <div style="font-size:12.5px;font-weight:700;line-height:1.4;{{ r.brandStyle }}">{{ r.brands }}</div>
+                    <div style="font-family:'JetBrains Mono',monospace;font-size:12.5px;">{{ r.viewers }}</div>
+                    <div style="font-size:11px;color:#77767C;line-height:1.4;">{{ r.evidence }}</div>
+                  </div>
+                </sc-for>
+              </div>
+            </div>
+          </sc-for>
+        </div>
+
+        <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:18px;">
+          <sc-for list="{{ liveActions }}" as="a" hint-placeholder-count="3">
+            <div style="background:#121114;border:1px solid rgba(255,255,255,0.08);border-radius:12px;padding:18px;">
+              <div style="font-size:12.5px;color:#FF6A1A;font-weight:800;">{{ a.label }}</div>
+              <div style="font-size:16px;font-weight:700;line-height:1.45;margin-top:8px;">{{ a.action }}</div>
+              <div style="font-size:13.5px;color:#77767C;line-height:1.5;margin-top:8px;">{{ a.metric }}</div>
+            </div>
+          </sc-for>
+        </div>
+        <div style="margin-top:18px;border-left:2px solid #FF6A1A;padding-left:22px;font-size:16px;line-height:1.6;color:#E7E6E2;">Мой опыт: построил работу с инфлюенсерами с $1,5K до $70K в месяц при том же ДРР — через команду менеджеров, метки, модели CPA и бартера и аналитику по каждому партнёру. Здесь та же операционная задача.</div>
+      </section>
+
+        <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:44px;">
+          <sc-for list="{{ statsRest }}" as="s" hint-placeholder-count="3">
             <div style="background:#141416;border:1px solid rgba(255,255,255,0.08);border-radius:14px;padding:21px 22px;">
               <div style="font-family:'JetBrains Mono',monospace;font-size:31px;font-weight:800;color:#FF6A1A;">{{ s.value }}</div>
               <div style="font-size:15px;color:#E7E6E2;font-weight:700;line-height:1.4;margin-top:7px;">{{ s.label }}</div>
@@ -512,141 +670,6 @@
             </div>
           </div>
         </sc-for>
-      </section>
-      <section id="strimery" style="padding:16px 0 60px;">
-        <div style="font-size:27.5px;font-weight:800;margin-bottom:8px;">Стримеры и амбассадоры</div>
-        <div style="font-size:15.5px;color:#77767C;margin-bottom:22px;">{{ talentIntro }}</div>
-
-        <div style="font-size:19.5px;font-weight:800;margin-bottom:4px;">Сколько стримеров подписано у каждого букмекера</div>
-        <div style="font-size:15px;color:#77767C;margin-bottom:12px;">{{ rosterNote }}</div>
-        <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:10px;">
-          <sc-for list="{{ rosterScale }}" as="r" hint-placeholder-count="4">
-            <div style="background:#141416;border:1px solid rgba(255,255,255,0.09);border-radius:12px;padding:18px 20px;">
-              <div style="font-family:'JetBrains Mono',monospace;font-size:34px;font-weight:800;{{ r.style }}">{{ r.count }}</div>
-              <div style="font-size:16px;font-weight:800;margin-top:5px;{{ r.style }}">{{ r.brand }}</div>
-              <div style="font-size:13px;color:#77767C;line-height:1.45;margin-top:7px;">{{ r.note }}</div>
-            </div>
-          </sc-for>
-        </div>
-        <div style="font-size:13.5px;color:#77767C;margin-bottom:26px;">Источник: <a href="{{ rosterSource.url }}" target="_blank" rel="noreferrer">{{ rosterSource.publisher }}</a>, {{ rosterSource.date }}. Поимённые составы публично не раскрываются — доступны только итоговые числа.</div>
-
-        <div style="font-size:19.5px;font-weight:800;margin-bottom:4px;">Кто подписан у каждого бренда</div>
-        <div style="font-size:15px;color:#77767C;margin-bottom:14px;">{{ rosterTableNote }}</div>
-        <div style="display:flex;gap:4px;background:#151417;border:1px solid rgba(255,255,255,0.08);border-radius:999px;padding:4px;width:fit-content;margin-bottom:16px;flex-wrap:wrap;">
-          <sc-for list="{{ talentBrandTabs }}" as="b" hint-placeholder-count="4">
-            <button onClick="{{ b.go }}" style="border:0;padding:9px 20px;border-radius:999px;font-size:15px;font-weight:700;cursor:pointer;{{ b.style }}">{{ b.label }}</button>
-          </sc-for>
-        </div>
-        <div style="display:flex;align-items:baseline;gap:14px;margin-bottom:14px;flex-wrap:wrap;">
-          <div style="font-family:'JetBrains Mono',monospace;font-size:36.5px;font-weight:800;color:#FF6A1A;">{{ activeBrand.count }}</div>
-          <div style="font-size:17px;font-weight:800;">{{ activeBrand.countLabel }}</div>
-          <div style="font-size:15px;color:#77767C;">{{ activeBrand.note }}</div>
-        </div>
-
-        <div style="border:1px solid rgba(255,255,255,0.09);border-radius:14px;overflow:hidden;">
-          <div style="display:grid;grid-template-columns:1fr 1.4fr;background:#1D1C1F;padding:12px 18px;font-size:12px;font-weight:700;letter-spacing:0.5px;color:#9A9AA0;">
-            <div>СТРИМЕР</div><div>НАЙДЕН В ЭФИРЕ НА ЗАМЕРЕ</div>
-          </div>
-          <div style="max-height:520px;overflow:auto;">
-            <sc-for list="{{ activeBrand.people }}" as="p" hint-placeholder-count="12">
-              <div style="display:grid;grid-template-columns:1fr 1.4fr;padding:10px 18px;border-top:1px solid rgba(255,255,255,0.06);background:#121114;align-items:baseline;">
-                <div style="font-size:15px;{{ p.nameStyle }}">{{ p.name }}</div>
-                <div style="font-size:13.5px;{{ p.observedStyle }}">{{ p.observed }}</div>
-              </div>
-            </sc-for>
-          </div>
-        </div>
-        <div style="font-size:13.5px;color:#77767C;line-height:1.55;margin-top:12px;">{{ activeBrand.gap }}</div>
-
-        <div style="font-size:19.5px;font-weight:800;margin:34px 0 12px;">Как конкурент объясняет свой подход</div>
-        <div style="background:#141416;border:1px solid rgba(255,255,255,0.09);border-radius:14px;padding:24px 26px;">
-          <div style="font-size:20.5px;font-weight:700;line-height:1.5;font-style:italic;color:#F2F1EE;">«{{ pariQuote.text }}»</div>
-          <div style="font-size:14px;color:#77767C;margin-top:12px;">{{ pariQuote.attribution }} · <a href="{{ pariQuote.url }}" target="_blank" rel="noreferrer">{{ pariQuote.publisher }}</a></div>
-          <div style="font-size:15.5px;color:#E7E6E2;line-height:1.6;margin-top:16px;padding-top:16px;border-top:1px solid rgba(255,255,255,0.08);">{{ pariQuote.meaning }}</div>
-        </div>
-        <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:14px;">
-          <div style="background:#121114;border:1px solid rgba(255,255,255,0.08);border-radius:12px;padding:18px 20px;">
-            <div style="font-size:13px;color:#FF6A1A;font-weight:800;">РЫНОЧНЫЙ ОРИЕНТИР ПО ЦЕНЕ</div>
-            <div style="font-size:16px;line-height:1.55;margin-top:8px;">{{ marketPrice.text }}</div>
-            <div style="font-size:13px;color:#77767C;margin-top:8px;"><a href="{{ marketPrice.url }}" target="_blank" rel="noreferrer">{{ marketPrice.publisher }}</a></div>
-          </div>
-          <div class="mine" style="padding:20px 24px;">
-            <div class="mine-tag"><i>ЕХ</i>ВОПРОС</div>
-            <div style="font-size:17px;line-height:1.55;margin-top:9px;">{{ talentQuestion }}</div>
-          </div>
-        </div>
-
-        <div style="font-size:19.5px;font-weight:800;margin:34px 0 12px;">Что нашлось в эфире на замерах</div>
-        <div style="background:#141416;border:1px solid rgba(255,255,255,0.08);border-radius:12px;padding:16px 20px;margin-bottom:14px;">
-          <div style="font-size:13px;font-weight:700;letter-spacing:0.6px;color:#77767C;margin-bottom:10px;">КАК ЧИТАТЬ КОЛОНКУ «ГДЕ НАЙДЕН»</div>
-          <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:14px;">
-            <sc-for list="{{ evidenceLegend }}" as="e" hint-placeholder-count="3">
-              <div>
-                <div style="font-size:15px;font-weight:800;color:#E7E6E2;">{{ e.name }}</div>
-                <div style="font-size:13px;color:#9A9AA0;line-height:1.5;margin-top:5px;">{{ e.text }}</div>
-                <div style="font-size:12.5px;color:#77767C;line-height:1.45;margin-top:5px;">{{ e.strength }}</div>
-              </div>
-            </sc-for>
-          </div>
-        </div>
-        <div style="display:grid;grid-template-columns:1fr 1fr;gap:18px;">
-          <sc-for list="{{ liveSnapshots }}" as="s" hint-placeholder-count="2">
-            <div style="background:#141416;border:1px solid rgba(255,255,255,0.09);border-radius:14px;overflow:hidden;">
-              <div style="padding:19px 21px;background:#1D1C1F;">
-                <div style="font-size:19.5px;font-weight:800;">{{ s.title }}</div>
-                <div style="font-size:13px;color:#77767C;margin-top:5px;">{{ s.meta }}</div>
-              </div>
-              <div style="display:grid;grid-template-columns:1.2fr 0.7fr 1fr;padding:11px 18px;font-size:12px;color:#77767C;font-weight:700;">
-                <div>БРЕНД</div><div>КАНАЛОВ</div><div>ЗРИТЕЛЕЙ В МОМЕНТЕ</div>
-              </div>
-              <sc-for list="{{ s.rows }}" as="r" hint-placeholder-count="5">
-                <div style="display:grid;grid-template-columns:1.2fr 0.7fr 1fr;padding:12px 18px;border-top:1px solid rgba(255,255,255,0.06);align-items:center;">
-                  <div style="font-size:15.5px;font-weight:700;{{ r.brandStyle }}">{{ r.brand }}</div>
-                  <div style="font-family:'JetBrains Mono',monospace;font-size:15px;">{{ r.channels }}</div>
-                  <div style="font-family:'JetBrains Mono',monospace;font-size:15px;">{{ r.viewers }}</div>
-                </div>
-              </sc-for>
-              <div style="padding:16px 18px;border-top:1px solid rgba(255,255,255,0.08);font-size:15px;line-height:1.5;color:#C7C6CC;">{{ s.takeaway }}</div>
-            </div>
-          </sc-for>
-        </div>
-
-        <div style="font-size:19.5px;font-weight:800;margin:34px 0 4px;">Каналы на каждом турнире в момент замера</div>
-        <div style="font-size:15px;color:#77767C;margin-bottom:12px;">Два отдельных замера. Каждый описывает только свой турнир в конкретный момент и не переносится на другие дни, категории или рынок целиком.</div>
-        <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:14px;">
-          <sc-for list="{{ streamerSnapshots }}" as="s" hint-placeholder-count="2">
-            <div style="background:#141416;border:1px solid rgba(255,255,255,0.09);border-radius:14px;overflow:hidden;">
-              <div style="padding:17px 18px;background:#1D1C1F;">
-                <div style="font-size:17px;font-weight:800;">{{ s.title }}</div>
-                <div style="font-size:12px;color:#77767C;line-height:1.4;margin-top:5px;">{{ s.note }}</div>
-              </div>
-              <div style="display:grid;grid-template-columns:1.1fr 1fr 0.65fr 0.65fr;padding:10px 14px;font-size:11px;font-weight:700;color:#77767C;">
-                <div>КАНАЛ</div><div>БРЕНД</div><div>ЗРИТЕЛИ</div><div>ГДЕ НАЙДЕН</div>
-              </div>
-              <div style="max-height:330px;overflow:auto;">
-                <sc-for list="{{ s.rows }}" as="r" hint-placeholder-count="10">
-                  <div style="display:grid;grid-template-columns:1.1fr 1fr 0.65fr 0.65fr;padding:11px 14px;border-top:1px solid rgba(255,255,255,0.06);align-items:start;">
-                    <a href="{{ r.channelUrl }}" target="_blank" rel="noreferrer" style="font-size:13px;font-weight:800;overflow-wrap:anywhere;">{{ r.streamer }}</a>
-                    <div style="font-size:12.5px;font-weight:700;line-height:1.4;{{ r.brandStyle }}">{{ r.brands }}</div>
-                    <div style="font-family:'JetBrains Mono',monospace;font-size:12.5px;">{{ r.viewers }}</div>
-                    <div style="font-size:11px;color:#77767C;line-height:1.4;">{{ r.evidence }}</div>
-                  </div>
-                </sc-for>
-              </div>
-            </div>
-          </sc-for>
-        </div>
-
-        <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:18px;">
-          <sc-for list="{{ liveActions }}" as="a" hint-placeholder-count="3">
-            <div style="background:#121114;border:1px solid rgba(255,255,255,0.08);border-radius:12px;padding:18px;">
-              <div style="font-size:12.5px;color:#FF6A1A;font-weight:800;">{{ a.label }}</div>
-              <div style="font-size:16px;font-weight:700;line-height:1.45;margin-top:8px;">{{ a.action }}</div>
-              <div style="font-size:13.5px;color:#77767C;line-height:1.5;margin-top:8px;">{{ a.metric }}</div>
-            </div>
-          </sc-for>
-        </div>
-        <div style="margin-top:18px;border-left:2px solid #FF6A1A;padding-left:22px;font-size:16px;line-height:1.6;color:#E7E6E2;">Мой опыт: построил работу с инфлюенсерами с $1,5K до $70K в месяц при том же ДРР — через команду менеджеров, метки, модели CPA и бартера и аналитику по каждому партнёру. Здесь та же операционная задача.</div>
       </section>
   </div>
   </sc-if>
@@ -1099,7 +1122,8 @@ class Component extends DCLogic {
       ? (() => {
           const winline = matrices.competitor_portfolio.find(item => item.brand_id === 'brand:winline');
           const total = matrices.competitor_portfolio.reduce((sum, item) => sum + item.sampled_relationship_count, 0);
-          return `У Winline — ${winline.sampled_relationship_count}, у пяти конкурентов — ${total - winline.sampled_relationship_count}. Разобраны отдельно: действует сейчас, нужно перепроверить, завершено.`;
+          const rivals = matrices.competitor_portfolio.filter(item => item.brand_id !== 'brand:winline' && item.sampled_relationship_count > 0).length;
+          return `У Winline — ${winline.sampled_relationship_count}, у ${rivals} ${plural(rivals, 'конкурента', 'конкурентов', 'конкурентов')} — ${total - winline.sampled_relationship_count}. Разобраны отдельно: действует сейчас, нужно перепроверить, завершено.`;
         })()
       : '';
     const topDotaBetBoom = (matrices?.streamer_matrix || [])
@@ -1478,6 +1502,61 @@ class Component extends DCLogic {
       fee: 'гонорар',
     };
 
+  const researchStats = matrixReady ? [
+    {
+      value: this.number(research.sources.source_count),
+      label: `${plural(research.sources.source_count, 'публикация', 'публикации', 'публикаций')}, на которые опираются все цифры ниже`,
+      note: sourceTypeNote,
+      expandable: true,
+      action: 'Показать все источники со ссылками',
+      items: research.sources.sources.map(item => ({
+        label: item.publisher,
+        meta: `${sourceTypeRu[item.source_type] || item.source_type} · опубликовано ${item.published_at || 'дата не указана'} · проверено ${item.observed_at}`,
+        url: item.url,
+      })),
+    },
+    {
+      value: this.number(research.claims.claim_count),
+      label: `${plural(research.claims.claim_count, 'проверенный факт', 'проверенных факта', 'проверенных фактов')} с оценкой надёжности`,
+      note: claimStatusNote,
+      expandable: true,
+      action: 'Показать все факты со ссылками',
+      items: research.claims.claims.map(item => {
+        const source = firstSource(item.source_ids);
+        const object = item.object_id ? ` → ${entityName(item.object_id)}` : '';
+        return {
+          label: `${entityName(item.subject_id)} · ${relationRu[item.predicate] || item.predicate}${object}`,
+          meta: `${claimStatusRu[item.status] || item.status} · надёжность ${Math.round(item.confidence * 100)}% · ${source?.publisher || item.source_ids.join(', ')}`,
+          url: source?.url || '#',
+        };
+      }),
+    },
+    {
+      value: this.number(matrices.competitor_portfolio.reduce((sum, item) => sum + item.sampled_relationship_count, 0)),
+      label: 'партнёрств разобрано по срокам и статусу',
+      note: portfolioSplitNote,
+      expandable: true,
+      action: 'Показать все партнёрства со ссылками',
+      items: research.partnerships.partnerships.map(item => {
+        const source = firstSource(item.source_ids);
+        return {
+          label: `${entityName(item.brand_id)} → ${entityName(item.asset_id)}`,
+          meta: `${relationRu[item.relationship_type] || item.relationship_type} · ${currentStatusRu[item.current_status] || item.current_status} · ${item.valid_from || 'начало не указано'} — ${item.valid_to || 'окончание не объявлено'} · ${source?.publisher || ''}`,
+          url: source?.url || '#',
+        };
+      }),
+    },
+    {
+      value: this.number(matrices.data_completeness.find(item => item.dataset === 'streamers').records),
+      group: 'streamers',
+      label: `${plural(matrices.data_completeness.find(item => item.dataset === 'streamers').records, 'запись', 'записи', 'записей')} о стримах Twitch, собрано вручную`,
+      note: snapshotNote,
+      expandable: false,
+      action: '',
+      items: [],
+    },
+  ] : [];
+
     return {
       matrixLoading: !matrixReady && !this.state.researchError,
       matrixError: this.state.researchError,
@@ -1593,59 +1672,9 @@ class Component extends DCLogic {
       },
       talentQuestion: 'Если годовой контракт с топовым стримером стоит на уровне сотен тысяч долларов, а отдача по нему не считается отдельно от остального маркетинга — на основании чего продлевается пул из полусотни человек?',
       scopeNote: scopeNote,
-      researchStats: matrixReady ? [
-        {
-          value: this.number(research.sources.source_count),
-          label: `${plural(research.sources.source_count, 'публикация', 'публикации', 'публикаций')}, на которые опираются все цифры ниже`,
-          note: sourceTypeNote,
-          expandable: true,
-          action: 'Показать все источники со ссылками',
-          items: research.sources.sources.map(item => ({
-            label: item.publisher,
-            meta: `${sourceTypeRu[item.source_type] || item.source_type} · опубликовано ${item.published_at || 'дата не указана'} · проверено ${item.observed_at}`,
-            url: item.url,
-          })),
-        },
-        {
-          value: this.number(research.claims.claim_count),
-          label: `${plural(research.claims.claim_count, 'проверенный факт', 'проверенных факта', 'проверенных фактов')} с оценкой надёжности`,
-          note: claimStatusNote,
-          expandable: true,
-          action: 'Показать все факты со ссылками',
-          items: research.claims.claims.map(item => {
-            const source = firstSource(item.source_ids);
-            const object = item.object_id ? ` → ${entityName(item.object_id)}` : '';
-            return {
-              label: `${entityName(item.subject_id)} · ${relationRu[item.predicate] || item.predicate}${object}`,
-              meta: `${claimStatusRu[item.status] || item.status} · надёжность ${Math.round(item.confidence * 100)}% · ${source?.publisher || item.source_ids.join(', ')}`,
-              url: source?.url || '#',
-            };
-          }),
-        },
-        {
-          value: this.number(matrices.competitor_portfolio.reduce((sum, item) => sum + item.sampled_relationship_count, 0)),
-          label: 'партнёрств разобрано по срокам и статусу',
-          note: portfolioSplitNote,
-          expandable: true,
-          action: 'Показать все партнёрства со ссылками',
-          items: research.partnerships.partnerships.map(item => {
-            const source = firstSource(item.source_ids);
-            return {
-              label: `${entityName(item.brand_id)} → ${entityName(item.asset_id)}`,
-              meta: `${relationRu[item.relationship_type] || item.relationship_type} · ${currentStatusRu[item.current_status] || item.current_status} · ${item.valid_from || 'начало не указано'} — ${item.valid_to || 'окончание не объявлено'} · ${source?.publisher || ''}`,
-              url: source?.url || '#',
-            };
-          }),
-        },
-        {
-          value: this.number(matrices.data_completeness.find(item => item.dataset === 'streamers').records),
-          label: `${plural(matrices.data_completeness.find(item => item.dataset === 'streamers').records, 'запись', 'записи', 'записей')} о стримах Twitch, собрано вручную`,
-          note: snapshotNote,
-          expandable: false,
-          action: '',
-          items: [],
-        },
-      ] : [],
+      researchStats,
+      statsStreamers: matrixReady ? researchStats.filter(item => item.group === 'streamers') : [],
+      statsRest: matrixReady ? researchStats.filter(item => item.group !== 'streamers') : [],
       insightCards: matrixReady ? [
         {
           n: '01',
