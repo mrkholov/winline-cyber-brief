@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0.0",
   "research_cutoff": "2026-08-15",
-  "source_count": 73,
+  "source_count": 74,
   "sources": [
     {
       "source_id": "src:1xbet-esl",
@@ -658,6 +658,15 @@
       "source_type": "analytics",
       "published_at": null,
       "observed_at": "2026-08-16",
+      "access": "public"
+    },
+    {
+      "source_id": "src:aba-twitch-market",
+      "url": "https://www.sostav.ru/publication/twitch-59117.html",
+      "publisher": "Sostav.ru — оценка Ассоциации блогеров и агентств (АБА)",
+      "source_type": "secondary_media",
+      "published_at": "2023-02-20",
+      "observed_at": "2026-08-17",
       "access": "public"
     }
   ]

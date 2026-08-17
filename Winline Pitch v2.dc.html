@@ -124,6 +124,7 @@
 
       <section id="strimery" style="padding:16px 0 60px;">
         <div style="font-size:27.5px;font-weight:800;margin-bottom:8px;">Стримеры и амбассадоры</div>
+        <div style="font-size:15px;color:#77767C;line-height:1.55;margin-bottom:30px;max-width:820px;">Фолловеры — текущее значение из Twitch API. Средний и пиковый онлайн — TwitchTracker, его срез примерно за последний месяц.</div>
         
 
         
@@ -200,7 +201,7 @@
 
         <div style="font-size:13.5px;color:#77767C;line-height:1.55;margin-top:18px;">Источник: <a href="https://cyber.sports.ru/betting/blogs/3382281.html" target="_blank" rel="noreferrer">Sports.ru — Киберспорт, «Карта российского киберспортивного спонсорства в 2026 году»</a>, февраль 2026. Поимённые составы публично не раскрываются — доступны только итоговые числа. Фолловеры — Twitch API. Средний и пиковый онлайн — TwitchTracker, его срез примерно за последний месяц. Собрано {{ statsCollectedAt }}.</div>
 
-        <div style="font-size:19.5px;font-weight:800;margin:34px 0 12px;">Как конкурент объясняет свой подход</div>
+        <div style="font-size:19.5px;font-weight:800;margin:34px 0 12px;">Обновлённый подход PARI</div>
         <div style="background:#141416;border:1px solid rgba(255,255,255,0.09);border-radius:14px;padding:24px 26px;">
           <div style="font-size:20.5px;font-weight:700;line-height:1.5;font-style:italic;color:#F2F1EE;">«{{ pariQuote.text }}»</div>
           <div style="font-size:14px;color:#77767C;margin-top:12px;">{{ pariQuote.attribution }} · <a href="{{ pariQuote.url }}" target="_blank" rel="noreferrer">{{ pariQuote.publisher }}</a></div>
@@ -208,8 +209,9 @@
         </div>
         <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:14px;">
           <div style="background:#121114;border:1px solid rgba(255,255,255,0.08);border-radius:12px;padding:18px 20px;">
-            <div style="font-size:13px;color:#FF6A1A;font-weight:800;">РЫНОЧНЫЙ ОРИЕНТИР ПО ЦЕНЕ</div>
+            <div style="font-size:13px;color:#FF6A1A;font-weight:800;">СКОЛЬКО ЭТО СТОИТ ПО РЫНКУ</div>
             <div style="font-size:16px;line-height:1.55;margin-top:8px;">{{ marketPrice.text }}</div>
+            <div style="font-size:14px;color:#C7C6CC;line-height:1.55;margin-top:10px;">{{ marketNote }}</div>
             <div style="font-size:13px;color:#77767C;margin-top:8px;"><a href="{{ marketPrice.url }}" target="_blank" rel="noreferrer">{{ marketPrice.publisher }}</a></div>
           </div>
           <div class="mine" style="padding:20px 24px;">
@@ -1718,7 +1720,7 @@ class Component extends DCLogic {
         const bShare = Math.round(b.fromEsports / b.people.length * 100);
         const wPer = Math.round(w.sumAvg / w.withAudienceCount);
         const bPer = Math.round(b.sumAvg / b.withAudienceCount);
-        return `У BetBoom ${bShare}% пула — про-игроки, бывшие про и комментаторы, у Winline ${wShare}%. При этом суммарный средний онлайн у них сопоставим: ${this.number(b.sumAvg)} против ${this.number(w.sumAvg)}. Разница в том, как он собран: у BetBoom ${this.number(bPer)} зрителей на канал против ${this.number(wPer)} у Winline, то есть тот же охват достаётся меньшим числом контрактов. Пул Winline шире и дешевле в пересчёте на человека, но каждый отдельный канал слабее, а значит и переговорная позиция по каждому — тоже.`;
+        return `У BetBoom ${bShare}% пула — про-игроки, бывшие про и комментаторы, у Winline ${wShare}%. При этом суммарный средний онлайн у них сопоставим: ${this.number(b.sumAvg)} против ${this.number(w.sumAvg)}. Разница в том, как он собран: у BetBoom ${this.number(bPer)} зрителей на канал против ${this.number(wPer)} у Winline — тот же охват достаётся меньшим числом контрактов.`;
       })(),
       talentBrandTabs: Object.keys(talentBrands).map(key => ({
         label: talentBrands[key].label,
@@ -1737,13 +1739,14 @@ class Component extends DCLogic {
         attribution: 'PARI об амбассадорах',
         publisher: 'Sports.ru — Беттинг-индустрия',
         url: 'https://www.sports.ru/betting/industry/1117155820-pari-ob-ambassadorax-net-smysla-soderzhat-ogromnyj-pul-iz-10-12-chelov.html',
-        meaning: 'PARI публично отказывается от большого пула амбассадоров и переходит на точечные сделки под события. Winline держит один из крупнейших пулов на рынке — около 50 человек. Это две противоположные ставки, и какая из них верная, показывает только замер отдачи по каждому контракту.',
+        meaning: 'PARI публично отказывается от большого пула амбассадоров и переходит на точечные сделки под события. Winline держит один из крупнейших пулов на рынке — около 50 человек.',
       },
       marketPrice: {
-        text: 'Мэддисон, будучи свободным агентом, публично назвал свою планку — около $200 тысяч в месяц. Это ориентир верхней границы рынка для топового стримера.',
-        publisher: 'Sports.ru — Киберспорт',
-        url: 'https://cyber.sports.ru/streamers-twitch/1117039708-meddison-ya-svobodnyj-agent-i-ya-gotov-winline-moj-lyubimyj-bukmeker-k.html',
+        text: 'Средняя интеграция на Twitch — 40,3 тысячи рублей: эфир, голосовая вставка или чат-бот плюс баннер под трансляцией. Спецстрим у топового стримера уходит за миллион, у нижней части рейтинга — меньше ста тысяч. Весь рынок рекламы на Twitch оценивали в миллиард рублей в год по пятидесяти крупнейшим каналам.',
+        publisher: 'Оценка Ассоциации блогеров и агентств, февраль 2023',
+        url: 'https://www.sostav.ru/publication/twitch-59117.html',
       },
+      marketNote: 'В той же оценке Winline шёл первым по числу интеграций — 491 против 310 у BetBoom. То есть по объёму закупки бренд уже был лидером рынка; вопрос в отдаче, а не в присутствии.',
       talentQuestion: 'Если годовой контракт с топовым стримером стоит на уровне сотен тысяч долларов, а отдача по нему не считается отдельно от остального маркетинга — на основании чего продлевается пул из полусотни человек?',
       researchStats,
       statsRest: matrixReady ? researchStats.filter(item => item.group !== 'streamers') : [],
