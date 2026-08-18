@@ -95,46 +95,52 @@
   <!-- ==================== ПИТЧ ==================== -->
   <div style="max-width:1240px;margin:0 auto;padding:0 40px;">
     <section id="hero" style="padding:80px 0 34px;">
-      <div style="font-size:46px;line-height:1.18;font-weight:800;max-width:1000px;letter-spacing:-0.7px;">Релевантный опыт для позиции «Руководитель направления киберспортивного маркетинга»</div>
+      <div style="font-size:46px;line-height:1.18;font-weight:800;max-width:1000px;letter-spacing:-0.7px;">Встреча по позиции «Руководитель направления киберспортивного маркетинга»</div>
     </section>
 
     <section id="opyt" style="--accent:#6BA8FF;--accent-soft:rgba(107,168,255,0.18);padding:24px 0 60px;">
-      <div style="position:sticky;top:65px;z-index:10;display:grid;grid-template-columns:1.1fr 1.3fr;gap:28px;padding:0 0 12px;background:#100E17;border-bottom:1px solid rgba(255,255,255,0.15);">
-        <div style="font-size:14px;font-weight:700;letter-spacing:0.6px;color:#BAB7CB;">НАПРАВЛЕНИЕ</div>
-        <div style="font-size:14px;font-weight:700;letter-spacing:0.6px;color:#BAB7CB;">ЧТО СДЕЛАНО</div>
-      </div>
-      <sc-for list="{{ expRows }}" as="row" hint-placeholder-count="6">
-        <div style="display:grid;grid-template-columns:1.1fr 1.3fr;gap:28px;padding:20px 0;border-top:1px solid rgba(255,255,255,0.07);align-items:start;">
-          <div>
-            <div style="font-size:18px;font-weight:700;">{{ row.need }}</div>
-          </div>
-          <div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(330px,1fr));gap:14px;">
+        <sc-for list="{{ expRows }}" as="row" hint-placeholder-count="6">
+          <div style="background:#1F1C2B;border:1px solid rgba(255,255,255,0.10);border-radius:16px;padding:22px 24px;display:flex;flex-direction:column;">
+            <div style="display:flex;align-items:center;gap:11px;margin-bottom:14px;">
+              <span style="width:26px;height:4px;border-radius:2px;background:var(--accent);flex-shrink:0;"></span>
+              <span style="font-size:18px;font-weight:800;line-height:1.3;">{{ row.need }}</span>
+            </div>
             <sc-if value="{{ row.hasLead }}" hint-placeholder-val="{{ false }}">
-              <div style="font-size:17px;color:#E7E6E2;font-family:'JetBrains Mono',monospace;line-height:1.6;">{{ row.lead }}</div>
+              <div style="font-size:16px;color:#E7E6E2;font-family:'JetBrains Mono',monospace;line-height:1.55;">{{ row.lead }}</div>
             </sc-if>
             <sc-if value="{{ row.hasSubLabel }}" hint-placeholder-val="{{ false }}">
-              <div style="font-size:14px;font-weight:700;letter-spacing:0.4px;color:#BAB7CB;margin-top:14px;">{{ row.subLabel }}</div>
+              <div style="font-size:13px;font-weight:700;letter-spacing:0.4px;color:#BAB7CB;margin-top:14px;">{{ row.subLabel }}</div>
             </sc-if>
             <sc-if value="{{ row.hasBullets }}" hint-placeholder-val="{{ false }}">
-              <ul style="list-style:none;margin:8px 0 0;padding:0;display:flex;flex-direction:column;gap:7px;">
+              <ul style="list-style:none;margin:10px 0 0;padding:0;display:flex;flex-direction:column;gap:8px;">
                 <sc-for list="{{ row.bullets }}" as="b" hint-placeholder-count="3">
                   <li style="display:flex;gap:10px;align-items:baseline;">
-                    <span style="color:var(--accent);font-size:16px;line-height:1.6;flex-shrink:0;">●</span>
-                    <span style="font-size:17px;color:#E7E6E2;font-family:'JetBrains Mono',monospace;line-height:1.6;">{{ b }}</span>
+                    <span style="color:var(--accent);font-size:15px;line-height:1.55;flex-shrink:0;">●</span>
+                    <span style="font-size:15.5px;color:#E7E6E2;line-height:1.55;">{{ b }}</span>
                   </li>
                 </sc-for>
               </ul>
             </sc-if>
             <sc-if value="{{ row.hasTags }}" hint-placeholder-val="{{ false }}">
-              <div style="display:flex;flex-wrap:wrap;gap:6px;margin-top:12px;">
+              <div style="display:flex;flex-wrap:wrap;gap:6px;margin-top:14px;">
                 <sc-for list="{{ row.tags }}" as="tag" hint-placeholder-count="7">
-                  <span style="font-size:14px;color:#E7E6E2;background:#2A2639;border-radius:6px;padding:5px 10px;">{{ tag }}</span>
+                  <span style="font-size:13.5px;color:#E7E6E2;background:#2A2639;border-radius:6px;padding:5px 10px;">{{ tag }}</span>
                 </sc-for>
               </div>
             </sc-if>
           </div>
-        </div>
-      </sc-for>
+        </sc-for>
+
+        <a href="https://mrkholov.github.io/kholov-playbook/" target="_blank" rel="noreferrer" style="background:var(--accent-soft);border:1px solid var(--accent);border-radius:16px;padding:22px 24px;display:flex;flex-direction:column;justify-content:space-between;gap:16px;text-decoration:none;">
+          <div>
+            <div style="font-size:13px;font-weight:700;letter-spacing:0.6px;color:var(--accent);margin-bottom:12px;">ПОЛНЫЙ ПЛЕЙБУК</div>
+            <div style="font-size:20px;font-weight:800;line-height:1.3;color:#F2F1EE;">31 кейс с цифрами: что делал, что получилось, что бы повторил</div>
+            <div style="font-size:15px;line-height:1.55;color:#BAB7CB;margin-top:10px;">Здесь только то, что относится к этой позиции. Остальное — по ссылке.</div>
+          </div>
+          <div style="font-size:16px;font-weight:800;color:var(--accent);">Открыть плейбук →</div>
+        </a>
+      </div>
       <div style="margin-top:40px;background:#1F1C2B;border:1px solid rgba(255,255,255,0.10);border-radius:14px;padding:26px 28px;">
         <div style="font-size:14px;font-weight:700;letter-spacing:0.6px;color:#BAB7CB;margin-bottom:16px;">ШИРИНА PERFORMANCE-ОПЫТА</div>
         <div style="display:flex;flex-wrap:wrap;gap:8px;">
