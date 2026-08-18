@@ -27,7 +27,8 @@
   summary::-webkit-details-marker { display:none; }
   details[open] > summary > span:last-child { opacity:0.28; }
   .mine ::selection, .mine::selection { background:#0A0A0C; color:#FF6A1A; }
-  .mine .hl { background:#FFF8F3; box-shadow:0 0 0 1px rgba(0,0,0,0.18); padding:2px 7px; border-radius:5px; font-weight:800; box-decoration-break:clone; -webkit-box-decoration-break:clone; }
+  .mine .hl { background:rgba(0,0,0,0.13); padding:1px 6px; border-radius:4px; font-weight:800; box-decoration-break:clone; -webkit-box-decoration-break:clone; }
+  .hl { background:rgba(255,106,26,0.16); padding:1px 6px; border-radius:4px; font-weight:700; box-decoration-break:clone; -webkit-box-decoration-break:clone; }
 </style>
 <script>
 (function () {
@@ -652,8 +653,8 @@
                 <span style="margin-left:auto;font-size:13px;font-weight:800;letter-spacing:0.4px;opacity:0.5;">РАСКРЫТЬ</span>
               </summary>
               <div style="padding:16px 22px 20px;">
-                <div style="font-size:15px;line-height:1.6;">В дни турнира один зритель смотрит несколько каналов, и бренд стоит сразу на многих. Сумма охватов — это не число людей. Считать надо уникальных зрителей и подбирать частоту: сколько показов на человека нужно, чтобы он дошёл до регистрации, и с какого повтора они перестают работать.</div>
-                <div style="font-size:15px;line-height:1.6;margin-top:9px;">Пересечение считается по чатам: берём уникальные ники на одновременных эфирах и смотрим, сколько совпадает. Доступ к внутренним данным для этого не нужен.</div>
+                <div style="font-size:15px;line-height:1.6;">Сумма охватов по пулу — это не число людей. За месяц один и тот же зритель попадает под бренд у нескольких стримеров подряд, а в дни турниров смотрит сразу несколько каналов. Считать надо уникальных зрителей и подбирать частоту: сколько касаний на человека за период нужно, чтобы он дошёл до регистрации, и с какого повтора они перестают работать.</div>
+                <div style="font-size:15px;line-height:1.6;margin-top:9px;">Пересечение считается по чатам: берём уникальные ники за период и смотрим, сколько людей встречается сразу у нескольких каналов пула. На одновременных эфирах это видно точнее всего. Доступ к внутренним данным не нужен.</div>
               </div>
             </details>
           </div>
