@@ -134,21 +134,14 @@
           </div>
         </sc-for>
 
-        <a href="https://mrkholov.github.io/kholov-playbook/" target="_blank" rel="noreferrer" style="grid-column:span 12;background:var(--accent-soft);border:1px solid var(--accent);border-radius:14px;padding:16px 22px;display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap;text-decoration:none;">
-          <div style="display:flex;align-items:baseline;gap:14px;flex-wrap:wrap;">
-            <span style="font-size:13px;font-weight:700;letter-spacing:0.6px;color:var(--accent);">ПОЛНЫЙ ПЛЕЙБУК</span>
-            <span style="font-size:17px;font-weight:800;color:#F2F1EE;">31 кейс с цифрами: что делал, что получилось, что бы повторил</span>
+        <a href="https://mrkholov.github.io/kholov-playbook/" target="_blank" rel="noreferrer" style="grid-column:span 12;background:var(--accent-soft);border:1px solid var(--accent);border-radius:18px;padding:32px 34px;display:flex;align-items:center;justify-content:space-between;gap:32px;flex-wrap:wrap;text-decoration:none;">
+          <div style="max-width:760px;">
+            <div style="font-size:13px;font-weight:700;letter-spacing:0.6px;color:var(--accent);margin-bottom:12px;">ПОЛНЫЙ ПЛЕЙБУК</div>
+            <div style="font-size:31px;font-weight:800;line-height:1.22;letter-spacing:-0.4px;color:#F2F1EE;">31 кейс с цифрами: что делал, что получилось и что бы повторил</div>
+            <div style="font-size:16px;line-height:1.55;color:#BAB7CB;margin-top:12px;">На этой странице только то, что относится к киберспорту. Остальное — там: performance, продукт, гейминг, эдтех и банк.</div>
           </div>
-          <span style="font-size:15.5px;font-weight:800;color:var(--accent);white-space:nowrap;">Открыть →</span>
+          <div style="display:flex;align-items:center;gap:12px;background:var(--accent);color:#0A0A0C;border-radius:12px;padding:15px 26px;font-size:17px;font-weight:800;white-space:nowrap;">Открыть плейбук →</div>
         </a>
-      </div>
-      <div style="margin-top:40px;background:#1F1C2B;border:1px solid rgba(255,255,255,0.10);border-radius:14px;padding:26px 28px;">
-        <div style="font-size:14px;font-weight:700;letter-spacing:0.6px;color:#BAB7CB;margin-bottom:16px;">ШИРИНА PERFORMANCE-ОПЫТА</div>
-        <div style="display:flex;flex-wrap:wrap;gap:8px;">
-          <sc-for list="{{ perfBreadth }}" as="p" hint-placeholder-count="10">
-            <span style="font-size:15px;color:#E7E6E2;background:#2A2639;border-radius:8px;padding:8px 13px;">{{ p }}</span>
-          </sc-for>
-        </div>
       </div>
     </section>
   </div>
@@ -2124,7 +2117,6 @@ class Component extends DCLogic {
           lead: 'English C1 · топ-менеджмент, инвесторы, агентства, международные команды · 4 года маркетинг-директором в Мексике',
         },
       ],
-      perfBreadth: ['Атрибуция и метки', 'Post-view и контрольные группы', 'Brand lift', 'Инкрементальность по гео', 'Антифрод GIVT/SIVT', 'Юнит-экономика и ДРР', 'Медиапланирование по P&L', 'CPA и бартерные модели', 'CRM и winback', 'Промокоды и QR', 'Частота касаний и ротация креативов', 'Ивенты как канал', 'Лендинги и конверсия', 'Brand Health Tracking', 'SEO и контент-воронки', 'B2B и запуск продуктов', 'Мотивация и KPI команды', 'AI в коммуникации на масштабе', 'Agency management'],
       gapTools: [
         { gap: 'Контакт есть, атрибуции нет', tool: 'Разметка на каждом касании: campaign ID, промокод, QR, chat-команда, размеченный лендинг под конкретный матч', proof: '120+ интеграций/мес по меткам, промокодам и QR' },
         { gap: 'Медийный эффект не в last-click', tool: 'Post-view отдельно от post-click, целевые и контрольные группы, вклад медийных конверсий в решение по бюджету', proof: 'Измерение охватных кампаний Wargaming' },
