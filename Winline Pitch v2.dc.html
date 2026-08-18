@@ -569,41 +569,19 @@
         <div class="mine" style="padding:26px 28px;margin-top:24px;">
           <div class="mine-tag"><i>ЕХ</i>ВЫВОД</div>
           <div style="font-size:26px;font-weight:800;letter-spacing:-0.3px;line-height:1.3;max-width:950px;">Считать надо не сумму охватов, а уникальную аудиторию и вклад каждого следующего касания</div>
-          <div style="font-size:15.5px;line-height:1.6;margin-top:12px;max-width:1000px;">Пулы стримеров пересекаются: русский Twitch маленький, ядро зрителей общее. Если ранжировать каждого по своему CPA, один и тот же человек считается многократно — и все выглядят прилично. Правильный вопрос другой: какой прирост уникального охвата даёт следующий контракт при уже собранном пуле и какая частота касаний на человека оптимальна.</div>
+          <div style="font-size:15.5px;line-height:1.6;margin-top:12px;max-width:1000px;">Пулы стримеров пересекаются: в дни турнира зритель переключается между несколькими каналами по одной дисциплине, а бренд стоит сразу на многих из них. Насколько велико пересечение, снаружи не посчитать — но пока оно не измерено, при ранжировании каждого канала по своему CPA один и тот же человек засчитывается многократно, и все выглядят прилично. Правильный вопрос другой: какой прирост уникального охвата даёт следующий контракт при уже собранном пуле и какая частота касаний на человека оптимальна.</div>
           <div style="font-size:15.5px;line-height:1.6;margin-top:11px;max-width:1000px;">Это считается без доступа к внутренним данным — по пересечению уникальных участников чатов на одновременных эфирах. Так уже делают сервисы, которые считают пересечение блогеров по авторам комментариев; у стримеров показатель честнее, потому что чат пишут во время эфира, а не спустя недели после публикации.</div>
           <div style="font-size:15.5px;line-height:1.6;margin-top:11px;max-width:1000px;"><span class="hl">Резать пул по пересечению можно почти без потери охвата. Резать по CPA — вслепую.</span></div>
         </div>
 
       </section>
 
-        <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:12px;">
-          <sc-for list="{{ statsRest }}" as="s" hint-placeholder-count="3">
-            <div style="background:#141416;border:1px solid rgba(255,255,255,0.08);border-radius:14px;padding:21px 22px;">
-              <div style="font-family:'JetBrains Mono',monospace;font-size:31px;font-weight:800;color:#FF6A1A;">{{ s.value }}</div>
-              <div style="font-size:15px;color:#E7E6E2;font-weight:700;line-height:1.4;margin-top:7px;">{{ s.label }}</div>
-              <div style="font-size:13px;color:#77767C;line-height:1.5;margin-top:8px;">{{ s.note }}</div>
-              <sc-if value="{{ s.expandable }}" hint-placeholder-val="{{ true }}">
-                <details style="margin-top:14px;">
-                  <summary style="font-size:13.5px;font-weight:700;color:#E7E6E2;cursor:pointer;">{{ s.action }}</summary>
-                  <div style="max-height:280px;overflow:auto;margin-top:12px;border-top:1px solid rgba(255,255,255,0.08);">
-                    <sc-for list="{{ s.items }}" as="item" hint-placeholder-count="5">
-                      <div style="padding:10px 0;border-bottom:1px solid rgba(255,255,255,0.06);">
-                        <a href="{{ item.url }}" target="_blank" rel="noreferrer" style="display:block;font-size:13.5px;font-weight:700;line-height:1.4;">{{ item.label }}</a>
-                        <div style="font-size:12px;color:#77767C;line-height:1.45;margin-top:4px;">{{ item.meta }}</div>
-                      </div>
-                    </sc-for>
-                  </div>
-                </details>
-              </sc-if>
-            </div>
-          </sc-for>
-        </div>
 
 
       </section>
       <section id="rynok" style="padding:16px 0 60px;">
-        <div style="font-size:27.5px;font-weight:800;margin-bottom:8px;">Почему портфель пересобирают именно сейчас</div>
-        <div style="font-size:15.5px;color:#77767C;margin-bottom:22px;max-width:900px;">Всё, что выше, — про активы. Этот блок про то, в какой экономике эти активы теперь живут.</div>
+        <div style="font-size:27.5px;font-weight:800;margin-bottom:8px;">Новая экономика рынка с 2026 года</div>
+        <div style="font-size:15.5px;color:#77767C;margin-bottom:22px;max-width:900px;">Всё, что выше, — про сами активы. Здесь — про условия, в которых они теперь считаются.</div>
 
         <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:12px;">
           <sc-for list="{{ marketTiles }}" as="m" hint-placeholder-count="4">
@@ -646,7 +624,7 @@
           <div class="mine-tag"><i>ЕХ</i>ВЫВОД</div>
           <div style="font-size:26px;font-weight:800;letter-spacing:-0.3px;line-height:1.3;max-width:950px;">Налог привязан к обороту, поэтому первым режут то, что не умеет показать возврат</div>
           <div style="font-size:15.5px;line-height:1.6;margin-top:12px;max-width:1000px;">Целевые отчисления в 2,25% считаются со всех принятых ставок, а не с маржи: в убыточный месяц они не уменьшаются. При такой конструкции расходы делятся на те, что доказывают вклад в депозит, и все остальные. Медийные активы почти всегда во второй группе — не потому, что не работают, а потому, что нечем показать.</div>
-          <div style="font-size:15.5px;line-height:1.6;margin-top:11px;max-width:1000px;">Обратная сторона: отрасль отказалась примерно от 30% медийных лиц, а самих стримеров меньше не стало. <span class="hl">Сейчас условия диктует покупатель, и это лучший момент пересобрать пул, а не худший.</span> С этого я бы и начал: измеримые обязательства в новых контрактах, пересмотр состава по пересечению аудиторий и опора на собственные продукты и права, которые не зависят от того, разрешат ли завтра рекламу у блогеров.</div>
+          <div style="font-size:15.5px;line-height:1.6;margin-top:11px;max-width:1000px;">Обратная сторона: отрасль отказалась примерно от 30% медийных лиц, а самих стримеров меньше не стало. <span class="hl">Значит активы подешевели, и торговаться сейчас проще, чем год назад.</span> С этого я бы и начал: измеримые обязательства в новых контрактах, пересмотр состава по пересечению аудиторий и опора на собственные продукты и права, которые не зависят от того, разрешат ли завтра рекламу у блогеров.</div>
         </div>
       </section>
       <section id="komandy" style="padding:16px 0 60px;">
@@ -761,6 +739,31 @@
           <div class="mine-tag"><i>ЕХ</i>ВНИМАНИЕ</div>
           <div style="font-size:21px;font-weight:800;line-height:1.4;max-width:950px;">{{ teamsExpiredTitle }}</div>
           <div style="font-size:15.5px;line-height:1.6;margin-top:11px;max-width:1000px;">{{ teamsExpiredText }}</div>
+        </div>
+
+        <div style="font-size:19.5px;font-weight:800;margin:34px 0 4px;">На чём построены все цифры выше</div>
+        <div style="font-size:15px;color:#77767C;line-height:1.55;margin-bottom:14px;max-width:900px;">Каждый источник, факт и партнёрство можно раскрыть и проверить по ссылке.</div>
+        <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:12px;">
+          <sc-for list="{{ statsRest }}" as="s" hint-placeholder-count="3">
+            <div style="background:#141416;border:1px solid rgba(255,255,255,0.08);border-radius:14px;padding:21px 22px;">
+              <div style="font-family:'JetBrains Mono',monospace;font-size:31px;font-weight:800;color:#FF6A1A;">{{ s.value }}</div>
+              <div style="font-size:15px;color:#E7E6E2;font-weight:700;line-height:1.4;margin-top:7px;">{{ s.label }}</div>
+              <div style="font-size:13px;color:#77767C;line-height:1.5;margin-top:8px;">{{ s.note }}</div>
+              <sc-if value="{{ s.expandable }}" hint-placeholder-val="{{ true }}">
+                <details style="margin-top:14px;">
+                  <summary style="font-size:13.5px;font-weight:700;color:#E7E6E2;cursor:pointer;">{{ s.action }}</summary>
+                  <div style="max-height:280px;overflow:auto;margin-top:12px;border-top:1px solid rgba(255,255,255,0.08);">
+                    <sc-for list="{{ s.items }}" as="item" hint-placeholder-count="5">
+                      <div style="padding:10px 0;border-bottom:1px solid rgba(255,255,255,0.06);">
+                        <a href="{{ item.url }}" target="_blank" rel="noreferrer" style="display:block;font-size:13.5px;font-weight:700;line-height:1.4;">{{ item.label }}</a>
+                        <div style="font-size:12px;color:#77767C;line-height:1.45;margin-top:4px;">{{ item.meta }}</div>
+                      </div>
+                    </sc-for>
+                  </div>
+                </details>
+              </sc-if>
+            </div>
+          </sc-for>
         </div>
       </section>
       <section id="turniry" style="padding:16px 0 60px;">
@@ -1213,7 +1216,7 @@ class Component extends DCLogic {
     const partnership = id => (research?.partnerships.partnerships || []).find(item => item.partnership_id === id);
     const signal = (snapshotId, brand) => matrices?.streamer_brand_signals.find(item => item.snapshot_id === snapshotId && item.brand === brand);
     // каналы с единичным онлайном не показываем: сигнал есть, аудитории нет
-    const hiddenSnapshotLogins = ['zaharpuzo77'];
+    const hiddenSnapshotLogins = ['zaharpuzo77', 'vens1g3r'];
     const snapshotMatrix = snapshotId => (matrices?.streamer_matrix || [])
       .filter(item => item.snapshot_id === snapshotId && !hiddenSnapshotLogins.includes(item.streamer_login));
     const tournament = id => matrices?.tournament_matrix.find(item => item.tournament_id === id);
@@ -2111,8 +2114,8 @@ class Component extends DCLogic {
       ],
       bannerShots: [
         { src: 'assets/banner-1.png', caption: 'just_ns · фрибет 10 000 ₽, промокод NS' },
-        { src: 'assets/banner-3.png', caption: 'RAMZES666 · тот же фрибет, промокод RAMZES' },
         { src: 'assets/banner-2.png', caption: 'just_ns · WinPass Season 3' },
+        { src: 'assets/banner-3.png', caption: 'RAMZES666 · тот же фрибет, промокод RAMZES' },
         { src: 'assets/banner-4.png', caption: 'RAMZES666 · WinPass Season 3' },
       ],
       snapshotTabs: snapshotBlocks.map((block, index) => ({
