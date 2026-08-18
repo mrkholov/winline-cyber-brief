@@ -27,6 +27,8 @@
   .mine-tag i { font-style:normal; background:#0A0A0C; color:var(--accent) !important; border-radius:4px; padding:2px 6px; font-size:13px; letter-spacing:0.4px; }
   * { box-sizing:border-box; font-family:'Golos Text',sans-serif; }
   ::selection { background:var(--accent); color:#0A0A0C; }
+  .exp-grid { display:grid; grid-template-columns:repeat(12,1fr); gap:14px; align-items:start; }
+  @media (max-width:980px) { .exp-grid > * { grid-column:span 12 !important; } }
   summary::-webkit-details-marker { display:none; }
   details[open] > summary > span:last-child { opacity:0.28; }
   .mine ::selection, .mine::selection { background:#0A0A0C; color:var(--accent); }
@@ -99,9 +101,9 @@
     </section>
 
     <section id="opyt" style="--accent:#6BA8FF;--accent-soft:rgba(107,168,255,0.18);padding:24px 0 60px;">
-      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(330px,1fr));gap:14px;">
+      <div class="exp-grid">
         <sc-for list="{{ expRows }}" as="row" hint-placeholder-count="6">
-          <div style="background:#1F1C2B;border:1px solid rgba(255,255,255,0.10);border-radius:16px;padding:22px 24px;display:flex;flex-direction:column;">
+          <div style="grid-column:span {{ row.span }};background:#1F1C2B;border:1px solid rgba(255,255,255,0.10);border-radius:16px;padding:22px 24px;display:flex;flex-direction:column;">
             <div style="display:flex;align-items:center;gap:11px;margin-bottom:14px;">
               <span style="width:26px;height:4px;border-radius:2px;background:var(--accent);flex-shrink:0;"></span>
               <span style="font-size:18px;font-weight:800;line-height:1.3;">{{ row.need }}</span>
@@ -132,13 +134,12 @@
           </div>
         </sc-for>
 
-        <a href="https://mrkholov.github.io/kholov-playbook/" target="_blank" rel="noreferrer" style="background:var(--accent-soft);border:1px solid var(--accent);border-radius:16px;padding:22px 24px;display:flex;flex-direction:column;justify-content:space-between;gap:16px;text-decoration:none;">
-          <div>
-            <div style="font-size:13px;font-weight:700;letter-spacing:0.6px;color:var(--accent);margin-bottom:12px;">ПОЛНЫЙ ПЛЕЙБУК</div>
-            <div style="font-size:20px;font-weight:800;line-height:1.3;color:#F2F1EE;">31 кейс с цифрами: что делал, что получилось, что бы повторил</div>
-            <div style="font-size:15px;line-height:1.55;color:#BAB7CB;margin-top:10px;">Здесь только то, что относится к этой позиции. Остальное — по ссылке.</div>
+        <a href="https://mrkholov.github.io/kholov-playbook/" target="_blank" rel="noreferrer" style="grid-column:span 12;background:var(--accent-soft);border:1px solid var(--accent);border-radius:14px;padding:16px 22px;display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap;text-decoration:none;">
+          <div style="display:flex;align-items:baseline;gap:14px;flex-wrap:wrap;">
+            <span style="font-size:13px;font-weight:700;letter-spacing:0.6px;color:var(--accent);">ПОЛНЫЙ ПЛЕЙБУК</span>
+            <span style="font-size:17px;font-weight:800;color:#F2F1EE;">31 кейс с цифрами: что делал, что получилось, что бы повторил</span>
           </div>
-          <div style="font-size:16px;font-weight:800;color:var(--accent);">Открыть плейбук →</div>
+          <span style="font-size:15.5px;font-weight:800;color:var(--accent);white-space:nowrap;">Открыть →</span>
         </a>
       </div>
       <div style="margin-top:40px;background:#1F1C2B;border:1px solid rgba(255,255,255,0.10);border-radius:14px;padding:26px 28px;">
@@ -2064,6 +2065,7 @@ class Component extends DCLogic {
 
       expRows: [
         {
+          span: 7,
           need: 'Команда и мотивация',
           hasBullets: true,
           bullets: [
@@ -2075,6 +2077,7 @@ class Component extends DCLogic {
           tags: ['Performance', 'Influence', 'CPA', 'CRM', 'SMM', 'SEO', 'Events'],
         },
         {
+          span: 5,
           need: 'Бюджет и P&L направления',
           hasLead: true,
           lead: 'Вырастил объем выручки от $90k до $550k в месяц при ДРР ≈35%.',
@@ -2088,6 +2091,7 @@ class Component extends DCLogic {
           ],
         },
         {
+          span: 4,
           need: 'Стримеры и инфлюенсеры',
           hasBullets: true,
           bullets: [
@@ -2097,11 +2101,13 @@ class Component extends DCLogic {
           ],
         },
         {
+          span: 4,
           need: 'Gaming и Twitch',
           hasLead: true,
           lead: 'Слежу за про-сценой CS2 и Dota2, смотрю турниры, играю FaceIT.',
         },
         {
+          span: 4,
           need: 'Аналитика и качество трафика',
           hasBullets: true,
           bullets: [
@@ -2112,6 +2118,7 @@ class Component extends DCLogic {
           ],
         },
         {
+          span: 12,
           need: 'Переговоры и международка',
           hasLead: true,
           lead: 'English C1 · топ-менеджмент, инвесторы, агентства, международные команды · 4 года маркетинг-директором в Мексике',
