@@ -297,12 +297,15 @@
         </div>
         <div style="font-size:15px;color:#77767C;line-height:1.55;margin-bottom:18px;max-width:860px;">Оба замера сняты во время матчей: сетка каналов и бренды в них зафиксированы в конкретную минуту турнира.</div>
 
+        <div style="display:flex;gap:4px;background:#151417;border:1px solid rgba(255,255,255,0.08);border-radius:999px;padding:4px;width:fit-content;margin-bottom:16px;flex-wrap:wrap;">
+          <sc-for list="{{ snapshotTabs }}" as="b" hint-placeholder-count="2">
+            <button onClick="{{ b.go }}" style="border:0;padding:9px 20px;border-radius:999px;font-size:15px;font-weight:700;cursor:pointer;{{ b.style }}">{{ b.label }}</button>
+          </sc-for>
+        </div>
+
         <div style="display:flex;flex-direction:column;gap:26px;">
-          <sc-for list="{{ snapshotBlocks }}" as="s" hint-placeholder-count="2">
+          <sc-for list="{{ activeSnapshot }}" as="s" hint-placeholder-count="1">
             <div>
-              <div style="display:flex;align-items:baseline;gap:12px;flex-wrap:wrap;margin-bottom:4px;">
-                <div style="font-size:19.5px;font-weight:800;">{{ s.title }}</div>
-              </div>
               <div style="font-size:14px;color:#77767C;line-height:1.5;margin-bottom:12px;">{{ s.note }}</div>
 
               <div style="border:1px solid rgba(255,255,255,0.09);border-radius:14px;overflow:hidden;">
@@ -1128,7 +1131,7 @@
 </x-dc>
 <script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1280,&quot;height&quot;:900}}">
 class Component extends DCLogic {
-  state = { screen: 'pitch', matrix: 'insights', talentBrand: 'winline', research: window.WINLINE_RESEARCH_DATA || null, researchError: false };
+  state = { screen: 'pitch', matrix: 'insights', talentBrand: 'winline', snapshot: 0, research: window.WINLINE_RESEARCH_DATA || null, researchError: false };
   researchController = null;
 
   pill(on) {
@@ -1189,6 +1192,8 @@ class Component extends DCLogic {
     const goM = (matrix) => () => this.setState({ matrix });
     const goTB = (talentBrand) => () => this.setState({ talentBrand });
     const tb = this.state.talentBrand;
+    const goSnap = (snapshot) => () => this.setState({ snapshot });
+    const sn = this.state.snapshot || 0;
     const arrows = (labels) => labels.map((label, i) => ({ label, hasNext: i < labels.length - 1 }));
     const bStyle = (b) => b === 'Winline' ? 'color:#FF6A1A;' : b === '—' ? 'color:#4A4950;' : 'color:#9A9AA0;';
     const research = this.state.research;
@@ -1790,6 +1795,38 @@ class Component extends DCLogic {
     },
   ] : [];
 
+    const snapshotBlocks = matrixReady ? streamerSnapshots.map((snapshot, index) => {
+        const magic = partnership('partnership:winline-magic');
+        const topDota = snapshotMatrix('twitch:dota2')
+          .filter(item => item.brand === 'BetBoom')
+          .sort((left, right) => right.viewers_at_observation - left.viewers_at_observation)[0];
+        const magicSource = firstSource(magic?.source_ids?.slice().reverse());
+        const live = [
+          {
+            rows: snapshotRows('twitch:cs2-ewc-live'),
+            followUp: `Winline поддерживает CS2-команду magic: беттинг-партнёрство объявлено ${dateRu(magic.valid_from)}.`,
+            followUpUrl: magicSource.url,
+            followUpPublisher: `${magicSource.publisher}, ${dateRu(magicSource.published_at)}`,
+            takeaway: `BetBoom: ${ewcBetBoom.observed_channel_count} каналов и ${this.number(ewcBetBoom.viewers_at_observation)} зрителей в моменте. Много фокуса на бывших про-игроков и стримеров с высоким уровнем ELO.`,
+          },
+          {
+            rows: snapshotRows('twitch:dota2'),
+            takeaway: `У BetBoom и Winline по ${dotaWinline.observed_channel_count} каналов с сигналом. Но зрителей на каналах BetBoom в ${this.decimal(dotaBetBoom.viewers_at_observation / dotaWinline.viewers_at_observation)} раза больше: ${this.number(dotaBetBoom.viewers_at_observation)} против ${this.number(dotaWinline.viewers_at_observation)}. Основной вклад даёт один канал — ${topDota.streamer_display_name}: ${this.number(topDota.viewers_at_observation)} зрителей, это ${this.decimal(topDota.viewers_at_observation / dotaBetBoom.viewers_at_observation * 100)}% всего онлайна BetBoom в срезе.`,
+          },
+        ][index];
+        return {
+          title: snapshot.title,
+          note: snapshot.note,
+          rows: snapshot.rows,
+          brandRows: live.rows,
+          takeaway: live.takeaway,
+          hasFollowUp: Boolean(live.followUp),
+          followUp: live.followUp || '',
+          followUpUrl: live.followUpUrl || '',
+          followUpPublisher: live.followUpPublisher || '',
+        };
+    }) : [];
+
     return {
       statsCollectedAt: statsDoc?.collected_at || '',
       matrixLoading: !matrixReady && !this.state.researchError,
@@ -2078,37 +2115,13 @@ class Component extends DCLogic {
         { src: 'assets/banner-2.png', caption: 'just_ns · WinPass Season 3' },
         { src: 'assets/banner-4.png', caption: 'RAMZES666 · WinPass Season 3' },
       ],
-      snapshotBlocks: matrixReady ? streamerSnapshots.map((snapshot, index) => {
-        const magic = partnership('partnership:winline-magic');
-        const topDota = snapshotMatrix('twitch:dota2')
-          .filter(item => item.brand === 'BetBoom')
-          .sort((left, right) => right.viewers_at_observation - left.viewers_at_observation)[0];
-        const magicSource = firstSource(magic?.source_ids?.slice().reverse());
-        const live = [
-          {
-            rows: snapshotRows('twitch:cs2-ewc-live'),
-            followUp: `Winline поддерживает CS2-команду magic: беттинг-партнёрство объявлено ${dateRu(magic.valid_from)}.`,
-            followUpUrl: magicSource.url,
-            followUpPublisher: `${magicSource.publisher}, ${dateRu(magicSource.published_at)}`,
-            takeaway: `BetBoom: ${ewcBetBoom.observed_channel_count} каналов и ${this.number(ewcBetBoom.viewers_at_observation)} зрителей в моменте. Много фокуса на бывших про-игроков и стримеров с высоким уровнем ELO.`,
-          },
-          {
-            rows: snapshotRows('twitch:dota2'),
-            takeaway: `У BetBoom и Winline по ${dotaWinline.observed_channel_count} каналов с сигналом. Но зрителей на каналах BetBoom в ${this.decimal(dotaBetBoom.viewers_at_observation / dotaWinline.viewers_at_observation)} раза больше: ${this.number(dotaBetBoom.viewers_at_observation)} против ${this.number(dotaWinline.viewers_at_observation)}. Основной вклад даёт один канал — ${topDota.streamer_display_name}: ${this.number(topDota.viewers_at_observation)} зрителей, это ${this.decimal(topDota.viewers_at_observation / dotaBetBoom.viewers_at_observation * 100)}% всего онлайна BetBoom в срезе.`,
-          },
-        ][index];
-        return {
-          title: snapshot.title,
-          note: snapshot.note,
-          rows: snapshot.rows,
-          brandRows: live.rows,
-          takeaway: live.takeaway,
-          hasFollowUp: Boolean(live.followUp),
-          followUp: live.followUp || '',
-          followUpUrl: live.followUpUrl || '',
-          followUpPublisher: live.followUpPublisher || '',
-        };
-      }) : [],
+      snapshotTabs: snapshotBlocks.map((block, index) => ({
+        label: block.title,
+        go: goSnap(index),
+        style: this.pill(sn === index),
+      })),
+      activeSnapshot: snapshotBlocks.filter((block, index) => index === sn),
+      snapshotBlocks,
       streamerPartnershipRows,
       streamerSignalStats,
       ownedComparisons: matrixReady ? [
