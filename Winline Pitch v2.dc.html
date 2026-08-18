@@ -75,7 +75,7 @@
 </script>
 </helmet>
 
-<div style="background:#100E17;color:#F2F1EE;min-height:100vh;background-image:radial-gradient(1200px 620px at 12% -10%, rgba(255,106,26,0.16), transparent 58%),radial-gradient(900px 500px at 88% 4%, rgba(92,200,216,0.08), transparent 60%);background-repeat:no-repeat;">
+<div style="background:#100E17;color:#F2F1EE;min-height:100vh;background-image:radial-gradient(1200px 620px at 12% -10%, rgba(255,106,26,0.16), transparent 58%),radial-gradient(900px 500px at 88% 4%, rgba(107,168,255,0.10), transparent 60%);background-repeat:no-repeat;">
 
   <div style="position:sticky;top:0;z-index:50;background:rgba(16,14,23,0.92);backdrop-filter:blur(12px);border-bottom:1px solid rgba(255,255,255,0.10);">
     <div style="max-width:1240px;margin:0 auto;padding:13px 40px;display:flex;align-items:center;justify-content:space-between;gap:26px;flex-wrap:wrap;">
@@ -162,14 +162,14 @@
 
         
 
-      <section id="rynok" style="--accent:#5CC8D8;--accent-soft:rgba(92,200,216,0.16);padding:16px 0 60px;">
-        <div style="display:flex;align-items:center;gap:12px;margin-bottom:8px;"><span style="width:34px;height:5px;border-radius:3px;background:#5CC8D8;flex-shrink:0;"></span><span style="font-size:27.5px;font-weight:800;">Новая экономика рынка с 2026 года</span></div>
+      <section id="rynok" style="--accent:#6BA8FF;--accent-soft:rgba(107,168,255,0.18);padding:16px 0 60px;">
+        <div style="display:flex;align-items:center;gap:12px;margin-bottom:8px;"><span style="width:34px;height:5px;border-radius:3px;background:var(--accent);flex-shrink:0;"></span><span style="font-size:27.5px;font-weight:800;">Новая экономика рынка с 2026 года</span></div>
         <div style="font-size:15.5px;color:#BAB7CB;margin-bottom:22px;max-width:900px;">Всё, что дальше, — про сами активы. Этот блок про условия, в которых они теперь считаются.</div>
 
         <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:12px;">
           <sc-for list="{{ marketTiles }}" as="m" hint-placeholder-count="4">
-            <div style="background:#1F1C2B;border:1px solid rgba(92,200,216,0.22);border-radius:14px;padding:20px 22px;">
-              <div style="font-family:'JetBrains Mono',monospace;font-size:30px;font-weight:800;color:#5CC8D8;">{{ m.value }}</div>
+            <div style="background:#1F1C2B;border:1px solid rgba(107,168,255,0.26);border-radius:14px;padding:20px 22px;">
+              <div style="font-family:'JetBrains Mono',monospace;font-size:30px;font-weight:800;color:var(--accent);">{{ m.value }}</div>
               <div style="font-size:15px;font-weight:800;line-height:1.35;margin-top:7px;">{{ m.label }}</div>
               <div style="font-size:14px;color:#BAB7CB;line-height:1.5;margin-top:8px;">{{ m.note }}</div>
               <div style="font-size:13.5px;margin-top:9px;"><a href="{{ m.url }}" target="_blank" rel="noreferrer">{{ m.publisher }}</a></div>
@@ -183,7 +183,7 @@
             <div style="display:flex;flex-direction:column;gap:9px;">
               <sc-for list="{{ marketRulesNow }}" as="r" hint-placeholder-count="4">
                 <div style="display:flex;gap:10px;align-items:baseline;">
-                  <span style="color:#5CC8D8;font-size:15px;flex-shrink:0;">&#9679;</span>
+                  <span style="color:var(--accent);font-size:15px;flex-shrink:0;">&#9679;</span>
                   <span style="font-size:15px;line-height:1.55;color:#E7E6E2;">{{ r }}</span>
                 </div>
               </sc-for>
