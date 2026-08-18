@@ -733,7 +733,7 @@
                       <sc-for list="{{ g.items }}" as="a" hint-placeholder-count="4">
                         <div style="font-size:15px;line-height:1.35;">
                           <sc-if value="{{ a.hasUrl }}" hint-placeholder-val="{{ true }}"><a href="{{ a.url }}" target="_blank" rel="noreferrer" style="{{ a.style }}">{{ a.name }}</a></sc-if>
-                          <sc-if value="{{ a.hasUrl }}" hint-placeholder-val="{{ false }}"><span style="{{ a.style }}">{{ a.name }}</span></sc-if>
+                          <sc-if value="{{ a.noUrl }}" hint-placeholder-val="{{ true }}"><span style="{{ a.style }}">{{ a.name }}</span></sc-if>
                           <span title="{{ a.markTitle }}" style="{{ a.markStyle }}">{{ a.mark }}</span><span style="font-size:12px;color:#77767C;"> {{ a.note }}</span>
                         </div>
                       </sc-for>
@@ -747,22 +747,11 @@
         <div style="display:flex;flex-wrap:wrap;gap:18px;align-items:center;font-size:13px;color:#77767C;margin-bottom:32px;">
           <span><span style="color:#FF6A1A;font-weight:700;">Оранжевый*</span> — актив назван именем букмекера</span>
           <span><span style="color:#FF6A1A;font-weight:800;">?</span> — нужно подтверждение актуальности</span>
-          <span><span style="color:#77767C;">×</span> — завершено</span>
         </div>
         <div style="font-size:13px;color:#77767C;line-height:1.55;margin-bottom:32px;">{{ eventAssetsNote }}</div>
 
 
 
-        <div class="mine" style="padding:22px 24px;margin-top:14px;">
-          <div class="mine-tag"><i>ЕХ</i>ПОПРАВКА</div>
-          <div style="font-size:19.5px;font-weight:800;line-height:1.4;margin-top:8px;">По PGL Winline выступает спонсором русскоязычной трансляции. Права на неё принадлежат Paragon Events.</div>
-          <div style="font-size:14px;line-height:1.5;margin-top:10px;opacity:0.75;">Эксклюзивное русскоязычное освещение оформлено на Paragon Events. Для Winline публично доказаны спонсорство эфира и активации; актуальность партнёрства после PGL Astana 2025 требует подтверждения.</div>
-        </div>
-
-        <div class="mine" style="padding:18px 22px;margin-top:30px;">
-          <div class="mine-tag"><i>ЕХ</i>ВНИМАНИЕ</div>
-          <div style="font-size:16.5px;line-height:1.6;">Карта рынка за февраль 2026 показывает Tundra и Virtus.pro как действующие активы Winline. По отдельным публикациям оба партнёрства завершены, поэтому в таблице они помечены крестиком. Разницу снимает только внутренний реестр контрактов — по открытым данным определить, кто прав, нельзя.</div>
-        </div>
         <div style="font-size:19.5px;font-weight:800;margin:34px 0 12px;">Собственные турниры Winline</div>
         <div style="display:grid;grid-template-columns:1fr 1fr;gap:18px;">
           <sc-for list="{{ ownedComparisons }}" as="c" hint-placeholder-count="2">
@@ -1527,6 +1516,7 @@ class Component extends DCLogic {
           mark: flag.mark, markStyle: flag.style, markTitle: flag.title,
           url: deal ? (firstSource(deal.source_ids)?.url || '') : '',
           hasUrl: Boolean(deal && firstSource(deal.source_ids)?.url),
+          noUrl: !(deal && firstSource(deal.source_ids)?.url),
           relation: deal ? (relationRu[deal.relationship_type] || deal.relationship_type) : 'по карте рынка',
           statusText: deal ? statusTextFor(deal.brand_id, deal.current_status) : 'отдельно не проверено',
           statusColor: deal ? statusToneFor(deal.brand_id, deal.current_status) : 'color:#77767C;',
@@ -1548,6 +1538,7 @@ class Component extends DCLogic {
           mark: flag.mark, markStyle: flag.style, markTitle: flag.title,
           url: firstSource(deal.source_ids)?.url || '',
           hasUrl: Boolean(firstSource(deal.source_ids)?.url),
+          noUrl: !firstSource(deal.source_ids)?.url,
           relation: relationRu[deal.relationship_type] || deal.relationship_type,
           statusText: statusTextFor(deal.brand_id, deal.current_status),
           statusColor: statusToneFor(deal.brand_id, deal.current_status),
