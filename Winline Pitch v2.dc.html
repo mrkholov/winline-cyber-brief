@@ -13,23 +13,24 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Golos+Text:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
+  :root { --accent:#FF6A1A; --accent-soft:rgba(255,106,26,0.16); }
   body { margin:0; background:#1A1726; }
-  a { color:#FF6A1A; text-decoration:none; }
-  a:hover { color:#FF8A47; }
+  a { color:var(--accent); text-decoration:none; }
+  a:hover { filter:brightness(1.25); }
   html { scroll-behavior:smooth; }
   section[id] { scroll-margin-top:86px; }
-  .mine { background:#FF6A1A; border-radius:14px; border:0 !important; }
+  .mine { background:var(--accent); border-radius:14px; border:0 !important; }
   .mine, .mine div, .mine span, .mine b, .mine li { color:#0A0A0C !important; }
   .mine a { color:#0A0A0C !important; text-decoration:underline; }
   .mine-tag { display:inline-flex; align-items:center; gap:8px; font-size:13px; font-weight:800; letter-spacing:0.8px; margin-bottom:11px; }
-  .mine-tag i { font-style:normal; background:#0A0A0C; color:#FF6A1A !important; border-radius:4px; padding:2px 6px; font-size:12px; letter-spacing:0.4px; }
+  .mine-tag i { font-style:normal; background:#0A0A0C; color:var(--accent) !important; border-radius:4px; padding:2px 6px; font-size:12px; letter-spacing:0.4px; }
   * { box-sizing:border-box; font-family:'Golos Text',sans-serif; }
-  ::selection { background:#FF6A1A; color:#0A0A0C; }
+  ::selection { background:var(--accent); color:#0A0A0C; }
   summary::-webkit-details-marker { display:none; }
   details[open] > summary > span:last-child { opacity:0.28; }
-  .mine ::selection, .mine::selection { background:#0A0A0C; color:#FF6A1A; }
+  .mine ::selection, .mine::selection { background:#0A0A0C; color:var(--accent); }
   .mine .hl { background:rgba(0,0,0,0.13); padding:1px 6px; border-radius:4px; font-weight:800; box-decoration-break:clone; -webkit-box-decoration-break:clone; }
-  .hl { background:rgba(255,106,26,0.16); padding:1px 6px; border-radius:4px; font-weight:700; box-decoration-break:clone; -webkit-box-decoration-break:clone; }
+  .hl { background:var(--accent-soft); padding:1px 6px; border-radius:4px; font-weight:700; box-decoration-break:clone; -webkit-box-decoration-break:clone; }
 </style>
 <script>
 (function () {
@@ -160,8 +161,8 @@
 
         
 
-      <section id="rynok" style="padding:16px 0 60px;">
-        <div style="display:flex;align-items:center;gap:12px;margin-bottom:8px;"><span style="width:34px;height:5px;border-radius:3px;background:#5CC8D8;flex-shrink:0;"></span><span style="font-size:27.5px;font-weight:800;">Новая экономика рынка с 2026 года</span></div>
+      <section id="rynok" style="--accent:#5CC8D8;--accent-soft:rgba(92,200,216,0.16);padding:16px 0 60px;">
+        <div style="display:flex;align-items:center;gap:12px;margin-bottom:8px;"><span style="width:34px;height:5px;border-radius:3px;background:#5CC8D8;flex-shrink:0;"></span><span style="font-size:27.5px;font-weight:800;">Новая экономика рынка с 2026 года</span></div>
         <div style="font-size:15.5px;color:#A6A3BA;margin-bottom:22px;max-width:900px;">Всё, что дальше, — про сами активы. Этот блок про условия, в которых они теперь считаются.</div>
 
         <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:12px;">
@@ -212,8 +213,8 @@
       <div style="font-family:'JetBrains Mono',monospace;font-size:14px;color:#FF6A1A;font-weight:600;letter-spacing:1.2px;margin-bottom:18px;">ДАННЫЕ, КОТОРЫЕ Я СОБРАЛ К ЭТОЙ ВСТРЕЧЕ</div>
       <div style="font-size:45.5px;font-weight:800;max-width:960px;letter-spacing:-0.7px;line-height:1.16;margin-bottom:40px;">Анализ активов по открытым данным</div>
 
-      <section id="strimery" style="padding:16px 0 60px;">
-        <div style="display:flex;align-items:center;gap:12px;margin-bottom:8px;"><span style="width:34px;height:5px;border-radius:3px;background:#FF6A1A;flex-shrink:0;"></span><span style="font-size:27.5px;font-weight:800;">Стримеры и амбассадоры</span></div>
+      <section id="strimery" style="--accent:#FF6A1A;--accent-soft:rgba(255,106,26,0.16);padding:16px 0 60px;">
+        <div style="display:flex;align-items:center;gap:12px;margin-bottom:8px;"><span style="width:34px;height:5px;border-radius:3px;background:var(--accent);flex-shrink:0;"></span><span style="font-size:27.5px;font-weight:800;">Стримеры и амбассадоры</span></div>
         <div style="font-size:15px;color:#A6A3BA;line-height:1.55;margin-bottom:30px;max-width:820px;">Фолловеры — текущее значение из Twitch API. Средний и пиковый онлайн — TwitchTracker, его срез примерно за последний месяц.</div>
         
 
@@ -226,7 +227,7 @@
           </sc-for>
         </div>
         <div style="display:flex;align-items:baseline;gap:14px;margin-bottom:14px;flex-wrap:wrap;">
-          <div style="font-family:'JetBrains Mono',monospace;font-size:36.5px;font-weight:800;color:#FF6A1A;">{{ activeBrand.count }}</div>
+          <div style="font-family:'JetBrains Mono',monospace;font-size:36.5px;font-weight:800;color:var(--accent);">{{ activeBrand.count }}</div>
           <div style="font-size:17px;font-weight:800;">{{ activeBrand.countLabel }}</div>
           
         </div>
@@ -250,7 +251,7 @@
         <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:16px;">
           <sc-for list="{{ activeBrand.totals }}" as="s" hint-placeholder-count="4">
             <div style="background:#272338;border:1px solid rgba(255,255,255,0.11);border-radius:12px;padding:16px 18px;">
-              <div style="font-family:'JetBrains Mono',monospace;font-size:26px;font-weight:800;color:#FF6A1A;">{{ s.value }}</div>
+              <div style="font-family:'JetBrains Mono',monospace;font-size:26px;font-weight:800;color:var(--accent);">{{ s.value }}</div>
               <div style="font-size:13px;color:#C0BDD2;line-height:1.45;margin-top:6px;">{{ s.label }}</div>
             </div>
           </sc-for>
@@ -298,7 +299,7 @@
           <div style="font-size:15.5px;color:#E7E6E2;line-height:1.6;margin-top:16px;padding-top:16px;border-top:1px solid rgba(255,255,255,0.10);">{{ pariQuote.meaning }}</div>
 
           <details style="margin-top:16px;padding-top:16px;border-top:1px solid rgba(255,255,255,0.10);">
-            <summary style="font-size:14px;font-weight:800;letter-spacing:0.5px;color:#FF6A1A;cursor:pointer;">СКОЛЬКО ЭТО СТОИТ ПО РЫНКУ</summary>
+            <summary style="font-size:14px;font-weight:800;letter-spacing:0.5px;color:var(--accent);cursor:pointer;">СКОЛЬКО ЭТО СТОИТ ПО РЫНКУ</summary>
             <div style="font-size:16px;line-height:1.6;margin-top:12px;max-width:1000px;color:#E7E6E2;">{{ marketPrice.text }}</div>
             <div style="font-size:15px;color:#D3D1DB;line-height:1.6;margin-top:11px;max-width:1000px;">{{ marketNote }}</div>
             <div style="font-size:13px;color:#A6A3BA;margin-top:11px;"><a href="{{ marketPrice.url }}" target="_blank" rel="noreferrer">{{ marketPrice.publisher }}</a></div>
@@ -386,10 +387,10 @@
                     </div>
                   </sc-for>
                 </div>
-                <div style="background:rgba(255,106,26,0.13);border:1px solid rgba(255,106,26,0.38);border-radius:12px;padding:16px 20px;font-size:15px;line-height:1.6;color:#F0DFD2;">
+                <div style="background:var(--accent-soft);border:1px solid var(--accent-soft);border-radius:12px;padding:16px 20px;font-size:15px;line-height:1.6;color:#F0DFD2;">
                   <div>{{ s.takeaway }}</div>
                   <sc-if value="{{ s.hasFollowUp }}" hint-placeholder-val="{{ true }}">
-                    <div style="margin-top:14px;padding-top:14px;border-top:1px solid rgba(255,106,26,0.28);">{{ s.followUp }} <a href="{{ s.followUpUrl }}" target="_blank" rel="noreferrer" style="color:#FF9351;font-weight:700;">{{ s.followUpPublisher }}</a></div>
+                    <div style="margin-top:14px;padding-top:14px;border-top:1px solid var(--accent-soft);">{{ s.followUp }} <a href="{{ s.followUpUrl }}" target="_blank" rel="noreferrer" style="color:#FF9351;font-weight:700;">{{ s.followUpPublisher }}</a></div>
                   </sc-if>
                 </div>
               </div>
@@ -402,7 +403,7 @@
 
         <div style="display:flex;align-items:center;gap:12px;margin:30px 0 6px;flex-wrap:wrap;">
           <div style="font-size:19.5px;font-weight:800;">WINLINE PUBSTOMP · финал The International 2026</div>
-          <span style="font-size:12px;font-weight:800;letter-spacing:0.6px;background:#FF6A1A;color:#0A0A0C;border-radius:5px;padding:4px 9px;">23 АВГУСТА</span>
+          <span style="font-size:12px;font-weight:800;letter-spacing:0.6px;background:var(--accent);color:#0A0A0C;border-radius:5px;padding:4px 9px;">23 АВГУСТА</span>
         </div>
         <div style="font-size:15px;color:#A6A3BA;line-height:1.55;margin-bottom:16px;max-width:900px;">Пока идёт турнир, Winline собирает офлайн-просмотр финала в Москве — и продаёт на него билеты через панели тех же стримеров, что в таблице выше.</div>
 
@@ -427,7 +428,7 @@
               <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:10px;">
                 <sc-for list="{{ pubstompStats }}" as="s" hint-placeholder-count="4">
                   <div style="background:#332E48;border-radius:10px;padding:13px 15px;">
-                    <div style="font-family:'JetBrains Mono',monospace;font-size:24px;font-weight:800;color:#FF6A1A;">{{ s.value }}</div>
+                    <div style="font-family:'JetBrains Mono',monospace;font-size:24px;font-weight:800;color:var(--accent);">{{ s.value }}</div>
                     <div style="font-size:12.5px;color:#C0BDD2;line-height:1.4;margin-top:5px;">{{ s.label }}</div>
                   </div>
                 </sc-for>
@@ -486,11 +487,11 @@
 
                 <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:20px;">
                   <div style="background:#332E48;border-radius:10px;padding:14px 16px;">
-                    <div style="font-family:'JetBrains Mono',monospace;font-size:27.5px;font-weight:800;color:#FF6A1A;">{{ e.viewers }}</div>
+                    <div style="font-family:'JetBrains Mono',monospace;font-size:27.5px;font-weight:800;color:var(--accent);">{{ e.viewers }}</div>
                     <div style="font-size:13px;color:#C0BDD2;line-height:1.4;margin-top:5px;">зрителей в момент нашего замера</div>
                   </div>
                   <div style="background:#332E48;border-radius:10px;padding:14px 16px;">
-                    <div style="font-family:'JetBrains Mono',monospace;font-size:27.5px;font-weight:800;color:#FF6A1A;">{{ e.prize }}</div>
+                    <div style="font-family:'JetBrains Mono',monospace;font-size:27.5px;font-weight:800;color:var(--accent);">{{ e.prize }}</div>
                     <div style="font-size:13px;color:#C0BDD2;line-height:1.4;margin-top:5px;">призовой фонд</div>
                   </div>
                 </div>
@@ -533,7 +534,7 @@
                   <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:18px;">
                     <sc-for list="{{ e.channel.stats }}" as="s" hint-placeholder-count="3">
                       <div style="background:#332E48;border-radius:10px;padding:13px 15px;">
-                        <div style="font-family:'JetBrains Mono',monospace;font-size:24px;font-weight:800;color:#FF6A1A;">{{ s.value }}</div>
+                        <div style="font-family:'JetBrains Mono',monospace;font-size:24px;font-weight:800;color:var(--accent);">{{ s.value }}</div>
                         <div style="font-size:12.5px;color:#C0BDD2;line-height:1.4;margin-top:5px;">{{ s.label }}</div>
                       </div>
                     </sc-for>
@@ -546,7 +547,7 @@
                     </sc-for>
                   </div>
 
-                  <div style="font-size:15.5px;line-height:1.6;color:#E7E6E2;margin-top:18px;padding:13px 16px;background:#332E48;border-left:2px solid #FF6A1A;border-radius:0 8px 8px 0;">{{ e.channel.takeaway }}</div>
+                  <div style="font-size:15.5px;line-height:1.6;color:#E7E6E2;margin-top:18px;padding:13px 16px;background:#332E48;border-left:2px solid var(--accent);border-radius:0 8px 8px 0;">{{ e.channel.takeaway }}</div>
                 </div>
                 <div style="background:#1F1B2E;border:1px solid rgba(255,255,255,0.11);border-radius:12px;overflow:hidden;">
                   <img src="{{ e.channel.image }}" alt="{{ e.channel.imageCaption }}" style="width:100%;height:auto;display:block;">
@@ -571,7 +572,7 @@
               <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:10px;">
                 <sc-for list="{{ slayStats }}" as="s" hint-placeholder-count="4">
                   <div style="background:#332E48;border-radius:10px;padding:14px 16px;">
-                    <div style="font-family:'JetBrains Mono',monospace;font-size:25px;font-weight:800;color:#FF6A1A;">{{ s.value }}</div>
+                    <div style="font-family:'JetBrains Mono',monospace;font-size:25px;font-weight:800;color:var(--accent);">{{ s.value }}</div>
                     <div style="font-size:12.5px;color:#C0BDD2;line-height:1.4;margin-top:5px;">{{ s.label }}</div>
                   </div>
                 </sc-for>
@@ -713,8 +714,8 @@
 
 
       </section>
-      <section id="komandy" style="padding:16px 0 60px;">
-        <div style="display:flex;align-items:center;gap:12px;margin-bottom:8px;"><span style="width:34px;height:5px;border-radius:3px;background:#A98BFF;flex-shrink:0;"></span><span style="font-size:27.5px;font-weight:800;">Команды: ростеры и спонсорство</span></div>
+      <section id="komandy" style="--accent:#A98BFF;--accent-soft:rgba(169,139,255,0.18);padding:16px 0 60px;">
+        <div style="display:flex;align-items:center;gap:12px;margin-bottom:8px;"><span style="width:34px;height:5px;border-radius:3px;background:#A98BFF;flex-shrink:0;"></span><span style="font-size:27.5px;font-weight:800;">Команды: ростеры и спонсорство</span></div>
         <div style="font-size:15.5px;color:#A6A3BA;margin-bottom:22px;">{{ teamsIntro }}</div>
         <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:20px;">
           <sc-for list="{{ teamsSummary }}" as="s" hint-placeholder-count="3">
@@ -744,7 +745,7 @@
           </sc-for>
         </div>
         <div style="display:flex;flex-wrap:wrap;gap:18px;align-items:center;font-size:13px;color:#A6A3BA;margin-top:12px;">
-          <span><span style="color:#FF6A1A;font-weight:700;">Оранжевое название*</span> — команда носит имя букмекера</span>
+          <span><span style="color:var(--accent);font-weight:700;">Оранжевое название*</span> — команда носит имя букмекера</span>
           <span>Пустой источник — связь взята из карты рынка без отдельной публикации</span>
         </div>
 
@@ -764,7 +765,7 @@
               <div style="font-size:17px;font-weight:800;line-height:1.4;margin-bottom:9px;">Имя стоит на турнирах и мероприятиях</div>
               <div style="display:flex;flex-wrap:wrap;gap:7px;">
                 <sc-for list="{{ teamsNamingWinline }}" as="t" hint-placeholder-count="4">
-                  <span style="font-size:14px;background:#2A1A10;border-radius:7px;padding:6px 12px;color:#FF6A1A;">{{ t }}</span>
+                  <span style="font-size:14px;background:#2A1A10;border-radius:7px;padding:6px 12px;color:var(--accent);">{{ t }}</span>
                 </sc-for>
               </div>
             </div>
@@ -777,7 +778,7 @@
         <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:12px;">
           <sc-for list="{{ statsRest }}" as="s" hint-placeholder-count="3">
             <div style="background:#272338;border:1px solid rgba(255,255,255,0.10);border-radius:14px;padding:21px 22px;">
-              <div style="font-family:'JetBrains Mono',monospace;font-size:31px;font-weight:800;color:#FF6A1A;">{{ s.value }}</div>
+              <div style="font-family:'JetBrains Mono',monospace;font-size:31px;font-weight:800;color:var(--accent);">{{ s.value }}</div>
               <div style="font-size:15px;color:#E7E6E2;font-weight:700;line-height:1.4;margin-top:7px;">{{ s.label }}</div>
               <div style="font-size:13px;color:#A6A3BA;line-height:1.5;margin-top:8px;">{{ s.note }}</div>
               <sc-if value="{{ s.expandable }}" hint-placeholder-val="{{ true }}">
@@ -797,8 +798,8 @@
           </sc-for>
         </div>
       </section>
-      <section id="turniry" style="padding:16px 0 60px;">
-        <div style="display:flex;align-items:center;gap:12px;margin-bottom:8px;"><span style="width:34px;height:5px;border-radius:3px;background:#FFB454;flex-shrink:0;"></span><span style="font-size:27.5px;font-weight:800;">Турниры и трансляции</span></div>
+      <section id="turniry" style="--accent:#FFB454;--accent-soft:rgba(255,180,84,0.16);padding:16px 0 60px;">
+        <div style="display:flex;align-items:center;gap:12px;margin-bottom:8px;"><span style="width:34px;height:5px;border-radius:3px;background:#FFB454;flex-shrink:0;"></span><span style="font-size:27.5px;font-weight:800;">Турниры и трансляции</span></div>
         <div style="font-size:15.5px;color:#A6A3BA;margin-bottom:22px;">{{ eventsIntro }}</div>
 
         <div style="font-size:19.5px;font-weight:800;margin-bottom:4px;">Турниры, организации и студии по брендам</div>
@@ -830,8 +831,8 @@
           </sc-for>
         </div>
         <div style="display:flex;flex-wrap:wrap;gap:18px;align-items:center;font-size:13px;color:#A6A3BA;margin-bottom:32px;">
-          <span><span style="color:#FF6A1A;font-weight:700;">Оранжевым</span> — активы, названные именем букмекера</span>
-          <span><span style="color:#FF6A1A;font-weight:800;">?</span> — нужно подтверждение актуальности</span>
+          <span><span style="color:var(--accent);font-weight:700;">Оранжевым</span> — активы, названные именем букмекера</span>
+          <span><span style="color:var(--accent);font-weight:800;">?</span> — нужно подтверждение актуальности</span>
         </div>
         <div style="font-size:13px;color:#A6A3BA;line-height:1.55;">{{ eventAssetsNote }}</div>
 
@@ -998,7 +999,7 @@ class Component extends DCLogic {
 
   pill(on) {
     return on
-      ? 'background:#FF6A1A;color:#0A0A0C;'
+      ? 'background:var(--accent);color:#0A0A0C;'
       : 'background:transparent;color:#C0BDD2;';
   }
 
@@ -1057,7 +1058,7 @@ class Component extends DCLogic {
     const goSnap = (snapshot) => () => this.setState({ snapshot });
     const sn = this.state.snapshot || 0;
     const arrows = (labels) => labels.map((label, i) => ({ label, hasNext: i < labels.length - 1 }));
-    const bStyle = (b) => b === 'Winline' ? 'color:#FF6A1A;' : b === '—' ? 'color:#6E6B85;' : 'color:#C0BDD2;';
+    const bStyle = (b) => b === 'Winline' ? 'color:var(--accent);' : b === '—' ? 'color:#6E6B85;' : 'color:#C0BDD2;';
     const research = this.state.research;
     const matrices = research?.matrices;
     const organizationNames = new Map((research?.organizations.organizations || []).map(item => [item.organization_id, item.name]));
@@ -1184,7 +1185,7 @@ class Component extends DCLogic {
     const statusStyleFor = status =>
       status === 'current_publicly_verified' || status === 'active_by_public_term' || status === 'fresh_public_announcement' || status === 'own_team'
         ? 'color:#E7E6E2;'
-        : status === 'current_unverified' ? 'color:#FF6A1A;' : 'color:#A6A3BA;';
+        : status === 'current_unverified' ? 'color:var(--accent);' : 'color:#A6A3BA;';
     // по своим активам не выносим приговор «завершено» — ставим вопрос, ответ знают только внутри
     const endedStatuses = new Set(['historical', 'reported_expired']);
     const statusTextFor = (brandId, status) =>
@@ -1192,13 +1193,13 @@ class Component extends DCLogic {
         ? 'уточнить'
         : (currentStatusRu[status] || status);
     const statusToneFor = (brandId, status) =>
-      brandId === 'brand:winline' && endedStatuses.has(status) ? 'color:#FF6A1A;' : statusStyleFor(status);
+      brandId === 'brand:winline' && endedStatuses.has(status) ? 'color:var(--accent);' : statusStyleFor(status);
     const brandOrder = ['brand:winline', 'brand:betboom', 'brand:pari', 'brand:1xbet', 'brand:fonbet', 'brand:liga-stavok'];
     const partnershipRow = item => {
       const source = firstSource(item.source_ids);
       return {
         brand: brandNames[item.brand_id] || entityName(item.brand_id),
-        brandStyle: item.brand_id === 'brand:winline' ? 'color:#FF6A1A;' : 'color:#D3D1DB;',
+        brandStyle: item.brand_id === 'brand:winline' ? 'color:var(--accent);' : 'color:#D3D1DB;',
         asset: entityName(item.asset_id),
         relation: relationRu[item.relationship_type] || item.relationship_type,
         status: statusTextFor(item.brand_id, item.current_status),
@@ -1259,7 +1260,7 @@ class Component extends DCLogic {
         name: person.name,
         role: person.role,
         note: person.note,
-        style: person.brand === 'brand:winline' ? 'color:#FF6A1A;'
+        style: person.brand === 'brand:winline' ? 'color:var(--accent);'
           : person.brand ? 'color:#E7E6E2;text-decoration:underline dotted;' : 'color:#E7E6E2;',
       })),
       meaning: 'Формат не киберспортивный, а собирает втрое больше зрителей, чем пиковый онлайн Winline Pro League Season 3, при призовом 5 млн ₽ — втором среди собственных продуктов после Standoff 2 Major.',
@@ -1299,7 +1300,7 @@ class Component extends DCLogic {
       unknown: '—',
     };
     const roleColor = {
-      pro: 'color:#FF6A1A;font-weight:700;',
+      pro: 'color:var(--accent);font-weight:700;',
       ex_pro: 'color:#FF8A47;font-weight:700;',
       esports_scene: 'color:#E7E6E2;',
       caster: 'color:#D3D1DB;',
@@ -1324,7 +1325,7 @@ class Component extends DCLogic {
         const role = bg?.category || 'unknown';
         return {
           name,
-          nameStyle: best ? 'color:#FF6A1A;font-weight:800;' : 'color:#E7E6E2;',
+          nameStyle: best ? 'color:var(--accent);font-weight:800;' : 'color:#E7E6E2;',
           role: roleLabel[role],
           roleKey: role,
           roleStyle: roleColor[role],
@@ -1382,7 +1383,7 @@ class Component extends DCLogic {
               .map(asset => ({
                 name: asset.name + (asset.bookmaker_naming ? '*' : ''),
                 note: asset.note || '',
-                style: asset.bookmaker_naming ? 'color:#FF6A1A;font-weight:700;' : 'color:#E7E6E2;',
+                style: asset.bookmaker_naming ? 'color:var(--accent);font-weight:700;' : 'color:#E7E6E2;',
               })),
           }))
           .filter(group => group.count > 0),
@@ -1400,9 +1401,9 @@ class Component extends DCLogic {
       return a === b || a.includes(b) || b.includes(a);
     };
     const statusMark = status =>
-      status === 'current_unverified' ? { mark: '?', style: 'color:#FF6A1A;font-weight:800;', title: 'нужно подтверждение' }
+      status === 'current_unverified' ? { mark: '?', style: 'color:var(--accent);font-weight:800;', title: 'нужно подтверждение' }
       : status === 'reported_expired' || status === 'historical' ? { mark: '×', style: 'color:#A6A3BA;', title: 'завершено' }
-      : status === 'fresh_public_announcement' ? { mark: '+', style: 'color:#FF6A1A;', title: 'только что объявлено' }
+      : status === 'fresh_public_announcement' ? { mark: '+', style: 'color:var(--accent);', title: 'только что объявлено' }
       : { mark: '', style: '', title: '' };
     const partnershipsFor = brandId => (research?.partnerships.partnerships || []).filter(item => item.brand_id === brandId);
     const brandOrderForAssets = (() => {
@@ -1430,7 +1431,7 @@ class Component extends DCLogic {
           kind: asset.asset_type,
           name: asset.name + (asset.bookmaker_naming ? '*' : ''),
           note: asset.note || '',
-          style: asset.bookmaker_naming ? 'color:#FF6A1A;font-weight:700;' : 'color:#E7E6E2;',
+          style: asset.bookmaker_naming ? 'color:var(--accent);font-weight:700;' : 'color:#E7E6E2;',
           mark: flag.mark, markStyle: flag.style, markTitle: flag.title,
           url: deal ? (firstSource(deal.source_ids)?.url || '') : '',
           hasUrl: Boolean(deal && firstSource(deal.source_ids)?.url),
@@ -1466,7 +1467,7 @@ class Component extends DCLogic {
           kind: 'tournament',
           name: short + (String(tournament.name || '').toLowerCase().includes(brandWord) ? '*' : ''),
           note: [prize, tournament.peak_viewers ? `пик ${this.number(tournament.peak_viewers)}` : ''].filter(Boolean).join(' · '),
-          style: String(tournament.name || '').toLowerCase().includes(brandWord) ? 'color:#FF6A1A;font-weight:700;' : 'color:#E7E6E2;',
+          style: String(tournament.name || '').toLowerCase().includes(brandWord) ? 'color:var(--accent);font-weight:700;' : 'color:#E7E6E2;',
           mark: '', markStyle: '', markTitle: '',
           url: '', hasUrl: false, noUrl: true,
           relation: 'собственный турнир',
@@ -1503,7 +1504,7 @@ class Component extends DCLogic {
         .filter(group => group.count > 0);
       return {
         label: brandNames[id] || key,
-        style: id === 'brand:winline' ? 'color:#FF6A1A;' : 'color:#E7E6E2;',
+        style: id === 'brand:winline' ? 'color:var(--accent);' : 'color:#E7E6E2;',
         total: `${rows.length} ${plural(rows.length, 'актив', 'актива', 'активов')}`,
         groups,
       };
@@ -1515,7 +1516,7 @@ class Component extends DCLogic {
           const item = matrices.competitor_portfolio.find(row => row.brand_id === brandId);
           return {
             brand: brandNames[brandId],
-            brandStyle: brandId === 'brand:winline' ? 'color:#FF6A1A;' : '',
+            brandStyle: brandId === 'brand:winline' ? 'color:var(--accent);' : '',
             total: item.sampled_relationship_count,
             current: item.current_public_signal_count,
             verify: item.needs_verification_count,
@@ -1580,7 +1581,7 @@ class Component extends DCLogic {
                 channelUrl: item.channelUrl,
                 viewers: this.number(item.viewers),
                 brands: [...item.brands].sort().join(' · '),
-                brandStyle: item.brands.has('Winline') ? 'color:#FF6A1A;' : '',
+                brandStyle: item.brands.has('Winline') ? 'color:var(--accent);' : '',
                 evidence: [...item.evidence].sort().map(evidenceRu).join(' · '),
               })),
           };
@@ -1751,7 +1752,7 @@ class Component extends DCLogic {
       teamTable: mergedBrandAssets.flatMap(brand =>
         (brand.groups.find(group => group.title === 'Команды')?.items || []).map(item => ({
           brand: brand.label,
-          brandStyle: brand.label === 'Winline' ? 'color:#FF6A1A;' : 'color:#D3D1DB;',
+          brandStyle: brand.label === 'Winline' ? 'color:var(--accent);' : 'color:#D3D1DB;',
           name: item.name,
           nameStyle: item.style,
           relation: item.relation || '—',
@@ -1796,7 +1797,7 @@ class Component extends DCLogic {
       mediaEvents,
       rightsChain: [
         { who: 'Paragon Events', style: 'color:#E7E6E2;', role: 'правообладатель', what: 'С 2023 года держит русские права на турниры ESL FACEIT Group: IEM, ESL Pro League, ESL One, DreamLeague. В 2024 заключила многолетнее соглашение с PGL и стала эксклюзивным держателем русских прав на их турниры.', publisher: 'Игромания', url: 'https://www.igromania.ru/news/126208/Paragon_stala_vladelcem_prav_na_russkoyazychnoe_osveschenie_turnirov_ESL_FACEIT_Group.html' },
-        { who: 'Winline', style: 'color:#FF6A1A;', role: 'спонсор вещания', what: 'DreamLeague по Dota 2 Paragon освещает при поддержке Winline. Своих прав у букмекера в этой цепочке нет — оплачивается брендинг эфира.', publisher: 'Paragon Events на Sports.ru', url: 'https://cyber.sports.ru/dota2/blogs/3369101.html' },
+        { who: 'Winline', style: 'color:var(--accent);', role: 'спонсор вещания', what: 'DreamLeague по Dota 2 Paragon освещает при поддержке Winline. Своих прав у букмекера в этой цепочке нет — оплачивается брендинг эфира.', publisher: 'Paragon Events на Sports.ru', url: 'https://cyber.sports.ru/dota2/blogs/3369101.html' },
         { who: 'Okko', style: 'color:#E7E6E2;', role: 'площадка дистрибуции', what: 'С 4 апреля 2026 показывает турниры PGL по CS2 и Dota 2 под брендингом Winline: мультипоток, выбор аудиодорожки, хайлайты и аналитика. Старт — PGL Bucharest, дальше мейджор в Сингапуре и PGL Astana.', publisher: 'Esports.ru', url: 'https://esports.ru/news/winline-i-okko-obyavili-o-partnerstve/' },
         { who: 'Фонбет', style: 'color:#E7E6E2;', role: 'спонсор вещания конкурента', what: 'Титульный партнёр русской трансляции IEM Krakow 2026 по CS2 — на официальных каналах той же Paragon. Турнир прошёл 28 января — 8 февраля, призовой 1,25 млн $.', publisher: 'Legalbet', url: 'https://legalbet.ru/news/62021082-fonbet-titulnij-partner-russkoyazichnoj-translyatcii/' },
       ],
@@ -1804,15 +1805,15 @@ class Component extends DCLogic {
         const brand = talentBrands[key];
         return {
           label: brand.label,
-          style: brand.label === 'Winline' ? 'color:#FF6A1A;' : 'color:#E7E6E2;',
+          style: brand.label === 'Winline' ? 'color:var(--accent);' : 'color:#E7E6E2;',
           roster: brand.count,
           withData: `${brand.withAudienceCount} из ${brand.count}`,
           esports: `${brand.fromEsports} · ${Math.round(brand.fromEsports / brand.people.length * 100)}%`,
-          esportsStyle: brand.fromEsports / brand.people.length >= 0.35 ? 'color:#FF6A1A;font-weight:700;' : 'color:#C0BDD2;',
+          esportsStyle: brand.fromEsports / brand.people.length >= 0.35 ? 'color:var(--accent);font-weight:700;' : 'color:#C0BDD2;',
           sumAvg: this.number(brand.sumAvg),
           sumMax: this.number(brand.sumMax),
           perChannel: brand.withAudienceCount ? this.number(Math.round(brand.sumAvg / brand.withAudienceCount)) : '—',
-          perChannelStyle: brand.withAudienceCount && brand.sumAvg / brand.withAudienceCount > 5000 ? 'color:#FF6A1A;' : 'color:#D3D1DB;',
+          perChannelStyle: brand.withAudienceCount && brand.sumAvg / brand.withAudienceCount > 5000 ? 'color:var(--accent);' : 'color:#D3D1DB;',
         };
       }),
       talentVerdictTitle: 'BetBoom набирает людей из киберспорта, Winline — стримеров',
@@ -1866,7 +1867,7 @@ class Component extends DCLogic {
         {
           n: '02',
           title: 'Эффект без клика',
-          answers: 'влияние на органику',
+          answers: 'влияние на органику',
           items: [
             {
               name: 'Аплифты регистраций и депозитов в периоды эфиров',
@@ -1883,7 +1884,7 @@ class Component extends DCLogic {
         {
           n: '03',
           title: 'Те, кто не дошёл — сбор аудиторий',
-          answers: 'как вернуть тех, кто не зарегистрировался',
+          answers: 'как вернуть тех, кто не зарегистрировался',
           items: [
             {
               name: 'Розыгрыш вместо прямой регистрации',
@@ -2003,7 +2004,7 @@ class Component extends DCLogic {
       slayVerdictText: 'Награды разошлись между людьми из разных пулов: sasavot и rostislav_999 есть в составе Winline, а StRoGo — партнёр Фонбета. Премия работает как площадка для всего ру-стриминга, а не как витрина своего пула, и именно поэтому её смотрят 758 тысяч человек одновременно. Ни один киберспортивный продукт Winline к таким числам близко не подходит: у Pro League Season 3 пик 21 485.',
       slayVerdictSecond: 'При этом у рекордной цифры нет независимого подтверждения, а после церемонии были публичные обвинения в накрутке онлайна и голосов. Актив такого масштаба стоит защищать внешним счётчиком: заявка турнира в Esports Charts стоит ноль рублей и снимает спор до того, как он начнётся.',
       pubstompRivals: [
-        { brand: 'Winline', style: 'color:#FF6A1A;', place: 'Москва, МТС Live Холл', when: '23 августа, 1 день', tickets: 'от 2 000 ₽, проданы', ticketStyle: 'color:#FF6A1A;font-weight:700;' },
+        { brand: 'Winline', style: 'color:var(--accent);', place: 'Москва, МТС Live Холл', when: '23 августа, 1 день', tickets: 'от 2 000 ₽, проданы', ticketStyle: 'color:var(--accent);font-weight:700;' },
         { brand: 'BetBoom', style: 'color:#E7E6E2;', place: 'Москва, Дизайн-завод', when: '22–23 августа', tickets: 'фестиваль на два дня финалов', ticketStyle: 'color:#D3D1DB;' },
         { brand: 'Фонбет', style: 'color:#E7E6E2;', place: 'Петербург, Брусницын Холл', when: '22–23 августа', tickets: 'продажа ещё не открыта', ticketStyle: 'color:#D3D1DB;' },
       ],
