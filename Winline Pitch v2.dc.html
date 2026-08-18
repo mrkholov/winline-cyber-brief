@@ -894,98 +894,6 @@
   </sc-if>
 
 
-  <!-- ==================== CV ==================== -->
-  <div style="max-width:1240px;margin:0 auto;padding:0 40px;">
-    <section id="cv" style="padding:62px 0 40px;border-top:1px solid rgba(255,255,255,0.12);">
-      <div style="font-family:'JetBrains Mono',monospace;font-size:14px;color:#FF6A1A;font-weight:600;letter-spacing:1.2px;margin-bottom:20px;">CV — ДОКАЗАТЕЛЬНАЯ БАЗА</div>
-      <div style="font-size:43.5px;font-weight:800;max-width:860px;letter-spacing:-0.6px;line-height:1.2;">13 лет 8 месяцев в performance, product marketing, gaming и EdTech</div>
-    </section>
-
-    <section style="padding:20px 0 48px;">
-      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:14px;">
-        <sc-for list="{{ cvCompanies }}" as="c" hint-placeholder-count="3">
-          <div style="background:#1F1C2B;border:1px solid rgba(255,255,255,0.11);border-radius:14px;padding:26px;">
-            <div style="font-family:'JetBrains Mono',monospace;font-size:14px;color:#FF6A1A;font-weight:600;">{{ c.years }}</div>
-            <div style="font-size:24px;font-weight:800;margin-top:10px;">{{ c.company }}</div>
-            <div style="font-size:15.5px;color:#C0BDD2;margin-top:4px;">{{ c.role }}</div>
-            <div style="margin-top:20px;display:flex;flex-direction:column;gap:10px;">
-              <sc-for list="{{ c.facts }}" as="f" hint-placeholder-count="4">
-                <div style="display:flex;justify-content:space-between;gap:14px;padding-top:10px;border-top:1px solid rgba(255,255,255,0.07);">
-                  <span style="font-size:14px;color:#C0BDD2;line-height:1.4;">{{ f.k }}</span>
-                  <span style="font-size:15px;font-family:'JetBrains Mono',monospace;font-weight:600;white-space:nowrap;">{{ f.v }}</span>
-                </div>
-              </sc-for>
-            </div>
-          </div>
-        </sc-for>
-      </div>
-    </section>
-
-    <section style="padding:48px 0;border-top:1px solid rgba(255,255,255,0.07);">
-      <div style="font-size:25px;font-weight:800;margin-bottom:6px;">Международный периметр</div>
-      <div style="font-size:15.5px;color:#BAB7CB;margin-bottom:22px;">Executive-уровень: переговоры, релокации, работа вне России</div>
-      <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:12px;">
-        <sc-for list="{{ cvIntl }}" as="i" hint-placeholder-count="4">
-          <div style="background:#1F1C2B;border:1px solid rgba(255,255,255,0.10);border-radius:14px;padding:20px;">
-            <div style="font-size:23px;font-weight:800;color:#FF6A1A;">{{ i.stat }}</div>
-            <div style="font-size:15px;color:#E7E6E2;margin-top:8px;line-height:1.45;">{{ i.label }}</div>
-          </div>
-        </sc-for>
-      </div>
-    </section>
-
-    <section style="padding:48px 0;border-top:1px solid rgba(255,255,255,0.07);">
-      <div style="font-size:27.5px;font-weight:800;margin-bottom:26px;">Три кейса под этот периметр</div>
-      <div style="display:flex;flex-direction:column;gap:14px;">
-        <sc-for list="{{ cvCases }}" as="c" hint-placeholder-count="3">
-          <div style="background:#1F1C2B;border:1px solid rgba(255,255,255,0.11);border-radius:14px;padding:26px 28px;">
-            <div style="display:flex;align-items:baseline;gap:14px;margin-bottom:16px;flex-wrap:wrap;">
-              <span style="font-size:21.5px;font-weight:800;">{{ c.title }}</span>
-              <span style="font-size:14.5px;font-family:'JetBrains Mono',monospace;color:#FF6A1A;">{{ c.headline }}</span>
-            </div>
-            <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:24px;">
-              <div>
-                <div style="font-size:14px;font-weight:700;letter-spacing:0.6px;color:#BAB7CB;margin-bottom:7px;">КОНТЕКСТ</div>
-                <div style="font-size:16px;line-height:1.55;color:#D3D1DB;">{{ c.context }}</div>
-              </div>
-              <div>
-                <div style="font-size:14px;font-weight:700;letter-spacing:0.6px;color:#BAB7CB;margin-bottom:7px;">ЧТО СДЕЛАЛ</div>
-                <div style="font-size:16px;line-height:1.55;color:#D3D1DB;">{{ c.action }}</div>
-              </div>
-              <div>
-                <div style="font-size:14px;font-weight:700;letter-spacing:0.6px;color:#FF6A1A;margin-bottom:7px;">ПЕРЕНОС В WINLINE</div>
-                <div style="font-size:16px;line-height:1.55;color:#E7E6E2;">{{ c.transfer }}</div>
-              </div>
-            </div>
-          </div>
-        </sc-for>
-      </div>
-    </section>
-
-    <section style="padding:48px 0;border-top:1px solid rgba(255,255,255,0.07);">
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:40px;">
-        <div>
-          <div style="font-size:25px;font-weight:800;margin-bottom:20px;">Измерение медийки и охвата</div>
-          <sc-for list="{{ measurementCases }}" as="m" hint-placeholder-count="5">
-            <div style="padding:14px 0;border-top:1px solid rgba(255,255,255,0.07);">
-              <div style="font-size:16.5px;font-weight:700;">{{ m.title }}</div>
-              <div style="font-size:15px;color:#C0BDD2;margin-top:5px;line-height:1.5;">{{ m.desc }}</div>
-            </div>
-          </sc-for>
-        </div>
-        <div>
-          <div style="font-size:25px;font-weight:800;margin-bottom:20px;">Управленческий подход</div>
-          <sc-for list="{{ mgmtApproach }}" as="m" hint-placeholder-count="6">
-            <div style="padding:14px 0;border-top:1px solid rgba(255,255,255,0.07);font-size:16px;line-height:1.55;color:#D3D1DB;">{{ m }}</div>
-          </sc-for>
-        </div>
-      </div>
-    </section>
-  </div>
-
-  <!-- ==================== ВОПРОСЫ ==================== -->
-  <div style="max-width:1240px;margin:0 auto;padding:0 40px;">
-  </div>
 
 </div>
 
@@ -1744,7 +1652,6 @@ class Component extends DCLogic {
         { href: '#strimery', label: 'Стримеры' },
         { href: '#komandy', label: 'Команды' },
         { href: '#turniry', label: 'Турниры' },
-        { href: '#cv', label: 'CV' },
       ],
 
       teamTable: mergedBrandAssets.flatMap(brand =>
@@ -2115,61 +2022,7 @@ class Component extends DCLogic {
           lead: 'English C1 · топ-менеджмент, инвесторы, агентства, международные команды · 4 года маркетинг-директором в Мексике',
         },
       ],
-      gapTools: [
-        { gap: 'Контакт есть, атрибуции нет', tool: 'Разметка на каждом касании: campaign ID, промокод, QR, chat-команда, размеченный лендинг под конкретный матч', proof: '120+ интеграций/мес по меткам, промокодам и QR' },
-        { gap: 'Медийный эффект не в last-click', tool: 'Post-view отдельно от post-click, целевые и контрольные группы, вклад медийных конверсий в решение по бюджету', proof: 'Измерение охватных кампаний Wargaming' },
-        { gap: 'Бренд усиливается, но не считается', tool: 'Brand lift через геймифицированные опросы аудитории, видевшей интеграцию, против контрольной', proof: 'Статзначимый инкремент знания бренда' },
-        { gap: 'Платим дважды за одну аудиторию', tool: 'Пересечение аудиторий: уникальные ники в чатах при одновременных эфирах, эвристика по расписанию и дисциплине, гео и first-party ID', proof: 'Методология спроектирована на Twitch API' },
-        { gap: 'Охват накручен', tool: 'Антифрод: сообщения чата на 1000 зрителей, форма кривой онлайна, хвост VOD, возраст канала и история контента', proof: '1 место Яндекс · ~$27K/мес отсечённых расходов · Admon, GIVT/SIVT' },
-        { gap: 'Один канал — не вся коммуникация', tool: 'Мультиканальность партнёра: стрим → Telegram/VK/YouTube → offline-ивент → CRM, с единым идентификатором кампании', proof: 'Отдел инфлюенс с нуля: $1,5K → $70K/мес' },
-      ],
 
-      cvCompanies: [
-        { years: '2022–2026', company: 'Escuela Británica', role: 'Marketing Director, Мексика', facts: [{ k: 'Выручка', v: '$90K → $550K/мес' }, { k: 'Рост', v: '×2, затем +80%' }, { k: 'ДРР', v: '~35%' }, { k: 'Бюджет', v: '$100–250K/мес' }, { k: 'Прямые тимлиды', v: '5' }] },
-        { years: '2018–2022', company: 'Wargaming', role: 'World of Tanks, СНГ', facts: [{ k: 'Команда', v: 'до 30 чел, матрично' }, { k: 'Бюджет пик', v: '$1M+/мес' }, { k: 'Winback', v: '+$85K/мес' }, { k: 'Reactivation', v: '+$18K/мес' }, { k: 'Twitch-тесты', v: 'CAC ↓3×' }] },
-        { years: '2012–2018', company: 'IT-Agency', role: 'Руководитель performance', facts: [{ k: 'Клиентский бюджет', v: '$20K → $800K/мес' }, { k: 'Проектов одновременно', v: '11' }, { k: 'Нанял и обучил', v: '7 специалистов' }, { k: 'Антифрод', v: '1 место, Яндекс' }] },
-      ],
-      cvIntl: [
-        { stat: 'C1', label: 'Английский — executive-переговоры без переводчика' },
-        { stat: '3 страны', label: 'Работа на месте: Россия, Мексика, Бразилия; сейчас — Беларусь' },
-        { stat: 'Топ-менеджмент', label: 'Согласование стратегии направления с руководством компании' },
-        { stat: 'Агентства и вендоры', label: 'Прямые переговоры со скидками у инфлюенсеров и подрядчиков — минус 30% к стоимости заявки' },
-      ],
-      cvCases: [
-        {
-          title: 'Инфлюенс-канал с нуля до системы', headline: '$1,5K → $70K/мес',
-          context: 'Мексика: работа с блогерами велась вручную, без аналитики и единых правил.',
-          action: 'Нанял и выстроил команду 2 → 7 менеджеров, календарь публикаций, отслеживание по меткам, промокодам и QR, модели CPA и бартера, скрипт запроса скидок, аналитика по блогерам, платформам и типам интеграций.',
-          transfer: 'Influence-группа и работа со стримерами: та же задача — превратить договорённости в систему с атрибуцией на каждом уровне.'
-        },
-        {
-          title: 'Измерение там, где нет last-click', headline: 'post-view, brand lift, инкрементальность',
-          context: 'Охватные и медийные кампании, которые нельзя оценить перформанс-логикой.',
-          action: 'Построил post-view измерение с контрольными группами, замерил brand lift после кампании в онлайн-кинотеатрах, проверил инкрементальность офлайна на сегментах похожих городов — бюджет переложили в digital.',
-          transfer: 'Спонсорства, турнирные продукты и события: как честно считать актив без прямой атрибуции.'
-        },
-        {
-          title: 'Качество трафика и антифрод', headline: '~$27K/мес отсечённых расходов',
-          context: 'Часть бюджета уходила на невалидный трафик и подменённые метки.',
-          action: 'Интеграция с Admon, фильтрация GIVT/SIVT, выявление куки-стаффинга по версиям браузера. Отдельно — 1 место на мероприятии Яндекса за систему выявления мошеннического трафика.',
-          transfer: 'Накрутка онлайна и голосов у стримеров и на собственных проектах считается той же логикой — независимый проверяемый замер.'
-        },
-      ],
-      measurementCases: [
-        { title: 'Post-view отдельно от post-click', desc: 'Медийный канал — такое же звено цепочки касаний, просто с длинным лагом. Учитывался отдельно, а не списывался в неизмеримое.' },
-        { title: 'Brand lift', desc: 'Замер восприятия бренда у аудитории, видевшей рекламу, против контрольной. Статзначимый инкремент по знанию.' },
-        { title: 'Инкрементальность по гео', desc: 'Перед годовым бюджетом на офлайн — тест на сегментах похожих городов. Прирост точечный, масштабировать нерационально.' },
-        { title: 'Частота касаний и ротация', desc: 'Считал нужное число касаний и менял креатив на каждом шаге с таймаутами вместо трёх одинаковых подряд.' },
-        { title: 'Динамические посадочные', desc: 'World of Tanks: +$85K/мес от вернувшихся и +$18K/мес от активных игроков.' },
-      ],
-      mgmtApproach: [
-        'Стратегия согласуется с топ-менеджментом и переводится в понятные цели команды.',
-        'Еженедельные один на один с лидами, раз в две-три недели — с сотрудниками.',
-        'KPI учитывают роль, опыт и существующую партнёрскую базу сотрудника.',
-        'Оцениваются план-факт, выручка, маржа, доля расходов, объём outreach и публикации.',
-        'От команды — самостоятельность и аргументированные предложения, не только исполнение.',
-        'При провале результата сначала разбираются причины и мотивация, затем фиксируются границы и срок исправления.',
-      ],
 
     };
   }
