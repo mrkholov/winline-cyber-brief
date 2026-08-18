@@ -745,7 +745,7 @@
           </sc-for>
         </div>
         <div style="display:flex;flex-wrap:wrap;gap:18px;align-items:center;font-size:13px;color:#77767C;margin-bottom:32px;">
-          <span><span style="color:#FF6A1A;font-weight:700;">Оранжевый*</span> — актив назван именем букмекера</span>
+          <span><span style="color:#FF6A1A;font-weight:700;">Оранжевым</span> — активы, названные именем букмекера</span>
           <span><span style="color:#FF6A1A;font-weight:800;">?</span> — нужно подтверждение актуальности</span>
         </div>
         <div style="font-size:13px;color:#77767C;line-height:1.55;">{{ eventAssetsNote }}</div>
@@ -1841,7 +1841,9 @@ class Component extends DCLogic {
         .map(brand => ({
           label: brand.label,
           style: brand.style,
-          groups: brand.groups.filter(group => group.title !== 'Команды'),
+          groups: brand.groups
+            .filter(group => group.title !== 'Команды')
+            .map(group => ({ ...group, items: group.items.map(item => ({ ...item, name: item.name.replace('*', '') })) })),
         }))
         .filter(brand => brand.groups.length > 0)
         .map(brand => ({
