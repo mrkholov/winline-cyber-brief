@@ -93,7 +93,7 @@
 
     <section id="opyt" style="padding:80px 0;border-top:1px solid rgba(255,255,255,0.07);">
       <div style="font-family:'JetBrains Mono',monospace;font-size:14px;color:#FF6A1A;font-weight:600;letter-spacing:1.2px;margin-bottom:14px;">МОЙ ОПЫТ</div>
-      <div style="font-size:36.5px;font-weight:800;letter-spacing:-0.4px;margin-bottom:34px;">Шесть направлений и что за каждым стоит</div>
+      <div style="font-size:36.5px;font-weight:800;letter-spacing:-0.4px;margin-bottom:34px;">Шесть направлений и что за каждым стоит</div>
       <div style="position:sticky;top:65px;z-index:10;display:grid;grid-template-columns:1.1fr 1.3fr;gap:28px;padding:0 0 12px;background:#0A0A0C;border-bottom:1px solid rgba(255,255,255,0.15);">
         <div style="font-size:13px;font-weight:700;letter-spacing:0.6px;color:#77767C;">НАПРАВЛЕНИЕ</div>
         <div style="font-size:13px;font-weight:700;letter-spacing:0.6px;color:#77767C;">ЧТО СДЕЛАНО</div>
@@ -218,21 +218,21 @@
 
         <div style="font-size:19.5px;font-weight:800;margin:30px 0 12px;">Кто на кого делает ставку</div>
         <div style="border:1px solid rgba(255,255,255,0.09);border-radius:14px;overflow:hidden;">
-          <div style="display:grid;grid-template-columns:0.85fr 0.6fr 0.75fr 0.85fr 0.85fr 0.9fr;background:#1D1C1F;padding:12px 18px;font-size:12px;font-weight:700;letter-spacing:0.5px;color:#9A9AA0;">
-            <div>БРЕНД</div><div>В ПУЛЕ</div><div>ИЗ КИБЕРА</div><div>СУММА СРЕДНЕГО</div><div>СУММА ПИКОВ</div><div>СРЕДНИЙ НА КАНАЛ</div>
+          <div style="display:grid;grid-template-columns:0.85fr 0.55fr 0.7fr 0.75fr 0.9fr 0.9fr;background:#1D1C1F;padding:12px 18px;font-size:12px;font-weight:700;letter-spacing:0.5px;color:#9A9AA0;">
+            <div>БРЕНД</div><div>В ПУЛЕ</div><div>С ДАННЫМИ</div><div>ИЗ КИБЕРА</div><div>СУММА СРЕДНЕГО</div><div>СРЕДНИЙ НА КАНАЛ</div>
           </div>
           <sc-for list="{{ brandTotals }}" as="b" hint-placeholder-count="4">
-            <div style="display:grid;grid-template-columns:0.85fr 0.6fr 0.75fr 0.85fr 0.85fr 0.9fr;padding:13px 18px;border-top:1px solid rgba(255,255,255,0.07);background:#121114;align-items:baseline;">
+            <div style="display:grid;grid-template-columns:0.85fr 0.55fr 0.7fr 0.75fr 0.9fr 0.9fr;padding:13px 18px;border-top:1px solid rgba(255,255,255,0.07);background:#121114;align-items:baseline;">
               <div style="font-size:14px;font-weight:800;{{ b.style }}">{{ b.label }}</div>
               <div style="font-family:'JetBrains Mono',monospace;font-size:13.5px;color:#C7C6CC;">{{ b.roster }}</div>
+              <div style="font-family:'JetBrains Mono',monospace;font-size:13.5px;color:#9A9AA0;">{{ b.withData }}</div>
               <div style="font-family:'JetBrains Mono',monospace;font-size:13.5px;{{ b.esportsStyle }}">{{ b.esports }}</div>
               <div style="font-family:'JetBrains Mono',monospace;font-size:13.5px;color:#E7E6E2;">{{ b.sumAvg }}</div>
-              <div style="font-family:'JetBrains Mono',monospace;font-size:13.5px;color:#9A9AA0;">{{ b.sumMax }}</div>
               <div style="font-family:'JetBrains Mono',monospace;font-size:13.5px;font-weight:700;{{ b.perChannelStyle }}">{{ b.perChannel }}</div>
             </div>
           </sc-for>
         </div>
-        <div style="font-size:13px;color:#77767C;line-height:1.55;margin-top:10px;">Суммы считаются только по каналам, у которых есть аудиторные данные, поэтому они занижены относительно полного пула. «Из кибера» — доля тех, кто выступал на про-сцене или комментирует.</div>
+        <div style="font-size:13px;color:#77767C;line-height:1.55;margin-top:10px;">Колонка «с данными» показывает, по скольким каналам пула вообще есть аудиторные цифры: остальные либо не стримили в замеряемый месяц, либо их канал не удалось сопоставить с человеком из состава. Суммы и средние считаются только по этим каналам, поэтому сравнивать бренды честно можно по колонке «средний на канал». «Из кибера» — доля тех, кто выступал на про-сцене или комментирует.</div>
 
         <div class="mine" style="padding:22px 26px;margin-top:18px;">
           <div class="mine-tag"><i>ЕХ</i>ВЫВОД</div>
@@ -390,10 +390,26 @@
           </div>
 
           <div style="border-top:1px solid rgba(255,255,255,0.08);padding:22px 26px;">
+            <div style="font-size:13px;font-weight:700;letter-spacing:0.6px;color:#77767C;margin-bottom:12px;">ТРИ БУКМЕКЕРА В ОДИН УИКЕНД</div>
+            <div style="border:1px solid rgba(255,255,255,0.09);border-radius:12px;overflow:hidden;">
+              <div style="display:grid;grid-template-columns:0.8fr 1.4fr 0.7fr 1fr;padding:11px 18px;background:#1D1C1F;font-size:12px;font-weight:700;letter-spacing:0.5px;color:#9A9AA0;">
+                <div>БРЕНД</div><div>ГДЕ</div><div>КОГДА</div><div>БИЛЕТЫ</div>
+              </div>
+              <sc-for list="{{ pubstompRivals }}" as="r" hint-placeholder-count="3">
+                <div style="display:grid;grid-template-columns:0.8fr 1.4fr 0.7fr 1fr;padding:12px 18px;border-top:1px solid rgba(255,255,255,0.06);background:#121114;align-items:baseline;">
+                  <div style="font-size:15px;font-weight:800;{{ r.style }}">{{ r.brand }}</div>
+                  <div style="font-size:14px;color:#C7C6CC;">{{ r.place }}</div>
+                  <div style="font-size:14px;color:#C7C6CC;">{{ r.when }}</div>
+                  <div style="font-size:14px;{{ r.ticketStyle }}">{{ r.tickets }}</div>
+                </div>
+              </sc-for>
+            </div>
+            <div style="font-size:13px;color:#77767C;line-height:1.5;margin:10px 0 20px;">Источники: <a href="https://afisha.yandex.ru/moscow/sport/winline-pubstomp-the-international" target="_blank" rel="noreferrer">Яндекс Афиша</a> · <a href="https://finargot.ru/pubstomp" target="_blank" rel="noreferrer">карта пабстомпов TI 2026</a>. Кроме этих трёх, финал показывают ещё в Шанхае, Перми и Ростове — но это площадки без букмекерских денег.</div>
+
             <div class="mine" style="padding:22px 26px;">
               <div class="mine-tag"><i>ЕХ</i>ВЫВОД</div>
               <div style="font-size:19px;font-weight:800;line-height:1.4;">Это классный актив в портфеле по возможности замера: у офлайн-ивента есть билет, а значит есть контакт.</div>
-              <div style="font-size:15.5px;line-height:1.6;margin-top:11px;max-width:1000px;">Стрим даёт только просмотр, а билет даёт имя, телефон и почту человека, который сам заплатил за то, чтобы смотреть Dota. Такую базу можно сверить с игроками, разделить на новых и действующих, догреть после ивента и посчитать выручку на одного пришедшего. Продажа идёт через панели стримеров — значит уже сейчас видно, чей канал приводит покупателей, и это готовый рейтинг пула по отдаче, а не по подписчикам.</div>
+              <div style="font-size:15.5px;line-height:1.6;margin-top:11px;max-width:1000px;">Стрим даёт только просмотр, а билет даёт имя, телефон и почту человека, который сам заплатил за то, чтобы смотреть Dota. Такую базу можно сверить с игроками, разделить на новых и действующих, догреть после ивента и посчитать выручку на одного пришедшего. Продажа идёт через панели стримеров — значит уже сейчас видно, чей канал приводит покупателей, и это готовый рейтинг пула по отдаче, а не по подписчикам. Отдельно стоит сравнить себя с соседями по уикенду: Winline берёт один день против двух у BetBoom и Фонбета и при этом уже распродан. Вопрос, который я бы задал заранее: чем мы считаем победу в этой тройной очной ставке — залом, билетами, онлайном трансляции или регистрациями после неё.</div>
             </div>
           </div>
         </div>
@@ -409,21 +425,25 @@
               <div style="padding:24px 26px;">
                 <div style="display:flex;align-items:baseline;gap:12px;flex-wrap:wrap;">
                   <div style="font-size:23px;font-weight:800;">{{ e.name }}</div>
-                  <sc-if value="{{ e.isLive }}" hint-placeholder-val="{{ true }}">
-                    <span style="font-size:12px;font-weight:800;letter-spacing:0.6px;background:#FF6A1A;color:#0A0A0C;border-radius:5px;padding:3px 8px;">В ЭФИРЕ {{ e.date }}</span>
-                  </sc-if>
+                  <span style="font-size:12px;font-weight:800;letter-spacing:0.6px;background:#1D1C1F;border:1px solid rgba(255,255,255,0.14);color:#9A9AA0;border-radius:5px;padding:3px 8px;">{{ e.badge }}</span>
                 </div>
                 <div style="font-size:15px;color:#9A9AA0;line-height:1.55;margin-top:8px;">{{ e.format }}</div>
 
                 <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:20px;">
                   <div style="background:#1D1C1F;border-radius:10px;padding:14px 16px;">
                     <div style="font-family:'JetBrains Mono',monospace;font-size:27.5px;font-weight:800;color:#FF6A1A;">{{ e.viewers }}</div>
-                    <div style="font-size:13px;color:#9A9AA0;line-height:1.4;margin-top:5px;">зрителей в момент наблюдения</div>
+                    <div style="font-size:13px;color:#9A9AA0;line-height:1.4;margin-top:5px;">зрителей в момент нашего замера</div>
                   </div>
                   <div style="background:#1D1C1F;border-radius:10px;padding:14px 16px;">
                     <div style="font-family:'JetBrains Mono',monospace;font-size:27.5px;font-weight:800;color:#FF6A1A;">{{ e.prize }}</div>
                     <div style="font-size:13px;color:#9A9AA0;line-height:1.4;margin-top:5px;">призовой фонд</div>
                   </div>
+                </div>
+
+                <div style="background:#1D1C1F;border-radius:10px;padding:15px 18px;margin-top:12px;">
+                  <div style="font-size:12.5px;font-weight:700;letter-spacing:0.5px;color:#77767C;margin-bottom:9px;">ЧЕМ ЗАКОНЧИЛОСЬ</div>
+                  <div style="font-size:15.5px;line-height:1.55;color:#E7E6E2;">{{ e.result }}</div>
+                  <div style="font-size:12.5px;color:#77767C;margin-top:7px;"><a href="{{ e.resultUrl }}" target="_blank" rel="noreferrer">{{ e.resultPublisher }}</a></div>
                 </div>
 
                 <div class="mine" style="padding:18px 20px;margin-top:12px;">
@@ -542,6 +562,15 @@
           </div>
         </div>
 
+
+        <div class="mine" style="padding:26px 28px;margin-top:24px;">
+          <div class="mine-tag"><i>ЕХ</i>ВЫВОД</div>
+          <div style="font-size:26px;font-weight:800;letter-spacing:-0.3px;line-height:1.3;max-width:950px;">Считать надо не сумму охватов, а уникальную аудиторию и вклад каждого следующего касания</div>
+          <div style="font-size:15.5px;line-height:1.6;margin-top:12px;max-width:1000px;">Пулы стримеров пересекаются: русский Twitch маленький, ядро зрителей общее. Если ранжировать каждого по своему CPA, один и тот же человек считается многократно — и все выглядят прилично. Правильный вопрос другой: какой прирост уникального охвата даёт следующий контракт при уже собранном пуле и какая частота касаний на человека оптимальна.</div>
+          <div style="font-size:15.5px;line-height:1.6;margin-top:11px;max-width:1000px;">Это считается без доступа к внутренним данным — по пересечению уникальных участников чатов на одновременных эфирах. Так уже делают сервисы, которые считают пересечение блогеров по авторам комментариев; у стримеров показатель честнее, потому что чат пишут во время эфира, а не спустя недели после публикации.</div>
+          <div style="font-size:15.5px;line-height:1.6;margin-top:11px;max-width:1000px;"><span class="hl">Резать пул по пересечению можно почти без потери охвата. Резать по CPA — вслепую.</span></div>
+        </div>
+
       </section>
 
         <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:12px;">
@@ -568,6 +597,54 @@
         </div>
 
 
+      </section>
+      <section id="rynok" style="padding:16px 0 60px;">
+        <div style="font-size:27.5px;font-weight:800;margin-bottom:8px;">Почему портфель пересобирают именно сейчас</div>
+        <div style="font-size:15.5px;color:#77767C;margin-bottom:22px;max-width:900px;">Всё, что выше, — про активы. Этот блок про то, в какой экономике эти активы теперь живут.</div>
+
+        <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:12px;">
+          <sc-for list="{{ marketTiles }}" as="m" hint-placeholder-count="4">
+            <div style="background:#141416;border:1px solid rgba(255,255,255,0.09);border-radius:14px;padding:20px 22px;">
+              <div style="font-family:'JetBrains Mono',monospace;font-size:30px;font-weight:800;color:#FF6A1A;">{{ m.value }}</div>
+              <div style="font-size:15px;font-weight:800;line-height:1.35;margin-top:7px;">{{ m.label }}</div>
+              <div style="font-size:13px;color:#77767C;line-height:1.5;margin-top:8px;">{{ m.note }}</div>
+              <div style="font-size:12.5px;margin-top:9px;"><a href="{{ m.url }}" target="_blank" rel="noreferrer">{{ m.publisher }}</a></div>
+            </div>
+          </sc-for>
+        </div>
+
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:16px;">
+          <div style="background:#141416;border:1px solid rgba(255,255,255,0.08);border-radius:14px;padding:22px 24px;">
+            <div style="font-size:13px;font-weight:700;letter-spacing:0.6px;color:#77767C;margin-bottom:12px;">ЧТО ПО РЕКЛАМЕ УЖЕ ДЕЙСТВУЕТ</div>
+            <div style="display:flex;flex-direction:column;gap:9px;">
+              <sc-for list="{{ marketRulesNow }}" as="r" hint-placeholder-count="4">
+                <div style="display:flex;gap:10px;align-items:baseline;">
+                  <span style="color:#FF6A1A;font-size:15px;flex-shrink:0;">&#9679;</span>
+                  <span style="font-size:15px;line-height:1.55;color:#E7E6E2;">{{ r }}</span>
+                </div>
+              </sc-for>
+            </div>
+          </div>
+          <div style="background:#141416;border:1px solid rgba(255,255,255,0.08);border-radius:14px;padding:22px 24px;">
+            <div style="font-size:13px;font-weight:700;letter-spacing:0.6px;color:#77767C;margin-bottom:12px;">ЧТО ПРЕДЛОЖЕНО, НО НЕ ПРИНЯТО</div>
+            <div style="display:flex;flex-direction:column;gap:9px;">
+              <sc-for list="{{ marketRulesDraft }}" as="r" hint-placeholder-count="4">
+                <div style="display:flex;gap:10px;align-items:baseline;">
+                  <span style="color:#4A4950;font-size:15px;flex-shrink:0;">&#9675;</span>
+                  <span style="font-size:15px;line-height:1.55;color:#9A9AA0;">{{ r }}</span>
+                </div>
+              </sc-for>
+            </div>
+            <div style="font-size:12.5px;color:#77767C;margin-top:12px;">Законопроект внесён в марте 2026 и не принят — это риск, а не действующая норма. <a href="https://adindex.ru/news/right/2026/03/13/343076.phtml" target="_blank" rel="noreferrer">AdIndex</a></div>
+          </div>
+        </div>
+
+        <div class="mine" style="padding:26px 28px;margin-top:18px;">
+          <div class="mine-tag"><i>ЕХ</i>ВЫВОД</div>
+          <div style="font-size:26px;font-weight:800;letter-spacing:-0.3px;line-height:1.3;max-width:950px;">Налог привязан к обороту, поэтому первым режут то, что не умеет показать возврат</div>
+          <div style="font-size:15.5px;line-height:1.6;margin-top:12px;max-width:1000px;">Целевые отчисления в 2,25% считаются со всех принятых ставок, а не с маржи: в убыточный месяц они не уменьшаются. При такой конструкции расходы делятся на те, что доказывают вклад в депозит, и все остальные. Медийные активы почти всегда во второй группе — не потому, что не работают, а потому, что нечем показать.</div>
+          <div style="font-size:15.5px;line-height:1.6;margin-top:11px;max-width:1000px;">Обратная сторона: отрасль отказалась примерно от 30% медийных лиц, а самих стримеров меньше не стало. <span class="hl">Сейчас условия диктует покупатель, и это лучший момент пересобрать пул, а не худший.</span> С этого я бы и начал: измеримые обязательства в новых контрактах, пересмотр состава по пересечению аудиторий и опора на собственные продукты и права, которые не зависят от того, разрешат ли завтра рекламу у блогеров.</div>
+        </div>
       </section>
       <section id="komandy" style="padding:16px 0 60px;">
         <div style="font-size:27.5px;font-weight:800;margin-bottom:8px;">Команды: ростеры и спонсорство</div>
@@ -676,6 +753,12 @@
             <div style="font-size:17px;font-weight:700;line-height:1.55;margin-top:20px;padding-top:18px;border-top:1px solid rgba(255,255,255,0.09);">Обе модели решают одну задачу — донести бренд до момента наивысшего внимания. Вопрос, который стоит задать до следующего продления: сравнивались ли они между собой по стоимости качественного контакта.</div>
           </div>
         </div>
+
+        <div class="mine" style="padding:24px 26px;margin-top:18px;">
+          <div class="mine-tag"><i>ЕХ</i>ВНИМАНИЕ</div>
+          <div style="font-size:21px;font-weight:800;line-height:1.4;max-width:950px;">{{ teamsExpiredTitle }}</div>
+          <div style="font-size:15.5px;line-height:1.6;margin-top:11px;max-width:1000px;">{{ teamsExpiredText }}</div>
+        </div>
       </section>
       <section id="turniry" style="padding:16px 0 60px;">
         <div style="font-size:27.5px;font-weight:800;margin-bottom:8px;">Турниры и трансляции</div>
@@ -761,6 +844,35 @@
           </div>
         </div>
         <div style="margin-top:16px;background:#1D1C1F;border-left:2px solid #FF6A1A;border-radius:0 10px 10px 0;padding:16px 20px;font-size:15px;line-height:1.6;color:#C7C6CC;">{{ eventsGap }}</div>
+
+        <div style="height:1px;background:rgba(255,255,255,0.09);margin:40px 0 28px;"></div>
+
+        <div style="font-size:19.5px;font-weight:800;margin-bottom:4px;">Кому принадлежат права на русские трансляции</div>
+        <div style="font-size:15px;color:#77767C;line-height:1.55;margin-bottom:16px;max-width:900px;">Публикации часто пишут, что букмекер «купил права». На деле права держит студия, а букмекер платит за брендинг вещания. Разница важная: у спонсора вещания нет самого актива, он арендует витрину.</div>
+
+        <div style="border:1px solid rgba(255,255,255,0.09);border-radius:14px;overflow:hidden;">
+          <div style="display:grid;grid-template-columns:0.8fr 1.1fr 1.5fr;background:#1D1C1F;padding:12px 18px;font-size:12px;font-weight:700;letter-spacing:0.5px;color:#9A9AA0;">
+            <div>КТО</div><div>РОЛЬ В ЦЕПОЧКЕ</div><div>ЧТО ИМЕННО</div>
+          </div>
+          <sc-for list="{{ rightsChain }}" as="r" hint-placeholder-count="4">
+            <div style="display:grid;grid-template-columns:0.8fr 1.1fr 1.5fr;padding:13px 18px;border-top:1px solid rgba(255,255,255,0.07);background:#121114;align-items:start;">
+              <div style="font-size:15px;font-weight:800;{{ r.style }}">{{ r.who }}</div>
+              <div style="font-size:14px;color:#C7C6CC;">{{ r.role }}</div>
+              <div>
+                <div style="font-size:14px;color:#E7E6E2;line-height:1.5;">{{ r.what }}</div>
+                <div style="font-size:12.5px;margin-top:5px;"><a href="{{ r.url }}" target="_blank" rel="noreferrer">{{ r.publisher }}</a></div>
+              </div>
+            </div>
+          </sc-for>
+        </div>
+
+        <div class="mine" style="padding:24px 26px;margin-top:16px;">
+          <div class="mine-tag"><i>ЕХ</i>ВЫВОД</div>
+          <div style="font-size:21px;font-weight:800;line-height:1.4;max-width:950px;">Одна студия обслуживает двух конкурентов сразу, разведя их по турнирам</div>
+          <div style="font-size:15.5px;line-height:1.6;margin-top:11px;max-width:1000px;">Paragon держит русские права и на ESL, и на PGL. DreamLeague по Dota идёт при поддержке Winline, а титульным партнёром русской трансляции IEM Krakow по CS был Фонбет. Значит эксклюзива по студии ни у кого нет: покупается конкретный турнир, а не отношения с правообладателем. Это первое, что я бы уточнил внутри — что именно закреплено в договоре и на какой срок.</div>
+          <div style="font-size:15.5px;line-height:1.6;margin-top:11px;max-width:1000px;"><span class="hl">Okko здесь стоит особняком: это единственная площадка в портфеле, где зритель авторизован.</span> На Twitch мы видим анонимную толпу, в подписочном сервисе — идентифицированного человека, которому можно посчитать досмотры, повторные визиты и путь дальше. Для замера вклада трансляций это лучшая точка входа, и с онлайн-кинотеатрами я уже работал.</div>
+        </div>
+
 
       </section>
   </div>
@@ -1244,7 +1356,12 @@ class Component extends DCLogic {
       name: item.name,
       format: item.format,
       date: '16 августа',
-      isLive: item.date_status === 'observed_live',
+      badge: item.date_status === 'observed_live' ? `В ЭФИРЕ ${dateRu(item.date)}` : `ЗАВЕРШЁН ${dateRu(item.date)}`,
+      result: item.result
+        ? `Чемпион — ${item.result.champion}, ${this.number(item.result.prize)} ₽. Второе место у ${item.result.runner_up}. Всего ${item.result.participants} участников, ${item.result.format.toLowerCase()}. ${item.result.note}`
+        : '',
+      resultUrl: item.result ? item.result.source.url : '',
+      resultPublisher: item.result ? `${item.result.source.publisher}, ${dateRu(item.date)}` : '',
       viewers: this.number(item.observed_concurrent_viewers),
       prize: `${this.decimal(item.prize_pool.amount / 1000000)} млн ₽`,
       image: item.image,
@@ -1323,7 +1440,8 @@ class Component extends DCLogic {
         const shown = ['twitch:cs2-ewc-live', 'twitch:dota2'];
         const own = (signalsByName.get(normName(name)) || []).filter(row => row.brand === entry.name && shown.includes(row.snapshot_id));
         const best = own.sort((left, right) => right.viewers_at_observation - left.viewers_at_observation)[0];
-        const stat = statsByName.get(normName(name));
+        const rawStat = statsByName.get(normName(name));
+        const stat = rawStat?.identified ? rawStat : null;
         const bg = bgByName.get(normName(name));
         const role = bg?.category || 'unknown';
         return {
@@ -1354,10 +1472,12 @@ class Component extends DCLogic {
       const fromEsports = people.filter(item => esportsRoles.has(item.roleKey)).length;
       const mixCount = {};
       for (const item of people) mixCount[item.roleKey] = (mixCount[item.roleKey] || 0) + 1;
+      const identifiedCount = entry.streamers.filter(n => statsByName.get(normName(n))?.identified).length;
       return {
         label: entry.name,
         people,
         sumAvg, sumMax, fromEsports,
+        identifiedCount,
         withAudienceCount: withAudience.length,
         totals: [
           { value: this.number(sumAvg), label: 'суммарный средний онлайн пула' },
@@ -1678,6 +1798,7 @@ class Component extends DCLogic {
       navLinks: [
         { href: '#opyt', label: 'Опыт' },
         { href: '#strimery', label: 'Стримеры' },
+        { href: '#rynok', label: 'Рынок' },
         { href: '#komandy', label: 'Команды' },
         { href: '#turniry', label: 'Турниры' },
         { href: '#research', label: 'Research' },
@@ -1739,18 +1860,27 @@ class Component extends DCLogic {
       teamsJustify: ['Ассоциация с командой', 'Эксклюзив в категории', 'Права на контент', 'Доступ к игрокам'],
       teamsNamingRivals: ['BetBoom Team', 'PARIVISION', 'L1GA TEAM', 'Bet-M 33'],
       teamsNamingWinline: ['Winline Pro League', 'WINLINE Star Series', 'Winline Insight', 'WINLINE KING PONG'],
+      teamsExpiredTitle: 'Клубных контрактов у Winline сейчас один — magic, и ему неделя',
+      teamsExpiredText: 'Титульное партнёрство с Virtus.pro действовало с 1 января 2022 три года и закончилось; Tundra и Gaimin в наших данных тоже помечены как завершённые. Публикации до сих пор перечисляют эти команды как активы Winline — при подготовке к разговору на такую подборку опираться нельзя. Фактически в киберспортивных составах у бренда остался один свежий контракт, объявленный 11 августа. Это и делает magic удобной точкой отсчёта: истории прошлых активаций, которая исказит замер, у него ещё нет.',
       teamsSummary,
       teamRows,
       eventsIntro: eventsIntro,
       eventRows,
       mediaEvents,
-      eventsGap: 'В данных нет WINLINE Star Series Season 3: турнир прошёл 1–9 августа 2026 с призовым 3,5 млн ₽ и десятью командами стримеров, то есть закончился за шесть дней до даты сбора. Это ближайшее, что нужно дособрать.',
+      eventsGap: 'Сравнение выше построено на турнирах, по которым Esports Charts публикует аудиторию. Ещё три собственных продукта Winline в него не попали, потому что публичных цифр по ним нет: Star Series Season 3 по Dota (26 мая — 7 июня, 3,5 млн ₽ призовых плюс 1,5 млн через систему контрактов, 10 команд), отдельный сезон Star Series по CS2 в августе и WINLINE MPKBK CIS LAN Season 6 (27–30 июля, Москва, 40 тыс. $, 16 команд, очки VRS от Valve — единственный не медийный, а спортивный турнир в портфеле). Отдельно стоит Кубок Фиферов с Кефиром: 500 тыс. ₽, 13–19 июля, отбор на площадке WINBOX, и бренда нет в названии — только поддержка и оформление.',
+      rightsChain: [
+        { who: 'Paragon Events', style: 'color:#E7E6E2;', role: 'правообладатель', what: 'С 2023 года держит русские права на турниры ESL FACEIT Group: IEM, ESL Pro League, ESL One, DreamLeague. В 2024 заключила многолетнее соглашение с PGL и стала эксклюзивным держателем русских прав на их турниры.', publisher: 'Игромания', url: 'https://www.igromania.ru/news/126208/Paragon_stala_vladelcem_prav_na_russkoyazychnoe_osveschenie_turnirov_ESL_FACEIT_Group.html' },
+        { who: 'Winline', style: 'color:#FF6A1A;', role: 'спонсор вещания', what: 'DreamLeague по Dota 2 Paragon освещает при поддержке Winline. Своих прав у букмекера в этой цепочке нет — оплачивается брендинг эфира.', publisher: 'Paragon Events на Sports.ru', url: 'https://cyber.sports.ru/dota2/blogs/3369101.html' },
+        { who: 'Okko', style: 'color:#E7E6E2;', role: 'площадка дистрибуции', what: 'С 4 апреля 2026 показывает турниры PGL по CS2 и Dota 2 под брендингом Winline: мультипоток, выбор аудиодорожки, хайлайты и аналитика. Старт — PGL Bucharest, дальше мейджор в Сингапуре и PGL Astana.', publisher: 'Esports.ru', url: 'https://esports.ru/news/winline-i-okko-obyavili-o-partnerstve/' },
+        { who: 'Фонбет', style: 'color:#E7E6E2;', role: 'спонсор вещания конкурента', what: 'Титульный партнёр русской трансляции IEM Krakow 2026 по CS2 — на официальных каналах той же Paragon. Турнир прошёл 28 января — 8 февраля, призовой 1,25 млн $.', publisher: 'Legalbet', url: 'https://legalbet.ru/news/62021082-fonbet-titulnij-partner-russkoyazichnoj-translyatcii/' },
+      ],
       brandTotals: Object.keys(talentBrands).map(key => {
         const brand = talentBrands[key];
         return {
           label: brand.label,
           style: brand.label === 'Winline' ? 'color:#FF6A1A;' : 'color:#E7E6E2;',
           roster: brand.count,
+          withData: `${brand.withAudienceCount} из ${brand.count}`,
           esports: `${brand.fromEsports} · ${Math.round(brand.fromEsports / brand.people.length * 100)}%`,
           esportsStyle: brand.fromEsports / brand.people.length >= 0.35 ? 'color:#FF6A1A;font-weight:700;' : 'color:#9A9AA0;',
           sumAvg: this.number(brand.sumAvg),
@@ -1767,7 +1897,7 @@ class Component extends DCLogic {
         const bShare = Math.round(b.fromEsports / b.people.length * 100);
         const wPer = Math.round(w.sumAvg / w.withAudienceCount);
         const bPer = Math.round(b.sumAvg / b.withAudienceCount);
-        return `У BetBoom ${bShare}% пула — про-игроки, бывшие про и комментаторы, у Winline ${wShare}%. При этом суммарный средний онлайн у них сопоставим: ${this.number(b.sumAvg)} против ${this.number(w.sumAvg)}. Разница в том, как он собран: у BetBoom ${this.number(bPer)} зрителей на канал против ${this.number(wPer)} у Winline — тот же охват достаётся меньшим числом контрактов.`;
+        return `У BetBoom ${bShare}% пула — про-игроки, бывшие про и комментаторы, у Winline ${wShare}%. Средний онлайн на канал: ${this.number(bPer)} у BetBoom против ${this.number(wPer)} у Winline, то есть канал BetBoom в ${this.decimal(bPer / wPer)} раза крупнее. Пул Winline на ${w.count} человек шире по числу имён, но собран из каналов поменьше.`;
       })(),
       talentBrandTabs: Object.keys(talentBrands).map(key => ({
         label: talentBrands[key].label,
@@ -1831,7 +1961,7 @@ class Component extends DCLogic {
           items: [
             {
               name: 'Розыгрыш вместо прямой регистрации',
-              detail: 'Вход в активность за телефон или почту, а не за полную регистрацию. Фокус здесь на сборе контактов: ведём не на форму регистрации, а в телеграм-группу или бота, где человек оставляет контакт за участие. Контакт стоит в разы дешевле регистрации, дальше он догревается в CRM — как в канале KING PONG, куда уводит команда из чата.',
+              detail: 'Фокус здесь на сборе контактов: ведём не на форму регистрации, а в телеграм-группу или бота, где человек оставляет контакт за участие. Контакт стоит в разы дешевле регистрации, дальше он догревается в CRM — как в канале KING PONG, куда уводит команда из чата.',
               limit: 'Часть собранных контактов не дойдёт до депозита никогда. Считать надо стоимость не контакта, а доведённого игрока.',
             },
             {
@@ -1907,11 +2037,34 @@ class Component extends DCLogic {
       portfolioSummary,
       pubstompFacts: [
         { label: 'КОГДА', value: '23 августа 2026, начало в 5 утра по Москве — под финал в Шанхае' },
-        { label: 'ГДЕ', value: 'МТС Live Холл, Москва, 18+' },
+        { label: 'ГДЕ', value: 'МТС Live Холл, Москва, 18+. Экран 6 200 кв. м — дважды в Книге рекордов Гиннесса' },
         { label: 'КТО В ЗАЛЕ', value: 'RAMZES666, just_ns, DreadzTV, 9pasha, VooDooSh, korya_mc, Buster и другие стримеры и блогеры' },
         { label: 'БИЛЕТЫ', value: 'от 2 000 ₽, продажа через Афишу и МТС Live. Проданы: Афиша не даёт оформить заказ' },
         { label: 'ФОРМАТ', value: 'Просмотр финала на большом экране с комментаторами, тематика Древнего Китая, интерактивные зоны и розыгрыши' },
         { label: 'КАК ПРОДАЮТ', value: 'В момент замера ссылка на билеты стояла в панелях у ramzes, 9pasha и followKudes — это 18 945 из 40 405 зрителей Winline в срезе по Dota, почти половина' },
+      ],
+      marketTiles: [
+        { value: '7%', label: 'с разницы между ставками и выплатами', note: 'Плюс 25% налога на прибыль. Действует с 1 января 2026 года; поступления в бюджет от отрасли ждут на уровне 60 млрд ₽ против 1 млрд годом раньше.', publisher: 'Чемпионат', url: 'https://www.championat.com/bets/article-6263338-novye-nalogi-dlya-bukmekerov-chto-izmenilos-kak-otreagiruet-rynok-skolko-zaplatyat-v-2026-godu.html' },
+        { value: '2,25%', label: 'целевые отчисления со всего оборота', note: 'Считаются от суммы принятых ставок, а не от маржи. В убыточный месяц платятся так же, как в прибыльный.', publisher: 'Чемпионат', url: 'https://www.championat.com/bets/article-6263338-novye-nalogi-dlya-bukmekerov-chto-izmenilos-kak-otreagiruet-rynok-skolko-zaplatyat-v-2026-godu.html' },
+        { value: '−50%', label: 'расходы букмекеров на маркетинг', note: 'Оценка по отрасли за 2026 год: свободных денег на продвижение почти не осталось, а список разрешённых площадок сузился.', publisher: 'Sostav', url: 'https://www.sostav.ru/publication/raskhody-bukmekerov-na-marketing-umenshilis-na-50-82969.html' },
+        { value: '~30%', label: 'медийных лиц, от которых отказались', note: 'При этом число самих стримеров не сократилось: конкуренция за оставшиеся места выросла.', publisher: 'Sports.ru — Киберспорт', url: 'https://cyber.sports.ru/betting/blogs/3365372.html' },
+      ],
+      marketRulesNow: [
+        'НДФЛ удерживается с каждого выигрыша: порог в 15 000 ₽ отменён с 2026 года.',
+        'Реклама на ТВ и радио — только с 22:00 до 7:00. Остальное: СМИ, спортивные объекты, собственные ресурсы и каналы блогеров с маркировкой.',
+        'С сентября 2026 к рекламе обязательно предупреждение о риске зависимости: не меньше 3 секунд на радио и 5 секунд на ТВ.',
+        'Pari, Лига Ставок и Winline вместе с АРИР подписали отраслевые рекомендации о добросовестной рекламе.',
+      ],
+      marketRulesDraft: [
+        'Отдельное регулирование рекламы у блогеров и стримеров, включая нативные форматы.',
+        'Запрет рекламы ставок во время спортивных трансляций, а также за час до и после них.',
+        'Запрет участия в рекламе ставок любых публичных лиц — спортсменов, комментаторов, блогеров.',
+        'Запрет рекламы бонусов и фрибетов.',
+      ],
+      pubstompRivals: [
+        { brand: 'Winline', style: 'color:#FF6A1A;', place: 'Москва, МТС Live Холл', when: '23 августа, 1 день', tickets: 'от 2 000 ₽, проданы', ticketStyle: 'color:#FF6A1A;font-weight:700;' },
+        { brand: 'BetBoom', style: 'color:#E7E6E2;', place: 'Москва, Дизайн-завод', when: '22–23 августа', tickets: 'фестиваль на два дня финалов', ticketStyle: 'color:#C7C6CC;' },
+        { brand: 'Фонбет', style: 'color:#E7E6E2;', place: 'Петербург, Брусницын Холл', when: '22–23 августа', tickets: 'продажа ещё не открыта', ticketStyle: 'color:#C7C6CC;' },
       ],
       pubstompStats: [
         { value: '4 000+', label: 'гостей в зале' },

@@ -71,8 +71,19 @@ function durationToHours(text) {
   return (Number(m[1] || 0)) + (Number(m[2] || 0)) / 60 + (Number(m[3] || 0)) / 3600;
 }
 
+/**
+ * Имя в составе часто совпадает с чужим или пустым каналом, поэтому подтверждённые
+ * соответствия и заведомо неопознанных держим отдельным файлом сверки.
+ */
+const MIN_FOLLOWERS = 1000;
+
 (async () => {
   const rosters = JSON.parse(fs.readFileSync(path.join(ROOT, 'data/research/rosters.json'), 'utf8'));
+  const manual = JSON.parse(fs.readFileSync(path.join(ROOT, 'data/research/streamer-logins.json'), 'utf8'));
+  const key = (brand, name) => `${brand}|${name}`;
+  const forcedLogin = new Map(manual.confirmed.map((item) => [key(item.brand_id, item.name), item.login]));
+  const forcedProof = new Map(manual.confirmed.map((item) => [key(item.brand_id, item.name), item.proof]));
+  const unidentified = new Set(manual.not_identified.map((item) => key(item.brand_id, item.name)));
 
   const wanted = [];
   for (const brand of rosters.brands) {
@@ -82,7 +93,10 @@ function durationToHours(text) {
 
   // 1. резолвим логины пачками по 100
   const resolved = new Map();
-  const allCandidates = [...new Set(wanted.flatMap((item) => loginCandidates(item.name)))];
+  const allCandidates = [...new Set([
+    ...wanted.flatMap((item) => loginCandidates(item.name)),
+    ...forcedLogin.values(),
+  ])];
   for (let i = 0; i < allCandidates.length; i += 100) {
     const chunk = allCandidates.slice(i, i + 100);
     const query = chunk.map((login) => `login=${encodeURIComponent(login)}`).join('&');
@@ -98,12 +112,16 @@ function durationToHours(text) {
   let done = 0;
 
   for (const item of wanted) {
-    const user = loginCandidates(item.name).map((l) => resolved.get(l)).find(Boolean);
+    const itemKey = key(item.brand, item.name);
+    const forced = forcedLogin.get(itemKey);
+    const user = forced
+      ? resolved.get(forced)
+      : loginCandidates(item.name).map((l) => resolved.get(l)).find(Boolean);
     done += 1;
     process.stdout.write(`\r  сбор статистики: ${done}/${wanted.length}`);
 
-    if (!user) {
-      records.push({ ...item, resolved: false });
+    if (!user || (!forced && unidentified.has(itemKey))) {
+      records.push({ ...item, resolved: false, identified: false });
       continue;
     }
 
@@ -113,18 +131,28 @@ function durationToHours(text) {
     const videos = await helix(`videos?user_id=${user.id}&type=archive&first=100`);
     const recent = (videos.data || []).filter((v) => new Date(v.created_at).getTime() >= since);
 
+    const followerCount = typeof followers.total === 'number' ? followers.total : null;
+    // канал с горсткой подписчиков — это тёзка, а не тот человек из состава
+    const identified = Boolean(forced) || (followerCount != null && followerCount >= MIN_FOLLOWERS);
+    if (!identified) {
+      records.push({ brand: item.brand, brandName: item.brandName, name: item.name, resolved: false, identified: false });
+      continue;
+    }
+
     records.push({
       brand: item.brand,
       brandName: item.brandName,
       name: item.name,
       resolved: true,
+      identified: true,
+      proof: forcedProof.get(itemKey) || `канал найден по имени, ${followerCount} фолловеров`,
       login: user.login,
       display_name: user.display_name,
       user_id: user.id,
       channel_url: `https://www.twitch.tv/${user.login}`,
       created_at: user.created_at,
       description: user.description || '',
-      followers: typeof followers.total === 'number' ? followers.total : null,
+      followers: followerCount,
       streams_14d: recent.length,
       hours_14d: Number(recent.reduce((sum, v) => sum + durationToHours(v.duration), 0).toFixed(1)),
       vod_views_14d: recent.reduce((sum, v) => sum + (v.view_count || 0), 0),

@@ -11,7 +11,7 @@
       "discipline": "non_esports",
       "organizer": "Winline",
       "date": "2026-08-16",
-      "date_status": "observed_live",
+      "date_status": "finished",
       "prize_pool": {
         "amount": 5000000,
         "currency": "RUB"
@@ -98,7 +98,8 @@
       "status": "observed",
       "confidence": 0.95,
       "source_ids": [
-        "src:king-pong-live"
+        "src:king-pong-live",
+        "src:king-pong-result"
       ],
       "notes": "Призовой фонд 5 млн ₽ — второй по величине среди собственных продуктов Winline после Standoff 2 Major 2026 (6 млн ₽). 67 190 зрителей в момент наблюдения — примерно втрое больше пикового онлайна Winline Pro League Season 3 (21 485). Формат не киберспортивный.",
       "measurement_note": "Первые две механики дают прямую, проверяемую атрибуцию — по ним видно переход, регистрацию и депозит с привязкой к эфиру. Остальные две работают на охват и запоминание, их вклад считается отдельно.",
@@ -118,6 +119,18 @@
         "observed_at": "2026-08-16",
         "image": "assets/pong-tg.png",
         "image_caption": "Телеграм-канал турнира: карточка матча и две кнопки — на розыгрыш Winline и обратно на эфир"
+      },
+      "result": {
+        "champion": "Михаил Литвин",
+        "prize": 2000000,
+        "runner_up": "The Limba",
+        "participants": 16,
+        "format": "Single Elimination, гранд-финал до трёх побед",
+        "note": "Отдельным номером — шоу-матч Бустера и Лимбы на золотой слиток.",
+        "source": {
+          "publisher": "Esports.ru",
+          "url": "https://esports.ru/striming/news/chempion-winline-king-pong-po-nastolnomu-tennisu/"
+        }
       }
     }
   ]

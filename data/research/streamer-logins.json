@@ -1,0 +1,39 @@
+{
+  "schema_version": "1.0.0",
+  "research_cutoff": "2026-08-18",
+  "status": "editorial",
+  "method": "Ручная сверка составов с реальными каналами Twitch. Подтверждение — одно из: канал встречается в наших же замерах эфиров с логином; в названии стрима или описании канала стоит бренд букмекера; профиль канала совпадает с дисциплиной и языком человека. Всё, что не подтвердилось, помечено как несопоставленное и не участвует в подсчётах.",
+  "confirmed": [
+    { "brand_id": "brand:betboom", "name": "Chopper", "login": "chopperinho", "proof": "встречается в нашем замере CS2 с брендом BetBoom" },
+    { "brand_id": "brand:betboom", "name": "Overdrive", "login": "overdrivezzz", "proof": "встречается в нашем замере с брендом BetBoom" },
+    { "brand_id": "brand:betboom", "name": "Mager", "login": "mager1337", "proof": "встречается в нашем замере с брендом BetBoom" },
+    { "brand_id": "brand:betboom", "name": "Shadowkek", "login": "shadowkekw", "proof": "1,3 млн фолловеров, эфир по Counter-Strike с матчем EWC 2026" },
+    { "brand_id": "brand:betboom", "name": "FalleN", "login": "gafallen", "proof": "1,5 млн фолловеров, описание канала — профессиональный игрок в CS" },
+    { "brand_id": "brand:betboom", "name": "Diamondprox", "login": "diamondprox_lol", "proof": "в названии стрима стоит промокод BETBOOM" },
+    { "brand_id": "brand:betboom", "name": "Lebwa", "login": "lebwa_bb", "proof": "суффикс bb в логине, эфиры по «Миру танков», имя в описании" },
+    { "brand_id": "brand:betboom", "name": "Danila Gorilla", "login": "danila_gorilla", "proof": "1,2 млн фолловеров, основной канал" },
+    { "brand_id": "brand:betboom", "name": "strimans", "login": "strimanssss", "proof": "в описании канала ссылка на агентство BetBoom" },
+    { "brand_id": "brand:betboom", "name": "1cen1ce", "login": "1cen1ce116", "proof": "описание: комментатор по Dota 2 и CS2 с 2015 года" },
+    { "brand_id": "brand:betboom", "name": "k1tava", "login": "k1tava_", "proof": "русскоязычный канал по League of Legends, 16 тыс. фолловеров" },
+    { "brand_id": "brand:betboom", "name": "Smurf", "login": "smurf_tv", "proof": "описание: профессиональный игрок в League of Legends, русскоязычные эфиры" },
+    { "brand_id": "brand:fonbet", "name": "BAXA", "login": "baxadoto", "proof": "200 тыс. фолловеров, эфиры по Dota 2" },
+    { "brand_id": "brand:fonbet", "name": "ILTW", "login": "iltw1", "proof": "260 тыс. фолловеров, эфир по Dota 2 с просмотром The International" },
+    { "brand_id": "brand:fonbet", "name": "Sqreendota2", "login": "sqreenbets", "proof": "встречается в нашем замере с брендом Fonbet" },
+    { "brand_id": "brand:pari", "name": "Jerry", "login": "jerry256cs2", "proof": "в названии стрима стоит команда !pari" },
+    { "brand_id": "brand:pari", "name": "formix", "login": "formixyouknow", "proof": "126 тыс. фолловеров, эфиры по EA Sports FC" },
+    { "brand_id": "brand:pari", "name": "limitless", "login": "limitlessqt", "proof": "163 тыс. фолловеров, эфир по Dota 2 с The International" },
+    { "brand_id": "brand:winline", "name": "ROUNDZ", "login": "roundzz_", "proof": "в названии стрима стоит команда !winline" },
+    { "brand_id": "brand:winline", "name": "sayurri", "login": "sayurri_01", "proof": "16 тыс. фолловеров, русскоязычный канал" }
+  ],
+  "not_identified": [
+    { "brand_id": "brand:betboom", "name": "Illidan" },
+    { "brand_id": "brand:betboom", "name": "ZoneR" },
+    { "brand_id": "brand:betboom", "name": "Handy" },
+    { "brand_id": "brand:betboom", "name": "YBN" },
+    { "brand_id": "brand:betboom", "name": "blindzone" },
+    { "brand_id": "brand:betboom", "name": "hhakuu" },
+    { "brand_id": "brand:winline", "name": "KEFIR" },
+    { "brand_id": "brand:winline", "name": "linaone" },
+    { "brand_id": "brand:pari", "name": "tried" }
+  ]
+}
