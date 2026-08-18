@@ -802,17 +802,6 @@
             </div>
           </sc-for>
         </div>
-        <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:18px;">
-          <div style="background:#141416;border:1px solid rgba(255,255,255,0.08);border-radius:14px;padding:22px 24px;">
-            <div style="font-size:13px;color:#77767C;font-weight:800;">ЧТО ИЗ ЭТОГО СЛЕДУЕТ</div>
-            <div style="font-size:18px;font-weight:800;line-height:1.45;margin-top:9px;">Призовой фонд не объясняет рост внимания. Формат, площадки трансляции и медийные участники влияют сильнее бюджета.</div>
-          </div>
-          <div class="mine" style="padding:20px 24px;">
-            <div class="mine-tag"><i>ЕХ</i>ПРЕДЛОЖЕНИЕ</div>
-            <div style="font-size:17px;line-height:1.55;margin-top:9px;">Post-view отдельно от post-click, замер узнаваемости бренда, контрольные группы и проверка прироста по географии. Рост нужно раскладывать на проверяемые причины.</div>
-          </div>
-        </div>
-        <div style="margin-top:16px;background:#1D1C1F;border-left:2px solid #FF6A1A;border-radius:0 10px 10px 0;padding:16px 20px;font-size:15px;line-height:1.6;color:#C7C6CC;">{{ eventsGap }}</div>
 
 
 
@@ -1539,14 +1528,17 @@ class Component extends DCLogic {
           .trim();
         if (rows.some(row => sameAsset(row.name.replace('*', ''), short))) continue;
         const prizeUnit = tournament.prize_pool?.currency === 'USD' ? '$' : '₽';
+        const prizeAmount = tournament.prize_pool?.amount || 0;
         const prize = tournament.prize_pool
-          ? `${this.decimal(tournament.prize_pool.amount / 1000000)} млн ${prizeUnit}`
+          ? (prizeAmount >= 1000000
+              ? `${this.decimal(prizeAmount / 1000000)} млн ${prizeUnit}`
+              : `${this.number(prizeAmount)} ${prizeUnit}`)
           : '';
         rows.push({
           kind: 'tournament',
-          name: short + '*',
+          name: short + (String(tournament.name || '').toLowerCase().includes(brandWord) ? '*' : ''),
           note: [prize, tournament.peak_viewers ? `пик ${this.number(tournament.peak_viewers)}` : ''].filter(Boolean).join(' · '),
-          style: 'color:#FF6A1A;font-weight:700;',
+          style: String(tournament.name || '').toLowerCase().includes(brandWord) ? 'color:#FF6A1A;font-weight:700;' : 'color:#E7E6E2;',
           mark: '', markStyle: '', markTitle: '',
           url: '', hasUrl: false, noUrl: true,
           relation: 'собственный турнир',
@@ -1884,7 +1876,6 @@ class Component extends DCLogic {
       eventsIntro: eventsIntro,
       eventRows,
       mediaEvents,
-      eventsGap: 'Сравнение выше построено на турнирах, по которым Esports Charts публикует аудиторию. Ещё три собственных продукта Winline в него не попали, потому что публичных цифр по ним нет: Star Series Season 3 по Dota (26 мая — 7 июня, 3,5 млн ₽ призовых плюс 1,5 млн через систему контрактов, 10 команд), отдельный сезон Star Series по CS2 в августе и WINLINE MPKBK CIS LAN Season 6 (27–30 июля, Москва, 40 тыс. $, 16 команд, очки VRS от Valve — единственный не медийный, а спортивный турнир в портфеле). Отдельно стоит Кубок Фиферов с Кефиром: 500 тыс. ₽, 13–19 июля, отбор на площадке WINBOX, и бренда нет в названии — только поддержка и оформление.',
       rightsChain: [
         { who: 'Paragon Events', style: 'color:#E7E6E2;', role: 'правообладатель', what: 'С 2023 года держит русские права на турниры ESL FACEIT Group: IEM, ESL Pro League, ESL One, DreamLeague. В 2024 заключила многолетнее соглашение с PGL и стала эксклюзивным держателем русских прав на их турниры.', publisher: 'Игромания', url: 'https://www.igromania.ru/news/126208/Paragon_stala_vladelcem_prav_na_russkoyazychnoe_osveschenie_turnirov_ESL_FACEIT_Group.html' },
         { who: 'Winline', style: 'color:#FF6A1A;', role: 'спонсор вещания', what: 'DreamLeague по Dota 2 Paragon освещает при поддержке Winline. Своих прав у букмекера в этой цепочке нет — оплачивается брендинг эфира.', publisher: 'Paragon Events на Sports.ru', url: 'https://cyber.sports.ru/dota2/blogs/3369101.html' },

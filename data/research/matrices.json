@@ -448,6 +448,63 @@
       "audience_scope_complete": false,
       "status": "corroborated",
       "confidence": 0.94
+    },
+    {
+      "tournament_id": "tournament:wss-s3-dota",
+      "name": "WINLINE Star Series Season 3",
+      "discipline": "dota2",
+      "organizer": "Winline",
+      "start_date": "2026-05-26",
+      "end_date": "2026-06-07",
+      "prize_pool": {
+        "amount": 3500000,
+        "currency": "RUB"
+      },
+      "peak_viewers": null,
+      "average_viewers": null,
+      "hours_watched": null,
+      "audience_scope_complete": false,
+      "status": "corroborated",
+      "confidence": 0.9,
+      "notes": "Ещё 1,5 млн ₽ распределяются через систему контрактов. 10 команд, режим Captain’s Draft."
+    },
+    {
+      "tournament_id": "tournament:mpkbk-cis-lan-6",
+      "name": "WINLINE MPKBK CIS LAN Season 6",
+      "discipline": "cs2",
+      "organizer": "Winline / MPKBK",
+      "start_date": "2026-07-27",
+      "end_date": "2026-07-30",
+      "prize_pool": {
+        "amount": 40000,
+        "currency": "USD"
+      },
+      "peak_viewers": null,
+      "average_viewers": null,
+      "hours_watched": null,
+      "audience_scope_complete": false,
+      "status": "corroborated",
+      "confidence": 0.95,
+      "notes": "Офлайн в Москве, 16 команд, очки VRS от Valve. Чемпион — WW, второе место у Virtus.pro."
+    },
+    {
+      "tournament_id": "tournament:kubok-fiferov-2026",
+      "name": "Кубок Фиферов 2026",
+      "discipline": "ea_sports_fc",
+      "organizer": "KEFIR / Winline",
+      "start_date": "2026-07-13",
+      "end_date": "2026-07-19",
+      "prize_pool": {
+        "amount": 500000,
+        "currency": "RUB"
+      },
+      "peak_viewers": null,
+      "average_viewers": null,
+      "hours_watched": null,
+      "audience_scope_complete": false,
+      "status": "corroborated",
+      "confidence": 0.9,
+      "notes": "Бренда нет в названии — только поддержка и оформление. Отбор прошёл на площадке WINBOX в Москве."
     }
   ],
   "streamer_brand_signals": [
