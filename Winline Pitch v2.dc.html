@@ -863,66 +863,6 @@
       </sc-for>
       <div style="margin-top:34px;background:#141416;border:1px solid #FF6A1A;border-radius:14px;padding:24px 28px;font-family:'JetBrains Mono',monospace;font-size:16px;line-height:1.9;">Инкрементальный NGR − права − гонорары − продакшн − усиление охвата − бонусы − операционные расходы</div>
     </section>
-    <section style="padding:80px 0;border-top:1px solid rgba(255,255,255,0.07);">
-      <div style="font-family:'JetBrains Mono',monospace;font-size:14px;color:#FF6A1A;font-weight:600;letter-spacing:1.2px;margin-bottom:14px;">ТА ЖЕ ВОРОНКА НА ЖИВОМ АКТИВЕ</div>
-      <div style="font-size:36.5px;font-weight:800;letter-spacing:-0.4px;margin-bottom:12px;">Как я бы отслеживал эту воронку на magic × EWC</div>
-      <div style="font-size:17.5px;color:#9A9AA0;max-width:800px;line-height:1.6;margin-bottom:16px;">Те же шесть разрывов выше, но на конкретном активе: контракт с magic подписан 11 августа, команда уже играет — точка отсчёта ещё не размыта активациями.</div>
-      <div style="background:#1D1C1F;border-left:2px solid #FF6A1A;border-radius:0 10px 10px 0;padding:18px 22px;font-size:16.5px;line-height:1.6;color:#E7E6E2;max-width:800px;margin-bottom:32px;">Точечный срез на 4-й день группового этапа: два канала из топ-15 CS2 (lentbb, dayneez) смотрели матч <b>magic vs 3DMAX</b> — актив Winline — с баннером BetBoom в панели. Внимание вокруг собственного матча монетизирует конкурент.</div>
-      <div style="display:flex;flex-direction:column;gap:10px;">
-        <sc-for list="{{ showcaseSteps }}" as="s" hint-placeholder-count="7">
-          <div style="display:grid;grid-template-columns:28px 1fr 1fr;gap:18px;align-items:center;background:#141416;border:1px solid rgba(255,255,255,0.08);border-radius:10px;padding:16px 20px;">
-            <div style="font-family:'JetBrains Mono',monospace;color:#FF6A1A;font-size:15px;font-weight:700;">{{ s.n }}</div>
-            <div style="font-size:16.5px;font-weight:600;">{{ s.label }}</div>
-            <div style="font-size:15px;color:#9A9AA0;line-height:1.5;">{{ s.metric }}</div>
-          </div>
-        </sc-for>
-      </div>
-    </section>
-  </div>
-
-  <div style="max-width:1240px;margin:0 auto;padding:0 40px;">
-      <section id="reshenie" style="padding:16px 0 60px;">
-        <div style="font-size:27.5px;font-weight:800;margin-bottom:8px;">Приоритет по дисциплинам: где быстрее всего получится измеримый результат</div>
-        <div style="font-size:15.5px;color:#77767C;margin-bottom:22px;">Оценка сравнивает только то, что видно снаружи: сколько букмекеров в дисциплине, сколько турниров, качество доступного замера. Это не окупаемость и не готовая рекомендация двигать бюджет.</div>
-        <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:14px;">
-          <sc-for list="{{ disciplineCards }}" as="d" hint-placeholder-count="3">
-            <div style="background:#141416;border:1px solid rgba(255,255,255,0.09);border-radius:14px;padding:22px;">
-              <div style="display:flex;align-items:baseline;justify-content:space-between;gap:12px;">
-                <div style="font-size:20.5px;font-weight:800;">{{ d.name }}</div>
-                <div style="font-family:'JetBrains Mono',monospace;font-size:28.5px;font-weight:800;{{ d.scoreStyle }}">{{ d.score }}</div>
-              </div>
-              <div style="font-size:12.5px;color:#77767C;margin-top:5px;">надёжность оценки {{ d.confidence }} · расчёт по открытым данным</div>
-              <div style="font-size:15px;line-height:1.55;margin-top:16px;">{{ d.evidence }}</div>
-              <div style="font-size:15px;font-weight:700;line-height:1.5;margin-top:15px;padding-top:15px;border-top:1px solid rgba(255,255,255,0.07);">{{ d.decision }}</div>
-            </div>
-          </sc-for>
-        </div>
-        <div style="font-size:23px;font-weight:800;margin:36px 0 16px;">Каких данных не хватает, чтобы посчитать прибыльность</div>
-        <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:12px;">
-          <sc-for list="{{ completenessRows }}" as="c" hint-placeholder-count="3">
-            <div style="background:#121114;border:1px solid rgba(255,255,255,0.08);border-radius:12px;padding:18px;">
-              <div style="font-size:13.5px;color:#FF6A1A;font-weight:800;">{{ c.label }} · {{ c.records }} записей</div>
-              <div style="font-size:15px;color:#C7C6CC;line-height:1.55;margin-top:9px;">{{ c.missing }}</div>
-            </div>
-          </sc-for>
-        </div>
-        <div style="font-size:23px;font-weight:800;margin:36px 0 16px;">Как превращу это в решения за первые 30 дней</div>
-        <div style="display:flex;flex-direction:column;gap:10px;">
-          <sc-for list="{{ decisionSteps }}" as="d" hint-placeholder-count="4">
-            <div style="display:grid;grid-template-columns:52px 130px 1.35fr 1.25fr;gap:18px;align-items:center;background:#141416;border:1px solid rgba(255,255,255,0.08);border-radius:11px;padding:17px 20px;">
-              <div style="font-family:'JetBrains Mono',monospace;color:#FF6A1A;font-size:16px;font-weight:800;">{{ d.n }}</div>
-              <div style="font-size:13.5px;color:#9A9AA0;font-weight:700;">{{ d.period }}</div>
-              <div style="font-size:16px;font-weight:700;line-height:1.45;">{{ d.action }}</div>
-              <div style="font-size:14px;color:#9A9AA0;line-height:1.5;">{{ d.output }}</div>
-            </div>
-          </sc-for>
-        </div>
-        <div style="margin-top:20px;background:#FF6A1A;color:#0A0A0C;border-radius:14px;padding:24px 28px;">
-          <div style="font-size:24px;font-weight:900;">На выходе: один паспорт на каждый актив и одно из четырёх решений</div>
-          <div style="font-size:17px;font-weight:800;margin-top:8px;">масштабировать · изменить · перезаключить · остановить</div>
-          <div style="font-size:15px;font-weight:700;line-height:1.5;margin-top:10px;">Критерий — инкрементальный NGR минус права, гонорары, продакшн, усиление охвата, бонусы и операционные расходы.</div>
-        </div>
-      </section>
   </div>
 
   <!-- ==================== CV ==================== -->
@@ -1016,16 +956,6 @@
 
   <!-- ==================== ВОПРОСЫ ==================== -->
   <div style="max-width:1240px;margin:0 auto;padding:0 40px;">
-    <section id="voprosy" style="padding:80px 0 40px;border-top:1px solid rgba(255,255,255,0.07);">
-      <div style="font-family:'JetBrains Mono',monospace;font-size:14px;color:#FF6A1A;font-weight:600;letter-spacing:1.2px;margin-bottom:14px;">К ШАМИЛЮ</div>
-      <div style="font-size:36.5px;font-weight:800;letter-spacing:-0.4px;margin-bottom:34px;">Четыре вопроса, с которых начну диалог</div>
-      <sc-for list="{{ closingQuestions }}" as="q" hint-placeholder-count="4">
-        <div style="display:flex;gap:22px;padding:24px 0;border-top:1px solid rgba(255,255,255,0.08);align-items:baseline;">
-          <div style="font-family:'JetBrains Mono',monospace;font-size:27.5px;font-weight:800;color:#2A2930;flex-shrink:0;">{{ q.n }}</div>
-          <div style="font-size:21.5px;font-weight:600;line-height:1.4;">{{ q.text }}</div>
-        </div>
-      </sc-for>
-    </section>
   </div>
 
 </div>
@@ -1793,7 +1723,6 @@ class Component extends DCLogic {
         { href: '#turniry', label: 'Турниры' },
         { href: '#research', label: 'Research' },
         { href: '#voronka', label: 'Воронка' },
-        { href: '#reshenie', label: '30 дней' },
         { href: '#cv', label: 'CV' },
       ],
 
@@ -1834,15 +1763,6 @@ class Component extends DCLogic {
           ? `${only.join(', ')} в этот срез не попали: у них в портфеле только команда, турниров и студий нет. Их связи — в таблице выше.`
           : '';
       })(),
-      __unusedBrandAssets: ['winline', 'betboom', 'fonbet', 'pari']
-        .map(key => talentBrands[key])
-        .filter(Boolean)
-        .map(brand => ({
-          label: brand.label,
-          style: brand.label === 'Winline' ? 'color:#FF6A1A;' : 'color:#E7E6E2;',
-          total: brand.assetGroups.reduce((sum, group) => sum + group.count, 0) + ' ' + plural(brand.assetGroups.reduce((sum, group) => sum + group.count, 0), 'актив', 'актива', 'активов'),
-          groups: brand.assetGroups,
-        })),
       teamsIntro: teamsIntro,
       teamsNamingNote: 'Модели не исключают друг друга: у BetBoom есть и одноимённый клуб, и своя линейка турниров — Streamers Battle с призовым 5 млн ₽, Dacha, Aunkere Cup, All-Star и другие. У Winline имя бренда стоит только на собственных продуктах, клубы идут без него. Что каждая из этих моделей даёт по деньгам, из открытых данных не посчитать: нужны условия договоров и внутренние цифры.',
       teamsNamingRivals: ['BetBoom Team', 'PARIVISION', 'L1GA TEAM', 'Bet-M 33'],
@@ -2097,34 +2017,7 @@ class Component extends DCLogic {
           ],
         },
       ] : [],
-      disciplineCards: matrixReady ? matrices.discipline_matrix
-        .slice()
-        .sort((left, right) => right.public_attractiveness_score - left.public_attractiveness_score)
-        .map(item => ({
-          name: disciplineNames[item.discipline],
-          score: `${this.decimal(item.public_attractiveness_score)} из 5`,
-          scoreStyle: item.discipline === 'standoff2' ? 'color:#9A9AA0;' : 'color:#FF6A1A;',
-          confidence: `${Math.round(item.score_confidence * 100)}%`,
-          evidence: `${item.bookmaker_count} букмекеров · ${item.tournament_count} турниров · ${item.snapshot_count} замера · качество доступного замера ${item.measurement_quality} из 5`,
-          decision: disciplineDecisions[item.discipline],
-        })) : [],
-      completenessRows: matrixReady ? matrices.data_completeness.map(item => ({
-        label: item.dataset === 'partnerships' ? 'Партнёрства' : item.dataset === 'tournaments' ? 'Турниры' : 'Twitch observations',
-        records: this.number(item.records),
-        missing: item.missing_internal_fields.map(field => missingLabels[field] || field).join(' · '),
-      })) : [],
-      decisionSteps: [
-        { n: '01', period: 'дни 1–5', action: 'Сверить контракты, права, обязательства, владельцев и полную стоимость', output: 'Актуальный реестр вместо публичного списка логотипов' },
-        { n: '02', period: 'дни 6–10', action: 'Разметить magic, партнёрские эфиры и вторичные каналы единым campaign ID', output: 'Контакт → переход → registration/KYC → FTD' },
-        { n: '03', period: 'дни 11–20', action: 'Запустить точку отсчёта, post-view, brand lift, пересечение аудиторий и антифрод-контур', output: 'Инкрементальный эффект и качество аудитории' },
-        { n: '04', period: 'дни 21–30', action: 'Провести P&L-gate по активам и согласовать следующий эксперимент', output: 'Масштабировать · изменить · перезаключить · остановить' },
-      ],
 
-      routeSteps: [
-        { n: '01', label: 'Опыт под задачи роли', hasArrow: true },
-        { n: '02', label: 'Что показал ресерч', hasArrow: true },
-        { n: '03', label: 'Воронка и пример на живом активе', hasArrow: false },
-      ],
       expRows: [
         {
           need: 'Команда и мотивация',
@@ -2189,21 +2082,6 @@ class Component extends DCLogic {
         { gap: 'Платим дважды за одну аудиторию', tool: 'Пересечение аудиторий: уникальные ники в чатах при одновременных эфирах, эвристика по расписанию и дисциплине, гео и first-party ID', proof: 'Методология спроектирована на Twitch API' },
         { gap: 'Охват накручен', tool: 'Антифрод: сообщения чата на 1000 зрителей, форма кривой онлайна, хвост VOD, возраст канала и история контента', proof: '1 место Яндекс · ~$27K/мес отсечённых расходов · Admon, GIVT/SIVT' },
         { gap: 'Один канал — не вся коммуникация', tool: 'Мультиканальность партнёра: стрим → Telegram/VK/YouTube → offline-ивент → CRM, с единым идентификатором кампании', proof: 'Отдел инфлюенс с нуля: $1,5K → $70K/мес' },
-      ],
-      showcaseSteps: [
-        { n: '01', label: 'Baseline до активации', metric: 'Регистрации и FTD по CS2-аудитории за 4 недели до' },
-        { n: '02', label: 'Stream и voice integration на партнёрских каналах', metric: 'Уникальные часы просмотра, стоимость часа' },
-        { n: '03', label: 'Chat-команда и размеченный лендинг под матч magic', metric: 'Post-click: переходы → регистрации → FTD' },
-        { n: '04', label: 'Telegram и соцсети партнёров', metric: 'Post-view и вклад вторичных касаний' },
-        { n: '05', label: 'Offline/watch-party вокруг матчей', metric: 'Явка, охват PR, brand lift по опросу' },
-        { n: '06', label: 'CRM follow-up по когорте', metric: 'Повторные депозиты, удержание, LTV' },
-        { n: '07', label: 'P&L-gate после события', metric: 'Инкрементальный NGR минус все затраты → решение' },
-      ],
-      closingQuestions: [
-        { n: '01', text: 'Где сейчас главный разрыв: стратегия, измерение, команда или партнёрства?' },
-        { n: '02', text: 'Какие дисциплины уже пробовали активировать, кроме тех, что видны публично?' },
-        { n: '03', text: 'Какие данные уже есть на уровне команды, стримера, турнира и события?' },
-        { n: '04', text: 'Какие решения по бюджету и контрактам руководитель принимает самостоятельно?' },
       ],
 
       cvCompanies: [
