@@ -1192,7 +1192,7 @@ class Component extends DCLogic {
     const endedStatuses = new Set(['historical', 'reported_expired']);
     const statusTextFor = (brandId, status) =>
       brandId === 'brand:winline' && endedStatuses.has(status)
-        ? 'срок истёк — продлевали?'
+        ? 'уточнить'
         : (currentStatusRu[status] || status);
     const statusToneFor = (brandId, status) =>
       brandId === 'brand:winline' && endedStatuses.has(status) ? 'color:#FF6A1A;' : statusStyleFor(status);
