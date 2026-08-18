@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Встреча по позиции «Руководитель направления киберспортивного маркетинга» — Егор Холов</title>
+<title>Встреча по позиции «Руководитель направления киберспортивного маркетинга» — Егор Холов</title>
 <meta name="robots" content="noindex, nofollow">
 <script src="./support.js"></script>
 <script src="./data/research/presentation-data.js"></script>
@@ -58,9 +58,17 @@
       if (last) current = last.slice(1);
     }
 
+    // активный пункт красится в цвет своего раздела
+    var section = current ? document.getElementById(current) : null;
+    var accent = '#FF6A1A';
+    if (section) {
+      var own = getComputedStyle(section).getPropertyValue('--accent').trim();
+      if (own) accent = own;
+    }
+
     for (var j = 0; j < links.length; j++) {
       var on = links[j].getAttribute('href') === '#' + current;
-      links[j].style.background = on ? '#FF6A1A' : 'transparent';
+      links[j].style.background = on ? accent : 'transparent';
       links[j].style.color = on ? '#0A0A0C' : '#C0BDD2';
     }
   }
