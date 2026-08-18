@@ -1442,6 +1442,8 @@ class Component extends DCLogic {
       unknown: 'color:#4A4950;',
     };
     const compact = value => value >= 1000000 ? `${this.decimal(value / 1000000)} млн` : value >= 1000 ? `${Math.round(value / 1000)}K` : String(value);
+    // сверху те, кто пришёл из киберспорта, дальше остальные; внутри группы — по среднему онлайну
+    const roleOrder = { pro: 0, ex_pro: 1, esports_scene: 2, caster: 3, game_streamer: 4, streamer: 5, variety: 6, unknown: 7 };
     const buildBrand = key => {
       const entry = (rosterDoc?.brands || []).find(item => brandKeyById[item.brand_id] === key);
       if (!entry) return { label: key, count: 0, countLabel: '', note: '', people: [], assetGroups: [], gap: '' };
@@ -1472,7 +1474,11 @@ class Component extends DCLogic {
           observedStyle: best ? 'color:#E7E6E2;' : 'color:#4A4950;',
           viewers: best ? best.viewers_at_observation : -1,
         };
-      }).sort((left, right) => right.viewers - left.viewers || right.avgRaw - left.avgRaw || right.followersRaw - left.followersRaw || left.name.localeCompare(right.name));
+      }).sort((left, right) =>
+        (roleOrder[left.roleKey] ?? 9) - (roleOrder[right.roleKey] ?? 9)
+        || right.avgRaw - left.avgRaw
+        || right.followersRaw - left.followersRaw
+        || left.name.localeCompare(right.name));
       const confirmed = people.filter(p => p.viewers >= 0).length;
       const withAudience = people.filter(p => p.avgRaw > 0);
       const sumAvg = withAudience.reduce((sum, item) => sum + item.avgRaw, 0);
