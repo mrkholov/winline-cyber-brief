@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0.0",
-  "research_cutoff": "2026-08-17",
+  "research_cutoff": "2026-08-18",
   "status": "editorial",
   "method": "Ручные записи заполнены по публично известной карьере. Остальные размечены автоматически: наличие страницы игрока на Liquipedia означает выступления на про-сцене, категория канала в Twitch отличает вэрайети от игровых. Скрипт scripts/enrich-streamer-background.js.",
   "categories": {
@@ -55,14 +55,14 @@
       "note": "бывший про-игрок Dota 2"
     },
     "dyrachyo": {
-      "category": "pro",
+      "category": "ex_pro",
       "discipline": "dota2",
-      "note": "действующий про-игрок Dota 2"
+      "note": "ушёл из активного состава Tundra в 2025, амбассадор BetBoom"
     },
     "9pasha": {
-      "category": "caster",
+      "category": "ex_pro",
       "discipline": "dota2",
-      "note": "комментатор и аналитик"
+      "note": "бывший игрок Virtus.pro, сейчас комментирует"
     },
     "Maelstorm": {
       "category": "caster",
@@ -100,9 +100,9 @@
       "note": "действующий про-игрок CS2"
     },
     "Chopper": {
-      "category": "pro",
+      "category": "ex_pro",
       "discipline": "cs2",
-      "note": "действующий про-игрок CS2"
+      "note": "бывший капитан Team Spirit, с конца 2025 ушёл в стримеры"
     },
     "Recrent": {
       "category": "ex_pro",
@@ -110,14 +110,14 @@
       "note": "бывший про-игрок CS, ведущий стример дисциплины"
     },
     "buster": {
-      "category": "ex_pro",
-      "discipline": "cs2",
-      "note": "бывший про-игрок, комментатор ESL"
+      "category": "streamer",
+      "discipline": "variety",
+      "note": "стример, ведёт собственные шоу Winline; про-сценой не известен"
     },
     "Stray228": {
-      "category": "ex_pro",
+      "category": "streamer",
       "discipline": "cs2",
-      "note": "бывший про-игрок CS"
+      "note": "известен как стример, а не по про-сцене"
     },
     "ZoneR": {
       "category": "ex_pro",
