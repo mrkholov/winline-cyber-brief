@@ -14,7 +14,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Golos+Text:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
   :root { --accent:#FF6A1A; --accent-soft:rgba(255,106,26,0.16); }
-  body { margin:0; background:#1A1726; }
+  body { margin:0; background:#100E17; }
   a { color:var(--accent); text-decoration:none; }
   a:hover { filter:brightness(1.25); }
   html { scroll-behavior:smooth; }
@@ -74,9 +74,9 @@
 </script>
 </helmet>
 
-<div style="background:#1A1726;color:#F2F1EE;min-height:100vh;background-image:radial-gradient(1200px 620px at 12% -10%, rgba(255,106,26,0.22), transparent 60%),radial-gradient(900px 500px at 88% 4%, rgba(92,200,216,0.13), transparent 62%);background-repeat:no-repeat;">
+<div style="background:#100E17;color:#F2F1EE;min-height:100vh;background-image:radial-gradient(1200px 620px at 12% -10%, rgba(255,106,26,0.16), transparent 58%),radial-gradient(900px 500px at 88% 4%, rgba(92,200,216,0.08), transparent 60%);background-repeat:no-repeat;">
 
-  <div style="position:sticky;top:0;z-index:50;background:rgba(26,23,38,0.90);backdrop-filter:blur(12px);border-bottom:1px solid rgba(255,255,255,0.10);">
+  <div style="position:sticky;top:0;z-index:50;background:rgba(16,14,23,0.92);backdrop-filter:blur(12px);border-bottom:1px solid rgba(255,255,255,0.10);">
     <div style="max-width:1240px;margin:0 auto;padding:13px 40px;display:flex;align-items:center;justify-content:space-between;gap:26px;flex-wrap:wrap;">
       <div style="display:flex;align-items:center;gap:12px;flex-shrink:0;">
         <div style="font-weight:900;font-size:19.5px;letter-spacing:0.4px;">WINLINE<span style="color:#FF6A1A;">•</span>CYBER</div>
@@ -85,7 +85,7 @@
       </div>
       <div style="display:flex;gap:3px;flex-wrap:wrap;">
         <sc-for list="{{ navLinks }}" as="n" hint-placeholder-count="9">
-          <a href="{{ n.href }}" data-nav="1" style="padding:7px 12px;border-radius:999px;font-size:14px;font-weight:700;color:#C0BDD2;text-decoration:none;white-space:nowrap;transition:background 0.15s,color 0.15s;" style-hover="background:#332E48;color:#F2F1EE;">{{ n.label }}</a>
+          <a href="{{ n.href }}" data-nav="1" style="padding:7px 12px;border-radius:999px;font-size:14px;font-weight:700;color:#C0BDD2;text-decoration:none;white-space:nowrap;transition:background 0.15s,color 0.15s;" style-hover="background:#2A2639;color:#F2F1EE;">{{ n.label }}</a>
         </sc-for>
       </div>
     </div>
@@ -99,7 +99,7 @@
 
     <section id="opyt" style="--accent:#6BA8FF;--accent-soft:rgba(107,168,255,0.18);padding:80px 0;border-top:1px solid rgba(255,255,255,0.07);">
       <div style="font-size:36.5px;font-weight:800;letter-spacing:-0.4px;margin-bottom:34px;">Мой опыт</div>
-      <div style="position:sticky;top:65px;z-index:10;display:grid;grid-template-columns:1.1fr 1.3fr;gap:28px;padding:0 0 12px;background:#1A1726;border-bottom:1px solid rgba(255,255,255,0.15);">
+      <div style="position:sticky;top:65px;z-index:10;display:grid;grid-template-columns:1.1fr 1.3fr;gap:28px;padding:0 0 12px;background:#100E17;border-bottom:1px solid rgba(255,255,255,0.15);">
         <div style="font-size:13px;font-weight:700;letter-spacing:0.6px;color:#A6A3BA;">НАПРАВЛЕНИЕ</div>
         <div style="font-size:13px;font-weight:700;letter-spacing:0.6px;color:#A6A3BA;">ЧТО СДЕЛАНО</div>
       </div>
@@ -128,18 +128,18 @@
             <sc-if value="{{ row.hasTags }}" hint-placeholder-val="{{ false }}">
               <div style="display:flex;flex-wrap:wrap;gap:6px;margin-top:12px;">
                 <sc-for list="{{ row.tags }}" as="tag" hint-placeholder-count="7">
-                  <span style="font-size:13px;color:#E7E6E2;background:#332E48;border-radius:6px;padding:5px 10px;">{{ tag }}</span>
+                  <span style="font-size:13px;color:#E7E6E2;background:#2A2639;border-radius:6px;padding:5px 10px;">{{ tag }}</span>
                 </sc-for>
               </div>
             </sc-if>
           </div>
         </div>
       </sc-for>
-      <div style="margin-top:40px;background:#272338;border:1px solid rgba(255,255,255,0.10);border-radius:14px;padding:26px 28px;">
+      <div style="margin-top:40px;background:#1F1C2B;border:1px solid rgba(255,255,255,0.10);border-radius:14px;padding:26px 28px;">
         <div style="font-size:13px;font-weight:700;letter-spacing:0.6px;color:#A6A3BA;margin-bottom:16px;">ШИРИНА PERFORMANCE-ОПЫТА</div>
         <div style="display:flex;flex-wrap:wrap;gap:8px;">
           <sc-for list="{{ perfBreadth }}" as="p" hint-placeholder-count="10">
-            <span style="font-size:15px;color:#E7E6E2;background:#332E48;border-radius:8px;padding:8px 13px;">{{ p }}</span>
+            <span style="font-size:15px;color:#E7E6E2;background:#2A2639;border-radius:8px;padding:8px 13px;">{{ p }}</span>
           </sc-for>
         </div>
       </div>
@@ -147,10 +147,10 @@
   </div>
 
     <sc-if value="{{ matrixLoading }}" hint-placeholder-val="{{ false }}">
-      <div style="background:#272338;border:1px solid rgba(255,255,255,0.11);border-radius:14px;padding:28px;font-size:16px;color:#C0BDD2;">Загружаю данные из data/research. Если сообщение не исчезает — пересоберите оффлайн-копию: python data/research/build-presentation-data.py</div>
+      <div style="background:#1F1C2B;border:1px solid rgba(255,255,255,0.11);border-radius:14px;padding:28px;font-size:16px;color:#C0BDD2;">Загружаю данные из data/research. Если сообщение не исчезает — пересоберите оффлайн-копию: python data/research/build-presentation-data.py</div>
     </sc-if>
     <sc-if value="{{ matrixError }}" hint-placeholder-val="{{ false }}">
-      <div style="background:#272338;border:1px solid #FF6A1A;border-radius:14px;padding:28px;">
+      <div style="background:#1F1C2B;border:1px solid #FF6A1A;border-radius:14px;padding:28px;">
         <div style="font-size:19.5px;font-weight:800;">Данные не загрузились</div>
         <div style="font-size:16px;color:#C0BDD2;line-height:1.6;margin-top:8px;">Страница читает JSON из data/research через локальный HTTP-сервер, а при открытии файлом — оффлайн-копию presentation-data.js. Если копия устарела после правки данных, пересоберите её командой python data/research/build-presentation-data.py</div>
       </div>
@@ -167,7 +167,7 @@
 
         <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:12px;">
           <sc-for list="{{ marketTiles }}" as="m" hint-placeholder-count="4">
-            <div style="background:#272338;border:1px solid rgba(92,200,216,0.22);border-radius:14px;padding:20px 22px;">
+            <div style="background:#1F1C2B;border:1px solid rgba(92,200,216,0.22);border-radius:14px;padding:20px 22px;">
               <div style="font-family:'JetBrains Mono',monospace;font-size:30px;font-weight:800;color:#5CC8D8;">{{ m.value }}</div>
               <div style="font-size:15px;font-weight:800;line-height:1.35;margin-top:7px;">{{ m.label }}</div>
               <div style="font-size:13px;color:#A6A3BA;line-height:1.5;margin-top:8px;">{{ m.note }}</div>
@@ -177,7 +177,7 @@
         </div>
 
         <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:16px;">
-          <div style="background:#272338;border:1px solid rgba(255,255,255,0.10);border-radius:14px;padding:22px 24px;">
+          <div style="background:#1F1C2B;border:1px solid rgba(255,255,255,0.10);border-radius:14px;padding:22px 24px;">
             <div style="font-size:13px;font-weight:700;letter-spacing:0.6px;color:#A6A3BA;margin-bottom:12px;">ЧТО ПО РЕКЛАМЕ УЖЕ ДЕЙСТВУЕТ</div>
             <div style="display:flex;flex-direction:column;gap:9px;">
               <sc-for list="{{ marketRulesNow }}" as="r" hint-placeholder-count="4">
@@ -188,7 +188,7 @@
               </sc-for>
             </div>
           </div>
-          <div style="background:#272338;border:1px solid rgba(255,255,255,0.10);border-radius:14px;padding:22px 24px;">
+          <div style="background:#1F1C2B;border:1px solid rgba(255,255,255,0.10);border-radius:14px;padding:22px 24px;">
             <div style="font-size:13px;font-weight:700;letter-spacing:0.6px;color:#A6A3BA;margin-bottom:12px;">ЧТО ПРЕДЛОЖЕНО, НО НЕ ПРИНЯТО</div>
             <div style="display:flex;flex-direction:column;gap:9px;">
               <sc-for list="{{ marketRulesDraft }}" as="r" hint-placeholder-count="4">
@@ -221,7 +221,7 @@
         
 
         
-        <div style="display:flex;gap:4px;background:#282338;border:1px solid rgba(255,255,255,0.10);border-radius:999px;padding:4px;width:fit-content;margin-bottom:16px;flex-wrap:wrap;">
+        <div style="display:flex;gap:4px;background:#201D2E;border:1px solid rgba(255,255,255,0.10);border-radius:999px;padding:4px;width:fit-content;margin-bottom:16px;flex-wrap:wrap;">
           <sc-for list="{{ talentBrandTabs }}" as="b" hint-placeholder-count="4">
             <button onClick="{{ b.go }}" style="border:0;padding:9px 20px;border-radius:999px;font-size:15px;font-weight:700;cursor:pointer;{{ b.style }}">{{ b.label }}</button>
           </sc-for>
@@ -233,12 +233,12 @@
         </div>
 
         <div style="border:1px solid rgba(255,255,255,0.11);border-radius:14px;overflow:hidden;">
-          <div style="display:grid;grid-template-columns:1.25fr 1fr 0.7fr 0.75fr 0.7fr;background:#332E48;padding:12px 18px;font-size:12px;font-weight:700;letter-spacing:0.5px;color:#C0BDD2;">
+          <div style="display:grid;grid-template-columns:1.25fr 1fr 0.7fr 0.75fr 0.7fr;background:#2A2639;padding:12px 18px;font-size:12px;font-weight:700;letter-spacing:0.5px;color:#C0BDD2;">
             <div>СТРИМЕР</div><div>КТО ЭТО</div><div>ФОЛЛОВЕРЫ</div><div>СРЕДНИЙ ОНЛАЙН</div><div>ПИК</div>
           </div>
           <div style="max-height:520px;overflow:auto;">
             <sc-for list="{{ activeBrand.people }}" as="p" hint-placeholder-count="12">
-              <div style="display:grid;grid-template-columns:1.25fr 1fr 0.7fr 0.75fr 0.7fr;padding:10px 18px;border-top:1px solid rgba(255,255,255,0.06);background:#221E33;align-items:baseline;">
+              <div style="display:grid;grid-template-columns:1.25fr 1fr 0.7fr 0.75fr 0.7fr;padding:10px 18px;border-top:1px solid rgba(255,255,255,0.06);background:#191627;align-items:baseline;">
                 <div style="font-size:15px;{{ p.nameStyle }}">{{ p.name }}</div>
                 <div style="font-size:13px;{{ p.roleStyle }}">{{ p.role }}</div>
                 <div style="font-family:'JetBrains Mono',monospace;font-size:13px;color:#D3D1DB;">{{ p.followers }}</div>
@@ -250,29 +250,29 @@
         </div>
         <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:16px;">
           <sc-for list="{{ activeBrand.totals }}" as="s" hint-placeholder-count="4">
-            <div style="background:#272338;border:1px solid rgba(255,255,255,0.11);border-radius:12px;padding:16px 18px;">
+            <div style="background:#1F1C2B;border:1px solid rgba(255,255,255,0.11);border-radius:12px;padding:16px 18px;">
               <div style="font-family:'JetBrains Mono',monospace;font-size:26px;font-weight:800;color:var(--accent);">{{ s.value }}</div>
               <div style="font-size:13px;color:#C0BDD2;line-height:1.45;margin-top:6px;">{{ s.label }}</div>
             </div>
           </sc-for>
         </div>
 
-        <div style="background:#272338;border:1px solid rgba(255,255,255,0.10);border-radius:12px;padding:16px 20px;margin-top:12px;">
+        <div style="background:#1F1C2B;border:1px solid rgba(255,255,255,0.10);border-radius:12px;padding:16px 20px;margin-top:12px;">
           <div style="font-size:13px;font-weight:700;letter-spacing:0.6px;color:#A6A3BA;margin-bottom:11px;">СОСТАВ ПУЛА ПО ТИПАМ</div>
           <div style="display:flex;flex-wrap:wrap;gap:7px;">
             <sc-for list="{{ activeBrand.mix }}" as="m" hint-placeholder-count="6">
-              <span style="font-size:13px;background:#332E48;border-radius:7px;padding:6px 12px;{{ m.style }}">{{ m.label }} — {{ m.count }}</span>
+              <span style="font-size:13px;background:#2A2639;border-radius:7px;padding:6px 12px;{{ m.style }}">{{ m.label }} — {{ m.count }}</span>
             </sc-for>
           </div>
         </div>
 
         <div style="font-size:19.5px;font-weight:800;margin:30px 0 12px;">Кто на кого делает ставку</div>
         <div style="border:1px solid rgba(255,255,255,0.11);border-radius:14px;overflow:hidden;">
-          <div style="display:grid;grid-template-columns:0.85fr 0.55fr 0.7fr 0.75fr 0.9fr 0.9fr;background:#332E48;padding:12px 18px;font-size:12px;font-weight:700;letter-spacing:0.5px;color:#C0BDD2;">
+          <div style="display:grid;grid-template-columns:0.85fr 0.55fr 0.7fr 0.75fr 0.9fr 0.9fr;background:#2A2639;padding:12px 18px;font-size:12px;font-weight:700;letter-spacing:0.5px;color:#C0BDD2;">
             <div>БРЕНД</div><div>В ПУЛЕ</div><div>С ДАННЫМИ</div><div>ИЗ КИБЕРА</div><div>СУММА СРЕДНЕГО</div><div>СРЕДНИЙ НА КАНАЛ</div>
           </div>
           <sc-for list="{{ brandTotals }}" as="b" hint-placeholder-count="4">
-            <div style="display:grid;grid-template-columns:0.85fr 0.55fr 0.7fr 0.75fr 0.9fr 0.9fr;padding:13px 18px;border-top:1px solid rgba(255,255,255,0.07);background:#221E33;align-items:baseline;">
+            <div style="display:grid;grid-template-columns:0.85fr 0.55fr 0.7fr 0.75fr 0.9fr 0.9fr;padding:13px 18px;border-top:1px solid rgba(255,255,255,0.07);background:#191627;align-items:baseline;">
               <div style="font-size:14px;font-weight:800;{{ b.style }}">{{ b.label }}</div>
               <div style="font-family:'JetBrains Mono',monospace;font-size:13.5px;color:#D3D1DB;">{{ b.roster }}</div>
               <div style="font-family:'JetBrains Mono',monospace;font-size:13.5px;color:#C0BDD2;">{{ b.withData }}</div>
@@ -293,7 +293,7 @@
         <div style="font-size:13.5px;color:#A6A3BA;line-height:1.55;margin-top:18px;">Источник: <a href="https://cyber.sports.ru/betting/blogs/3382281.html" target="_blank" rel="noreferrer">Sports.ru — Киберспорт, «Карта российского киберспортивного спонсорства в 2026 году»</a>, февраль 2026. Поимённые составы публично не раскрываются — доступны только итоговые числа. Фолловеры — Twitch API. Средний и пиковый онлайн — TwitchTracker, его срез примерно за последний месяц. Собрано {{ statsCollectedAt }}.</div>
 
         <div style="font-size:19.5px;font-weight:800;margin:34px 0 12px;">Обновлённый подход PARI</div>
-        <div style="background:#272338;border:1px solid rgba(255,255,255,0.11);border-radius:14px;padding:24px 26px;">
+        <div style="background:#1F1C2B;border:1px solid rgba(255,255,255,0.11);border-radius:14px;padding:24px 26px;">
           <div style="font-size:20.5px;font-weight:700;line-height:1.5;font-style:italic;color:#F2F1EE;">«{{ pariQuote.text }}»</div>
           <div style="font-size:14px;color:#A6A3BA;margin-top:12px;">{{ pariQuote.attribution }} · <a href="{{ pariQuote.url }}" target="_blank" rel="noreferrer">{{ pariQuote.publisher }}</a></div>
           <div style="font-size:15.5px;color:#E7E6E2;line-height:1.6;margin-top:16px;padding-top:16px;border-top:1px solid rgba(255,255,255,0.10);">{{ pariQuote.meaning }}</div>
@@ -349,7 +349,7 @@
         </div>
         <div style="font-size:15px;color:#A6A3BA;line-height:1.55;margin-bottom:18px;max-width:860px;">Оба замера сняты во время матчей: сетка каналов и бренды в них зафиксированы в конкретную минуту турнира.</div>
 
-        <div style="display:flex;gap:4px;background:#282338;border:1px solid rgba(255,255,255,0.10);border-radius:999px;padding:4px;width:fit-content;margin-bottom:16px;flex-wrap:wrap;">
+        <div style="display:flex;gap:4px;background:#201D2E;border:1px solid rgba(255,255,255,0.10);border-radius:999px;padding:4px;width:fit-content;margin-bottom:16px;flex-wrap:wrap;">
           <sc-for list="{{ snapshotTabs }}" as="b" hint-placeholder-count="2">
             <button onClick="{{ b.go }}" style="border:0;padding:9px 20px;border-radius:999px;font-size:15px;font-weight:700;cursor:pointer;{{ b.style }}">{{ b.label }}</button>
           </sc-for>
@@ -361,11 +361,11 @@
               <div style="font-size:14px;color:#A6A3BA;line-height:1.5;margin-bottom:12px;">{{ s.note }}</div>
 
               <div style="border:1px solid rgba(255,255,255,0.11);border-radius:14px;overflow:hidden;">
-                <div style="display:grid;grid-template-columns:1.15fr 0.9fr 0.65fr 1fr;background:#332E48;padding:12px 18px;font-size:12px;font-weight:700;letter-spacing:0.5px;color:#C0BDD2;">
+                <div style="display:grid;grid-template-columns:1.15fr 0.9fr 0.65fr 1fr;background:#2A2639;padding:12px 18px;font-size:12px;font-weight:700;letter-spacing:0.5px;color:#C0BDD2;">
                   <div>КАНАЛ</div><div>БРЕНД</div><div>ЗРИТЕЛИ</div><div>ГДЕ НАЙДЕН</div>
                 </div>
                 <sc-for list="{{ s.rows }}" as="r" hint-placeholder-count="12">
-                  <div style="display:grid;grid-template-columns:1.15fr 0.9fr 0.65fr 1fr;padding:11px 18px;border-top:1px solid rgba(255,255,255,0.06);background:#221E33;align-items:baseline;">
+                  <div style="display:grid;grid-template-columns:1.15fr 0.9fr 0.65fr 1fr;padding:11px 18px;border-top:1px solid rgba(255,255,255,0.06);background:#191627;align-items:baseline;">
                     <a href="{{ r.channelUrl }}" target="_blank" rel="noreferrer" style="font-size:14px;font-weight:800;overflow-wrap:anywhere;">{{ r.streamer }}</a>
                     <div style="font-size:13.5px;font-weight:700;{{ r.brandStyle }}">{{ r.brands }}</div>
                     <div style="font-family:'JetBrains Mono',monospace;font-size:13.5px;">{{ r.viewers }}</div>
@@ -376,11 +376,11 @@
 
               <div style="display:grid;grid-template-columns:1.1fr 1fr;gap:14px;margin-top:14px;align-items:start;">
                 <div style="border:1px solid rgba(255,255,255,0.11);border-radius:12px;overflow:hidden;">
-                  <div style="display:grid;grid-template-columns:1.2fr 0.7fr 1fr;padding:11px 18px;background:#332E48;font-size:12px;font-weight:700;letter-spacing:0.5px;color:#C0BDD2;">
+                  <div style="display:grid;grid-template-columns:1.2fr 0.7fr 1fr;padding:11px 18px;background:#2A2639;font-size:12px;font-weight:700;letter-spacing:0.5px;color:#C0BDD2;">
                     <div>БРЕНД</div><div>КАНАЛОВ</div><div>ЗРИТЕЛЕЙ В МОМЕНТЕ</div>
                   </div>
                   <sc-for list="{{ s.brandRows }}" as="r" hint-placeholder-count="4">
-                    <div style="display:grid;grid-template-columns:1.2fr 0.7fr 1fr;padding:11px 18px;border-top:1px solid rgba(255,255,255,0.06);background:#221E33;align-items:baseline;">
+                    <div style="display:grid;grid-template-columns:1.2fr 0.7fr 1fr;padding:11px 18px;border-top:1px solid rgba(255,255,255,0.06);background:#191627;align-items:baseline;">
                       <div style="font-size:15px;font-weight:800;{{ r.brandStyle }}">{{ r.brand }}</div>
                       <div style="font-family:'JetBrains Mono',monospace;font-size:14px;">{{ r.channels }}</div>
                       <div style="font-family:'JetBrains Mono',monospace;font-size:14px;">{{ r.viewers }}</div>
@@ -407,7 +407,7 @@
         </div>
         <div style="font-size:15px;color:#A6A3BA;line-height:1.55;margin-bottom:16px;max-width:900px;">Пока идёт турнир, Winline собирает офлайн-просмотр финала в Москве — и продаёт на него билеты через панели тех же стримеров, что в таблице выше.</div>
 
-        <div style="background:#272338;border:1px solid rgba(255,255,255,0.11);border-radius:14px;overflow:hidden;">
+        <div style="background:#1F1C2B;border:1px solid rgba(255,255,255,0.11);border-radius:14px;overflow:hidden;">
           <div style="display:grid;grid-template-columns:1.05fr 1fr;">
             <div style="padding:24px 26px;">
               <div style="display:flex;flex-direction:column;gap:11px;">
@@ -419,7 +419,7 @@
                 </sc-for>
               </div>
 
-              <div style="display:grid;grid-template-columns:230px 1fr;gap:16px;align-items:center;margin-top:18px;padding:14px;background:#332E48;border-radius:12px;">
+              <div style="display:grid;grid-template-columns:230px 1fr;gap:16px;align-items:center;margin-top:18px;padding:14px;background:#2A2639;border-radius:12px;">
                 <img src="assets/sold-out.png" alt="Яндекс Афиша: билеты проданы" style="width:100%;height:auto;display:block;border-radius:8px;">
                 <div style="font-size:14px;color:#D3D1DB;line-height:1.55;">Оформить билет на Афише уже нельзя — зал распродан. Спрос на офлайн-просмотр закрыт до начала турнира, и это единственная цифра по интересу к продукту, которую видно снаружи.</div>
               </div>
@@ -427,7 +427,7 @@
               <div style="font-size:13px;font-weight:700;letter-spacing:0.6px;color:#A6A3BA;margin:22px 0 10px;">ЧТО ПОКАЗАЛ ПРОШЛЫЙ ПАБСТОМП НА TI 2024</div>
               <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:10px;">
                 <sc-for list="{{ pubstompStats }}" as="s" hint-placeholder-count="4">
-                  <div style="background:#332E48;border-radius:10px;padding:13px 15px;">
+                  <div style="background:#2A2639;border-radius:10px;padding:13px 15px;">
                     <div style="font-family:'JetBrains Mono',monospace;font-size:24px;font-weight:800;color:var(--accent);">{{ s.value }}</div>
                     <div style="font-size:12.5px;color:#C0BDD2;line-height:1.4;margin-top:5px;">{{ s.label }}</div>
                   </div>
@@ -436,7 +436,7 @@
               <div style="font-size:13px;color:#A6A3BA;line-height:1.5;margin-top:12px;">Источники: <a href="https://afisha.yandex.ru/moscow/sport/winline-pubstomp-the-international" target="_blank" rel="noreferrer">Яндекс Афиша</a> · <a href="https://msk-live-hall.mts.ru/winlinepubstomp" target="_blank" rel="noreferrer">МТС Live Холл</a> · <a href="https://winners.eplus.marketing/2025/osnovnye-nominafii/industrial-nye-nominafii/geiming-i-kibersport/winline-pabstomp-the-international-vozrozhdenie-kibersportivnykh-iventov-v-rf" target="_blank" rel="noreferrer">E+ Awards, разбор кампании TI 2024</a></div>
             </div>
 
-            <div style="background:#1F1B2E;display:flex;flex-direction:column;">
+            <div style="background:#171423;display:flex;flex-direction:column;">
               <img src="assets/pubstomp-1.png" alt="Зона активации Bounty Hunt на пабстомпе" style="width:100%;height:auto;display:block;">
               <div style="font-size:13px;color:#A6A3BA;line-height:1.5;padding:12px 20px;">Зона активации Bounty Hunt: очередь к стенду с ящиками и призами</div>
               <img src="assets/pubstomp-2.png" alt="Зал во время финала" style="width:100%;height:auto;display:block;border-top:1px solid rgba(255,255,255,0.11);">
@@ -447,11 +447,11 @@
           <div style="border-top:1px solid rgba(255,255,255,0.10);padding:22px 26px;">
             <div style="font-size:13px;font-weight:700;letter-spacing:0.6px;color:#A6A3BA;margin-bottom:12px;">ТРИ БУКМЕКЕРА В ОДИН УИКЕНД</div>
             <div style="border:1px solid rgba(255,255,255,0.11);border-radius:12px;overflow:hidden;">
-              <div style="display:grid;grid-template-columns:0.8fr 1.4fr 0.7fr 1fr;padding:11px 18px;background:#332E48;font-size:12px;font-weight:700;letter-spacing:0.5px;color:#C0BDD2;">
+              <div style="display:grid;grid-template-columns:0.8fr 1.4fr 0.7fr 1fr;padding:11px 18px;background:#2A2639;font-size:12px;font-weight:700;letter-spacing:0.5px;color:#C0BDD2;">
                 <div>БРЕНД</div><div>ГДЕ</div><div>КОГДА</div><div>БИЛЕТЫ</div>
               </div>
               <sc-for list="{{ pubstompRivals }}" as="r" hint-placeholder-count="3">
-                <div style="display:grid;grid-template-columns:0.8fr 1.4fr 0.7fr 1fr;padding:12px 18px;border-top:1px solid rgba(255,255,255,0.06);background:#221E33;align-items:baseline;">
+                <div style="display:grid;grid-template-columns:0.8fr 1.4fr 0.7fr 1fr;padding:12px 18px;border-top:1px solid rgba(255,255,255,0.06);background:#191627;align-items:baseline;">
                   <div style="font-size:15px;font-weight:800;{{ r.style }}">{{ r.brand }}</div>
                   <div style="font-size:14px;color:#D3D1DB;">{{ r.place }}</div>
                   <div style="font-size:14px;color:#D3D1DB;">{{ r.when }}</div>
@@ -476,27 +476,27 @@
         <div style="font-size:19.5px;font-weight:800;margin:0 0 4px;">Собственные медийные мероприятия</div>
         <div style="font-size:15px;color:#A6A3BA;margin-bottom:14px;">Продукты Winline вне киберспортивных дисциплин, но на той же аудитории и с теми же лицами</div>
         <sc-for list="{{ mediaEvents }}" as="e" hint-placeholder-count="1">
-          <div style="background:#272338;border:1px solid rgba(255,255,255,0.11);border-radius:14px;overflow:hidden;">
+          <div style="background:#1F1C2B;border:1px solid rgba(255,255,255,0.11);border-radius:14px;overflow:hidden;">
             <div style="display:grid;grid-template-columns:1.05fr 1fr;gap:0;">
               <div style="padding:24px 26px;">
                 <div style="display:flex;align-items:baseline;gap:12px;flex-wrap:wrap;">
                   <div style="font-size:23px;font-weight:800;">{{ e.name }}</div>
-                  <span style="font-size:12px;font-weight:800;letter-spacing:0.6px;background:#332E48;border:1px solid rgba(255,255,255,0.14);color:#C0BDD2;border-radius:5px;padding:3px 8px;">{{ e.badge }}</span>
+                  <span style="font-size:12px;font-weight:800;letter-spacing:0.6px;background:#2A2639;border:1px solid rgba(255,255,255,0.14);color:#C0BDD2;border-radius:5px;padding:3px 8px;">{{ e.badge }}</span>
                 </div>
                 <div style="font-size:15px;color:#C0BDD2;line-height:1.55;margin-top:8px;">{{ e.format }}</div>
 
                 <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:20px;">
-                  <div style="background:#332E48;border-radius:10px;padding:14px 16px;">
+                  <div style="background:#2A2639;border-radius:10px;padding:14px 16px;">
                     <div style="font-family:'JetBrains Mono',monospace;font-size:27.5px;font-weight:800;color:var(--accent);">{{ e.viewers }}</div>
                     <div style="font-size:13px;color:#C0BDD2;line-height:1.4;margin-top:5px;">зрителей в момент нашего замера</div>
                   </div>
-                  <div style="background:#332E48;border-radius:10px;padding:14px 16px;">
+                  <div style="background:#2A2639;border-radius:10px;padding:14px 16px;">
                     <div style="font-family:'JetBrains Mono',monospace;font-size:27.5px;font-weight:800;color:var(--accent);">{{ e.prize }}</div>
                     <div style="font-size:13px;color:#C0BDD2;line-height:1.4;margin-top:5px;">призовой фонд</div>
                   </div>
                 </div>
 
-                <div style="background:#332E48;border-radius:10px;padding:15px 18px;margin-top:12px;">
+                <div style="background:#2A2639;border-radius:10px;padding:15px 18px;margin-top:12px;">
                   <div style="font-size:13px;font-weight:700;letter-spacing:0.5px;color:#A6A3BA;margin-bottom:9px;">ЧЕМ ЗАКОНЧИЛОСЬ</div>
                   <div style="font-size:15.5px;line-height:1.55;color:#E7E6E2;">{{ e.result }}</div>
                   <div style="font-size:12.5px;color:#A6A3BA;margin-top:7px;"><a href="{{ e.resultUrl }}" target="_blank" rel="noreferrer">{{ e.resultPublisher }}</a></div>
@@ -518,7 +518,7 @@
                 </div>
               </div>
 
-              <div style="background:#1F1B2E;display:flex;flex-direction:column;">
+              <div style="background:#171423;display:flex;flex-direction:column;">
                 <img src="{{ e.image }}" alt="{{ e.imageCaption }}" style="width:100%;height:auto;display:block;object-fit:cover;">
                 <div style="font-size:13px;color:#A6A3BA;line-height:1.5;padding:12px 20px;">{{ e.imageCaption }}</div>
               </div>
@@ -533,7 +533,7 @@
 
                   <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:18px;">
                     <sc-for list="{{ e.channel.stats }}" as="s" hint-placeholder-count="3">
-                      <div style="background:#332E48;border-radius:10px;padding:13px 15px;">
+                      <div style="background:#2A2639;border-radius:10px;padding:13px 15px;">
                         <div style="font-family:'JetBrains Mono',monospace;font-size:24px;font-weight:800;color:var(--accent);">{{ s.value }}</div>
                         <div style="font-size:12.5px;color:#C0BDD2;line-height:1.4;margin-top:5px;">{{ s.label }}</div>
                       </div>
@@ -543,13 +543,13 @@
                   <div style="font-size:13px;font-weight:700;letter-spacing:0.6px;color:#A6A3BA;margin:18px 0 8px;">КНОПКИ В ПОСТЕ</div>
                   <div style="display:flex;flex-wrap:wrap;gap:7px;">
                     <sc-for list="{{ e.channel.buttons }}" as="btn" hint-placeholder-count="2">
-                      <span style="font-size:14px;background:#332E48;border-radius:7px;padding:6px 12px;color:#E7E6E2;">{{ btn }}</span>
+                      <span style="font-size:14px;background:#2A2639;border-radius:7px;padding:6px 12px;color:#E7E6E2;">{{ btn }}</span>
                     </sc-for>
                   </div>
 
-                  <div style="font-size:15.5px;line-height:1.6;color:#E7E6E2;margin-top:18px;padding:13px 16px;background:#332E48;border-left:2px solid var(--accent);border-radius:0 8px 8px 0;">{{ e.channel.takeaway }}</div>
+                  <div style="font-size:15.5px;line-height:1.6;color:#E7E6E2;margin-top:18px;padding:13px 16px;background:#2A2639;border-left:2px solid var(--accent);border-radius:0 8px 8px 0;">{{ e.channel.takeaway }}</div>
                 </div>
-                <div style="background:#1F1B2E;border:1px solid rgba(255,255,255,0.11);border-radius:12px;overflow:hidden;">
+                <div style="background:#171423;border:1px solid rgba(255,255,255,0.11);border-radius:12px;overflow:hidden;">
                   <img src="{{ e.channel.image }}" alt="{{ e.channel.imageCaption }}" style="width:100%;height:auto;display:block;">
                 </div>
               </div>
@@ -562,16 +562,16 @@
 
         <div style="display:flex;align-items:center;gap:12px;margin-bottom:6px;flex-wrap:wrap;">
           <div style="font-size:19.5px;font-weight:800;">WINLINE SLAY · премия русского стриминга</div>
-          <span style="font-size:12px;font-weight:800;letter-spacing:0.6px;background:#332E48;border:1px solid rgba(255,255,255,0.14);color:#C0BDD2;border-radius:5px;padding:3px 8px;">ТРЕТИЙ СЕЗОН · 3 ДЕКАБРЯ 2025</span>
+          <span style="font-size:12px;font-weight:800;letter-spacing:0.6px;background:#2A2639;border:1px solid rgba(255,255,255,0.14);color:#C0BDD2;border-radius:5px;padding:3px 8px;">ТРЕТИЙ СЕЗОН · 3 ДЕКАБРЯ 2025</span>
         </div>
         <div style="font-size:15px;color:#A6A3BA;line-height:1.55;margin-bottom:16px;max-width:900px;">Собственная премия для контентмейкеров, идёт с 2023 года. Церемония 2025 года прошла в «Дворце Ирины Винер» в Лужниках, тема — castle core.</div>
 
-        <div style="background:#272338;border:1px solid rgba(255,255,255,0.11);border-radius:14px;overflow:hidden;">
+        <div style="background:#1F1C2B;border:1px solid rgba(255,255,255,0.11);border-radius:14px;overflow:hidden;">
           <div style="display:grid;grid-template-columns:1.05fr 1fr;">
             <div style="padding:24px 26px;">
               <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:10px;">
                 <sc-for list="{{ slayStats }}" as="s" hint-placeholder-count="4">
-                  <div style="background:#332E48;border-radius:10px;padding:14px 16px;">
+                  <div style="background:#2A2639;border-radius:10px;padding:14px 16px;">
                     <div style="font-family:'JetBrains Mono',monospace;font-size:25px;font-weight:800;color:var(--accent);">{{ s.value }}</div>
                     <div style="font-size:12.5px;color:#C0BDD2;line-height:1.4;margin-top:5px;">{{ s.label }}</div>
                   </div>
@@ -590,7 +590,7 @@
               <div style="font-size:13px;color:#A6A3BA;line-height:1.5;margin-top:14px;">Источники: <a href="https://www.championat.com/cybersport/news-6267636-slay-2025-postavila-absolyutnyj-rekord-na-twitch-v-rossii.html" target="_blank" rel="noreferrer">Чемпионат о рекорде</a> · <a href="https://www.igromania.ru/news/159963/bolshe-750-tyisyach-zritelej-smotreli-tseremoniyu-vrucheniya-premii-slay-2025-eto-rekord/" target="_blank" rel="noreferrer">Игромания</a> · <a href="https://silvermercury.ru/winners/slay-kak-winline-sozdal-pervyy-v-rossii-oskar-dlya-strimerov-i-pobil-rekord-po-onlaynu-na-twitch-2025-6147" target="_blank" rel="noreferrer">разбор кампании на Silver Mercury</a></div>
             </div>
 
-            <div style="background:#1F1B2E;display:flex;flex-direction:column;">
+            <div style="background:#171423;display:flex;flex-direction:column;">
               <img src="assets/slay-1.jpg" alt="Церемония SLAY 2025" style="width:100%;height:auto;display:block;">
               <div style="font-size:13px;color:#A6A3BA;line-height:1.5;padding:12px 20px;">Вручение статуэтки на сцене: ведут Buster и приглашённые ведущие</div>
               <img src="assets/slay-2.webp" alt="Интервью на фоне логотипа Winline" style="width:100%;height:auto;display:block;border-top:1px solid rgba(255,255,255,0.11);">
@@ -719,7 +719,7 @@
         <div style="font-size:15.5px;color:#A6A3BA;margin-bottom:22px;">{{ teamsIntro }}</div>
         <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:20px;">
           <sc-for list="{{ teamsSummary }}" as="s" hint-placeholder-count="3">
-            <div style="background:#272338;border:1px solid rgba(255,255,255,0.11);border-radius:12px;padding:17px 19px;">
+            <div style="background:#1F1C2B;border:1px solid rgba(255,255,255,0.11);border-radius:12px;padding:17px 19px;">
               <div style="font-family:'JetBrains Mono',monospace;font-size:29.5px;font-weight:800;color:#A98BFF;">{{ s.value }}</div>
               <div style="font-size:15.5px;font-weight:800;margin-top:5px;">{{ s.label }}</div>
               <div style="font-size:13px;color:#A6A3BA;line-height:1.45;margin-top:7px;">{{ s.note }}</div>
@@ -728,11 +728,11 @@
         </div>
 
         <div style="border:1px solid rgba(255,255,255,0.11);border-radius:14px;overflow:hidden;">
-          <div style="display:grid;grid-template-columns:0.7fr 1.2fr 1fr 1.05fr 1.05fr;background:#332E48;padding:13px 18px;font-size:12px;font-weight:700;letter-spacing:0.5px;color:#C0BDD2;">
+          <div style="display:grid;grid-template-columns:0.7fr 1.2fr 1fr 1.05fr 1.05fr;background:#2A2639;padding:13px 18px;font-size:12px;font-weight:700;letter-spacing:0.5px;color:#C0BDD2;">
             <div>БРЕНД</div><div>КОМАНДА</div><div>ТИП СВЯЗИ</div><div>СТАТУС СЕЙЧАС</div><div>СРОК И ИСТОЧНИК</div>
           </div>
           <sc-for list="{{ teamTable }}" as="p" hint-placeholder-count="12">
-            <div style="display:grid;grid-template-columns:0.7fr 1.2fr 1fr 1.05fr 1.05fr;padding:13px 18px;border-top:1px solid rgba(255,255,255,0.07);background:#221E33;align-items:start;">
+            <div style="display:grid;grid-template-columns:0.7fr 1.2fr 1fr 1.05fr 1.05fr;padding:13px 18px;border-top:1px solid rgba(255,255,255,0.07);background:#191627;align-items:start;">
               <div style="font-size:15px;font-weight:800;{{ p.brandStyle }}">{{ p.brand }}</div>
               <div style="font-size:15.5px;font-weight:700;{{ p.nameStyle }}">{{ p.name }}</div>
               <div style="font-size:14px;color:#D3D1DB;">{{ p.relation }}</div>
@@ -757,7 +757,7 @@
               <div style="font-size:17px;font-weight:800;line-height:1.4;margin-bottom:9px;">Клуб носит имя букмекера</div>
               <div style="display:flex;flex-wrap:wrap;gap:7px;">
                 <sc-for list="{{ teamsNamingRivals }}" as="t" hint-placeholder-count="4">
-                  <span style="font-size:14px;background:#332E48;border-radius:7px;padding:6px 12px;color:#E7E6E2;">{{ t }}</span>
+                  <span style="font-size:14px;background:#2A2639;border-radius:7px;padding:6px 12px;color:#E7E6E2;">{{ t }}</span>
                 </sc-for>
               </div>
             </div>
@@ -777,7 +777,7 @@
         <div style="font-size:15px;color:#A6A3BA;line-height:1.55;margin-bottom:14px;max-width:900px;">Каждый источник, факт и партнёрство можно раскрыть и проверить по ссылке.</div>
         <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:12px;">
           <sc-for list="{{ statsRest }}" as="s" hint-placeholder-count="3">
-            <div style="background:#272338;border:1px solid rgba(255,255,255,0.10);border-radius:14px;padding:21px 22px;">
+            <div style="background:#1F1C2B;border:1px solid rgba(255,255,255,0.10);border-radius:14px;padding:21px 22px;">
               <div style="font-family:'JetBrains Mono',monospace;font-size:31px;font-weight:800;color:var(--accent);">{{ s.value }}</div>
               <div style="font-size:15px;color:#E7E6E2;font-weight:700;line-height:1.4;margin-top:7px;">{{ s.label }}</div>
               <div style="font-size:13px;color:#A6A3BA;line-height:1.5;margin-top:8px;">{{ s.note }}</div>
@@ -806,8 +806,8 @@
         <div style="font-size:15px;color:#A6A3BA;margin-bottom:14px;">Всё, кроме команд: собственные турниры, партнёрства с операторами и студиями. Список собран из карты рынка и дополнен турнирами, по которым у нас есть призовые и аудитория. Названия кликабельны там, где партнёрство подтверждено отдельным источником.</div>
         <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(215px,1fr));gap:12px;margin-bottom:12px;">
           <sc-for list="{{ eventAssets }}" as="brand" hint-placeholder-count="5">
-            <div style="background:#272338;border:1px solid rgba(255,255,255,0.11);border-radius:12px;overflow:hidden;display:flex;flex-direction:column;">
-              <div style="padding:14px 18px;background:#332E48;display:flex;align-items:baseline;justify-content:space-between;gap:10px;">
+            <div style="background:#1F1C2B;border:1px solid rgba(255,255,255,0.11);border-radius:12px;overflow:hidden;display:flex;flex-direction:column;">
+              <div style="padding:14px 18px;background:#2A2639;display:flex;align-items:baseline;justify-content:space-between;gap:10px;">
                 <span style="font-size:17px;font-weight:800;{{ brand.style }}">{{ brand.label }}</span>
                 <span style="font-family:'JetBrains Mono',monospace;font-size:15px;color:#C0BDD2;">{{ brand.total }}</span>
               </div>
@@ -844,11 +844,11 @@
         <div style="font-size:15px;color:#A6A3BA;line-height:1.55;margin-bottom:16px;max-width:900px;">Публикации часто пишут, что букмекер «купил права». На деле права держит студия, а букмекер платит за брендинг вещания. Разница важная: у спонсора вещания нет самого актива, он арендует витрину.</div>
 
         <div style="border:1px solid rgba(255,255,255,0.11);border-radius:14px;overflow:hidden;">
-          <div style="display:grid;grid-template-columns:0.8fr 1.1fr 1.5fr;background:#332E48;padding:12px 18px;font-size:12px;font-weight:700;letter-spacing:0.5px;color:#C0BDD2;">
+          <div style="display:grid;grid-template-columns:0.8fr 1.1fr 1.5fr;background:#2A2639;padding:12px 18px;font-size:12px;font-weight:700;letter-spacing:0.5px;color:#C0BDD2;">
             <div>КТО</div><div>РОЛЬ В ЦЕПОЧКЕ</div><div>ЧТО ИМЕННО</div>
           </div>
           <sc-for list="{{ rightsChain }}" as="r" hint-placeholder-count="4">
-            <div style="display:grid;grid-template-columns:0.8fr 1.1fr 1.5fr;padding:13px 18px;border-top:1px solid rgba(255,255,255,0.07);background:#221E33;align-items:start;">
+            <div style="display:grid;grid-template-columns:0.8fr 1.1fr 1.5fr;padding:13px 18px;border-top:1px solid rgba(255,255,255,0.07);background:#191627;align-items:start;">
               <div style="font-size:15px;font-weight:800;{{ r.style }}">{{ r.who }}</div>
               <div style="font-size:14px;color:#D3D1DB;">{{ r.role }}</div>
               <div>
@@ -869,15 +869,15 @@
         <div style="font-size:19.5px;font-weight:800;margin:34px 0 12px;">Собственные турниры Winline</div>
         <div style="display:grid;grid-template-columns:1fr 1fr;gap:18px;">
           <sc-for list="{{ ownedComparisons }}" as="c" hint-placeholder-count="2">
-            <div style="background:#272338;border:1px solid rgba(255,255,255,0.11);border-radius:14px;padding:24px;">
+            <div style="background:#1F1C2B;border:1px solid rgba(255,255,255,0.11);border-radius:14px;padding:24px;">
               <div style="font-size:19.5px;font-weight:800;">{{ c.title }}</div>
               <div style="font-family:'JetBrains Mono',monospace;font-size:32px;font-weight:800;color:#FFB454;margin-top:14px;">{{ c.headline }}</div>
               <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:18px;">
-                <div style="background:#332E48;border-radius:10px;padding:15px;">
+                <div style="background:#2A2639;border-radius:10px;padding:15px;">
                   <div style="font-size:12.5px;color:#A6A3BA;font-weight:700;">{{ c.before.label }}</div>
                   <div style="font-size:15px;line-height:1.7;margin-top:7px;">{{ c.before.metrics }}</div>
                 </div>
-                <div style="background:#332E48;border-radius:10px;padding:15px;">
+                <div style="background:#2A2639;border-radius:10px;padding:15px;">
                   <div style="font-size:12.5px;color:#A6A3BA;font-weight:700;">{{ c.after.label }}</div>
                   <div style="font-size:15px;line-height:1.7;margin-top:7px;">{{ c.after.metrics }}</div>
                 </div>
@@ -906,7 +906,7 @@
     <section style="padding:20px 0 48px;">
       <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:14px;">
         <sc-for list="{{ cvCompanies }}" as="c" hint-placeholder-count="3">
-          <div style="background:#272338;border:1px solid rgba(255,255,255,0.11);border-radius:14px;padding:26px;">
+          <div style="background:#1F1C2B;border:1px solid rgba(255,255,255,0.11);border-radius:14px;padding:26px;">
             <div style="font-family:'JetBrains Mono',monospace;font-size:14px;color:#FF6A1A;font-weight:600;">{{ c.years }}</div>
             <div style="font-size:24px;font-weight:800;margin-top:10px;">{{ c.company }}</div>
             <div style="font-size:15.5px;color:#C0BDD2;margin-top:4px;">{{ c.role }}</div>
@@ -928,7 +928,7 @@
       <div style="font-size:15.5px;color:#A6A3BA;margin-bottom:22px;">Executive-уровень: переговоры, релокации, работа вне России</div>
       <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:12px;">
         <sc-for list="{{ cvIntl }}" as="i" hint-placeholder-count="4">
-          <div style="background:#272338;border:1px solid rgba(255,255,255,0.10);border-radius:14px;padding:20px;">
+          <div style="background:#1F1C2B;border:1px solid rgba(255,255,255,0.10);border-radius:14px;padding:20px;">
             <div style="font-size:23px;font-weight:800;color:#FF6A1A;">{{ i.stat }}</div>
             <div style="font-size:15px;color:#E7E6E2;margin-top:8px;line-height:1.45;">{{ i.label }}</div>
           </div>
@@ -940,7 +940,7 @@
       <div style="font-size:27.5px;font-weight:800;margin-bottom:26px;">Три кейса под этот периметр</div>
       <div style="display:flex;flex-direction:column;gap:14px;">
         <sc-for list="{{ cvCases }}" as="c" hint-placeholder-count="3">
-          <div style="background:#272338;border:1px solid rgba(255,255,255,0.11);border-radius:14px;padding:26px 28px;">
+          <div style="background:#1F1C2B;border:1px solid rgba(255,255,255,0.11);border-radius:14px;padding:26px 28px;">
             <div style="display:flex;align-items:baseline;gap:14px;margin-bottom:16px;flex-wrap:wrap;">
               <span style="font-size:21.5px;font-weight:800;">{{ c.title }}</span>
               <span style="font-size:13.5px;font-family:'JetBrains Mono',monospace;color:#FF6A1A;">{{ c.headline }}</span>
