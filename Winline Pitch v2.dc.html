@@ -748,9 +748,37 @@
           <span><span style="color:#FF6A1A;font-weight:700;">Оранжевый*</span> — актив назван именем букмекера</span>
           <span><span style="color:#FF6A1A;font-weight:800;">?</span> — нужно подтверждение актуальности</span>
         </div>
-        <div style="font-size:13px;color:#77767C;line-height:1.55;margin-bottom:32px;">{{ eventAssetsNote }}</div>
+        <div style="font-size:13px;color:#77767C;line-height:1.55;">{{ eventAssetsNote }}</div>
 
 
+
+        <div style="height:1px;background:rgba(255,255,255,0.09);margin:40px 0 28px;"></div>
+
+        <div style="font-size:19.5px;font-weight:800;margin-bottom:4px;">Кому принадлежат права на русские трансляции</div>
+        <div style="font-size:15px;color:#77767C;line-height:1.55;margin-bottom:16px;max-width:900px;">Публикации часто пишут, что букмекер «купил права». На деле права держит студия, а букмекер платит за брендинг вещания. Разница важная: у спонсора вещания нет самого актива, он арендует витрину.</div>
+
+        <div style="border:1px solid rgba(255,255,255,0.09);border-radius:14px;overflow:hidden;">
+          <div style="display:grid;grid-template-columns:0.8fr 1.1fr 1.5fr;background:#1D1C1F;padding:12px 18px;font-size:12px;font-weight:700;letter-spacing:0.5px;color:#9A9AA0;">
+            <div>КТО</div><div>РОЛЬ В ЦЕПОЧКЕ</div><div>ЧТО ИМЕННО</div>
+          </div>
+          <sc-for list="{{ rightsChain }}" as="r" hint-placeholder-count="4">
+            <div style="display:grid;grid-template-columns:0.8fr 1.1fr 1.5fr;padding:13px 18px;border-top:1px solid rgba(255,255,255,0.07);background:#121114;align-items:start;">
+              <div style="font-size:15px;font-weight:800;{{ r.style }}">{{ r.who }}</div>
+              <div style="font-size:14px;color:#C7C6CC;">{{ r.role }}</div>
+              <div>
+                <div style="font-size:14px;color:#E7E6E2;line-height:1.5;">{{ r.what }}</div>
+                <div style="font-size:12.5px;margin-top:5px;"><a href="{{ r.url }}" target="_blank" rel="noreferrer">{{ r.publisher }}</a></div>
+              </div>
+            </div>
+          </sc-for>
+        </div>
+
+        <div class="mine" style="padding:24px 26px;margin-top:16px;">
+          <div class="mine-tag"><i>ЕХ</i>ВЫВОД</div>
+          <div style="font-size:21px;font-weight:800;line-height:1.4;max-width:950px;">Одна студия обслуживает двух конкурентов сразу, разведя их по турнирам</div>
+          <div style="font-size:15.5px;line-height:1.6;margin-top:11px;max-width:1000px;">Paragon держит русские права и на ESL, и на PGL. DreamLeague по Dota идёт при поддержке Winline, а титульным партнёром русской трансляции IEM Krakow по CS был Фонбет. Значит эксклюзива по студии ни у кого нет: покупается конкретный турнир, а не отношения с правообладателем. Это первое, что я бы уточнил внутри — что именно закреплено в договоре и на какой срок.</div>
+          <div style="font-size:15.5px;line-height:1.6;margin-top:11px;max-width:1000px;"><span class="hl">Okko здесь стоит особняком: это единственная площадка в портфеле, где зритель авторизован.</span> На Twitch мы видим анонимную толпу, в подписочном сервисе — идентифицированного человека, которому можно посчитать досмотры, повторные визиты и путь дальше. Для замера вклада трансляций это лучшая точка входа, и с онлайн-кинотеатрами я уже работал.</div>
+        </div>
 
         <div style="font-size:19.5px;font-weight:800;margin:34px 0 12px;">Собственные турниры Winline</div>
         <div style="display:grid;grid-template-columns:1fr 1fr;gap:18px;">
@@ -786,33 +814,6 @@
         </div>
         <div style="margin-top:16px;background:#1D1C1F;border-left:2px solid #FF6A1A;border-radius:0 10px 10px 0;padding:16px 20px;font-size:15px;line-height:1.6;color:#C7C6CC;">{{ eventsGap }}</div>
 
-        <div style="height:1px;background:rgba(255,255,255,0.09);margin:40px 0 28px;"></div>
-
-        <div style="font-size:19.5px;font-weight:800;margin-bottom:4px;">Кому принадлежат права на русские трансляции</div>
-        <div style="font-size:15px;color:#77767C;line-height:1.55;margin-bottom:16px;max-width:900px;">Публикации часто пишут, что букмекер «купил права». На деле права держит студия, а букмекер платит за брендинг вещания. Разница важная: у спонсора вещания нет самого актива, он арендует витрину.</div>
-
-        <div style="border:1px solid rgba(255,255,255,0.09);border-radius:14px;overflow:hidden;">
-          <div style="display:grid;grid-template-columns:0.8fr 1.1fr 1.5fr;background:#1D1C1F;padding:12px 18px;font-size:12px;font-weight:700;letter-spacing:0.5px;color:#9A9AA0;">
-            <div>КТО</div><div>РОЛЬ В ЦЕПОЧКЕ</div><div>ЧТО ИМЕННО</div>
-          </div>
-          <sc-for list="{{ rightsChain }}" as="r" hint-placeholder-count="4">
-            <div style="display:grid;grid-template-columns:0.8fr 1.1fr 1.5fr;padding:13px 18px;border-top:1px solid rgba(255,255,255,0.07);background:#121114;align-items:start;">
-              <div style="font-size:15px;font-weight:800;{{ r.style }}">{{ r.who }}</div>
-              <div style="font-size:14px;color:#C7C6CC;">{{ r.role }}</div>
-              <div>
-                <div style="font-size:14px;color:#E7E6E2;line-height:1.5;">{{ r.what }}</div>
-                <div style="font-size:12.5px;margin-top:5px;"><a href="{{ r.url }}" target="_blank" rel="noreferrer">{{ r.publisher }}</a></div>
-              </div>
-            </div>
-          </sc-for>
-        </div>
-
-        <div class="mine" style="padding:24px 26px;margin-top:16px;">
-          <div class="mine-tag"><i>ЕХ</i>ВЫВОД</div>
-          <div style="font-size:21px;font-weight:800;line-height:1.4;max-width:950px;">Одна студия обслуживает двух конкурентов сразу, разведя их по турнирам</div>
-          <div style="font-size:15.5px;line-height:1.6;margin-top:11px;max-width:1000px;">Paragon держит русские права и на ESL, и на PGL. DreamLeague по Dota идёт при поддержке Winline, а титульным партнёром русской трансляции IEM Krakow по CS был Фонбет. Значит эксклюзива по студии ни у кого нет: покупается конкретный турнир, а не отношения с правообладателем. Это первое, что я бы уточнил внутри — что именно закреплено в договоре и на какой срок.</div>
-          <div style="font-size:15.5px;line-height:1.6;margin-top:11px;max-width:1000px;"><span class="hl">Okko здесь стоит особняком: это единственная площадка в портфеле, где зритель авторизован.</span> На Twitch мы видим анонимную толпу, в подписочном сервисе — идентифицированного человека, которому можно посчитать досмотры, повторные визиты и путь дальше. Для замера вклада трансляций это лучшая точка входа, и с онлайн-кинотеатрами я уже работал.</div>
-        </div>
 
 
       </section>
