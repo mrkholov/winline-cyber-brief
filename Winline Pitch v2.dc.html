@@ -717,7 +717,7 @@
         <div style="font-size:15.5px;color:#77767C;margin-bottom:22px;">{{ eventsIntro }}</div>
 
         <div style="font-size:19.5px;font-weight:800;margin-bottom:4px;">Турниры, организации и студии по брендам</div>
-        <div style="font-size:15px;color:#77767C;margin-bottom:14px;">Всё, кроме команд: собственные турниры, партнёрства с операторами и студиями. Названия кликабельны там, где партнёрство подтверждено отдельным источником.</div>
+        <div style="font-size:15px;color:#77767C;margin-bottom:14px;">Всё, кроме команд: собственные турниры, партнёрства с операторами и студиями. Список собран из карты рынка и дополнен турнирами, по которым у нас есть призовые и аудитория. Названия кликабельны там, где партнёрство подтверждено отдельным источником.</div>
         <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(215px,1fr));gap:12px;margin-bottom:12px;">
           <sc-for list="{{ eventAssets }}" as="brand" hint-placeholder-count="5">
             <div style="background:#141416;border:1px solid rgba(255,255,255,0.09);border-radius:12px;overflow:hidden;display:flex;flex-direction:column;">
@@ -1523,6 +1523,37 @@ class Component extends DCLogic {
           statusColor: deal ? statusToneFor(deal.brand_id, deal.current_status) : 'color:#77767C;',
           period: deal ? `${deal.valid_from || 'начало не указано'} → ${deal.valid_to || 'окончание не объявлено'}` : '',
           publisher: deal ? (firstSource(deal.source_ids)?.publisher || '') : '',
+        });
+      }
+      // карта рынка перечисляет не всё: добавляем турниры, которые есть в наших данных по аудитории
+      const brandWord = (rosterEntry?.name || '').toLowerCase();
+      for (const tournament of (matrices?.tournament_matrix || [])) {
+        if (!brandWord) break;
+        const organizers = String(tournament.organizer || '').toLowerCase().split('/').map(part => part.trim());
+        const inName = String(tournament.name || '').toLowerCase().split(/[^a-zа-я0-9]+/).includes(brandWord);
+        if (!organizers.includes(brandWord) && !inName) continue;
+        // бренд уже стоит в шапке карточки, в названии он лишний
+        const short = tournament.name
+          .replace(/\s*(19|20)\d\d\s*$/, '')
+          .replace(new RegExp('^' + (rosterEntry?.name || '') + '\\s+', 'i'), '')
+          .trim();
+        if (rows.some(row => sameAsset(row.name.replace('*', ''), short))) continue;
+        const prizeUnit = tournament.prize_pool?.currency === 'USD' ? '$' : '₽';
+        const prize = tournament.prize_pool
+          ? `${this.decimal(tournament.prize_pool.amount / 1000000)} млн ${prizeUnit}`
+          : '';
+        rows.push({
+          kind: 'tournament',
+          name: short + '*',
+          note: [prize, tournament.peak_viewers ? `пик ${this.number(tournament.peak_viewers)}` : ''].filter(Boolean).join(' · '),
+          style: 'color:#FF6A1A;font-weight:700;',
+          mark: '', markStyle: '', markTitle: '',
+          url: '', hasUrl: false, noUrl: true,
+          relation: 'собственный турнир',
+          statusText: 'есть в наших данных по аудитории',
+          statusColor: 'color:#9A9AA0;',
+          period: `${tournament.start_date || ''} → ${tournament.end_date || ''}`,
+          publisher: '',
         });
       }
       for (const deal of deals) {
