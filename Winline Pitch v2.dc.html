@@ -897,6 +897,35 @@
 
 </div>
 
+  <div style="max-width:1240px;margin:0 auto;padding:0 40px;">
+    <section id="kontakty" style="padding:62px 0 70px;border-top:1px solid rgba(255,255,255,0.12);">
+      <div style="display:flex;align-items:center;gap:18px;margin-bottom:30px;">
+        <img src="assets/egor-kholov.jpg" alt="Егор Холов" style="width:72px;height:72px;border-radius:50%;object-fit:cover;flex-shrink:0;border:1px solid rgba(255,255,255,0.14);">
+        <div>
+          <div style="font-size:23px;font-weight:800;line-height:1.25;">Егор Холов</div>
+          <div style="font-size:16px;color:#BAB7CB;line-height:1.5;margin-top:5px;">Маркетинг-директор · 14 лет · гейминг, EdTech, перформанс</div>
+        </div>
+      </div>
+
+      <div style="font-size:14px;font-weight:700;letter-spacing:0.6px;color:#BAB7CB;margin-bottom:14px;">СВЯЗАТЬСЯ</div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px;">
+        <div style="background:#1F1C2B;border:1px solid rgba(255,255,255,0.10);border-radius:12px;padding:16px 20px;">
+          <div style="font-size:13px;color:#BAB7CB;margin-bottom:6px;">Телеграм</div>
+          <a href="https://t.me/khoegor" target="_blank" rel="noreferrer" style="font-size:17px;font-weight:700;">t.me/khoegor</a>
+        </div>
+        <div style="background:#1F1C2B;border:1px solid rgba(255,255,255,0.10);border-radius:12px;padding:16px 20px;">
+          <div style="font-size:13px;color:#BAB7CB;margin-bottom:6px;">Почта</div>
+          <a href="mailto:egor.kholov@gmail.com" style="font-size:17px;font-weight:700;overflow-wrap:anywhere;">egor.kholov@gmail.com</a>
+        </div>
+        <div style="background:#1F1C2B;border:1px solid rgba(255,255,255,0.10);border-radius:12px;padding:16px 20px;">
+          <div style="font-size:13px;color:#BAB7CB;margin-bottom:6px;">LinkedIn</div>
+          <a href="https://www.linkedin.com/in/kholove/" target="_blank" rel="noreferrer" style="font-size:17px;font-weight:700;">linkedin.com/in/kholove</a>
+        </div>
+      </div>
+    </section>
+  </div>
+
+
 </x-dc>
 <script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1280,&quot;height&quot;:900}}">
 class Component extends DCLogic {
@@ -1652,6 +1681,7 @@ class Component extends DCLogic {
         { href: '#strimery', label: 'Стримеры' },
         { href: '#komandy', label: 'Команды' },
         { href: '#turniry', label: 'Турниры' },
+        { href: '#kontakty', label: 'Контакты' },
       ],
 
       teamTable: mergedBrandAssets.flatMap(brand =>
