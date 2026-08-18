@@ -811,32 +811,6 @@
 
   <!-- ==================== RESEARCH ==================== -->
   <div style="max-width:1240px;margin:0 auto;padding:0 40px;">
-    <section id="vyvody" style="padding:80px 0;border-top:1px solid rgba(255,255,255,0.07);">
-      <div style="font-family:'JetBrains Mono',monospace;font-size:14px;color:#FF6A1A;font-weight:600;letter-spacing:1.2px;margin-bottom:14px;">ЧТО ПОКАЗАЛ РЕСЕРЧ</div>
-      <div style="font-size:36.5px;font-weight:800;letter-spacing:-0.4px;margin-bottom:12px;">Я собрал публичные данные по направлению — и увидел три нюанса</div>
-      <div style="font-size:17.5px;color:#9A9AA0;max-width:760px;line-height:1.6;margin-bottom:34px;">Открытые источники, Esports Charts и точечные замеры Twitch API в реальном времени — кто сейчас в эфире и у кого чей бренд светится. Три момента ниже — самое важное для разговора; весь ресёрч целиком — в разделе Research.</div>
-      <div style="display:flex;flex-direction:column;gap:14px;">
-        <sc-for list="{{ discussTopics }}" as="d" hint-placeholder-count="3">
-          <div style="background:#141416;border:1px solid rgba(255,255,255,0.09);border-radius:14px;padding:26px 28px;">
-            <div style="display:flex;align-items:baseline;gap:14px;margin-bottom:16px;">
-              <span style="font-family:'JetBrains Mono',monospace;color:#FF6A1A;font-size:15px;font-weight:700;">{{ d.n }}</span>
-              <span style="font-size:23px;font-weight:800;">{{ d.title }}</span>
-            </div>
-            <div style="display:grid;grid-template-columns:1fr 1fr;gap:24px;">
-              <div>
-                <div style="font-size:13px;font-weight:700;letter-spacing:0.6px;color:#77767C;margin-bottom:8px;">ЧТО НАШЁЛ</div>
-                <div style="font-size:16.5px;line-height:1.55;color:#E7E6E2;">{{ d.obs }}</div>
-              </div>
-              <div>
-                <div style="font-size:13px;font-weight:700;letter-spacing:0.6px;color:#FF6A1A;margin-bottom:8px;">НЮАНС</div>
-                <div style="font-size:16.5px;line-height:1.55;color:#E7E6E2;">{{ d.q }}</div>
-              </div>
-            </div>
-          </div>
-        </sc-for>
-      </div>
-      <div style="margin-top:26px;font-size:17px;color:#9A9AA0;line-height:1.6;">Общее у всех трёх: <b style="color:#F2F1EE;">охват видно снаружи, а вклад в депозит — нет.</b> Отсюда — как я бы строил воронку.</div>
-    </section>
     <section id="research" style="padding:40px 0 0;">
     <sc-for list="{{ researchBlocks }}" as="r" hint-placeholder-count="8">
       <section style="padding:38px 0;border-top:1px solid rgba(255,255,255,0.07);">
@@ -2207,23 +2181,6 @@ class Component extends DCLogic {
         },
       ],
       perfBreadth: ['Атрибуция и метки', 'Post-view и контрольные группы', 'Brand lift', 'Инкрементальность по гео', 'Антифрод GIVT/SIVT', 'Юнит-экономика и ДРР', 'Медиапланирование по P&L', 'CPA и бартерные модели', 'CRM и winback', 'Промокоды и QR', 'Частота касаний и ротация креативов', 'Ивенты как канал', 'Лендинги и конверсия', 'Brand Health Tracking', 'SEO и контент-воронки', 'B2B и запуск продуктов', 'Мотивация и KPI команды', 'AI в коммуникации на масштабе', 'Agency management'],
-      discussTopics: [
-        {
-          n: '01', title: 'Аудит текущих медиаактивов',
-          obs: 'В выбранном срезе у Winline семь партнёрств разного типа и жизненного цикла: Buster и ESL подтверждены сейчас, magic только объявлен, PGL требует проверки актуальности, Gaimin истёк по данным источников, Tundra и Virtus.pro — исторические.',
-          q: 'Снаружи видно только логотипы. Что актив реально даёт — контент, комьюнити, трансляцию, offline — и что из этого конвертится, по публичным данным не восстановить. Это первое, что нужно свести в одну карту.'
-        },
-        {
-          n: '02', title: 'Срез конкурентов, стримеров и событий',
-          obs: 'BetBoom в 2026 держит свой клуб и отдельно купил спонсорство Team Spirit, переманив у 1xBet. В точечном срезе CS2 среди топ-50 каналов бренд нашёлся у 11: 10 BetBoom, 1 Winline. При этом SLAY 2025 собрал 750 000+ зрителей — рекорд для некиберспортивной трансляции в СНГ, и это собственный актив Winline.',
-          q: 'Разрыв в CS2 — это не разница в бюджете, а разница в медиаструктуре вокруг дисциплины. При этом собственный актив с рекордным охватом у Winline уже есть — вопрос не в охвате, а в том, доходит ли он до депозита.'
-        },
-        {
-          n: '03', title: 'Приоритетные дисциплины',
-          obs: 'Активы распределены неравномерно: 13 из 16 найденных партнёрских каналов — Dota 2, 3 — CS2. У Standoff 2 ядро игровой аудитории 7–15 лет при требовании 18+ к беттингу, а призовой Major к 2026 вырос почти вдвое при падавших пиках 2023 → 2024.',
-          q: 'Пока взрослая прослойка не измеряется отдельно, Standoff 2 нельзя честно сравнить с CS2 и Dota 2: у одного актива это охват, у другого — привлечение. Разные роли требуют разных метрик, а не одного рейтинга.'
-        },
-      ],
       funnelStages: arrows(['Целевая аудитория 18+', 'Подтверждённый контакт', 'Внимание', 'Идентифицируемое действие', 'Регистрация/KYC', 'FTD', 'Повторная активность', 'Turnover/NGR', 'Инкрементальный вклад']),
       gapTools: [
         { gap: 'Контакт есть, атрибуции нет', tool: 'Разметка на каждом касании: campaign ID, промокод, QR, chat-команда, размеченный лендинг под конкретный матч', proof: '120+ интеграций/мес по меткам, промокодам и QR' },
