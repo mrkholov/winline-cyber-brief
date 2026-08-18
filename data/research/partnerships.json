@@ -160,7 +160,7 @@
       ],
       "valid_from": "2022-04-18",
       "valid_to": null,
-      "current_status": "current_unverified",
+      "current_status": "own_team",
       "exclusivity": null,
       "rights": [
         "naming",
@@ -176,7 +176,8 @@
       "source_ids": [
         "src:betboom-team-interview",
         "src:betboom-team-current"
-      ]
+      ],
+      "notes": ""
     },
     {
       "partnership_id": "partnership:fonbet-mouz",
@@ -273,7 +274,7 @@
       ],
       "valid_from": "2024-01-05",
       "valid_to": null,
-      "current_status": "current_unverified",
+      "current_status": "own_team",
       "exclusivity": null,
       "rights": [
         "naming",
@@ -289,7 +290,8 @@
       "source_ids": [
         "src:liga-l1ga",
         "src:liga-l1ga-current"
-      ]
+      ],
+      "notes": ""
     },
     {
       "partnership_id": "partnership:pari-parivision",
@@ -302,7 +304,7 @@
       ],
       "valid_from": null,
       "valid_to": null,
-      "current_status": "current_publicly_verified",
+      "current_status": "own_team",
       "exclusivity": null,
       "rights": [
         "team_development",
@@ -318,7 +320,8 @@
       "source_ids": [
         "src:parivision",
         "src:parivision-partners"
-      ]
+      ],
+      "notes": ""
     },
     {
       "partnership_id": "partnership:winline-buster",

@@ -1256,6 +1256,7 @@ class Component extends DCLogic {
       in_progress: 'проверяется',
     };
     const currentStatusRu = {
+      own_team: 'собственный клуб бренда',
       current_publicly_verified: 'действует сейчас',
       active_by_public_term: 'действует по объявленному сроку',
       current_unverified: 'нужно перепроверить',
@@ -1323,9 +1324,17 @@ class Component extends DCLogic {
       return 'team';
     };
     const statusStyleFor = status =>
-      status === 'current_publicly_verified' || status === 'active_by_public_term' || status === 'fresh_public_announcement'
+      status === 'current_publicly_verified' || status === 'active_by_public_term' || status === 'fresh_public_announcement' || status === 'own_team'
         ? 'color:#E7E6E2;'
         : status === 'current_unverified' ? 'color:#FF6A1A;' : 'color:#77767C;';
+    // по своим активам не выносим приговор «завершено» — ставим вопрос, ответ знают только внутри
+    const endedStatuses = new Set(['historical', 'reported_expired']);
+    const statusTextFor = (brandId, status) =>
+      brandId === 'brand:winline' && endedStatuses.has(status)
+        ? 'срок истёк — продлевали?'
+        : (currentStatusRu[status] || status);
+    const statusToneFor = (brandId, status) =>
+      brandId === 'brand:winline' && endedStatuses.has(status) ? 'color:#FF6A1A;' : statusStyleFor(status);
     const brandOrder = ['brand:winline', 'brand:betboom', 'brand:pari', 'brand:1xbet', 'brand:fonbet', 'brand:liga-stavok'];
     const partnershipRow = item => {
       const source = firstSource(item.source_ids);
@@ -1334,8 +1343,8 @@ class Component extends DCLogic {
         brandStyle: item.brand_id === 'brand:winline' ? 'color:#FF6A1A;' : 'color:#C7C6CC;',
         asset: entityName(item.asset_id),
         relation: relationRu[item.relationship_type] || item.relationship_type,
-        status: currentStatusRu[item.current_status] || item.current_status,
-        statusStyle: statusStyleFor(item.current_status),
+        status: statusTextFor(item.brand_id, item.current_status),
+        statusStyle: statusToneFor(item.brand_id, item.current_status),
         period: `${item.valid_from || 'начало не указано'} → ${item.valid_to || 'окончание не объявлено'}`,
         url: source?.url || '#',
         publisher: source?.publisher || 'источник не указан',
@@ -1574,8 +1583,8 @@ class Component extends DCLogic {
           url: deal ? (firstSource(deal.source_ids)?.url || '') : '',
           hasUrl: Boolean(deal && firstSource(deal.source_ids)?.url),
           relation: deal ? (relationRu[deal.relationship_type] || deal.relationship_type) : 'по карте рынка',
-          statusText: deal ? (currentStatusRu[deal.current_status] || deal.current_status) : 'отдельно не проверено',
-          statusColor: deal ? statusStyleFor(deal.current_status) : 'color:#77767C;',
+          statusText: deal ? statusTextFor(deal.brand_id, deal.current_status) : 'отдельно не проверено',
+          statusColor: deal ? statusToneFor(deal.brand_id, deal.current_status) : 'color:#77767C;',
           period: deal ? `${deal.valid_from || 'начало не указано'} → ${deal.valid_to || 'окончание не объявлено'}` : '',
           publisher: deal ? (firstSource(deal.source_ids)?.publisher || '') : '',
         });
@@ -1595,8 +1604,8 @@ class Component extends DCLogic {
           url: firstSource(deal.source_ids)?.url || '',
           hasUrl: Boolean(firstSource(deal.source_ids)?.url),
           relation: relationRu[deal.relationship_type] || deal.relationship_type,
-          statusText: currentStatusRu[deal.current_status] || deal.current_status,
-          statusColor: statusStyleFor(deal.current_status),
+          statusText: statusTextFor(deal.brand_id, deal.current_status),
+          statusColor: statusToneFor(deal.brand_id, deal.current_status),
           period: `${deal.valid_from || 'начало не указано'} → ${deal.valid_to || 'окончание не объявлено'}`,
           publisher: firstSource(deal.source_ids)?.publisher || '',
         });
@@ -1907,8 +1916,8 @@ class Component extends DCLogic {
       teamsJustify: ['Ассоциация с командой', 'Эксклюзив в категории', 'Права на контент', 'Доступ к игрокам'],
       teamsNamingRivals: ['BetBoom Team', 'PARIVISION', 'L1GA TEAM', 'Bet-M 33'],
       teamsNamingWinline: ['Winline Pro League', 'WINLINE Star Series', 'Winline Insight', 'WINLINE KING PONG'],
-      teamsExpiredTitle: 'Клубных контрактов у Winline сейчас один — magic, и ему неделя',
-      teamsExpiredText: 'Титульное партнёрство с Virtus.pro действовало с 1 января 2022 три года и закончилось; Tundra и Gaimin в наших данных тоже помечены как завершённые. Публикации до сих пор перечисляют эти команды как активы Winline — при подготовке к разговору на такую подборку опираться нельзя. Фактически в киберспортивных составах у бренда остался один свежий контракт, объявленный 11 августа. Это и делает magic удобной точкой отсчёта: истории прошлых активаций, которая исказит замер, у него ещё нет.',
+      teamsExpiredTitle: 'Единственный публично подтверждённый клубный контракт сейчас — magic, и ему неделя',
+      teamsExpiredText: 'Титульное партнёрство с Virtus.pro объявляли на три года с 1 января 2022 — объявленный срок истёк, о продлении публично не сообщали. По Tundra и Gaimin свежих подтверждений тоже нет. При этом публикации до сих пор перечисляют все три команды как активы Winline, так что по открытым источникам состав портфеля не восстановить — это первое, что я бы уточнил внутри. По публично подтверждённым данным в киберспортивных составах остаётся magic, объявленный 11 августа. Это и делает его удобной точкой отсчёта: истории прошлых активаций, которая исказит замер, у него ещё нет.',
       teamsSummary,
       teamRows,
       eventsIntro: eventsIntro,
