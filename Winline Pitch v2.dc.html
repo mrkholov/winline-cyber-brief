@@ -166,6 +166,55 @@
 
         
 
+      <section id="rynok" style="padding:16px 0 60px;">
+        <div style="font-size:27.5px;font-weight:800;margin-bottom:8px;">Новая экономика рынка с 2026 года</div>
+        <div style="font-size:15.5px;color:#77767C;margin-bottom:22px;max-width:900px;">Всё, что дальше, — про сами активы. Этот блок про условия, в которых они теперь считаются.</div>
+
+        <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:12px;">
+          <sc-for list="{{ marketTiles }}" as="m" hint-placeholder-count="4">
+            <div style="background:#141416;border:1px solid rgba(255,255,255,0.09);border-radius:14px;padding:20px 22px;">
+              <div style="font-family:'JetBrains Mono',monospace;font-size:30px;font-weight:800;color:#FF6A1A;">{{ m.value }}</div>
+              <div style="font-size:15px;font-weight:800;line-height:1.35;margin-top:7px;">{{ m.label }}</div>
+              <div style="font-size:13px;color:#77767C;line-height:1.5;margin-top:8px;">{{ m.note }}</div>
+              <div style="font-size:12.5px;margin-top:9px;"><a href="{{ m.url }}" target="_blank" rel="noreferrer">{{ m.publisher }}</a></div>
+            </div>
+          </sc-for>
+        </div>
+
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:16px;">
+          <div style="background:#141416;border:1px solid rgba(255,255,255,0.08);border-radius:14px;padding:22px 24px;">
+            <div style="font-size:13px;font-weight:700;letter-spacing:0.6px;color:#77767C;margin-bottom:12px;">ЧТО ПО РЕКЛАМЕ УЖЕ ДЕЙСТВУЕТ</div>
+            <div style="display:flex;flex-direction:column;gap:9px;">
+              <sc-for list="{{ marketRulesNow }}" as="r" hint-placeholder-count="4">
+                <div style="display:flex;gap:10px;align-items:baseline;">
+                  <span style="color:#FF6A1A;font-size:15px;flex-shrink:0;">&#9679;</span>
+                  <span style="font-size:15px;line-height:1.55;color:#E7E6E2;">{{ r }}</span>
+                </div>
+              </sc-for>
+            </div>
+          </div>
+          <div style="background:#141416;border:1px solid rgba(255,255,255,0.08);border-radius:14px;padding:22px 24px;">
+            <div style="font-size:13px;font-weight:700;letter-spacing:0.6px;color:#77767C;margin-bottom:12px;">ЧТО ПРЕДЛОЖЕНО, НО НЕ ПРИНЯТО</div>
+            <div style="display:flex;flex-direction:column;gap:9px;">
+              <sc-for list="{{ marketRulesDraft }}" as="r" hint-placeholder-count="4">
+                <div style="display:flex;gap:10px;align-items:baseline;">
+                  <span style="color:#4A4950;font-size:15px;flex-shrink:0;">&#9675;</span>
+                  <span style="font-size:15px;line-height:1.55;color:#9A9AA0;">{{ r }}</span>
+                </div>
+              </sc-for>
+            </div>
+            <div style="font-size:12.5px;color:#77767C;margin-top:12px;">Законопроект внесён в марте 2026 и не принят — это риск, а не действующая норма. <a href="https://adindex.ru/news/right/2026/03/13/343076.phtml" target="_blank" rel="noreferrer">AdIndex</a></div>
+          </div>
+        </div>
+
+        <div class="mine" style="padding:26px 28px;margin-top:18px;">
+          <div class="mine-tag"><i>ЕХ</i>ВЫВОД</div>
+          <div style="font-size:26px;font-weight:800;letter-spacing:-0.3px;line-height:1.3;max-width:950px;">Налог привязан к обороту, поэтому первым режут то, что не умеет показать возврат</div>
+          <div style="font-size:15.5px;line-height:1.6;margin-top:12px;max-width:1000px;">Целевые отчисления в 2,25% считаются со всех принятых ставок, а не с маржи: в убыточный месяц они не уменьшаются. При такой конструкции расходы делятся на те, что доказывают вклад в депозит, и все остальные. Медийные активы почти всегда во второй группе — не потому, что не работают, а потому, что нечем показать.</div>
+          <div style="font-size:15.5px;line-height:1.6;margin-top:11px;max-width:1000px;">Обратная сторона: отрасль отказалась примерно от 30% медийных лиц, а самих стримеров меньше не стало. <span class="hl">Значит активы подешевели, и торговаться сейчас проще, чем год назад.</span> С этого я бы и начал: измеримые обязательства в новых контрактах, пересмотр состава по пересечению аудиторий и опора на собственные продукты и права, которые не зависят от того, разрешат ли завтра рекламу у блогеров.</div>
+        </div>
+      </section>
+
       <section id="strimery" style="padding:16px 0 60px;">
         <div style="font-size:27.5px;font-weight:800;margin-bottom:8px;">Стримеры и амбассадоры</div>
         <div style="font-size:15px;color:#77767C;line-height:1.55;margin-bottom:30px;max-width:820px;">Фолловеры — текущее значение из Twitch API. Средний и пиковый онлайн — TwitchTracker, его срез примерно за последний месяц.</div>
@@ -666,54 +715,6 @@
 
 
 
-      </section>
-      <section id="rynok" style="padding:16px 0 60px;">
-        <div style="font-size:27.5px;font-weight:800;margin-bottom:8px;">Новая экономика рынка с 2026 года</div>
-        <div style="font-size:15.5px;color:#77767C;margin-bottom:22px;max-width:900px;">Всё, что выше, — про сами активы. Здесь — про условия, в которых они теперь считаются.</div>
-
-        <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:12px;">
-          <sc-for list="{{ marketTiles }}" as="m" hint-placeholder-count="4">
-            <div style="background:#141416;border:1px solid rgba(255,255,255,0.09);border-radius:14px;padding:20px 22px;">
-              <div style="font-family:'JetBrains Mono',monospace;font-size:30px;font-weight:800;color:#FF6A1A;">{{ m.value }}</div>
-              <div style="font-size:15px;font-weight:800;line-height:1.35;margin-top:7px;">{{ m.label }}</div>
-              <div style="font-size:13px;color:#77767C;line-height:1.5;margin-top:8px;">{{ m.note }}</div>
-              <div style="font-size:12.5px;margin-top:9px;"><a href="{{ m.url }}" target="_blank" rel="noreferrer">{{ m.publisher }}</a></div>
-            </div>
-          </sc-for>
-        </div>
-
-        <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:16px;">
-          <div style="background:#141416;border:1px solid rgba(255,255,255,0.08);border-radius:14px;padding:22px 24px;">
-            <div style="font-size:13px;font-weight:700;letter-spacing:0.6px;color:#77767C;margin-bottom:12px;">ЧТО ПО РЕКЛАМЕ УЖЕ ДЕЙСТВУЕТ</div>
-            <div style="display:flex;flex-direction:column;gap:9px;">
-              <sc-for list="{{ marketRulesNow }}" as="r" hint-placeholder-count="4">
-                <div style="display:flex;gap:10px;align-items:baseline;">
-                  <span style="color:#FF6A1A;font-size:15px;flex-shrink:0;">&#9679;</span>
-                  <span style="font-size:15px;line-height:1.55;color:#E7E6E2;">{{ r }}</span>
-                </div>
-              </sc-for>
-            </div>
-          </div>
-          <div style="background:#141416;border:1px solid rgba(255,255,255,0.08);border-radius:14px;padding:22px 24px;">
-            <div style="font-size:13px;font-weight:700;letter-spacing:0.6px;color:#77767C;margin-bottom:12px;">ЧТО ПРЕДЛОЖЕНО, НО НЕ ПРИНЯТО</div>
-            <div style="display:flex;flex-direction:column;gap:9px;">
-              <sc-for list="{{ marketRulesDraft }}" as="r" hint-placeholder-count="4">
-                <div style="display:flex;gap:10px;align-items:baseline;">
-                  <span style="color:#4A4950;font-size:15px;flex-shrink:0;">&#9675;</span>
-                  <span style="font-size:15px;line-height:1.55;color:#9A9AA0;">{{ r }}</span>
-                </div>
-              </sc-for>
-            </div>
-            <div style="font-size:12.5px;color:#77767C;margin-top:12px;">Законопроект внесён в марте 2026 и не принят — это риск, а не действующая норма. <a href="https://adindex.ru/news/right/2026/03/13/343076.phtml" target="_blank" rel="noreferrer">AdIndex</a></div>
-          </div>
-        </div>
-
-        <div class="mine" style="padding:26px 28px;margin-top:18px;">
-          <div class="mine-tag"><i>ЕХ</i>ВЫВОД</div>
-          <div style="font-size:26px;font-weight:800;letter-spacing:-0.3px;line-height:1.3;max-width:950px;">Налог привязан к обороту, поэтому первым режут то, что не умеет показать возврат</div>
-          <div style="font-size:15.5px;line-height:1.6;margin-top:12px;max-width:1000px;">Целевые отчисления в 2,25% считаются со всех принятых ставок, а не с маржи: в убыточный месяц они не уменьшаются. При такой конструкции расходы делятся на те, что доказывают вклад в депозит, и все остальные. Медийные активы почти всегда во второй группе — не потому, что не работают, а потому, что нечем показать.</div>
-          <div style="font-size:15.5px;line-height:1.6;margin-top:11px;max-width:1000px;">Обратная сторона: отрасль отказалась примерно от 30% медийных лиц, а самих стримеров меньше не стало. <span class="hl">Значит активы подешевели, и торговаться сейчас проще, чем год назад.</span> С этого я бы и начал: измеримые обязательства в новых контрактах, пересмотр состава по пересечению аудиторий и опора на собственные продукты и права, которые не зависят от того, разрешат ли завтра рекламу у блогеров.</div>
-        </div>
       </section>
       <section id="komandy" style="padding:16px 0 60px;">
         <div style="font-size:27.5px;font-weight:800;margin-bottom:8px;">Команды: ростеры и спонсорство</div>
@@ -1743,8 +1744,8 @@ class Component extends DCLogic {
       matrixReady,
       navLinks: [
         { href: '#opyt', label: 'Опыт' },
-        { href: '#strimery', label: 'Стримеры' },
         { href: '#rynok', label: 'Рынок' },
+        { href: '#strimery', label: 'Стримеры' },
         { href: '#komandy', label: 'Команды' },
         { href: '#turniry', label: 'Турниры' },
         { href: '#cv', label: 'CV' },
