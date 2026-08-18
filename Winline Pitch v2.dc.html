@@ -24,6 +24,8 @@
   .mine-tag i { font-style:normal; background:#0A0A0C; color:#FF6A1A !important; border-radius:4px; padding:2px 6px; font-size:12px; letter-spacing:0.4px; }
   * { box-sizing:border-box; font-family:'Golos Text',sans-serif; }
   ::selection { background:#FF6A1A; color:#0A0A0C; }
+  summary::-webkit-details-marker { display:none; }
+  details[open] > summary > span:last-child { opacity:0.28; }
   .mine ::selection, .mine::selection { background:#0A0A0C; color:#FF6A1A; }
   .mine .hl { background:#FFF8F3; box-shadow:0 0 0 1px rgba(0,0,0,0.18); padding:2px 7px; border-radius:5px; font-weight:800; box-decoration-break:clone; -webkit-box-decoration-break:clone; }
 </style>
@@ -263,12 +265,13 @@
 
           <div style="display:flex;flex-direction:column;gap:12px;margin-top:22px;">
             <sc-for list="{{ measureLayers }}" as="layer" hint-placeholder-count="4">
-              <div style="background:rgba(255,255,255,0.5);border-radius:12px;overflow:hidden;">
-                <div style="display:flex;align-items:baseline;gap:14px;padding:14px 20px;background:rgba(0,0,0,0.09);flex-wrap:wrap;">
+              <details style="background:rgba(255,255,255,0.5);border-radius:12px;overflow:hidden;">
+                <summary style="display:flex;align-items:baseline;gap:14px;padding:14px 20px;background:rgba(0,0,0,0.09);flex-wrap:wrap;cursor:pointer;list-style:none;">
                   <span style="font-family:'JetBrains Mono',monospace;font-size:14px;font-weight:800;">{{ layer.n }}</span>
                   <span style="font-size:17px;font-weight:800;">{{ layer.title }}</span>
                   <span style="font-size:14px;opacity:0.65;">{{ layer.answers }}</span>
-                </div>
+                  <span style="margin-left:auto;font-size:13px;font-weight:800;letter-spacing:0.4px;opacity:0.5;">РАСКРЫТЬ</span>
+                </summary>
                 <div style="padding:4px 20px 16px;">
                   <sc-for list="{{ layer.items }}" as="m" hint-placeholder-count="3">
                     <div style="display:grid;grid-template-columns:1fr 1.35fr;gap:22px;padding:13px 0;border-top:1px solid rgba(0,0,0,0.12);align-items:start;">
@@ -280,7 +283,7 @@
                     </div>
                   </sc-for>
                 </div>
-              </div>
+              </details>
             </sc-for>
           </div>
 
@@ -506,6 +509,56 @@
 
           </div>
         </sc-for>
+
+        <div style="height:1px;background:rgba(255,255,255,0.09);margin:34px 0 26px;"></div>
+
+        <div style="display:flex;align-items:center;gap:12px;margin-bottom:6px;flex-wrap:wrap;">
+          <div style="font-size:19.5px;font-weight:800;">WINLINE SLAY · премия русского стриминга</div>
+          <span style="font-size:12px;font-weight:800;letter-spacing:0.6px;background:#1D1C1F;border:1px solid rgba(255,255,255,0.14);color:#9A9AA0;border-radius:5px;padding:3px 8px;">ТРЕТИЙ СЕЗОН · 3 ДЕКАБРЯ 2025</span>
+        </div>
+        <div style="font-size:15px;color:#77767C;line-height:1.55;margin-bottom:16px;max-width:900px;">Собственная премия для контентмейкеров, идёт с 2023 года. Церемония 2025 года прошла в «Дворце Ирины Винер» в Лужниках, тема — castle core.</div>
+
+        <div style="background:#141416;border:1px solid rgba(255,255,255,0.09);border-radius:14px;overflow:hidden;">
+          <div style="display:grid;grid-template-columns:1.05fr 1fr;">
+            <div style="padding:24px 26px;">
+              <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:10px;">
+                <sc-for list="{{ slayStats }}" as="s" hint-placeholder-count="4">
+                  <div style="background:#1D1C1F;border-radius:10px;padding:14px 16px;">
+                    <div style="font-family:'JetBrains Mono',monospace;font-size:25px;font-weight:800;color:#FF6A1A;">{{ s.value }}</div>
+                    <div style="font-size:12.5px;color:#9A9AA0;line-height:1.4;margin-top:5px;">{{ s.label }}</div>
+                  </div>
+                </sc-for>
+              </div>
+
+              <div style="font-size:13px;font-weight:700;letter-spacing:0.6px;color:#77767C;margin:22px 0 10px;">ЧТО ЗА ФОРМАТ</div>
+              <div style="display:flex;flex-direction:column;gap:9px;">
+                <sc-for list="{{ slayFacts }}" as="f" hint-placeholder-count="4">
+                  <div style="display:grid;grid-template-columns:150px 1fr;gap:16px;align-items:baseline;">
+                    <div style="font-size:12.5px;font-weight:700;letter-spacing:0.5px;color:#77767C;">{{ f.label }}</div>
+                    <div style="font-size:15px;line-height:1.5;color:#E7E6E2;">{{ f.value }}</div>
+                  </div>
+                </sc-for>
+              </div>
+              <div style="font-size:13px;color:#77767C;line-height:1.5;margin-top:14px;">Источники: <a href="https://www.championat.com/cybersport/news-6267636-slay-2025-postavila-absolyutnyj-rekord-na-twitch-v-rossii.html" target="_blank" rel="noreferrer">Чемпионат о рекорде</a> · <a href="https://www.igromania.ru/news/159963/bolshe-750-tyisyach-zritelej-smotreli-tseremoniyu-vrucheniya-premii-slay-2025-eto-rekord/" target="_blank" rel="noreferrer">Игромания</a> · <a href="https://silvermercury.ru/winners/slay-kak-winline-sozdal-pervyy-v-rossii-oskar-dlya-strimerov-i-pobil-rekord-po-onlaynu-na-twitch-2025-6147" target="_blank" rel="noreferrer">разбор кампании на Silver Mercury</a></div>
+            </div>
+
+            <div style="background:#0F0E11;display:flex;flex-direction:column;">
+              <img src="assets/slay-1.jpg" alt="Церемония SLAY 2025" style="width:100%;height:auto;display:block;">
+              <div style="font-size:13px;color:#77767C;line-height:1.5;padding:12px 20px;">Вручение статуэтки на сцене: ведут Buster и приглашённые ведущие</div>
+              <img src="assets/slay-2.webp" alt="Интервью на фоне логотипа Winline" style="width:100%;height:auto;display:block;border-top:1px solid rgba(255,255,255,0.09);">
+              <div style="font-size:13px;color:#77767C;line-height:1.5;padding:12px 20px;">Интервью в зоне с логотипом бренда — бренд в кадре весь эфир, а не только на плашке</div>
+            </div>
+          </div>
+
+          <div style="border-top:1px solid rgba(255,255,255,0.08);padding:22px 26px;">
+            <div class="mine" style="padding:22px 24px;">
+              <div class="mine-tag"><i>ЕХ</i>ВЫВОД</div>
+              <div style="font-size:19px;font-weight:800;line-height:1.4;max-width:950px;">{{ slayVerdictTitle }}</div>
+              <div style="font-size:15.5px;line-height:1.6;margin-top:11px;max-width:1000px;">{{ slayVerdictText }}</div>
+              <div style="font-size:15.5px;line-height:1.6;margin-top:11px;max-width:1000px;">{{ slayVerdictSecond }}</div>
+            </div>
+          </div>
+        </div>
 
         <div class="mine" style="padding:22px 26px;margin-top:18px;">
           <div class="mine-tag"><i>ЕХ</i>ВЫВОД</div>
@@ -809,61 +862,6 @@
   </div>
   </sc-if>
 
-  <!-- ==================== RESEARCH ==================== -->
-  <div style="max-width:1240px;margin:0 auto;padding:0 40px;">
-    <section id="research" style="padding:40px 0 0;">
-    <sc-for list="{{ researchBlocks }}" as="r" hint-placeholder-count="8">
-      <section style="padding:38px 0;border-top:1px solid rgba(255,255,255,0.07);">
-        <div style="display:flex;align-items:baseline;gap:14px;margin-bottom:8px;flex-wrap:wrap;">
-          <div style="font-family:'JetBrains Mono',monospace;font-size:14px;color:#FF6A1A;font-weight:600;">{{ r.n }}</div>
-          <div style="font-size:27.5px;font-weight:800;letter-spacing:-0.3px;">{{ r.title }}</div>
-        </div>
-        <div style="font-size:16px;color:#77767C;margin-bottom:22px;">{{ r.source }}</div>
-        <div style="display:grid;grid-template-columns:1.2fr 1fr;gap:26px;">
-          <div style="background:#141416;border:1px solid rgba(255,255,255,0.08);border-radius:14px;padding:22px 24px;">
-            <div style="font-size:13px;font-weight:700;letter-spacing:0.6px;color:#77767C;margin-bottom:12px;">ЧТО НАШЁЛ</div>
-            <div style="display:flex;flex-direction:column;gap:12px;">
-              <sc-for list="{{ r.facts }}" as="f" hint-placeholder-count="3">
-                <div style="font-size:16.5px;line-height:1.6;color:#E7E6E2;">{{ f.pre }}<sc-if value="{{ f.hasLink }}" hint-placeholder-val="{{ false }}"><a href="{{ f.url }}" target="_blank" rel="noreferrer">{{ f.linkText }}</a></sc-if>{{ f.post }}</div>
-              </sc-for>
-            </div>
-          </div>
-          <div style="border-left:2px solid #FF6A1A;padding-left:20px;">
-            <div style="font-size:13px;font-weight:700;letter-spacing:0.6px;color:#FF6A1A;margin-bottom:10px;">БЕРУ ВО ВНИМАНИЕ</div>
-            <div style="font-size:16.5px;line-height:1.6;">{{ r.q }}</div>
-          </div>
-        </div>
-      </section>
-    </sc-for>
-    </section>
-  </div>
-
-  <!-- ==================== ВОРОНКА ==================== -->
-  <div style="max-width:1240px;margin:0 auto;padding:0 40px;">
-    <section id="voronka" style="padding:80px 0;border-top:1px solid rgba(255,255,255,0.07);">
-      <div style="font-family:'JetBrains Mono',monospace;font-size:14px;color:#FF6A1A;font-weight:600;letter-spacing:1.2px;margin-bottom:14px;">ПОЭТОМУ ВОРОНКА</div>
-      <div style="font-size:36.5px;font-weight:800;letter-spacing:-0.4px;margin-bottom:12px;">Поэтому воронку я бы строил так — и вот чем закрываю каждый разрыв</div>
-      <div style="font-size:17.5px;color:#9A9AA0;max-width:760px;line-height:1.6;margin-bottom:34px;">Медиаактив в кибере почти никогда не даёт last-click — считать нужно по слоям, а не одной метрикой.</div>
-      <div style="display:flex;flex-wrap:wrap;align-items:center;margin-bottom:38px;">
-        <sc-for list="{{ funnelStages }}" as="s" hint-placeholder-count="9">
-          <div style="display:flex;align-items:center;">
-            <div style="background:#141416;border:1px solid rgba(255,255,255,0.1);border-radius:8px;padding:10px 13px;font-size:14px;font-weight:600;white-space:nowrap;">{{ s.label }}</div>
-            <sc-if value="{{ s.hasNext }}" hint-placeholder-val="{{ true }}">
-              <span style="color:#4A4950;font-size:17px;padding:0 7px;">→</span>
-            </sc-if>
-          </div>
-        </sc-for>
-      </div>
-      <sc-for list="{{ gapTools }}" as="g" hint-placeholder-count="6">
-        <div style="display:grid;grid-template-columns:1fr 1.15fr 0.85fr;gap:24px;padding:20px 0;border-top:1px solid rgba(255,255,255,0.07);align-items:baseline;">
-          <div style="font-size:17px;font-weight:700;">{{ g.gap }}</div>
-          <div style="font-size:16px;color:#C7C6CC;line-height:1.55;">{{ g.tool }}</div>
-          <div style="font-size:14px;color:#FF6A1A;font-family:'JetBrains Mono',monospace;line-height:1.5;">{{ g.proof }}</div>
-        </div>
-      </sc-for>
-      <div style="margin-top:34px;background:#141416;border:1px solid #FF6A1A;border-radius:14px;padding:24px 28px;font-family:'JetBrains Mono',monospace;font-size:16px;line-height:1.9;">Инкрементальный NGR − права − гонорары − продакшн − усиление охвата − бонусы − операционные расходы</div>
-    </section>
-  </div>
 
   <!-- ==================== CV ==================== -->
   <div style="max-width:1240px;margin:0 auto;padding:0 40px;">
@@ -1363,12 +1361,6 @@ class Component extends DCLogic {
       ? { winline: buildBrand('winline'), betboom: buildBrand('betboom'), fonbet: buildBrand('fonbet'), pari: buildBrand('pari') }
       : {};
     const activeBrand = talentBrands[tb] || talentBrands.winline || { label: '', count: 0, countLabel: '', note: '', people: [], assetGroups: [], gap: '' };
-    const normalizeFacts = blocks => blocks.map(block => ({
-      ...block,
-      facts: block.facts.map(fact => typeof fact === 'string'
-        ? { pre: fact, hasLink: false, linkText: '', url: '', post: '' }
-        : { pre: fact.pre, hasLink: true, linkText: fact.linkText, url: fact.url, post: fact.post || '' }),
-    }));
     const flatName = value => value.toLowerCase().replace(/[^a-zа-я0-9]/g, '');
     const sameAsset = (left, right) => {
       const a = flatName(left), b = flatName(right);
@@ -1721,8 +1713,6 @@ class Component extends DCLogic {
         { href: '#rynok', label: 'Рынок' },
         { href: '#komandy', label: 'Команды' },
         { href: '#turniry', label: 'Турниры' },
-        { href: '#research', label: 'Research' },
-        { href: '#voronka', label: 'Воронка' },
         { href: '#cv', label: 'CV' },
       ],
 
@@ -1965,6 +1955,21 @@ class Component extends DCLogic {
         'Запрет участия в рекламе ставок любых публичных лиц — спортсменов, комментаторов, блогеров.',
         'Запрет рекламы бонусов и фрибетов.',
       ],
+      slayStats: [
+        { value: '758 000', label: 'зрителей в пике — абсолютный рекорд Twitch по СНГ' },
+        { value: '16', label: 'номинаций: 8 основных и 8 придуманных зрителями' },
+        { value: '~91 000', label: 'вариантов номинаций прислала аудитория' },
+        { value: '70/30', label: 'вес голосов: зрители против жюри' },
+      ],
+      slayFacts: [
+        { label: 'КТО ВЁЛ', value: 'Buster, Вася Трунов, Богадовка и Lixxx' },
+        { label: 'КТО ПОБЕДИЛ', value: 'sasavot — три статуэтки, включая SLAY King. SLAY Queen — GENSYXA, лучший CS-стример — StRoGo, лучший Dota-стример — rostislav_999' },
+        { label: 'НАГРАДЫ', value: 'Статуэтка WINLINE SLAY, а победителям прошлого года — маска VISIONARY MASK 01 от Покраса Лампаса' },
+        { label: 'ПРИЗНАНИЕ', value: 'Бронза Silver Mercury 2025 в номинации «Лучшая кампания с участием лидеров мнений». Продюсировало агентство Goose Gaming, команда 16 человек' },
+      ],
+      slayVerdictTitle: 'Единственный актив Winline, который собирает всю сцену, включая чужих амбассадоров',
+      slayVerdictText: 'Награды разошлись между людьми из разных пулов: sasavot и rostislav_999 есть в составе Winline, а StRoGo — партнёр Фонбета. Премия работает как площадка для всего ру-стриминга, а не как витрина своего пула, и именно поэтому её смотрят 758 тысяч человек одновременно. Ни один киберспортивный продукт Winline к таким числам близко не подходит: у Pro League Season 3 пик 21 485.',
+      slayVerdictSecond: 'При этом у рекордной цифры нет независимого подтверждения, а после церемонии были публичные обвинения в накрутке онлайна и голосов. Актив такого масштаба стоит защищать внешним счётчиком: заявка турнира в Esports Charts стоит ноль рублей и снимает спор до того, как он начнётся.',
       pubstompRivals: [
         { brand: 'Winline', style: 'color:#FF6A1A;', place: 'Москва, МТС Live Холл', when: '23 августа, 1 день', tickets: 'от 2 000 ₽, проданы', ticketStyle: 'color:#FF6A1A;font-weight:700;' },
         { brand: 'BetBoom', style: 'color:#E7E6E2;', place: 'Москва, Дизайн-завод', when: '22–23 августа', tickets: 'фестиваль на два дня финалов', ticketStyle: 'color:#C7C6CC;' },
@@ -2074,7 +2079,6 @@ class Component extends DCLogic {
         },
       ],
       perfBreadth: ['Атрибуция и метки', 'Post-view и контрольные группы', 'Brand lift', 'Инкрементальность по гео', 'Антифрод GIVT/SIVT', 'Юнит-экономика и ДРР', 'Медиапланирование по P&L', 'CPA и бартерные модели', 'CRM и winback', 'Промокоды и QR', 'Частота касаний и ротация креативов', 'Ивенты как канал', 'Лендинги и конверсия', 'Brand Health Tracking', 'SEO и контент-воронки', 'B2B и запуск продуктов', 'Мотивация и KPI команды', 'AI в коммуникации на масштабе', 'Agency management'],
-      funnelStages: arrows(['Целевая аудитория 18+', 'Подтверждённый контакт', 'Внимание', 'Идентифицируемое действие', 'Регистрация/KYC', 'FTD', 'Повторная активность', 'Turnover/NGR', 'Инкрементальный вклад']),
       gapTools: [
         { gap: 'Контакт есть, атрибуции нет', tool: 'Разметка на каждом касании: campaign ID, промокод, QR, chat-команда, размеченный лендинг под конкретный матч', proof: '120+ интеграций/мес по меткам, промокодам и QR' },
         { gap: 'Медийный эффект не в last-click', tool: 'Post-view отдельно от post-click, целевые и контрольные группы, вклад медийных конверсий в решение по бюджету', proof: 'Измерение охватных кампаний Wargaming' },
@@ -2131,18 +2135,6 @@ class Component extends DCLogic {
         'При провале результата сначала разбираются причины и мотивация, затем фиксируются границы и срок исправления.',
       ],
 
-      researchBlocks: normalizeFacts([
-        {
-          n: 'R1', title: 'Медиаправа и кейс Evelone', source: 'Публикации отрасли, часть цифр — слухи рынка',
-          facts: ['Слой прав: владельцы IP (Valve, ESL FACEIT Group, PGL, BLAST) → держатели RU-прав (Paragon Events — эксклюзив ESL с 2023 и PGL с 2024, RuHub) → букмекер спонсирует трансляцию посредника.', 'В октябре 2025 StarLadder продал RU-права на каст Budapest Major стримеру Evelone; изначально права предлагались букмекерам дороже, конкретные суммы — слухи рынка, не подтверждённый факт.', 'На собственной трансляции Evelone собрал 484 000 зрителей на пике — лучший результат среди CS-стримеров за год.', 'Evelone — амбассадор BetBoom и получатель Porsche от 1win. Контракта с Winline нет.'],
-          q: 'Альтернативный канал закупки прав: прямая сделка с медийной фигурой вместо посредника. Экономику стоит проверить на следующем крупном тайтле — до продления через студию.'
-        },
-        {
-          n: 'R2', title: 'Блогеры и амбассадоры вне кибера', source: 'Открытые публикации, не внутренний реестр',
-          facts: ['~50 амбассадоров — один из крупнейших портфелей среди российских букмекеров, включая 15 комиков.', 'Спортивные комментаторы, музыканты, блогеры: Нобель Арустамян, Константин Генич, Денис Казанский, Дина Саева, Элджей и другие.', { pre: 'Media Poker #8, октябрь 2025: приз $76 782, ', linkText: '43 468 пик и 777 838 часов просмотра', url: 'https://escharts.com/tournaments/poker/winline-media-poker-8', post: '.' }, { pre: 'Media Football League сезон 3: ', linkText: '231 604 пика и 3,3 млн часов просмотра', url: 'https://escharts.com/organizers/winline', post: ' — больше любого киберспортивного продукта Winline.' }, 'Список собран по открытым источникам и не проверен поимённо.'],
-          q: 'Недоиспользованная синергия: плейбук амбассадоров отработан в соседних вертикалях, а кросс-промо с кибер-стримерами дешевле нового бюджета на охват.'
-        },
-      ]),
     };
   }
 }
